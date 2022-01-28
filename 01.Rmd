@@ -16,3 +16,88 @@ embed_yt('KbB0FjPg0mw')
 
 * Ver [originais em francês de toda a correspondência de Pascal](https://gallica.bnf.fr/ark:/12148/bpt6k69975r.image.r=Blaise+Pascal.f233.langFR).
 
+## Exercícios {-}
+
+[Enunciados (pdf).](https://projects.iq.harvard.edu/files/stat110/files/strategic_practice_and_homework_1.pdf)
+
+### Practice {-}
+
+#### 4. Norepeat words {-}
+
+::: {.rmdbox latex=1}
+
+A *norepeatword* is a sequence of at least one (and possibly all) of the usual $26$ letters a, b, c, ...,z, with repetitions not allowed.
+
+For example, “course” is a *norepeatword*, but “statistics” is not.
+
+Order matters, e.g., “course” is not the same as “source”.
+
+A *norepeatword* is chosen randomly, with all *norepeatwords* equally likely. Show that the probability that it uses all $26$ letters is very close to $1/e$.
+
+:::
+
+* O denominador vai ser o total de todas as *norepeatwords* (NRW), que é a soma de
+
+  * NRW de $1$ letra: $26$
+  * NRW de $2$ letras: $26 \cdot 25$
+  * NRW de $3$ letras: $26 \cdot 25 \cdot 24$
+  * $\dots$
+  * NRW de $24$ letras: $26 \cdot 25 \cdot 24 \cdot \cdots \cdot 3$
+  * NRW de $25$ letras: $26 \cdot 25 \cdot 24 \cdot \cdots \cdot 2$
+  * NRW de $26$ letras: $26 \cdot 25 \cdot 24 \cdot \cdots \cdot 1$
+  
+* Ou seja,
+
+  $$
+  \sum_{k=0}^{25} \frac{26!}{k!}
+  $$
+  
+* Que é igual a
+
+  $$
+  26! 
+  \left( 
+  1 + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \cdots + \frac{1}{25!} 
+  \right)
+  $$
+  
+* O total de NRW que usam as $26$ letras é $26!$.
+
+* A probabilidade procurada é
+
+  $$
+  \begin{aligned}
+  P 
+  &= 
+  \frac{26!}{
+  26! 
+  \left( 
+  1 + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \cdots + \frac{1}{25!} 
+  \right)
+  } \\
+  &=
+  \frac{1}{
+  1 + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \cdots + \frac{1}{25!} 
+  } \\
+  &= \frac1e
+  \end{aligned}
+  $$
+
+* A última igualdade se justifica porque a série de Taylor para $e^x$ é
+
+  $$
+  e^x = \sum_{k=0}^\infty \frac{x^k}{k!}
+  $$
+  
+* Numericamente:
+
+    ```{r}
+    1 / exp(1)
+    ```
+
+    ```{r}
+    1 / sum(1 / factorial(0:25))
+    ```
+
+
+### Homework {-}

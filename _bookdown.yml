@@ -29,5 +29,6 @@ language:
 rmd_files: [
   'index.Rmd',
   '01.Rmd',
+  '02.Rmd',
   'refs.Rmd'
 ]

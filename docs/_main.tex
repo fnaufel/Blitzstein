@@ -43,6 +43,46 @@
   pdfcreator={LaTeX via pandoc}}
 \urlstyle{same} % disable monospaced font for URLs
 \usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
 \usepackage{longtable,booktabs,array}
 \usepackage{calc} % for calculating minipage widths
 % Correct order of tables after \paragraph or \subparagraph
@@ -349,6 +389,127 @@
 \item
   Ver \href{https://gallica.bnf.fr/ark:/12148/bpt6k69975r.image.r=Blaise+Pascal.f233.langFR}{originais em francês de toda a correspondência de Pascal}.
 \end{itemize}
+
+\hypertarget{exercuxedcios}{%
+\section*{Exercícios}\label{exercuxedcios}}
+\addcontentsline{toc}{section}{Exercícios}
+
+\href{https://projects.iq.harvard.edu/files/stat110/files/strategic_practice_and_homework_1.pdf}{Enunciados (pdf).}
+
+\hypertarget{practice}{%
+\subsection*{Practice}\label{practice}}
+\addcontentsline{toc}{subsection}{Practice}
+
+\hypertarget{norepeat-words}{%
+\subsubsection*{4. Norepeat words}\label{norepeat-words}}
+\addcontentsline{toc}{subsubsection}{4. Norepeat words}
+
+\begin{rmdbox}
+A \emph{norepeatword} is a sequence of at least one (and possibly all) of the usual $26$ letters a, b, c, \ldots,z, with repetitions not allowed.
+
+For example, ``course'' is a \emph{norepeatword}, but ``statistics'' is not.
+
+Order matters, e.g., ``course'' is not the same as ``source''.
+
+A \emph{norepeatword} is chosen randomly, with all \emph{norepeatwords} equally likely. Show that the probability that it uses all $26$ letters is very close to $1/e$.
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  O denominador vai ser o total de todas as \emph{norepeatwords} (NRW), que é a soma de
+
+  \begin{itemize}
+  \tightlist
+  \item
+    NRW de $1$ letra: $26$
+  \item
+    NRW de $2$ letras: $26 \cdot 25$
+  \item
+    NRW de $3$ letras: $26 \cdot 25 \cdot 24$
+  \item
+    $\dots$
+  \item
+    NRW de $24$ letras: $26 \cdot 25 \cdot 24 \cdot \cdots \cdot 3$
+  \item
+    NRW de $25$ letras: $26 \cdot 25 \cdot 24 \cdot \cdots \cdot 2$
+  \item
+    NRW de $26$ letras: $26 \cdot 25 \cdot 24 \cdot \cdots \cdot 1$
+  \end{itemize}
+\item
+  Ou seja,
+
+  \[
+  \sum_{k=0}^{25} \frac{26!}{k!}
+  \]
+\item
+  Que é igual a
+
+  \[
+  26! 
+  \left( 
+  1 + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \cdots + \frac{1}{25!} 
+  \right)
+  \]
+\item
+  O total de NRW que usam as $26$ letras é $26!$.
+\item
+  A probabilidade procurada é
+
+  \[
+  \begin{aligned}
+  P 
+  &= 
+  \frac{26!}{
+  26! 
+  \left( 
+  1 + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \cdots + \frac{1}{25!} 
+  \right)
+  } \\
+  &=
+  \frac{1}{
+  1 + \frac{1}{1!} + \frac{1}{2!} + \frac{1}{3!} + \cdots + \frac{1}{25!} 
+  } \\
+  &= \frac1e
+  \end{aligned}
+  \]
+\item
+  A última igualdade se justifica porque a série de Taylor para $e^x$ é
+
+  \[
+  e^x = \sum_{k=0}^\infty \frac{x^k}{k!}
+  \]
+\item
+  Numericamente:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{/} \FunctionTok{exp}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\DocumentationTok{\#\# [1] 0,3678794}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\DecValTok{1} \SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(}\DecValTok{1} \SpecialCharTok{/} \FunctionTok{factorial}\NormalTok{(}\DecValTok{0}\SpecialCharTok{:}\DecValTok{25}\NormalTok{))}
+\DocumentationTok{\#\# [1] 0,3678794}
+\end{Highlighting}
+\end{Shaded}
+\end{itemize}
+
+\hypertarget{homework}{%
+\subsection*{Homework}\label{homework}}
+\addcontentsline{toc}{subsection}{Homework}
+
+\hypertarget{histuxf3rias-e-axiomas}{%
+\chapter*{02: Histórias e axiomas}\label{histuxf3rias-e-axiomas}}
+\addcontentsline{toc}{chapter}{02: Histórias e axiomas}
+
+\hypertarget{vuxeddeo-1}{%
+\section*{Vídeo}\label{vuxeddeo-1}}
+\addcontentsline{toc}{section}{Vídeo}
+
+\begin{center} \url{https://youtu.be/FJd_1H3rZGg} \end{center}
 
 \hypertarget{referuxeancias}{%
 \chapter*{Referências}\label{referuxeancias}}

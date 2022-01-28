@@ -1,0 +1,12 @@
+---
+knit: "bookdown::render_book"
+---
+
+# 02: Histórias e axiomas {-}
+
+## Vídeo {-}
+
+```{r echo=FALSE, results='asis', out.extra=center()}
+embed_yt('FJd_1H3rZGg')
+```
+
