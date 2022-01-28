@@ -1,0 +1,18 @@
+---
+knit: "bookdown::render_book"
+---
+
+# 01: Probabilidade e contagem {-}
+
+## Vídeo {-}
+
+```{r echo=FALSE, results='asis', out.extra=center()}
+embed_yt('KbB0FjPg0mw')
+```
+
+## Pascal e Fermat {-}
+
+* Ver artigo @devlin-2010-pascal-fermat.
+
+* Ver [originais em francês de toda a correspondência de Pascal](https://gallica.bnf.fr/ark:/12148/bpt6k69975r.image.r=Blaise+Pascal.f233.langFR).
+

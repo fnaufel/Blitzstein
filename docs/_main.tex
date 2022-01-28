@@ -1,0 +1,364 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+  11pt]{report}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\hypersetup{
+  pdftitle={Introduction to Probability},
+  pdfauthor={Fernando Náufel},
+  pdflang={pt-br},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+\urlstyle{same} % disable monospaced font for URLs
+\usepackage[margin=1in]{geometry}
+\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newlength{\cslentryspacingunit} % times entry-spacing
+\setlength{\cslentryspacingunit}{\parskip}
+\newenvironment{CSLReferences}[2] % #1 hanging-ident, #2 entry spacing
+ {% don't indent paragraphs
+  \setlength{\parindent}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+  \let\oldpar\par
+  \def\par{\hangindent=\cslhangindent\oldpar}
+  \fi
+  % set entry spacing
+  \setlength{\parskip}{#2\cslentryspacingunit}
+ }%
+ {}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{#1\hfill\break}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{#1}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{#1}\break}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic]{babel}
+\else
+\usepackage[bidi=default]{babel}
+\fi
+\babelprovide[main,import]{brazilian}
+% get rid of language-specific shorthands (see #6817):
+\let\LanguageShortHands\languageshorthands
+\def\languageshorthands#1{}
+
+% A command to save the path to the resources of bd.format (fnaufel)
+\newcommand{\dir}{/ssd/R/x86_64-pc-linux-gnu-library/4.1/fnaufelRmd/rmarkdown/resources}
+
+
+
+\hypersetup{
+  colorlinks,
+  breaklinks,
+  linkcolor=magenta,
+  urlcolor=blue
+}
+
+% Lexend font
+\usepackage{lexend}
+
+
+% Para bibliografia em português
+\usepackage{babelbib}
+
+% Para títulos de capítulos e seções:
+\usepackage[nobottomtitles*]{titlesec}
+
+%%%%%%%%%%%%%%%
+%
+% Titulos de capítulos e seções
+
+\titleformat{\chapter}[display]%
+{\bfseries\Large}%
+{\filleft\MakeUppercase{\chaptertitlename} \Huge\thechapter}%
+{4ex}%
+{\titlerule%
+  \vspace{2ex}%
+  \filright}%
+[\vspace{2ex}%
+\titlerule%
+\vspace{10ex}]
+
+\titleformat{\section}[block]%
+{\bfseries\Large}%
+{\thesection}{.5em}{\titlerule\\[.8ex]\bfseries}
+
+\titleformat{\subsection}[block]%
+{\bfseries}%
+{\thesubsection}{.5em}{\titlerule\\[.8ex]\bfseries}%
+[\vspace{1ex}]
+
+%%%%%%%%%%%%%%%
+%
+% Caixas
+
+\usepackage{tcolorbox}
+
+\tcbset{
+  rounded corners,
+  boxrule=0.3mm,
+  colback=black!.5!white,
+  parbox=false
+}
+
+\newtcolorbox{rmdbox}{
+  colframe=black!40!white,
+}
+
+
+\newtcolorbox{mycaution}{
+  colframe=red!75!black,
+  sidebyside,
+  lower separated=false,
+  lefthand width=1cm,
+  sidebyside gap=4mm
+}
+
+\newenvironment{rmdcaution}
+{
+  \begin{mycaution}
+    \includegraphics[width=.8cm]{\dir/images/caution.png}
+    \tcblower
+  }
+  {
+  \end{mycaution}
+}
+
+\newtcolorbox{myimportant}{
+  colframe=green!75!black,
+  sidebyside,
+  lower separated=false,
+  lefthand width=1cm,
+  sidebyside gap=4mm
+}
+
+\newenvironment{rmdimportant}
+{
+  \begin{myimportant}
+    \includegraphics[width=.8cm]{\dir/images/important.png}
+    \tcblower
+  }
+  {
+  \end{myimportant}
+}
+
+\newtcolorbox{mywarning}{
+  colframe=yellow!80!black,
+  sidebyside,
+  lower separated=false,
+  lefthand width=1cm,
+  sidebyside gap=4mm
+}
+
+\newenvironment{rmdwarning}
+{
+  \begin{mywarning}
+    \includegraphics[width=.8cm]{\dir/images/warning.png}
+    \tcblower
+  }
+  {
+  \end{mywarning}
+}
+
+\newtcolorbox{mynote}{
+  colframe=yellow!70!black,
+  sidebyside,
+  lower separated=false,
+  lefthand width=1cm,
+  sidebyside gap=4mm
+}
+
+\newenvironment{rmdnote}
+{
+  \begin{mynote}
+    \includegraphics[width=.8cm]{\dir/images/note.png}
+    \tcblower
+  }
+  {
+  \end{mynote}
+}
+
+\newtcolorbox{mytip}{
+  colframe=blue!50!white,
+  sidebyside,
+  lower separated=false,
+  lefthand width=1cm,
+  sidebyside gap=4mm
+}
+
+\newenvironment{rmdtip}
+{
+  \begin{mytip}
+    \includegraphics[width=.8cm]{\dir/images/tip.png}
+    \tcblower
+  }
+  {
+  \end{mytip}
+}
+
+% For highlighting using \hl{}
+\usepackage{soul}
+
+
+\makeatletter
+\@ifundefined{Shaded}{}{
+  % Code chunks and output
+  \usepackage[framemethod=pgf]{mdframed}
+  \renewenvironment{Shaded}{
+    \begin{mdframed}[%
+      roundcorner=2pt,%
+      innerleftmargin=5pt,%
+      innerrightmargin=5pt,%
+      topline=true,%
+      leftline=true,%
+      rightline=true,%
+      bottomline=true,%
+      linewidth=0.5pt,%
+      linecolor=black!20,%
+      backgroundcolor=black!2,%
+      skipabove=2ex,%
+      skipbelow=2.5ex%
+    ]%
+  }
+  {
+    \end{mdframed}
+  }
+}
+\makeatother
+
+% End of preamble for bookdowntemplate01
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{wrapfig}
+\usepackage{float}
+\usepackage{colortbl}
+\usepackage{pdflscape}
+\usepackage{tabu}
+\usepackage{threeparttable}
+\usepackage{threeparttablex}
+\usepackage[normalem]{ulem}
+\usepackage{makecell}
+\usepackage{xcolor}
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+
+\title{Introduction to Probability}
+\usepackage{etoolbox}
+\makeatletter
+\providecommand{\subtitle}[1]{% add subtitle to \maketitle
+  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
+}
+\makeatother
+\subtitle{Joe Blitzsten}
+\author{Fernando Náufel}
+\date{(versão de 28/01/2022)}
+
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{apresentauxe7uxe3o}{%
+\chapter*{Apresentação}\label{apresentauxe7uxe3o}}
+\addcontentsline{toc}{chapter}{Apresentação}
+
+\begin{itemize}
+\item
+  Página do livro: \url{https://projects.iq.harvard.edu/stat110/home}
+\item
+  Strategic practice and homework: \url{https://projects.iq.harvard.edu/stat110/strategic-practice-problems}
+\item
+  Handouts: \url{https://projects.iq.harvard.edu/stat110/handouts} --- includes solutions to exercises marked with (s) in the book.
+\item
+  Playlist: \url{https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo}
+\end{itemize}
+
+\hypertarget{probabilidade-e-contagem}{%
+\chapter*{01: Probabilidade e contagem}\label{probabilidade-e-contagem}}
+\addcontentsline{toc}{chapter}{01: Probabilidade e contagem}
+
+\hypertarget{vuxeddeo}{%
+\section*{Vídeo}\label{vuxeddeo}}
+\addcontentsline{toc}{section}{Vídeo}
+
+\begin{center} \url{https://youtu.be/KbB0FjPg0mw} \end{center}
+
+\hypertarget{pascal-e-fermat}{%
+\section*{Pascal e Fermat}\label{pascal-e-fermat}}
+\addcontentsline{toc}{section}{Pascal e Fermat}
+
+\begin{itemize}
+\item
+  Ver artigo DEVLIN (\protect\hyperlink{ref-devlin-2010-pascal-fermat}{2010}).
+\item
+  Ver \href{https://gallica.bnf.fr/ark:/12148/bpt6k69975r.image.r=Blaise+Pascal.f233.langFR}{originais em francês de toda a correspondência de Pascal}.
+\end{itemize}
+
+\hypertarget{referuxeancias}{%
+\chapter*{Referências}\label{referuxeancias}}
+\addcontentsline{toc}{chapter}{Referências}
+
+\hypertarget{refs}{}
+\begin{CSLReferences}{0}{1}
+\leavevmode\vadjust pre{\hypertarget{ref-devlin-2010-pascal-fermat}{}}%
+DEVLIN, K. \href{https://doi.org/10.5951/mt.103.8.0579}{The {P}ascal-{F}ermat Correspondence: How Mathematics Is Really Done}. \textbf{The Mathematics Teacher}, v. 103, n. 8, p. 579--582, abr. 2010.
+
+\end{CSLReferences}
+
+\end{document}

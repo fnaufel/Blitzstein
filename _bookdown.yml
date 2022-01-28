@@ -1,0 +1,33 @@
+new_session: no
+delete_merged_file: true
+output_dir: 'docs'
+before_chapter_script: 'before_chapter.R'
+
+
+# If not using Portuguese, delete these lines
+language:
+  label:
+    fig: 'Figura '
+    tab: 'Tabela '
+    eq: 'Equação '
+    thm: 'Teorema '
+    lem: 'Lema '
+    cor: 'Corolário '
+    prp: 'Proposição '
+    cnj: 'Conjectura '
+    def: 'Definição '
+    exm: 'Exemplo '
+    exr: 'Exercício '
+    proof: 'Prova. '
+    remark: 'Observação. '
+    solution: 'Solução. '
+  ui:
+    edit: Editar
+    chapter_name: 'Capítulo '
+    appendix_name: 'Apêndice '
+
+rmd_files: [
+  'index.Rmd',
+  '01.Rmd',
+  'refs.Rmd'
+]
