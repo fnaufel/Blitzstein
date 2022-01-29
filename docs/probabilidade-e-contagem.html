@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>01: Probabilidade e contagem | Introduction to Probability</title>
 <meta name="author" content="Fernando Náufel">
-<meta name="description" content="Vídeo   Pascal e Fermat Ver artigo DEVLIN, Keith1. Ver originais em francês de toda a correspondência de Pascal.  Exercícios Enunciados (pdf). Practice  4. Norepeat words  A norepeatword is a...">
+<meta name="description" content="Vídeo   Pascal e Fermat Ver artigo DEVLIN, Keith1. Ver originais em francês de toda a correspondência de Pascal.  R  Fatoriais e combinações  Qual o maior valor de \(n\) para o qual o R calcula...">
 <meta name="generator" content="bookdown 0.24.6 with bs4_book()">
 <meta property="og:title" content="01: Probabilidade e contagem | Introduction to Probability">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Vídeo   Pascal e Fermat Ver artigo DEVLIN, Keith1. Ver originais em francês de toda a correspondência de Pascal.  Exercícios Enunciados (pdf). Practice  4. Norepeat words  A norepeatword is a...">
+<meta property="og:description" content="Vídeo   Pascal e Fermat Ver artigo DEVLIN, Keith1. Ver originais em francês de toda a correspondência de Pascal.  R  Fatoriais e combinações  Qual o maior valor de \(n\) para o qual o R calcula...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="01: Probabilidade e contagem | Introduction to Probability">
-<meta name="twitter:description" content="Vídeo   Pascal e Fermat Ver artigo DEVLIN, Keith1. Ver originais em francês de toda a correspondência de Pascal.  Exercícios Enunciados (pdf). Practice  4. Norepeat words  A norepeatword is a...">
+<meta name="twitter:description" content="Vídeo   Pascal e Fermat Ver artigo DEVLIN, Keith1. Ver originais em francês de toda a correspondência de Pascal.  R  Fatoriais e combinações  Qual o maior valor de \(n\) para o qual o R calcula...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11.12/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/_Lexend-0.4.0/font.css" rel="stylesheet">
@@ -48,6 +48,7 @@
 <li><a class="" href="index.html">Apresentação</a></li>
 <li><a class="active" href="probabilidade-e-contagem.html">01: Probabilidade e contagem</a></li>
 <li><a class="" href="hist%C3%B3rias-e-axiomas.html">02: Histórias e axiomas</a></li>
+<li><a class="" href="problema-do-anivers%C3%A1rio-propriedades.html">03: Problema do aniversário, propriedades</a></li>
 <li><a class="" href="refer%C3%AAncias.html">Referências</a></li>
 </ul>
 
@@ -72,6 +73,71 @@
 <li><p>Ver artigo <span class="citation">DEVLIN, Keith<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="refer%C3%AAncias.html#ref-devlin-2010-pascal-fermat" role="doc-biblioref"&gt;The &lt;span&gt;P&lt;/span&gt;ascal-&lt;span&gt;F&lt;/span&gt;ermat Correspondence: How Mathematics Is Really Done, &lt;strong&gt;The Mathematics Teacher&lt;/strong&gt;, v. 103, n. 8, p. 579–582, 2010&lt;/a&gt;.&lt;/p&gt;'><sup>1</sup></a></span>.</p></li>
 <li><p>Ver <a href="https://gallica.bnf.fr/ark:/12148/bpt6k69975r.image.r=Blaise+Pascal.f233.langFR">originais em francês de toda a correspondência de Pascal</a>.</p></li>
 </ul>
+</div>
+<div id="r" class="section level2 unnumbered">
+<h2>R<a class="anchor" aria-label="anchor" href="#r"><i class="fas fa-link"></i></a>
+</h2>
+<div id="fatoriais-e-combinações" class="section level3 unnumbered">
+<h3>Fatoriais e combinações<a class="anchor" aria-label="anchor" href="#fatoriais-e-combina%C3%A7%C3%B5es"><i class="fas fa-link"></i></a>
+</h3>
+<ul>
+<li>
+<p>Qual o maior valor de <span class="math inline">\(n\)</span> para o qual o R calcula <code>factorial(n)</code>?</p>
+<p>No meu computador, <span class="math inline">\(n = 170\)</span>:</p>
+<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Special.html">factorial</a></span><span class="op">(</span><span class="fl">170</span><span class="op">:</span><span class="fl">171</span><span class="op">)</span>
+<span class="co">## [1] 7,257416e+306           Inf</span></code></pre></div>
+</li>
+<li>
+<p>Para valores maiores, podemos usar <code>lfactorial(n)</code> para calcular <span class="math inline">\(\ln n!\)</span>:</p>
+<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Special.html">lfactorial</a></span><span class="op">(</span><span class="fl">170</span><span class="op">:</span><span class="fl">171</span><span class="op">)</span>
+<span class="co">## [1] 706,5731 711,7147</span></code></pre></div>
+</li>
+<li><p>Da mesma forma, <code>lchoose(n, k)</code> calcula <span class="math inline">\(\ln \binom nk\)</span>.</p></li>
+</ul>
+</div>
+<div id="tabulando-dados-tabulate-times-table" class="section level3 unnumbered">
+<h3>Tabulando dados: <code>tabulate</code> <span class="math inline">\(\times\)</span> <code>table</code><a class="anchor" aria-label="anchor" href="#tabulando-dados-tabulate-times-table"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">365</span>,<span class="fl">23</span>,replace<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
+<span class="fu"><a href="https://rdrr.io/r/base/tabulate.html">tabulate</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span>
+<span class="co">##   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0</span>
+<span class="co">##  [41] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 1 0</span>
+<span class="co">##  [81] 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0</span>
+<span class="co">## [121] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0</span>
+<span class="co">## [161] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0</span>
+<span class="co">## [201] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0 0</span>
+<span class="co">## [241] 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">## [281] 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0</span>
+<span class="co">## [321] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">## [361] 0 1</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span>
+<span class="co">## b</span>
+<span class="co">##  34  35  57  72  78  79  85  89 114 151 155 192 230 232 234 246 255 287 313 319 321 </span>
+<span class="co">##   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1 </span>
+<span class="co">## 335 362 </span>
+<span class="co">##   1   1</span></code></pre></div>
+</div>
+<div id="funções-para-o-problema-do-aniversário" class="section level3 unnumbered">
+<h3>Funções para o problema do aniversário<a class="anchor" aria-label="anchor" href="#fun%C3%A7%C3%B5es-para-o-problema-do-anivers%C3%A1rio"><i class="fas fa-link"></i></a>
+</h3>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/birthday.html">pbirthday</a></span><span class="op">(</span><span class="fl">23</span><span class="op">)</span>
+<span class="co">## [1] 0,5072972</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/birthday.html">qbirthday</a></span><span class="op">(</span><span class="fl">.5</span><span class="op">)</span>
+<span class="co">## [1] 23</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/birthday.html">qbirthday</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
+<span class="co">## [1] 366</span></code></pre></div>
+<p>Para no mínimo <span class="math inline">\(3\)</span> no mesmo dia:</p>
+<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/birthday.html">qbirthday</a></span><span class="op">(</span><span class="fl">.5</span>, coincident <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>
+<span class="co">## [1] 88</span></code></pre></div>
+</div>
 </div>
 <div id="exercícios" class="section level2 unnumbered">
 <h2>Exercícios<a class="anchor" aria-label="anchor" href="#exerc%C3%ADcios"><i class="fas fa-link"></i></a>
@@ -152,20 +218,37 @@ e^x = \sum_{k=0}^\infty \frac{x^k}{k!}
 </li>
 <li>
 <p>Numericamente:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fl">1</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
 <span class="co">## [1] 0,3678794</span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fl">1</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/Special.html">factorial</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">25</span><span class="op">)</span><span class="op">)</span>
 <span class="co">## [1] 0,3678794</span></code></pre></div>
 </li>
 </ul>
 </div>
 </div>
-<div id="homework" class="section level3 unnumbered">
-<h3>Homework<a class="anchor" aria-label="anchor" href="#homework"><i class="fas fa-link"></i></a>
+<div id="exercícios-do-livro-cap.-1" class="section level3 unnumbered">
+<h3>Exercícios do livro (cap. <span class="math inline">\(1\)</span>)<a class="anchor" aria-label="anchor" href="#exerc%C3%ADcios-do-livro-cap.-1"><i class="fas fa-link"></i></a>
 </h3>
-
+<div id="section" class="section level4 unnumbered">
+<h4>13<a class="anchor" aria-label="anchor" href="#section"><i class="fas fa-link"></i></a>
+</h4>
+<div class="rmdbox">
+<p>A certain casino uses <span class="math inline">\(10\)</span> standard decks of cards mixed together into one big deck, which we will call a superdeck. Thus, the superdeck has <span class="math inline">\(52 \cdot 10 = 520\)</span> cards, with <span class="math inline">\(10\)</span> copies of each card.</p>
+<p>How many different <span class="math inline">\(10\)</span>-card hands can be dealt from the superdeck? The order of the cards does not matter, nor does it matter which of the original <span class="math inline">\(10\)</span> decks the cards came from. Express your answer as a binomial coefficient.</p>
+</div>
+<ul>
+<li>
+<p>Usando a notação de <span class="citation">OLIVEIRA MORGADO, Augusto César de <em>et al</em><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="refer%C3%AAncias.html#ref-oliveira-2004-analis" role="doc-biblioref"&gt;&lt;strong&gt;An&lt;span&gt;á&lt;/span&gt;lise combinat&lt;span&gt;ó&lt;/span&gt;ria e probabilidade&lt;/strong&gt;, Rio de Janeiro: Impa / Vitae, 2004&lt;/a&gt;.&lt;/p&gt;'><sup>2</sup></a></span>, onde <span class="math inline">\(\text{CR}_k^n\)</span> é o número de combinações completas de <span class="math inline">\(n\)</span> elementos de <span class="math inline">\(k\)</span> tipos diferentes, a resposta é</p>
+<p><span class="math display">\[
+\text{CR}_{52}^{10} = \binom{52 + 10 - 1}{10} = \binom{61}{10} =
+90.177.170.226
+\]</span></p>
+</li>
+<li><p>Só foi possível usar combinações completas porque a mão tem <span class="math inline">\(10\)</span> cartas, o que faz com que haja, essencialmente, um <span class="hl">número infinito de cópias de cada um dos <span class="math inline">\(52\)</span> tipos de carta</span>. Se a mão tivesse <span class="math inline">\(11\)</span> ou mais cartas, seria impossível que todas as cartas fossem iguais, e este raciocínio não poderia ser usado.</p></li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -180,9 +263,16 @@ e^x = \sum_{k=0}^\infty \frac{x^k}{k!}
 <li><a class="nav-link" href="#v%C3%ADdeo">Vídeo</a></li>
 <li><a class="nav-link" href="#pascal-e-fermat">Pascal e Fermat</a></li>
 <li>
+<a class="nav-link" href="#r">R</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#fatoriais-e-combina%C3%A7%C3%B5es">Fatoriais e combinações</a></li>
+<li><a class="nav-link" href="#tabulando-dados-tabulate-times-table">Tabulando dados: tabulate \(\times\) table</a></li>
+<li><a class="nav-link" href="#fun%C3%A7%C3%B5es-para-o-problema-do-anivers%C3%A1rio">Funções para o problema do aniversário</a></li>
+</ul>
+</li>
+<li>
 <a class="nav-link" href="#exerc%C3%ADcios">Exercícios</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#practice">Practice</a></li>
-<li><a class="nav-link" href="#homework">Homework</a></li>
+<li><a class="nav-link" href="#exerc%C3%ADcios-do-livro-cap.-1">Exercícios do livro (cap. \(1\))</a></li>
 </ul>
 </li>
 </ul>
@@ -202,7 +292,7 @@ e^x = \sum_{k=0}^\infty \frac{x^k}{k!}
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Introduction to Probability</strong>: Joe Blitzsten" por Fernando Náufel (versão de 28/01/2022)</p>
+    <p>"<strong>Introduction to Probability</strong>: Joe Blitzsten" por Fernando Náufel (versão de 29/01/2022)</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

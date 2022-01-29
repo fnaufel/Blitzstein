@@ -16,6 +16,60 @@ embed_yt('KbB0FjPg0mw')
 
 * Ver [originais em francês de toda a correspondência de Pascal](https://gallica.bnf.fr/ark:/12148/bpt6k69975r.image.r=Blaise+Pascal.f233.langFR).
 
+## R {-}
+
+### Fatoriais e combinações {-}
+
+* Qual o maior valor de $n$ para o qual o R calcula `factorial(n)`?
+
+  No meu computador, $n = 170$:
+  
+    ```{r}
+    factorial(170:171)
+    ```
+  
+* Para valores maiores, podemos usar `lfactorial(n)` para calcular $\ln n!$:
+
+    ```{r}
+    lfactorial(170:171)
+    ```
+
+* Da mesma forma, `lchoose(n, k)` calcula $\ln \binom nk$.
+
+
+### Tabulando dados: `tabulate` $\times$ `table` {-}
+
+```{r}
+b <- sample(1:365,23,replace=TRUE)
+tabulate(b)
+```
+
+```{r}
+table(b)
+```
+
+
+### Funções para o problema do aniversário {-}
+
+```{r}
+pbirthday(23)
+```
+
+```{r}
+qbirthday(.5)
+```
+
+```{r}
+qbirthday(1)
+```
+
+Para no mínimo $3$ no mesmo dia:
+
+```{r}
+qbirthday(.5, coincident = 3)
+```
+
+
 ## Exercícios {-}
 
 [Enunciados (pdf).](https://projects.iq.harvard.edu/files/stat110/files/strategic_practice_and_homework_1.pdf)
@@ -100,4 +154,28 @@ A *norepeatword* is chosen randomly, with all *norepeatwords* equally likely. Sh
     ```
 
 
-### Homework {-}
+### Exercícios do livro (cap. $1$) {-}
+
+#### 13 {-}
+
+::: {.rmdbox latex=1}
+
+A certain casino uses $10$ standard decks of cards mixed together into one big deck, which we will call a superdeck. Thus, the superdeck has $52 \cdot 10 = 520$ cards, with $10$ copies of each card. 
+
+How many different $10$-card hands can be dealt from the superdeck? The order of the cards does not matter, nor does it matter which of the original $10$ decks the cards came from. Express your answer as a binomial coefficient.
+
+:::
+
+* Usando a notação de @oliveira-2004-analis, onde $\text{CR}_k^n$ é o número de combinações completas de $n$ elementos de $k$ tipos diferentes, a resposta é
+
+    ```{r echo=FALSE}
+    resposta <- choose(61, 10)
+    ```
+  
+  $$
+  \text{CR}_{52}^{10} = \binom{52 + 10 - 1}{10} = \binom{61}{10} =
+  `r resposta`
+  $$
+
+* Só foi possível usar combinações completas porque a mão tem $10$ cartas, o que faz com que haja, essencialmente, um [número infinito de cópias de cada um dos $52$ tipos de carta]{.hl}. Se a mão tivesse $11$ ou mais cartas, seria impossível que todas as cartas fossem iguais, e este raciocínio não poderia ser usado.
+

@@ -1,0 +1,33 @@
+---
+knit: "bookdown::render_book"
+---
+
+# 03: Problema do aniversário, propriedades {-}
+
+## Vídeo {-}
+
+```{r echo=FALSE, results='asis', out.extra=center()}
+embed_yt('LZ5Wergp_PA')
+```
+
+
+## Exercícios {-}
+
+[Enunciados (pdf).](???)
+
+
+### Homework {-}
+
+
+
+### Exercícios do livro (cap. $1$) {-}
+
+#### 26 {-}
+
+#### 27 {-}
+
+#### 57 {-}
+
+#### 61 {-}
+
+#### 62 {-}

@@ -10,3 +10,105 @@ knit: "bookdown::render_book"
 embed_yt('FJd_1H3rZGg')
 ```
 
+
+## Exercícios {-}
+
+[Enunciados (pdf).](https://projects.iq.harvard.edu/files/stat110/files/strategic_practice_and_homework_1.pdf)
+
+
+### Homework {-}
+
+#### 4. Teorema das colunas {-}
+
+::: {.rmdbox latex=1}
+
+(a) Mostre que 
+
+$$
+\binom{k}{k} + \binom{k + 1}{k} + \binom{k + 2}{k} + \cdots + 
+\binom{n}{k} = \binom{n + 1}{k + 1}
+$$
+
+:::
+
+* O lado direito significa escolher $k + 1$ pessoas dentre $n + 1$ pessoas.
+
+* O truque é [ordenar as pessoas]{.hl} de algum modo.
+
+* Um exemplo concreto, com $n = 4$ e $k = 2$, mostrando que
+
+  $$
+  \binom{5}{3} = \binom{4}{2} + \binom{3}{2} + \binom{2}{2}
+  $$
+
+  1. Vamos chamar as $n + 1$ pessoas de $1, 2, 3, 4, 5$.
+  
+  1. Grupos de $k + 1$ pessoas onde o menor número é $1$:
+  
+     * $1, 2, 3$
+     * $1, 2, 4$
+     * $1, 2, 5$
+     * $1, 3, 4$
+     * $1, 3, 5$
+     * $1, 4, 5$
+
+  1. Grupos de $k + 1$ pessoas onde o menor número é $2$:
+  
+     * $2, 3, 4$
+     * $2, 3, 5$
+     * $2, 4, 5$
+
+  1. Grupos de $k + 1$ pessoas onde o menor número é $3$:
+  
+     * $3, 4, 5$
+
+* No caso geral, vamos ordenar as $n + 1$ pessoas, rotulando-as como
+
+  $$
+  a_0, a_1, a_2, \dots, a_n
+  $$
+  
+* Como a ordem [dentro de cada grupo]{.hl} não importa, vamos escolher primeiro um elemento para ser o de [menor índice do grupo]{.hl} e escolher os restantes $k$ elementos dentre os elementos de índice maior do que o primeiro.
+
+* Se escolhermos $a_0$ como o de menor índice, temos $n \choose k$ modos de escolher os restantes.
+
+* Se escolhermos $a_1$ como o de menor índice, temos $n - 1 \choose k$ modos de escolher os restantes.
+
+* $\dots$
+
+* Se escolhermos $a_{n - (k+1)}$ como o de menor índice, temos $k + 1 \choose k$ modos de escolher os restantes.
+
+* Se escolhermos $a_{n - k}$ como o de menor índice, temos $k \choose k$ modos de escolher os restantes.
+
+::: {.rmdbox latex=1}
+
+(b)  Suppose that a large pack of Haribo gummi bears can have anywhere between $30$ and $50$ gummi bears. There are $5$ delicious flavors. How many possibilities are there for the composition of such a pack of gummi bears?
+
+:::
+
+* Usando a notação de @oliveira-2004-analis, onde $\text{CR}_k^n$ é o número de combinações completas de $n$ elementos de $k$ tipos diferentes, a resposta é
+
+  $$
+  \begin{aligned}
+    \text{CR}_5^{30} + \text{CR}_5^{31} + \cdots + \text{CR}_5^{50} 
+    &=
+    \binom{34}{4} + \binom{35}{4} + \cdots + \binom{54}{4} \\
+    &= \binom{55}{5} - 
+    \left[ 
+    \binom{33}{4} + \binom{32}{4} + \cdots + \binom{4}{4}
+    \right] \\
+    &= \binom{55}{5} - \binom{34}{5}
+  \end{aligned}
+  $$
+  
+
+### Exercícios do livro (cap. $1$) {-}
+
+#### 17 {-}
+
+#### 18 {-}
+
+#### 19 {-}
+
+#### 22 {-}
+

@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>02: Histórias e axiomas | Introduction to Probability</title>
 <meta name="author" content="Fernando Náufel">
-<meta name="description" content="Vídeo">
+<meta name="description" content="Vídeo   Exercícios Enunciados (pdf). Homework  4. Teorema das colunas  Mostre que \[ \binom{k}{k} + \binom{k + 1}{k} + \binom{k + 2}{k} + \cdots + \binom{n}{k} = \binom{n + 1}{k + 1} \] O lado...">
 <meta name="generator" content="bookdown 0.24.6 with bs4_book()">
 <meta property="og:title" content="02: Histórias e axiomas | Introduction to Probability">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Vídeo">
+<meta property="og:description" content="Vídeo   Exercícios Enunciados (pdf). Homework  4. Teorema das colunas  Mostre que \[ \binom{k}{k} + \binom{k + 1}{k} + \binom{k + 2}{k} + \cdots + \binom{n}{k} = \binom{n + 1}{k + 1} \] O lado...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="02: Histórias e axiomas | Introduction to Probability">
-<meta name="twitter:description" content="Vídeo">
+<meta name="twitter:description" content="Vídeo   Exercícios Enunciados (pdf). Homework  4. Teorema das colunas  Mostre que \[ \binom{k}{k} + \binom{k + 1}{k} + \binom{k + 2}{k} + \cdots + \binom{n}{k} = \binom{n + 1}{k + 1} \] O lado...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11.12/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/_Lexend-0.4.0/font.css" rel="stylesheet">
@@ -48,6 +48,7 @@
 <li><a class="" href="index.html">Apresentação</a></li>
 <li><a class="" href="probabilidade-e-contagem.html">01: Probabilidade e contagem</a></li>
 <li><a class="active" href="hist%C3%B3rias-e-axiomas.html">02: Histórias e axiomas</a></li>
+<li><a class="" href="problema-do-anivers%C3%A1rio-propriedades.html">03: Problema do aniversário, propriedades</a></li>
 <li><a class="" href="refer%C3%AAncias.html">Referências</a></li>
 </ul>
 
@@ -64,17 +65,138 @@
 </h2>
 <iframe src="https://www.youtube.com/embed/FJd_1H3rZGg" width="100%" height="400px" data-external="1" class="center">
 </iframe>
+</div>
+<div id="exercícios-1" class="section level2 unnumbered">
+<h2>Exercícios<a class="anchor" aria-label="anchor" href="#exerc%C3%ADcios-1"><i class="fas fa-link"></i></a>
+</h2>
+<p><a href="https://projects.iq.harvard.edu/files/stat110/files/strategic_practice_and_homework_1.pdf">Enunciados (pdf).</a></p>
+<div id="homework" class="section level3 unnumbered">
+<h3>Homework<a class="anchor" aria-label="anchor" href="#homework"><i class="fas fa-link"></i></a>
+</h3>
+<div id="teorema-das-colunas" class="section level4 unnumbered">
+<h4>4. Teorema das colunas<a class="anchor" aria-label="anchor" href="#teorema-das-colunas"><i class="fas fa-link"></i></a>
+</h4>
+<div class="rmdbox">
+<ol style="list-style-type: lower-alpha">
+<li>Mostre que</li>
+</ol>
+<p><span class="math display">\[
+\binom{k}{k} + \binom{k + 1}{k} + \binom{k + 2}{k} + \cdots +
+\binom{n}{k} = \binom{n + 1}{k + 1}
+\]</span></p>
+</div>
+<ul>
+<li><p>O lado direito significa escolher <span class="math inline">\(k + 1\)</span> pessoas dentre <span class="math inline">\(n + 1\)</span> pessoas.</p></li>
+<li><p>O truque é <span class="hl">ordenar as pessoas</span> de algum modo.</p></li>
+<li>
+<p>Um exemplo concreto, com <span class="math inline">\(n = 4\)</span> e <span class="math inline">\(k = 2\)</span>, mostrando que</p>
+<p><span class="math display">\[
+\binom{5}{3} = \binom{4}{2} + \binom{3}{2} + \binom{2}{2}
+\]</span></p>
+<ol style="list-style-type: decimal">
+<li><p>Vamos chamar as <span class="math inline">\(n + 1\)</span> pessoas de <span class="math inline">\(1, 2, 3, 4, 5\)</span>.</p></li>
+<li>
+<p>Grupos de <span class="math inline">\(k + 1\)</span> pessoas onde o menor número é <span class="math inline">\(1\)</span>:</p>
+<ul>
+<li><span class="math inline">\(1, 2, 3\)</span></li>
+<li><span class="math inline">\(1, 2, 4\)</span></li>
+<li><span class="math inline">\(1, 2, 5\)</span></li>
+<li><span class="math inline">\(1, 3, 4\)</span></li>
+<li><span class="math inline">\(1, 3, 5\)</span></li>
+<li><span class="math inline">\(1, 4, 5\)</span></li>
+</ul>
+</li>
+<li>
+<p>Grupos de <span class="math inline">\(k + 1\)</span> pessoas onde o menor número é <span class="math inline">\(2\)</span>:</p>
+<ul>
+<li><span class="math inline">\(2, 3, 4\)</span></li>
+<li><span class="math inline">\(2, 3, 5\)</span></li>
+<li><span class="math inline">\(2, 4, 5\)</span></li>
+</ul>
+</li>
+<li>
+<p>Grupos de <span class="math inline">\(k + 1\)</span> pessoas onde o menor número é <span class="math inline">\(3\)</span>:</p>
+<ul>
+<li><span class="math inline">\(3, 4, 5\)</span></li>
+</ul>
+</li>
+</ol>
+</li>
+<li>
+<p>No caso geral, vamos ordenar as <span class="math inline">\(n + 1\)</span> pessoas, rotulando-as como</p>
+<p><span class="math display">\[
+a_0, a_1, a_2, \dots, a_n
+\]</span></p>
+</li>
+<li><p>Como a ordem <span class="hl">dentro de cada grupo</span> não importa, vamos escolher primeiro um elemento para ser o de <span class="hl">menor índice do grupo</span> e escolher os restantes <span class="math inline">\(k\)</span> elementos dentre os elementos de índice maior do que o primeiro.</p></li>
+<li><p>Se escolhermos <span class="math inline">\(a_0\)</span> como o de menor índice, temos <span class="math inline">\(n \choose k\)</span> modos de escolher os restantes.</p></li>
+<li><p>Se escolhermos <span class="math inline">\(a_1\)</span> como o de menor índice, temos <span class="math inline">\(n - 1 \choose k\)</span> modos de escolher os restantes.</p></li>
+<li><p><span class="math inline">\(\dots\)</span></p></li>
+<li><p>Se escolhermos <span class="math inline">\(a_{n - (k+1)}\)</span> como o de menor índice, temos <span class="math inline">\(k + 1 \choose k\)</span> modos de escolher os restantes.</p></li>
+<li><p>Se escolhermos <span class="math inline">\(a_{n - k}\)</span> como o de menor índice, temos <span class="math inline">\(k \choose k\)</span> modos de escolher os restantes.</p></li>
+</ul>
+<div class="rmdbox">
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Suppose that a large pack of Haribo gummi bears can have anywhere between <span class="math inline">\(30\)</span> and <span class="math inline">\(50\)</span> gummi bears. There are <span class="math inline">\(5\)</span> delicious flavors. How many possibilities are there for the composition of such a pack of gummi bears?</li>
+</ol>
+</div>
+<ul>
+<li>
+<p>Usando a notação de <span class="citation">OLIVEIRA MORGADO <em>et al</em><a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="refer%C3%AAncias.html#ref-oliveira-2004-analis" role="doc-biblioref"&gt;&lt;em&gt;Ibid&lt;/em&gt;.&lt;/a&gt;&lt;/p&gt;'><sup>3</sup></a></span>, onde <span class="math inline">\(\text{CR}_k^n\)</span> é o número de combinações completas de <span class="math inline">\(n\)</span> elementos de <span class="math inline">\(k\)</span> tipos diferentes, a resposta é</p>
+<p><span class="math display">\[
+\begin{aligned}
+  \text{CR}_5^{30} + \text{CR}_5^{31} + \cdots + \text{CR}_5^{50}
+  &amp;=
+  \binom{34}{4} + \binom{35}{4} + \cdots + \binom{54}{4} \\
+  &amp;= \binom{55}{5} -
+  \left[
+  \binom{33}{4} + \binom{32}{4} + \cdots + \binom{4}{4}
+  \right] \\
+  &amp;= \binom{55}{5} - \binom{34}{5}
+\end{aligned}
+\]</span></p>
+</li>
+</ul>
+</div>
+</div>
+<div id="exercícios-do-livro-cap.-1-1" class="section level3 unnumbered">
+<h3>Exercícios do livro (cap. <span class="math inline">\(1\)</span>)<a class="anchor" aria-label="anchor" href="#exerc%C3%ADcios-do-livro-cap.-1-1"><i class="fas fa-link"></i></a>
+</h3>
+<div id="section-1" class="section level4 unnumbered">
+<h4>17<a class="anchor" aria-label="anchor" href="#section-1"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+<div id="section-2" class="section level4 unnumbered">
+<h4>18<a class="anchor" aria-label="anchor" href="#section-2"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+<div id="section-3" class="section level4 unnumbered">
+<h4>19<a class="anchor" aria-label="anchor" href="#section-3"><i class="fas fa-link"></i></a>
+</h4>
+</div>
+<div id="section-4" class="section level4 unnumbered">
+<h4>22<a class="anchor" aria-label="anchor" href="#section-4"><i class="fas fa-link"></i></a>
+</h4>
 
 </div>
 </div>
+</div>
+</div>
+
   <div class="chapter-nav">
 <div class="prev"><a href="probabilidade-e-contagem.html">01: Probabilidade e contagem</a></div>
-<div class="next"><a href="refer%C3%AAncias.html">Referências</a></div>
+<div class="next"><a href="problema-do-anivers%C3%A1rio-propriedades.html">03: Problema do aniversário, propriedades</a></div>
 </div></main><div class="col-md-3 col-lg-2 d-none d-md-block sidebar sidebar-chapter">
     <nav id="toc" data-toggle="toc" aria-label="Nesta página"><h2>Nesta página</h2>
       <ul class="nav navbar-nav">
 <li><a class="nav-link" href="#hist%C3%B3rias-e-axiomas">02: Histórias e axiomas</a></li>
 <li><a class="nav-link" href="#v%C3%ADdeo-1">Vídeo</a></li>
+<li>
+<a class="nav-link" href="#exerc%C3%ADcios-1">Exercícios</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#homework">Homework</a></li>
+<li><a class="nav-link" href="#exerc%C3%ADcios-do-livro-cap.-1-1">Exercícios do livro (cap. \(1\))</a></li>
+</ul>
+</li>
 </ul>
 
       <div class="book-extra">
@@ -92,7 +214,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Introduction to Probability</strong>: Joe Blitzsten" por Fernando Náufel (versão de 28/01/2022)</p>
+    <p>"<strong>Introduction to Probability</strong>: Joe Blitzsten" por Fernando Náufel (versão de 29/01/2022)</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

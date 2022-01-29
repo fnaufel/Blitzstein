@@ -345,7 +345,7 @@
 \makeatother
 \subtitle{Joe Blitzsten}
 \author{Fernando Náufel}
-\date{(versão de 28/01/2022)}
+\date{(versão de 29/01/2022)}
 
 \begin{document}
 \maketitle
@@ -389,6 +389,106 @@
 \item
   Ver \href{https://gallica.bnf.fr/ark:/12148/bpt6k69975r.image.r=Blaise+Pascal.f233.langFR}{originais em francês de toda a correspondência de Pascal}.
 \end{itemize}
+
+\hypertarget{r}{%
+\section*{R}\label{r}}
+\addcontentsline{toc}{section}{R}
+
+\hypertarget{fatoriais-e-combinauxe7uxf5es}{%
+\subsection*{Fatoriais e combinações}\label{fatoriais-e-combinauxe7uxf5es}}
+\addcontentsline{toc}{subsection}{Fatoriais e combinações}
+
+\begin{itemize}
+\item
+  Qual o maior valor de $n$ para o qual o R calcula \texttt{factorial(n)}?
+
+  No meu computador, $n = 170$:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{factorial}\NormalTok{(}\DecValTok{170}\SpecialCharTok{:}\DecValTok{171}\NormalTok{)}
+\DocumentationTok{\#\# [1] 7,257416e+306           Inf}
+\end{Highlighting}
+\end{Shaded}
+\item
+  Para valores maiores, podemos usar \texttt{lfactorial(n)} para calcular $\ln n!$:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{lfactorial}\NormalTok{(}\DecValTok{170}\SpecialCharTok{:}\DecValTok{171}\NormalTok{)}
+\DocumentationTok{\#\# [1] 706,5731 711,7147}
+\end{Highlighting}
+\end{Shaded}
+\item
+  Da mesma forma, \texttt{lchoose(n,\ k)} calcula $\ln \binom nk$.
+\end{itemize}
+
+\hypertarget{tabulando-dados-tabulate-times-table}{%
+\subsection*{\texorpdfstring{Tabulando dados: \texttt{tabulate} $\times$ \texttt{table}}{Tabulando dados: tabulate  table}}\label{tabulando-dados-tabulate-times-table}}
+\addcontentsline{toc}{subsection}{Tabulando dados: \texttt{tabulate} $\times$ \texttt{table}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{365}\NormalTok{,}\DecValTok{23}\NormalTok{,}\AttributeTok{replace=}\ConstantTok{TRUE}\NormalTok{)}
+\FunctionTok{tabulate}\NormalTok{(b)}
+\DocumentationTok{\#\#   [1] 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\#  [34] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [133] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [166] 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [199] 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [265] 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [298] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 1 0 0 0}
+\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{table}\NormalTok{(b)}
+\DocumentationTok{\#\# b}
+\DocumentationTok{\#\#   5  17  91 109 115 123 171 210 240 244 251 276 284 289 290 301 317 }
+\DocumentationTok{\#\#   1   1   1   1   1   1   1   2   1   1   1   1   1   1   1   1   1 }
+\DocumentationTok{\#\# 325 327 339 353 358 }
+\DocumentationTok{\#\#   1   1   1   1   1}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{funuxe7uxf5es-para-o-problema-do-aniversuxe1rio}{%
+\subsection*{Funções para o problema do aniversário}\label{funuxe7uxf5es-para-o-problema-do-aniversuxe1rio}}
+\addcontentsline{toc}{subsection}{Funções para o problema do aniversário}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pbirthday}\NormalTok{(}\DecValTok{23}\NormalTok{)}
+\DocumentationTok{\#\# [1] 0,5072972}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qbirthday}\NormalTok{(.}\DecValTok{5}\NormalTok{)}
+\DocumentationTok{\#\# [1] 23}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qbirthday}\NormalTok{(}\DecValTok{1}\NormalTok{)}
+\DocumentationTok{\#\# [1] 366}
+\end{Highlighting}
+\end{Shaded}
+
+Para no mínimo $3$ no mesmo dia:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{qbirthday}\NormalTok{(.}\DecValTok{5}\NormalTok{, }\AttributeTok{coincident =} \DecValTok{3}\NormalTok{)}
+\DocumentationTok{\#\# [1] 88}
+\end{Highlighting}
+\end{Shaded}
 
 \hypertarget{exercuxedcios}{%
 \section*{Exercícios}\label{exercuxedcios}}
@@ -497,9 +597,32 @@ A \emph{norepeatword} is chosen randomly, with all \emph{norepeatwords} equally 
 \end{Shaded}
 \end{itemize}
 
-\hypertarget{homework}{%
-\subsection*{Homework}\label{homework}}
-\addcontentsline{toc}{subsection}{Homework}
+\hypertarget{exercuxedcios-do-livro-cap.-1}{%
+\subsection*{\texorpdfstring{Exercícios do livro (cap. $1$)}{Exercícios do livro (cap. )}}\label{exercuxedcios-do-livro-cap.-1}}
+\addcontentsline{toc}{subsection}{Exercícios do livro (cap. $1$)}
+
+\hypertarget{section}{%
+\subsubsection*{13}\label{section}}
+\addcontentsline{toc}{subsubsection}{13}
+
+\begin{rmdbox}
+A certain casino uses $10$ standard decks of cards mixed together into one big deck, which we will call a superdeck. Thus, the superdeck has $52 \cdot 10 = 520$ cards, with $10$ copies of each card.
+
+How many different $10$-card hands can be dealt from the superdeck? The order of the cards does not matter, nor does it matter which of the original $10$ decks the cards came from. Express your answer as a binomial coefficient.
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Usando a notação de OLIVEIRA MORGADO et al. (\protect\hyperlink{ref-oliveira-2004-analis}{2004}), onde $\text{CR}_k^n$ é o número de combinações completas de $n$ elementos de $k$ tipos diferentes, a resposta é
+
+  \[
+  \text{CR}_{52}^{10} = \binom{52 + 10 - 1}{10} = \binom{61}{10} =
+  90.177.170.226
+  \]
+\item
+  Só foi possível usar combinações completas porque a mão tem $10$ cartas, o que faz com que haja, essencialmente, um {\hl{número infinito de cópias de cada um dos $52$ tipos de carta}}. Se a mão tivesse $11$ ou mais cartas, seria impossível que todas as cartas fossem iguais, e este raciocínio não poderia ser usado.
+\end{itemize}
 
 \hypertarget{histuxf3rias-e-axiomas}{%
 \chapter*{02: Histórias e axiomas}\label{histuxf3rias-e-axiomas}}
@@ -511,6 +634,205 @@ A \emph{norepeatword} is chosen randomly, with all \emph{norepeatwords} equally 
 
 \begin{center} \url{https://youtu.be/FJd_1H3rZGg} \end{center}
 
+\hypertarget{exercuxedcios-1}{%
+\section*{Exercícios}\label{exercuxedcios-1}}
+\addcontentsline{toc}{section}{Exercícios}
+
+\href{https://projects.iq.harvard.edu/files/stat110/files/strategic_practice_and_homework_1.pdf}{Enunciados (pdf).}
+
+\hypertarget{homework}{%
+\subsection*{Homework}\label{homework}}
+\addcontentsline{toc}{subsection}{Homework}
+
+\hypertarget{teorema-das-colunas}{%
+\subsubsection*{4. Teorema das colunas}\label{teorema-das-colunas}}
+\addcontentsline{toc}{subsubsection}{4. Teorema das colunas}
+
+\begin{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\tightlist
+\item
+  Mostre que
+\end{enumerate}
+
+\[
+\binom{k}{k} + \binom{k + 1}{k} + \binom{k + 2}{k} + \cdots + 
+\binom{n}{k} = \binom{n + 1}{k + 1}
+\]
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  O lado direito significa escolher $k + 1$ pessoas dentre $n + 1$ pessoas.
+\item
+  O truque é {\hl{ordenar as pessoas}} de algum modo.
+\item
+  Um exemplo concreto, com $n = 4$ e $k = 2$, mostrando que
+
+  \[
+  \binom{5}{3} = \binom{4}{2} + \binom{3}{2} + \binom{2}{2}
+  \]
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \item
+    Vamos chamar as $n + 1$ pessoas de $1, 2, 3, 4, 5$.
+  \item
+    Grupos de $k + 1$ pessoas onde o menor número é $1$:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      $1, 2, 3$
+    \item
+      $1, 2, 4$
+    \item
+      $1, 2, 5$
+    \item
+      $1, 3, 4$
+    \item
+      $1, 3, 5$
+    \item
+      $1, 4, 5$
+    \end{itemize}
+  \item
+    Grupos de $k + 1$ pessoas onde o menor número é $2$:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      $2, 3, 4$
+    \item
+      $2, 3, 5$
+    \item
+      $2, 4, 5$
+    \end{itemize}
+  \item
+    Grupos de $k + 1$ pessoas onde o menor número é $3$:
+
+    \begin{itemize}
+    \tightlist
+    \item
+      $3, 4, 5$
+    \end{itemize}
+  \end{enumerate}
+\item
+  No caso geral, vamos ordenar as $n + 1$ pessoas, rotulando-as como
+
+  \[
+  a_0, a_1, a_2, \dots, a_n
+  \]
+\item
+  Como a ordem {\hl{dentro de cada grupo}} não importa, vamos escolher primeiro um elemento para ser o de {\hl{menor índice do grupo}} e escolher os restantes $k$ elementos dentre os elementos de índice maior do que o primeiro.
+\item
+  Se escolhermos $a_0$ como o de menor índice, temos $n \choose k$ modos de escolher os restantes.
+\item
+  Se escolhermos $a_1$ como o de menor índice, temos $n - 1 \choose k$ modos de escolher os restantes.
+\item
+  $\dots$
+\item
+  Se escolhermos $a_{n - (k+1)}$ como o de menor índice, temos $k + 1 \choose k$ modos de escolher os restantes.
+\item
+  Se escolhermos $a_{n - k}$ como o de menor índice, temos $k \choose k$ modos de escolher os restantes.
+\end{itemize}
+
+\begin{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Suppose that a large pack of Haribo gummi bears can have anywhere between $30$ and $50$ gummi bears. There are $5$ delicious flavors. How many possibilities are there for the composition of such a pack of gummi bears?
+\end{enumerate}
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Usando a notação de OLIVEIRA MORGADO et al. (\protect\hyperlink{ref-oliveira-2004-analis}{2004}), onde $\text{CR}_k^n$ é o número de combinações completas de $n$ elementos de $k$ tipos diferentes, a resposta é
+
+  \[
+  \begin{aligned}
+    \text{CR}_5^{30} + \text{CR}_5^{31} + \cdots + \text{CR}_5^{50} 
+    &=
+    \binom{34}{4} + \binom{35}{4} + \cdots + \binom{54}{4} \\
+    &= \binom{55}{5} - 
+    \left[ 
+    \binom{33}{4} + \binom{32}{4} + \cdots + \binom{4}{4}
+    \right] \\
+    &= \binom{55}{5} - \binom{34}{5}
+  \end{aligned}
+  \]
+\end{itemize}
+
+\hypertarget{exercuxedcios-do-livro-cap.-1-1}{%
+\subsection*{\texorpdfstring{Exercícios do livro (cap. $1$)}{Exercícios do livro (cap. )}}\label{exercuxedcios-do-livro-cap.-1-1}}
+\addcontentsline{toc}{subsection}{Exercícios do livro (cap. $1$)}
+
+\hypertarget{section-1}{%
+\subsubsection*{17}\label{section-1}}
+\addcontentsline{toc}{subsubsection}{17}
+
+\hypertarget{section-2}{%
+\subsubsection*{18}\label{section-2}}
+\addcontentsline{toc}{subsubsection}{18}
+
+\hypertarget{section-3}{%
+\subsubsection*{19}\label{section-3}}
+\addcontentsline{toc}{subsubsection}{19}
+
+\hypertarget{section-4}{%
+\subsubsection*{22}\label{section-4}}
+\addcontentsline{toc}{subsubsection}{22}
+
+\hypertarget{problema-do-aniversuxe1rio-propriedades}{%
+\chapter*{03: Problema do aniversário, propriedades}\label{problema-do-aniversuxe1rio-propriedades}}
+\addcontentsline{toc}{chapter}{03: Problema do aniversário, propriedades}
+
+\hypertarget{vuxeddeo-2}{%
+\section*{Vídeo}\label{vuxeddeo-2}}
+\addcontentsline{toc}{section}{Vídeo}
+
+\begin{center} \url{https://youtu.be/LZ5Wergp_PA} \end{center}
+
+\hypertarget{exercuxedcios-2}{%
+\section*{Exercícios}\label{exercuxedcios-2}}
+\addcontentsline{toc}{section}{Exercícios}
+
+\href{???}{Enunciados (pdf).}
+
+\hypertarget{homework-1}{%
+\subsection*{Homework}\label{homework-1}}
+\addcontentsline{toc}{subsection}{Homework}
+
+\hypertarget{exercuxedcios-do-livro-cap.-1-2}{%
+\subsection*{\texorpdfstring{Exercícios do livro (cap. $1$)}{Exercícios do livro (cap. )}}\label{exercuxedcios-do-livro-cap.-1-2}}
+\addcontentsline{toc}{subsection}{Exercícios do livro (cap. $1$)}
+
+\hypertarget{section-5}{%
+\subsubsection*{26}\label{section-5}}
+\addcontentsline{toc}{subsubsection}{26}
+
+\hypertarget{section-6}{%
+\subsubsection*{27}\label{section-6}}
+\addcontentsline{toc}{subsubsection}{27}
+
+\hypertarget{section-7}{%
+\subsubsection*{57}\label{section-7}}
+\addcontentsline{toc}{subsubsection}{57}
+
+\hypertarget{section-8}{%
+\subsubsection*{61}\label{section-8}}
+\addcontentsline{toc}{subsubsection}{61}
+
+\hypertarget{section-9}{%
+\subsubsection*{62}\label{section-9}}
+\addcontentsline{toc}{subsubsection}{62}
+
 \hypertarget{referuxeancias}{%
 \chapter*{Referências}\label{referuxeancias}}
 \addcontentsline{toc}{chapter}{Referências}
@@ -519,6 +841,9 @@ A \emph{norepeatword} is chosen randomly, with all \emph{norepeatwords} equally 
 \begin{CSLReferences}{0}{1}
 \leavevmode\vadjust pre{\hypertarget{ref-devlin-2010-pascal-fermat}{}}%
 DEVLIN, K. \href{https://doi.org/10.5951/mt.103.8.0579}{The {P}ascal-{F}ermat Correspondence: How Mathematics Is Really Done}. \textbf{The Mathematics Teacher}, v. 103, n. 8, p. 579--582, abr. 2010.
+
+\leavevmode\vadjust pre{\hypertarget{ref-oliveira-2004-analis}{}}%
+OLIVEIRA MORGADO, A. C. DE et al. \textbf{An{á}lise combinat{ó}ria e probabilidade}. Rio de Janeiro: Impa / Vitae, 2004.
 
 \end{CSLReferences}
 
