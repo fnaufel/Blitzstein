@@ -345,7 +345,7 @@
 \makeatother
 \subtitle{Joe Blitzsten}
 \author{Fernando Náufel}
-\date{(versão de 29/01/2022)}
+\date{(versão de 03/02/2022)}
 
 \begin{document}
 \maketitle
@@ -431,17 +431,16 @@
 \begin{Highlighting}[]
 \NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{365}\NormalTok{,}\DecValTok{23}\NormalTok{,}\AttributeTok{replace=}\ConstantTok{TRUE}\NormalTok{)}
 \FunctionTok{tabulate}\NormalTok{(b)}
-\DocumentationTok{\#\#   [1] 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\#   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
 \DocumentationTok{\#\#  [34] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [133] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [166] 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [199] 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [265] 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [298] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 1 0 0 0}
-\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1}
+\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
+\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [133] 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 1 0 0}
+\DocumentationTok{\#\# [166] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [199] 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0}
+\DocumentationTok{\#\# [232] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0}
+\DocumentationTok{\#\# [265] 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0}
+\DocumentationTok{\#\# [298] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -449,10 +448,10 @@
 \begin{Highlighting}[]
 \FunctionTok{table}\NormalTok{(b)}
 \DocumentationTok{\#\# b}
-\DocumentationTok{\#\#   5  17  91 109 115 123 171 210 240 244 251 276 284 289 290 301 317 }
-\DocumentationTok{\#\#   1   1   1   1   1   1   1   2   1   1   1   1   1   1   1   1   1 }
-\DocumentationTok{\#\# 325 327 339 353 358 }
-\DocumentationTok{\#\#   1   1   1   1   1}
+\DocumentationTok{\#\#  33  76  99 123 134 145 156 157 158 163 186 203 222 224 226 233 259 }
+\DocumentationTok{\#\#   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1 }
+\DocumentationTok{\#\# 275 285 293 323 324 328 }
+\DocumentationTok{\#\#   1   1   1   1   1   1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -598,8 +597,8 @@ A \emph{norepeatword} is chosen randomly, with all \emph{norepeatwords} equally 
 \end{itemize}
 
 \hypertarget{exercuxedcios-do-livro-cap.-1}{%
-\subsection*{\texorpdfstring{Exercícios do livro (cap. $1$)}{Exercícios do livro (cap. )}}\label{exercuxedcios-do-livro-cap.-1}}
-\addcontentsline{toc}{subsection}{Exercícios do livro (cap. $1$)}
+\subsection*{Exercícios do livro (cap. 1)}\label{exercuxedcios-do-livro-cap.-1}}
+\addcontentsline{toc}{subsection}{Exercícios do livro (cap. 1)}
 
 \hypertarget{section}{%
 \subsubsection*{13}\label{section}}
@@ -770,24 +769,114 @@ How many different $10$-card hands can be dealt from the superdeck? The order of
 \end{itemize}
 
 \hypertarget{exercuxedcios-do-livro-cap.-1-1}{%
-\subsection*{\texorpdfstring{Exercícios do livro (cap. $1$)}{Exercícios do livro (cap. )}}\label{exercuxedcios-do-livro-cap.-1-1}}
-\addcontentsline{toc}{subsection}{Exercícios do livro (cap. $1$)}
+\subsection*{Exercícios do livro (cap. 1)}\label{exercuxedcios-do-livro-cap.-1-1}}
+\addcontentsline{toc}{subsection}{Exercícios do livro (cap. 1)}
 
 \hypertarget{section-1}{%
 \subsubsection*{17}\label{section-1}}
 \addcontentsline{toc}{subsubsection}{17}
 
+\begin{rmdbox}
+\[
+\sum_{k = 0}^n \binom{n}{k}^2 = \binom{2n}{n}
+\]
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Quero escolher $n$ pessoas dentre $2n$ pessoas (lado direito).
+\item
+  Divido as $2n$ pessoas em dois grupos de $n$ cada.
+\item
+  Para $k \in \{0, 1, \ldots n\}$:
+
+  \begin{itemize}
+  \item
+    Escolho $k$ pessoas do primeiro grupo --- $\binom{n}{k}$ --- para entrar.
+  \item
+    Escolho $k$ pessoas do segundo grupo --- $\binom{n}{k}$ --- para {\hl{não}} entrar.
+  \item
+    Para este valor de $k$, tenho $\binom{n}{k}^2$ maneiras de selecionar $n$ pessoas, com $k$ pessoas do primeiro grupo e $n-k$ pessoas do segundo.
+  \end{itemize}
+\end{itemize}
+
 \hypertarget{section-2}{%
 \subsubsection*{18}\label{section-2}}
 \addcontentsline{toc}{subsubsection}{18}
+
+\begin{rmdbox}
+\[
+\sum_{k = 1}^n k\binom{n}{k}^2 = n\binom{2n-1}{n-1}
+\]
+
+\end{rmdbox}
+
+Usamos o mesmo raciocínio do exercício anterior, com a seguinte modificação:
+
+\begin{itemize}
+\item
+  Temos $2n$ pessoas, divididas em dois grupos de $n$, como antes.
+\item
+  Como antes, quero escolher $n$ pessoas dentre as $2n$.
+\item
+  Mas agora, para cada escolha, quero designar uma das $n$ pessoas do primeiro grupo como chefe (i.e., sempre haverá pelo menos uma pessoa do primeiro grupo). Isto corresponde ao fator $n$ no lado direito.
+\item
+  Escolhido o chefe, preciso escolher $n - 1$ pessoas dentre as $2n - 1$ restantes ($n - 1$ do primeiro grupo, $n$ do segundo). Isto corresponde ao segundo fator do lado direito.
+\item
+  Do lado esquerdo, para $k \in \{1, 2, \ldots, n \}$:
+
+  \begin{itemize}
+  \item
+    Vou escolher $k$ pessoas do primeiro grupo --- $\binom{n}{k}$ --- para entrar.
+  \item
+    Dentre elas, vou escolher um chefe --- $k$.
+  \item
+    Vou escolher $k$ pessoas do segundo grupo --- $\binom{n}{k}$ --- para {\hl{não}} entrar.
+  \end{itemize}
+\end{itemize}
 
 \hypertarget{section-3}{%
 \subsubsection*{19}\label{section-3}}
 \addcontentsline{toc}{subsubsection}{19}
 
+\begin{rmdbox}
+\[
+\sum_{k=2}^n \binom k2 \binom{n-k+2}{2} = \binom{n+3}{5}, \quad \forall n \geq 2
+\]
+
+\end{rmdbox}
+
 \hypertarget{section-4}{%
 \subsubsection*{22}\label{section-4}}
 \addcontentsline{toc}{subsubsection}{22}
+
+\begin{rmdbox}
+
+Para provar
+
+\[
+1^3 + 2^3 + \cdots + n^3 = (1 + 2 + \cdots + n)^2
+\]
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Vamos provar
+
+  \[
+  1 + 2 + \cdots + n = \binom{n+1}{2}
+  \]
+\item
+  E vamos provar
+
+  \[
+  1^3 + 2^3 + \cdots + n^3 = 
+  6\binom{n+1}{4} + 6\binom{n+1}{3} + \binom{n+1}{2}
+  \]
+\end{enumerate}
+
+\end{rmdbox}
 
 \hypertarget{problema-do-aniversuxe1rio-propriedades}{%
 \chapter*{03: Problema do aniversário, propriedades}\label{problema-do-aniversuxe1rio-propriedades}}
@@ -810,8 +899,8 @@ How many different $10$-card hands can be dealt from the superdeck? The order of
 \addcontentsline{toc}{subsection}{Homework}
 
 \hypertarget{exercuxedcios-do-livro-cap.-1-2}{%
-\subsection*{\texorpdfstring{Exercícios do livro (cap. $1$)}{Exercícios do livro (cap. )}}\label{exercuxedcios-do-livro-cap.-1-2}}
-\addcontentsline{toc}{subsection}{Exercícios do livro (cap. $1$)}
+\subsection*{Exercícios do livro (cap. 1)}\label{exercuxedcios-do-livro-cap.-1-2}}
+\addcontentsline{toc}{subsection}{Exercícios do livro (cap. 1)}
 
 \hypertarget{section-5}{%
 \subsubsection*{26}\label{section-5}}

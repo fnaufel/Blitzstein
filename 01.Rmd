@@ -154,7 +154,7 @@ A *norepeatword* is chosen randomly, with all *norepeatwords* equally likely. Sh
     ```
 
 
-### Exercícios do livro (cap. $1$) {-}
+### Exercícios do livro (cap. 1) {-}
 
 #### 13 {-}
 

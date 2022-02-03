@@ -7,14 +7,14 @@
 <title>02: Histórias e axiomas | Introduction to Probability</title>
 <meta name="author" content="Fernando Náufel">
 <meta name="description" content="Vídeo   Exercícios Enunciados (pdf). Homework  4. Teorema das colunas  Mostre que \[ \binom{k}{k} + \binom{k + 1}{k} + \binom{k + 2}{k} + \cdots + \binom{n}{k} = \binom{n + 1}{k + 1} \] O lado...">
-<meta name="generator" content="bookdown 0.24.6 with bs4_book()">
+<meta name="generator" content="bookdown 0.24.7 with bs4_book()">
 <meta property="og:title" content="02: Histórias e axiomas | Introduction to Probability">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Vídeo   Exercícios Enunciados (pdf). Homework  4. Teorema das colunas  Mostre que \[ \binom{k}{k} + \binom{k + 1}{k} + \binom{k + 2}{k} + \cdots + \binom{n}{k} = \binom{n + 1}{k + 1} \] O lado...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="02: Histórias e axiomas | Introduction to Probability">
 <meta name="twitter:description" content="Vídeo   Exercícios Enunciados (pdf). Homework  4. Teorema das colunas  Mostre que \[ \binom{k}{k} + \binom{k + 1}{k} + \binom{k + 2}{k} + \cdots + \binom{n}{k} = \binom{n + 1}{k + 1} \] O lado...">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11.12/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11.14/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/_Lexend-0.4.0/font.css" rel="stylesheet">
 <link href="libs/_JetBrains%20Mono-0.4.0/font.css" rel="stylesheet">
@@ -160,23 +160,86 @@ a_0, a_1, a_2, \dots, a_n
 </div>
 </div>
 <div id="exercícios-do-livro-cap.-1-1" class="section level3 unnumbered">
-<h3>Exercícios do livro (cap. <span class="math inline">\(1\)</span>)<a class="anchor" aria-label="anchor" href="#exerc%C3%ADcios-do-livro-cap.-1-1"><i class="fas fa-link"></i></a>
+<h3>Exercícios do livro (cap. 1)<a class="anchor" aria-label="anchor" href="#exerc%C3%ADcios-do-livro-cap.-1-1"><i class="fas fa-link"></i></a>
 </h3>
 <div id="section-1" class="section level4 unnumbered">
 <h4>17<a class="anchor" aria-label="anchor" href="#section-1"><i class="fas fa-link"></i></a>
 </h4>
+<div class="rmdbox">
+<p><span class="math display">\[
+\sum_{k = 0}^n \binom{n}{k}^2 = \binom{2n}{n}
+\]</span></p>
+</div>
+<ul>
+<li><p>Quero escolher <span class="math inline">\(n\)</span> pessoas dentre <span class="math inline">\(2n\)</span> pessoas (lado direito).</p></li>
+<li><p>Divido as <span class="math inline">\(2n\)</span> pessoas em dois grupos de <span class="math inline">\(n\)</span> cada.</p></li>
+<li>
+<p>Para <span class="math inline">\(k \in \{0, 1, \ldots n\}\)</span>:</p>
+<ul>
+<li><p>Escolho <span class="math inline">\(k\)</span> pessoas do primeiro grupo — <span class="math inline">\(\binom{n}{k}\)</span> — para entrar.</p></li>
+<li><p>Escolho <span class="math inline">\(k\)</span> pessoas do segundo grupo — <span class="math inline">\(\binom{n}{k}\)</span> — para <span class="hl">não</span> entrar.</p></li>
+<li><p>Para este valor de <span class="math inline">\(k\)</span>, tenho <span class="math inline">\(\binom{n}{k}^2\)</span> maneiras de selecionar <span class="math inline">\(n\)</span> pessoas, com <span class="math inline">\(k\)</span> pessoas do primeiro grupo e <span class="math inline">\(n-k\)</span> pessoas do segundo.</p></li>
+</ul>
+</li>
+</ul>
 </div>
 <div id="section-2" class="section level4 unnumbered">
 <h4>18<a class="anchor" aria-label="anchor" href="#section-2"><i class="fas fa-link"></i></a>
 </h4>
+<div class="rmdbox">
+<p><span class="math display">\[
+\sum_{k = 1}^n k\binom{n}{k}^2 = n\binom{2n-1}{n-1}
+\]</span></p>
+</div>
+<p>Usamos o mesmo raciocínio do exercício anterior, com a seguinte modificação:</p>
+<ul>
+<li><p>Temos <span class="math inline">\(2n\)</span> pessoas, divididas em dois grupos de <span class="math inline">\(n\)</span>, como antes.</p></li>
+<li><p>Como antes, quero escolher <span class="math inline">\(n\)</span> pessoas dentre as <span class="math inline">\(2n\)</span>.</p></li>
+<li><p>Mas agora, para cada escolha, quero designar uma das <span class="math inline">\(n\)</span> pessoas do primeiro grupo como chefe (i.e., sempre haverá pelo menos uma pessoa do primeiro grupo). Isto corresponde ao fator <span class="math inline">\(n\)</span> no lado direito.</p></li>
+<li><p>Escolhido o chefe, preciso escolher <span class="math inline">\(n - 1\)</span> pessoas dentre as <span class="math inline">\(2n - 1\)</span> restantes (<span class="math inline">\(n - 1\)</span> do primeiro grupo, <span class="math inline">\(n\)</span> do segundo). Isto corresponde ao segundo fator do lado direito.</p></li>
+<li>
+<p>Do lado esquerdo, para <span class="math inline">\(k \in \{1, 2, \ldots, n \}\)</span>:</p>
+<ul>
+<li><p>Vou escolher <span class="math inline">\(k\)</span> pessoas do primeiro grupo — <span class="math inline">\(\binom{n}{k}\)</span> — para entrar.</p></li>
+<li><p>Dentre elas, vou escolher um chefe — <span class="math inline">\(k\)</span>.</p></li>
+<li><p>Vou escolher <span class="math inline">\(k\)</span> pessoas do segundo grupo — <span class="math inline">\(\binom{n}{k}\)</span> — para <span class="hl">não</span> entrar.</p></li>
+</ul>
+</li>
+</ul>
 </div>
 <div id="section-3" class="section level4 unnumbered">
 <h4>19<a class="anchor" aria-label="anchor" href="#section-3"><i class="fas fa-link"></i></a>
 </h4>
+<div class="rmdbox">
+<p><span class="math display">\[
+\sum_{k=2}^n \binom k2 \binom{n-k+2}{2} = \binom{n+3}{5}, \quad \forall n \geq 2
+\]</span></p>
+</div>
 </div>
 <div id="section-4" class="section level4 unnumbered">
 <h4>22<a class="anchor" aria-label="anchor" href="#section-4"><i class="fas fa-link"></i></a>
 </h4>
+<div class="rmdbox">
+<p>Para provar</p>
+<p><span class="math display">\[
+1^3 + 2^3 + \cdots + n^3 = (1 + 2 + \cdots + n)^2
+\]</span></p>
+<ol style="list-style-type: lower-alpha">
+<li>
+<p>Vamos provar</p>
+<p><span class="math display">\[
+1 + 2 + \cdots + n = \binom{n+1}{2}
+\]</span></p>
+</li>
+<li>
+<p>E vamos provar</p>
+<p><span class="math display">\[
+1^3 + 2^3 + \cdots + n^3 =
+6\binom{n+1}{4} + 6\binom{n+1}{3} + \binom{n+1}{2}
+\]</span></p>
+</li>
+</ol>
+</div>
 
 </div>
 </div>
@@ -194,7 +257,7 @@ a_0, a_1, a_2, \dots, a_n
 <li>
 <a class="nav-link" href="#exerc%C3%ADcios-1">Exercícios</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#homework">Homework</a></li>
-<li><a class="nav-link" href="#exerc%C3%ADcios-do-livro-cap.-1-1">Exercícios do livro (cap. \(1\))</a></li>
+<li><a class="nav-link" href="#exerc%C3%ADcios-do-livro-cap.-1-1">Exercícios do livro (cap. 1)</a></li>
 </ul>
 </li>
 </ul>
@@ -214,7 +277,7 @@ a_0, a_1, a_2, \dots, a_n
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Introduction to Probability</strong>: Joe Blitzsten" por Fernando Náufel (versão de 29/01/2022)</p>
+    <p>"<strong>Introduction to Probability</strong>: Joe Blitzsten" por Fernando Náufel (versão de 03/02/2022)</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

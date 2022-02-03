@@ -102,13 +102,93 @@ $$
   $$
   
 
-### Exercícios do livro (cap. $1$) {-}
+### Exercícios do livro (cap. 1) {-}
 
 #### 17 {-}
 
+::: {.rmdbox latex=1}
+
+$$
+\sum_{k = 0}^n \binom{n}{k}^2 = \binom{2n}{n}
+$$
+
+:::
+
+* Quero escolher $n$ pessoas dentre $2n$ pessoas (lado direito).
+
+* Divido as $2n$ pessoas em dois grupos de $n$ cada.
+
+* Para $k \in \{0, 1, \ldots n\}$:
+
+  * Escolho $k$ pessoas do primeiro grupo --- $\binom{n}{k}$ --- para entrar.
+  
+  * Escolho $k$ pessoas do segundo grupo --- $\binom{n}{k}$ --- para [não]{.hl} entrar.
+  
+  * Para este valor de $k$, tenho $\binom{n}{k}^2$ maneiras de selecionar $n$ pessoas, com $k$ pessoas do primeiro grupo e $n-k$ pessoas do segundo.
+  
+
 #### 18 {-}
+
+::: {.rmdbox latex=1}
+
+$$
+\sum_{k = 1}^n k\binom{n}{k}^2 = n\binom{2n-1}{n-1}
+$$
+
+:::
+
+Usamos o mesmo raciocínio do exercício anterior, com a seguinte modificação:
+
+* Temos $2n$ pessoas, divididas em dois grupos de $n$, como antes.
+
+* Como antes, quero escolher $n$ pessoas dentre as $2n$.
+
+* Mas agora, para cada escolha, quero designar uma das $n$ pessoas do primeiro grupo como chefe (i.e., sempre haverá pelo menos uma pessoa do primeiro grupo). Isto corresponde ao fator $n$ no lado direito.
+
+* Escolhido o chefe, preciso escolher $n - 1$ pessoas dentre as $2n - 1$ restantes ($n - 1$ do primeiro grupo, $n$ do segundo). Isto corresponde ao segundo fator do lado direito.
+
+* Do lado esquerdo, para $k \in \{1, 2, \ldots, n \}$:
+
+  * Vou escolher $k$ pessoas do primeiro grupo --- $\binom{n}{k}$ --- para entrar.
+  
+  * Dentre elas, vou escolher um chefe --- $k$.
+  
+  * Vou escolher $k$ pessoas do segundo grupo --- $\binom{n}{k}$ --- para [não]{.hl} entrar.
+
 
 #### 19 {-}
 
+::: {.rmdbox latex=1}
+
+$$
+\sum_{k=2}^n \binom k2 \binom{n-k+2}{2} = \binom{n+3}{5}, \quad \forall n \geq 2
+$$
+
+:::
+
+
 #### 22 {-}
+
+::: {.rmdbox latex=1}
+
+Para provar 
+
+$$
+1^3 + 2^3 + \cdots + n^3 = (1 + 2 + \cdots + n)^2
+$$
+
+a. Vamos provar
+
+   $$
+   1 + 2 + \cdots + n = \binom{n+1}{2}
+   $$
+
+b. E vamos provar
+
+   $$
+   1^3 + 2^3 + \cdots + n^3 = 
+   6\binom{n+1}{4} + 6\binom{n+1}{3} + \binom{n+1}{2}
+   $$
+
+:::
 
