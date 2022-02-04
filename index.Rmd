@@ -3,8 +3,7 @@
 
 knit: "bookdown::render_book"
 
-title: 'Introduction to Probability'
-subtitle: 'Joe Blitzsten'
+title: 'Introduction to Probability (Joe Blitzstein)'
 author: "Fernando Náufel"
 description: 'Anotações'
 date: "(versão de `r format(Sys.Date(), '%d/%m/%Y')`)"

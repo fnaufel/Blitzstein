@@ -4,15 +4,15 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<title>01: Probabilidade e contagem | Introduction to Probability</title>
+<title>01: Probabilidade e contagem | Introduction to Probability (Joe Blitzstein)</title>
 <meta name="author" content="Fernando Náufel">
 <meta name="description" content="Vídeo   Pascal e Fermat Ver artigo DEVLIN, Keith1. Ver originais em francês de toda a correspondência de Pascal.  R  Fatoriais e combinações  Qual o maior valor de \(n\) para o qual o R calcula...">
 <meta name="generator" content="bookdown 0.24.7 with bs4_book()">
-<meta property="og:title" content="01: Probabilidade e contagem | Introduction to Probability">
+<meta property="og:title" content="01: Probabilidade e contagem | Introduction to Probability (Joe Blitzstein)">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Vídeo   Pascal e Fermat Ver artigo DEVLIN, Keith1. Ver originais em francês de toda a correspondência de Pascal.  R  Fatoriais e combinações  Qual o maior valor de \(n\) para o qual o R calcula...">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="01: Probabilidade e contagem | Introduction to Probability">
+<meta name="twitter:title" content="01: Probabilidade e contagem | Introduction to Probability (Joe Blitzstein)">
 <meta name="twitter:description" content="Vídeo   Pascal e Fermat Ver artigo DEVLIN, Keith1. Ver originais em francês de toda a correspondência de Pascal.  R  Fatoriais e combinações  Qual o maior valor de \(n\) para o qual o R calcula...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11.14/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
@@ -32,8 +32,7 @@
 
     <div class="d-flex align-items-start justify-content-between">
       <h1>
-        <a href="index.html" title="Joe Blitzsten">Introduction to Probability</a>:
-        <small class="text-muted">Joe Blitzsten</small>
+        <a href="index.html" title="">Introduction to Probability (Joe Blitzstein)</a>
       </h1>
       <button class="btn btn-outline-primary d-lg-none ml-2 mt-1" type="button" data-toggle="collapse" data-target="#main-nav" aria-expanded="true" aria-controls="main-nav"><i class="fas fa-bars"></i><span class="sr-only">Mostrar sumário</span></button>
     </div>
@@ -103,21 +102,23 @@
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">365</span>,<span class="fl">23</span>,replace<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/tabulate.html">tabulate</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span>
-<span class="co">##   [1] 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0</span>
-<span class="co">##  [41] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
-<span class="co">##  [81] 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0</span>
-<span class="co">## [121] 0 0 0 0 0 0 1 0 0 1 0 0 0 1 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0</span>
-<span class="co">## [161] 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
-<span class="co">## [201] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0</span>
-<span class="co">## [241] 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
-<span class="co">## [281] 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 1</span></code></pre></div>
+<span class="co">##   [1] 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">##  [41] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">##  [81] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">## [121] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0</span>
+<span class="co">## [161] 0 2 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">## [201] 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0</span>
+<span class="co">## [241] 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0</span>
+<span class="co">## [281] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0</span>
+<span class="co">## [321] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0</span>
+<span class="co">## [361] 0 1</span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span>
 <span class="co">## b</span>
-<span class="co">##   2  14  37  86 118 127 130 134 136 139 154 155 171 174 227 236 245 248 292 293 296 </span>
-<span class="co">##   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1 </span>
-<span class="co">## 303 310 </span>
-<span class="co">##   1   1</span></code></pre></div>
+<span class="co">##   5  69  99 133 139 142 158 159 162 164 169 178 209 220 237 251 278 284 299 316 356 </span>
+<span class="co">##   1   1   1   1   1   1   1   1   2   1   1   1   1   1   1   1   1   1   1   1   1 </span>
+<span class="co">## 362 </span>
+<span class="co">##   1</span></code></pre></div>
 </div>
 <div id="funções-para-o-problema-do-aniversário" class="section level3 unnumbered">
 <h3>Funções para o problema do aniversário<a class="anchor" aria-label="anchor" href="#fun%C3%A7%C3%B5es-para-o-problema-do-anivers%C3%A1rio"><i class="fas fa-link"></i></a>
@@ -290,7 +291,7 @@ e^x = \sum_{k=0}^\infty \frac{x^k}{k!}
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Introduction to Probability</strong>: Joe Blitzsten" por Fernando Náufel (versão de 03/02/2022)</p>
+    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 04/02/2022)</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

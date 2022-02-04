@@ -36,7 +36,7 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
 \hypersetup{
-  pdftitle={Introduction to Probability},
+  pdftitle={Introduction to Probability (Joe Blitzstein)},
   pdfauthor={Fernando Náufel},
   pdflang={pt-br},
   hidelinks,
@@ -336,16 +336,9 @@
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
 
-\title{Introduction to Probability}
-\usepackage{etoolbox}
-\makeatletter
-\providecommand{\subtitle}[1]{% add subtitle to \maketitle
-  \apptocmd{\@title}{\par {\large #1 \par}}{}{}
-}
-\makeatother
-\subtitle{Joe Blitzsten}
+\title{Introduction to Probability (Joe Blitzstein)}
 \author{Fernando Náufel}
-\date{(versão de 03/02/2022)}
+\date{(versão de 04/02/2022)}
 
 \begin{document}
 \maketitle
@@ -431,16 +424,17 @@
 \begin{Highlighting}[]
 \NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{365}\NormalTok{,}\DecValTok{23}\NormalTok{,}\AttributeTok{replace=}\ConstantTok{TRUE}\NormalTok{)}
 \FunctionTok{tabulate}\NormalTok{(b)}
-\DocumentationTok{\#\#   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
-\DocumentationTok{\#\#  [34] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
-\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [133] 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 1 0 0}
-\DocumentationTok{\#\# [166] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [199] 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0}
-\DocumentationTok{\#\# [232] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0}
-\DocumentationTok{\#\# [265] 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0}
-\DocumentationTok{\#\# [298] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1}
+\DocumentationTok{\#\#   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0}
+\DocumentationTok{\#\#  [34] 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0}
+\DocumentationTok{\#\#  [67] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0}
+\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [133] 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 0 0 0}
+\DocumentationTok{\#\# [166] 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [199] 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [232] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [265] 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [298] 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -448,9 +442,9 @@
 \begin{Highlighting}[]
 \FunctionTok{table}\NormalTok{(b)}
 \DocumentationTok{\#\# b}
-\DocumentationTok{\#\#  33  76  99 123 134 145 156 157 158 163 186 203 222 224 226 233 259 }
+\DocumentationTok{\#\#  26  27  45  62  68  93 107 140 157 160 161 172 206 208 214 234 265 }
 \DocumentationTok{\#\#   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1 }
-\DocumentationTok{\#\# 275 285 293 323 324 328 }
+\DocumentationTok{\#\# 271 284 298 310 319 348 }
 \DocumentationTok{\#\#   1   1   1   1   1   1}
 \end{Highlighting}
 \end{Shaded}
