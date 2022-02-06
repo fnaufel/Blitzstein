@@ -175,8 +175,10 @@ $$
   1. Escolhemos sempre o elemento $k + 1$:
 
      $$
+     \begin{aligned}
      1 \quad 2 \quad \underbrace{3}_{k = 2} \quad 4 \quad 5 \quad 6 \\
      1 \quad 2 \quad 3 \quad \underbrace{4}_{k = 3} \quad 5 \quad 6
+     \end{aligned}
      $$
      
      Este é o elemento que vai estar [no meio]{.hl} do grupo dos escolhidos.
@@ -184,15 +186,19 @@ $$
   1. Escolhemos $2$ dentre os $k$ primeiros elementos:
   
      $$
+     \begin{aligned}
      \underbrace{1 \quad 2}_{k = 2} \quad 3 \quad 4 \quad 5 \quad 6 \\
      \underbrace{1 \quad 2 \quad 3}_{k = 3} \quad 4 \quad 5 \quad 6
+     \end{aligned}
      $$
 
   1. Escolhemos $2$ dentre os $n - k + 2$ últimos elementos:
 
      $$
+     \begin{aligned}
      1 \quad 2 \quad 3 \quad \underbrace{4 \quad 5 \quad 6}_{k = 2}\\
      1 \quad 2 \quad 3 \quad 4 \quad \underbrace{5 \quad 6}_{k = 3}
+     \end{aligned}
      $$
 
 

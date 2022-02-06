@@ -48,6 +48,7 @@
 <li><a class="active" href="probabilidade-e-contagem.html">01: Probabilidade e contagem</a></li>
 <li><a class="" href="hist%C3%B3rias-e-axiomas.html">02: Histórias e axiomas</a></li>
 <li><a class="" href="problema-do-anivers%C3%A1rio-propriedades.html">03: Problema do aniversário, propriedades</a></li>
+<li><a class="" href="probabilidade-condicional.html">04: Probabilidade condicional</a></li>
 <li><a class="" href="refer%C3%AAncias.html">Referências</a></li>
 </ul>
 
@@ -102,20 +103,23 @@
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">365</span>,<span class="fl">23</span>,replace<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/tabulate.html">tabulate</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span>
-<span class="co">##   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
-<span class="co">##  [41] 0 0 0 1 0 0 0 0 0 0 1 0 2 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0</span>
-<span class="co">##  [81] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0</span>
-<span class="co">## [121] 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
-<span class="co">## [161] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
-<span class="co">## [201] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1</span>
-<span class="co">## [241] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0</span>
-<span class="co">## [281] 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
-<span class="co">## [321] 0 0 2</span></code></pre></div>
+<span class="co">##   [1] 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">##  [41] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 1 0</span>
+<span class="co">##  [81] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">## [121] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">## [161] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">## [201] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">## [241] 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">## [281] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0</span>
+<span class="co">## [321] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">## [361] 0 0 1 0 1</span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span>
 <span class="co">## b</span>
-<span class="co">##  19  21  44  51  53  55  70  71 110 130 147 163 216 223 240 262 265 272 281 291 323 </span>
-<span class="co">##   1   1   1   1   2   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   2</span></code></pre></div>
+<span class="co">##  10  23  24  28  44  67  71  79 102 121 136 138 180 185 203 221 244 265 319 348 363 </span>
+<span class="co">##   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   2   1   1   1   1 </span>
+<span class="co">## 365 </span>
+<span class="co">##   1</span></code></pre></div>
 </div>
 <div id="funções-para-o-problema-do-aniversário" class="section level3 unnumbered">
 <h3>Funções para o problema do aniversário<a class="anchor" aria-label="anchor" href="#fun%C3%A7%C3%B5es-para-o-problema-do-anivers%C3%A1rio"><i class="fas fa-link"></i></a>

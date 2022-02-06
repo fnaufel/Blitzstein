@@ -1,0 +1,73 @@
+---
+knit: "bookdown::render_book"
+---
+
+# 04: Probabilidade condicional {-}
+
+## Vídeo {-}
+
+```{r echo=FALSE, results='asis', out.extra=center()}
+embed_yt('P7NE4WF8j-Q')
+```
+
+
+## Exercícios {-}
+
+[Enunciados (pdf).](https://projects.iq.harvard.edu/files/stat110/files/strategic_practice_and_homework_2.pdf)
+
+
+### Homework {-}
+
+#### 3.1 Lewis Carroll {-}
+
+::: {.rmdbox latex=1}
+
+ A bag contains one marble which is either green or blue, with equal probabilities. A green marble is put in the bag (so there are $2$ marbles now), and then a random marble is taken out. The marble taken out is green. What is the probability that the remaining marble is also green?
+
+This problem was first posed by Lewis Carroll in 1893.
+
+:::
+
+
+#### 3.5 Xadrez {-}
+
+::: {.rmdbox latex=1}
+
+You are going to play $2$ games of chess with an opponent whom you have never played against before (for the sake of this problem). Your opponent is equally likely to be a beginner, intermediate, or a master. Depending on which, your chances of winning an individual game are $90\%$, $50\%$, or $30\%$, respectively.
+ 
+a. What is your probability of winning the first game?
+
+b. Congratulations: you won the first game! Given this information, what is the probability that you will also win the second game (assume that, given the skill level of your opponent, the outcomes of the games are independent)?
+
+c. Explain the distinction between assuming that the outcomes of the games are independent and assuming that they are conditionally independent given the opponent’s skill level. Which of these assumptions seems more reasonable, and why?
+ 
+:::
+
+
+### Exercícios do livro (cap. 2) {-}
+
+#### 2 {-}
+
+
+#### 4 {-}
+
+
+#### 9 {-}
+
+
+#### 12 {-}
+
+
+#### 14 {-}
+
+
+#### 15 {-}
+
+
+#### 16 {-}
+
+
+#### 17 {-}
+
+
+#### 29 {-}
