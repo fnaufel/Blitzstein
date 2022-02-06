@@ -214,6 +214,37 @@ a_0, a_1, a_2, \dots, a_n
 \sum_{k=2}^n \binom k2 \binom{n-k+2}{2} = \binom{n+3}{5}, \quad \forall n \geq 2
 \]</span></p>
 </div>
+<ul>
+<li><p>Um exemplo concreto: <span class="math inline">\(n = 3\)</span></p></li>
+<li><p>Queremos escolher <span class="math inline">\(5\)</span> elementos dentre <span class="math inline">\(6\)</span>.</p></li>
+<li>
+<p>Para <span class="math inline">\(k \in \{ 2, 3 \}\)</span>:</p>
+<ol style="list-style-type: decimal">
+<li>
+<p>Escolhemos sempre o elemento <span class="math inline">\(k + 1\)</span>:</p>
+<p><span class="math display">\[
+1 \quad 2 \quad \underbrace{3}_{k = 2} \quad 4 \quad 5 \quad 6 \\
+1 \quad 2 \quad 3 \quad \underbrace{4}_{k = 3} \quad 5 \quad 6
+\]</span></p>
+<p>Este é o elemento que vai estar <span class="hl">no meio</span> do grupo dos escolhidos.</p>
+</li>
+<li>
+<p>Escolhemos <span class="math inline">\(2\)</span> dentre os <span class="math inline">\(k\)</span> primeiros elementos:</p>
+<p><span class="math display">\[
+\underbrace{1 \quad 2}_{k = 2} \quad 3 \quad 4 \quad 5 \quad 6 \\
+\underbrace{1 \quad 2 \quad 3}_{k = 3} \quad 4 \quad 5 \quad 6
+\]</span></p>
+</li>
+<li>
+<p>Escolhemos <span class="math inline">\(2\)</span> dentre os <span class="math inline">\(n - k + 2\)</span> últimos elementos:</p>
+<p><span class="math display">\[
+1 \quad 2 \quad 3 \quad \underbrace{4 \quad 5 \quad 6}_{k = 2}\\
+1 \quad 2 \quad 3 \quad 4 \quad \underbrace{5 \quad 6}_{k = 3}
+\]</span></p>
+</li>
+</ol>
+</li>
+</ul>
 </div>
 <div id="section-4" class="section level4 unnumbered">
 <h4>22<a class="anchor" aria-label="anchor" href="#section-4"><i class="fas fa-link"></i></a>
@@ -239,7 +270,69 @@ a_0, a_1, a_2, \dots, a_n
 </li>
 </ol>
 </div>
-
+<ol style="list-style-type: lower-alpha">
+<li>
+<p>Considere <span class="math inline">\(n + 1\)</span> times, numerados de <span class="math inline">\(0\)</span> a <span class="math inline">\(n\)</span>, num campeonato onde cada time joga com todos os outros exatamente uma vez. O total de jogos será</p>
+<p><span class="math display">\[
+\binom{n+1}{2}
+\]</span></p>
+<ul>
+<li><p>O time <span class="math inline">\(0\)</span> joga com <span class="math inline">\(n\)</span> times com número maior que ele.</p></li>
+<li><p>O time <span class="math inline">\(1\)</span> joga com <span class="math inline">\(n - 1\)</span> times com número maior que ele.</p></li>
+<li><p>O time <span class="math inline">\(2\)</span> joga com <span class="math inline">\(n - 2\)</span> times com número maior que ele.</p></li>
+<li><p>…</p></li>
+<li><p>O time <span class="math inline">\(n-2\)</span> joga com <span class="math inline">\(2\)</span> times com número maior que ele.</p></li>
+<li><p>O time <span class="math inline">\(n-1\)</span> joga com <span class="math inline">\(1\)</span> time com número maior que ele.</p></li>
+<li><p>O time <span class="math inline">\(n\)</span> joga com <span class="math inline">\(0\)</span> times com número maior que ele.</p></li>
+</ul>
+</li>
+<li>
+<p>Hint: Imagine choosing a number between <span class="math inline">\(1\)</span> and <span class="math inline">\(n\)</span> and then choosing <span class="math inline">\(3\)</span> numbers between <span class="math inline">\(0\)</span> and <span class="math inline">\(n\)</span> smaller than the original number, with replacement. Then consider cases based on how many distinct numbers were chosen.</p>
+<ul>
+<li><p>Vamos chamar o número escolhido de <span class="math inline">\(k\)</span>.</p></li>
+<li><p>Para <span class="math inline">\(k = 1\)</span>, só temos o <span class="math inline">\(0\)</span> para escolher. É <span class="math inline">\(1\)</span> possibilidade.</p></li>
+<li><p>Para <span class="math inline">\(k = 2\)</span>, temos <span class="math inline">\(2\)</span> números. São <span class="math inline">\(2^3\)</span> possibilidades.</p></li>
+<li><p>Para <span class="math inline">\(k = 3\)</span>, temos <span class="math inline">\(3\)</span> números. São <span class="math inline">\(3^3\)</span> possibilidades.</p></li>
+<li><p>No geral, para <span class="math inline">\(k = n\)</span>, são <span class="math inline">\(n^3\)</span> possibilidades.</p></li>
+<li><p>A soma de todos os casos é a soma dos cubos.</p></li>
+<li>
+<p>Vamos examinar o caso em que <span class="math inline">\(k\)</span> foi o número escolhido. De quantas maneiras podemos escolher <span class="math inline">\(3\)</span> números entre <span class="math inline">\(0\)</span> e <span class="math inline">\(k-1\)</span>, com reposição?</p>
+<ul>
+<li><p>Com <span class="math inline">\(1\)</span> número, basta escolher o número: <span class="math inline">\(\binom{k}{1}\)</span> possibilidades.</p></li>
+<li>
+<p>Com <span class="math inline">\(2\)</span> números distintos:</p>
+<ul>
+<li><p>Escolhemos os <span class="math inline">\(2\)</span> números: <span class="math inline">\(\binom{k}{2}\)</span> possibilidades;</p></li>
+<li><p>Escolhemos qual dos <span class="math inline">\(2\)</span> aparecerá <span class="math inline">\(2\)</span> vezes: <span class="math inline">\(2\)</span> possibilidades;</p></li>
+<li><p>Escolhemos a posição do número que aparece uma vez: <span class="math inline">\(3\)</span> possibilidades.</p></li>
+<li><p>São <span class="math inline">\(6 \binom{k}{2}\)</span> possibilidades.</p></li>
+</ul>
+</li>
+<li>
+<p>Com <span class="math inline">\(3\)</span> números distintos:</p>
+<ul>
+<li><p>Escolhemos os <span class="math inline">\(3\)</span> números: <span class="math inline">\(\binom{k}{3}\)</span> possibilidades;</p></li>
+<li><p>Escolhemos a ordem dos <span class="math inline">\(3\)</span> números: <span class="math inline">\(6\)</span> possibilidades;</p></li>
+<li><p>São <span class="math inline">\(6 \binom{k}{3}\)</span> possibilidades.</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Para todos os valores de <span class="math inline">\(k\)</span>, o total de possibilidades é</p>
+<p><span class="math display">\[
+\sum_{k = 1}^n \left[ \binom{k}{1} + 6\binom{k}{2} + 6\binom{k}{3}\right]
+\]</span></p>
+</li>
+<li>
+<p>Usando o teorema das colunas, chegamos ao resultado</p>
+<p><span class="math display">\[
+\binom{n + 1}{2} + 6\binom{n + 1}{3} + 6\binom{n + 1}{4}
+\]</span></p>
+</li>
+</ul>
+</li>
+</ol>
 </div>
 </div>
 </div>
@@ -276,7 +369,7 @@ a_0, a_1, a_2, \dots, a_n
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 04/02/2022)</p>
+    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 06/02/2022)</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
