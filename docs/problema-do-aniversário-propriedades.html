@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>03: Problema do aniversário, propriedades | Introduction to Probability (Joe Blitzstein)</title>
 <meta name="author" content="Fernando Náufel">
-<meta name="description" content="Vídeo   Exercícios  Exercícios do livro (cap. 1)  26  27  57  61  62">
+<meta name="description" content="Vídeo   Exercícios  Exercícios do livro (cap. 1)  26  Amostra com reposição de tamanho \(1000\) a partir de uma população de tamanho \(1\) milhão. Cada pessoa tem a mesma probabilidade de ser...">
 <meta name="generator" content="bookdown 0.24.7 with bs4_book()">
 <meta property="og:title" content="03: Problema do aniversário, propriedades | Introduction to Probability (Joe Blitzstein)">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Vídeo   Exercícios  Exercícios do livro (cap. 1)  26  27  57  61  62">
+<meta property="og:description" content="Vídeo   Exercícios  Exercícios do livro (cap. 1)  26  Amostra com reposição de tamanho \(1000\) a partir de uma população de tamanho \(1\) milhão. Cada pessoa tem a mesma probabilidade de ser...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="03: Problema do aniversário, propriedades | Introduction to Probability (Joe Blitzstein)">
-<meta name="twitter:description" content="Vídeo   Exercícios  Exercícios do livro (cap. 1)  26  27  57  61  62">
+<meta name="twitter:description" content="Vídeo   Exercícios  Exercícios do livro (cap. 1)  26  Amostra com reposição de tamanho \(1000\) a partir de uma população de tamanho \(1\) milhão. Cada pessoa tem a mesma probabilidade de ser...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11.14/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/_Lexend-0.4.0/font.css" rel="stylesheet">
@@ -21,7 +21,8 @@
 <link href="libs/_Roboto-0.4.0/font.css" rel="stylesheet">
 <script src="libs/bs3compat-0.3.1/transition.js"></script><script src="libs/bs3compat-0.3.1/tabs.js"></script><script src="libs/bs3compat-0.3.1/bs3compat.js"></script><link href="libs/bs4_book-1.0.0/bs4_book.css" rel="stylesheet">
 <script src="libs/bs4_book-1.0.0/bs4_book.js"></script><link href="libs/pagedtable-1.1/css/pagedtable.css" rel="stylesheet">
-<script src="libs/pagedtable-1.1/js/pagedtable.js"></script><script src="html_files/alterar_detalhes.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="html_files/styles_all.css">
+<script src="libs/pagedtable-1.1/js/pagedtable.js"></script><script src="libs/kePrint-0.0.1/kePrint.js"></script><link href="libs/lightable-0.0.1/lightable.css" rel="stylesheet">
+<script src="html_files/alterar_detalhes.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- CSS --><link rel="stylesheet" href="html_files/styles_all.css">
 <link rel="stylesheet" href="html_files/styles_book.css">
 </head>
 <body data-spy="scroll" data-target="#toc">
@@ -75,18 +76,232 @@
 <div id="section-5" class="section level4 unnumbered">
 <h4>26<a class="anchor" aria-label="anchor" href="#section-5"><i class="fas fa-link"></i></a>
 </h4>
+<div class="rmdbox">
+<p>Amostra <span class="hl">com reposição</span> de tamanho <span class="math inline">\(1000\)</span> a partir de uma população de tamanho <span class="math inline">\(1\)</span> milhão. Cada pessoa tem a mesma probabilidade de ser escolhida.</p>
+<p>Qual a probabilidade de pelo menos uma pessoa ser escolhida mais de uma vez?</p>
+</div>
+<p>Usando <span class="math inline">\(N = 1.000.000\)</span> e <span class="math inline">\(n = 1.000\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P &amp;= 1 - P(\text{ninguém escolhido mais de uma vez}) \\
+  &amp;= 1 - \frac{\binom{N}{n} \cdot n!}{N^n} \\
+  &amp;= 1 - \frac{N}{N} \cdot \frac{N - 1}{N} \cdot \frac{N - 2}{N} \cdot \cdots \cdot \frac{N - n + 1}{N}
+\end{aligned}
+\]</span></p>
+<p>Na verdade, esta é a mesma distribuição do problema dos aniversários, com <span class="math inline">\(N\)</span> dias e <span class="math inline">\(n\)</span> pessoas.</p>
+<p>Para <span class="math inline">\(N\)</span> grande e <span class="math inline">\(n\)</span> pequeno, a probabilidade <span class="math inline">\(P\)</span> de pelo menos uma pessoa ser escolhida mais de uma vez se aproxima de <span class="math inline">\(0\)</span>:</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">maximo</span> <span class="op">&lt;-</span> <span class="fl">6</span>
+<span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">10</span><span class="op">^</span><span class="va">maximo</span>
+<span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">10</span><span class="op">^</span><span class="op">(</span><span class="va">maximo</span><span class="op">:</span><span class="fl">0</span><span class="op">)</span>
+
+<span class="fu">tibble</span><span class="op">(</span>
+  N <span class="op">=</span> <span class="va">N</span>,
+  n <span class="op">=</span> <span class="va">n</span>,
+  P <span class="op">=</span> <span class="fu">map2_dbl</span><span class="op">(</span><span class="va">n</span>, <span class="va">N</span>, <span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/stats/birthday.html">pbirthday</a></span><span class="op">(</span><span class="va">.x</span>, <span class="va">.y</span><span class="op">)</span><span class="op">)</span>
+<span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">kbl</span><span class="op">(</span>
+    format.args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>big.mark <span class="op">=</span> <span class="st">'.'</span><span class="op">)</span>
+  <span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">kable_paper</span><span class="op">(</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'striped'</span>, <span class="st">'hover'</span><span class="op">)</span>,
+    full_width <span class="op">=</span> <span class="cn">FALSE</span>
+  <span class="op">)</span></code></pre></div>
+<div class="inline-table"><table class=" lightable-paper lightable-striped lightable-hover" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;'>
+<thead><tr>
+<th style="text-align:right;">
+N
+</th>
+<th style="text-align:right;">
+n
+</th>
+<th style="text-align:right;">
+P
+</th>
+</tr></thead>
+<tbody>
+<tr>
+<td style="text-align:right;">
+1.000.000
+</td>
+<td style="text-align:right;">
+1.000.000
+</td>
+<td style="text-align:right;">
+1,0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1.000.000
+</td>
+<td style="text-align:right;">
+100.000
+</td>
+<td style="text-align:right;">
+1,0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1.000.000
+</td>
+<td style="text-align:right;">
+10.000
+</td>
+<td style="text-align:right;">
+1,0000000
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1.000.000
+</td>
+<td style="text-align:right;">
+1.000
+</td>
+<td style="text-align:right;">
+0,3932670
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1.000.000
+</td>
+<td style="text-align:right;">
+100
+</td>
+<td style="text-align:right;">
+0,0049379
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1.000.000
+</td>
+<td style="text-align:right;">
+10
+</td>
+<td style="text-align:right;">
+0,0000450
+</td>
+</tr>
+<tr>
+<td style="text-align:right;">
+1.000.000
+</td>
+<td style="text-align:right;">
+1
+</td>
+<td style="text-align:right;">
+0,0000000
+</td>
+</tr>
+</tbody>
+</table></div>
 </div>
 <div id="section-6" class="section level4 unnumbered">
 <h4>27<a class="anchor" aria-label="anchor" href="#section-6"><i class="fas fa-link"></i></a>
 </h4>
+<div class="rmdbox">
+<ul>
+<li><p>Função de <em>hash</em> <span class="math inline">\(h(x)\)</span>.</p></li>
+<li><p><span class="math inline">\(k\)</span> telefones armazenados em <span class="math inline">\(n\)</span> posições, todas com a mesma probabilidade.</p></li>
+<li><p>Qual a probabilidade de colisão?</p></li>
+</ul>
+</div>
+<p>De novo, <code>pbirthday(k, n)</code>.</p>
 </div>
 <div id="section-7" class="section level4 unnumbered">
 <h4>57<a class="anchor" aria-label="anchor" href="#section-7"><i class="fas fa-link"></i></a>
 </h4>
+<div class="rmdbox">
+<ul>
+<li><p>Existem <span class="math inline">\(10^{44}\)</span> moléculas na atmosfera.</p></li>
+<li><p>No seu último suspiro, César respirou <span class="math inline">\(10^{22}\)</span> delas (<span class="hl">sem</span> reposição).</p></li>
+<li><p>Você respira <span class="math inline">\(10^{22}\)</span> moléculas agora (<span class="hl">com</span> reposição).</p></li>
+<li><p>Qual a probabilidade de que pelo menos uma molécula sua tenha sido de César também?</p></li>
+</ul>
+</div>
+<p>A resposta é <span class="math inline">\(1 - P(\text{nenhuma molécula sua foi de César})\)</span>.</p>
+<p>Para calcular <span class="math inline">\(P(\text{nenhuma molécula sua foi de César})\)</span>:</p>
+<ul>
+<li><p>Todas as respiradas possíveis (com reposição, com ordem): <span class="math inline">\(\left( 10^{44} \right)^{\left(10^{22} \right)}\)</span>.</p></li>
+<li><p>Todas as respiradas sem moléculas de César (com reposição, com ordem): <span class="math inline">\(\left( 10^{44} - 10^{22} \right)^{\left(10^{22} \right)}\)</span>.</p></li>
+<li>
+<p>Daí,</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(\text{nenhuma molécula sua foi de César})
+&amp;=
+\frac{\left( 10^{44} - 10^{22} \right)^{\left(10^{22} \right)}}
+{\left( 10^{44} \right)^{\left(10^{22} \right)}}
+\\
+&amp;=
+\left( \frac{10^{44} - 10^{22}}{10^{44}} \right)^{(10^{22})}
+\\
+&amp;=
+\left( 1 - \frac{1}{10^{22}} \right)^{(10^{{22}})}
+\\
+&amp;\approx e^{-1}
+\end{aligned}
+\]</span></p>
+</li>
+<li>
+<p>Logo, a probabilidade procurada é aproximadamente</p>
+<p><span class="math display">\[
+1 - e^{-1} \approx 0{,}63
+\]</span></p>
+</li>
+<li>
+<p>Formulação original em <span class="citation">PAULOS, John Allen<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;&lt;a href="refer%C3%AAncias.html#ref-paulos-1988-innum" role="doc-biblioref"&gt;&lt;strong&gt;Innumeracy: Mathematical Illiteracy and Its Consequences&lt;/strong&gt;, 1. ed. New York: Hill; Wang, 1988&lt;/a&gt;.&lt;/p&gt;'><sup>4</sup></a></span>:</p>
+<div class="inline-figure"><img src="images/caesar.png" width="80%" style="display: block; margin: auto;"></div>
+</li>
+</ul>
 </div>
 <div id="section-8" class="section level4 unnumbered">
 <h4>61<a class="anchor" aria-label="anchor" href="#section-8"><i class="fas fa-link"></i></a>
 </h4>
+<div class="rmdbox">
+<ul>
+<li><p><span class="math inline">\(n\)</span> passageiros para <span class="math inline">\(n\)</span> assentos.</p></li>
+<li><p>Passageiro <span class="math inline">\(k\)</span> inicialmente alocado no assento <span class="math inline">\(k\)</span>.</p></li>
+<li><p>MAS Passageiro <span class="math inline">\(1\)</span> decide escolher assento ao acaso (cada assento com a mesma probabilidade).</p></li>
+<li><p>Então, cada passageiro seguinte se senta no assento inicialmente alocado para ele, se disponível; caso contrário, escolhe um assento ao acaso.</p></li>
+<li><p>Qual a probabilidade de que o último passageiro se sente no assento alocado para ele?</p></li>
+</ul>
+</div>
+<div id="possibilidades" class="section level5 unnumbered">
+<h5>Possibilidades<a class="anchor" aria-label="anchor" href="#possibilidades"><i class="fas fa-link"></i></a>
+</h5>
+<p>O último passageiro só pode se sentar no lugar <span class="math inline">\(1\)</span> ou no lugar <span class="math inline">\(n\)</span>.</p>
+<p>Aliás, isto é um caso específico de um fenômeno mais geral, Qualquer que seja o valor de <span class="math inline">\(n\)</span>:</p>
+<ul>
+<li><p>O passageiro <span class="math inline">\(3\)</span> nunca fica no assento <span class="math inline">\(2\)</span>: ou o passageiro <span class="math inline">\(1\)</span> pegou, ou ficou livre para o passageiro <span class="math inline">\(2\)</span> (que é obrigado a pegá-lo).</p></li>
+<li><p>O passageiro <span class="math inline">\(4\)</span> nunca fica nos assentos <span class="math inline">\(2\)</span> nem <span class="math inline">\(3\)</span>: ou o passageiro <span class="math inline">\(1\)</span> pegou o assento <span class="math inline">\(3\)</span>, ou aconteceu um dos casos acima e o assento <span class="math inline">\(3\)</span> ficou livre para o passageiro <span class="math inline">\(3\)</span> (que é obrigado a pegá-lo).</p></li>
+<li><p>O passageiro <span class="math inline">\(5\)</span> nunca fica nos assentos <span class="math inline">\(2\)</span> nem <span class="math inline">\(3\)</span> nem <span class="math inline">\(4\)</span>: ou o passageiro <span class="math inline">\(1\)</span> pegou o assento <span class="math inline">\(4\)</span>, ou aconteceu um dos casos acima e o assento <span class="math inline">\(4\)</span> ficou livre para o passageiro <span class="math inline">\(4\)</span> (que é obrigado a pegá-lo).</p></li>
+<li><p>etc.</p></li>
+<li><p>Seguindo o raciocínio, chegamos à conclusão de que o passageiro <span class="math inline">\(n\)</span> só pode ocupar o assento <span class="math inline">\(1\)</span> ou o assento <span class="math inline">\(n\)</span>.</p></li>
+</ul>
+</div>
+<div id="probabilidades" class="section level5 unnumbered">
+<h5>Probabilidades<a class="anchor" aria-label="anchor" href="#probabilidades"><i class="fas fa-link"></i></a>
+</h5>
+<ul>
+<li><p>Examinando exemplos com <span class="math inline">\(n \in \{3, 4, 5\}\)</span>, a probabilidade parece ser <span class="math inline">\(1/2\)</span>.</p></li>
+<li><p>Por quê?</p></li>
+<li>
+<p>O assento do passageiro <span class="math inline">\(n\)</span> depende da pergunta (no momento em que o passageiro <span class="math inline">\(n\)</span> vai se sentar)</p>
+<p><span class="hl">“O assento <span class="math inline">\(1\)</span> já foi tomado?”</span></p>
+<p>cuja resposta é oposta à da pergunta</p>
+<p><span class="hl">“O assento <span class="math inline">\(n\)</span> já foi tomado?”</span></p>
+</li>
+<li><p>Com que probabilidade a resposta a esta última pergunta é sim?</p></li>
+<li><p>Em todos os passos anteriores, <a href="problema-do-anivers%C3%A1rio-propriedades.html#possibilidades">como explicado acima em “possibilidades”</a>, os assentos <span class="math inline">\(1\)</span> e <span class="math inline">\(n\)</span> sempre estão disponíveis para qualquer passageiro que vá escolher um assento ao acaso.</p></li>
+<li><p>Como todos os assentos têm a mesma probabilidade de ser escolhidos, a probabilidade de o assento <span class="math inline">\(1\)</span> estar tomado é igual à probabilidade de o assento <span class="math inline">\(n\)</span> estar tomado.</p></li>
+<li><p>Logo, a probabilidade de o passageiro <span class="math inline">\(n\)</span> acabar no assento <span class="math inline">\(n\)</span> é <span class="math inline">\(1/2\)</span>.</p></li>
+</ul>
+</div>
 </div>
 <div id="section-9" class="section level4 unnumbered">
 <h4>62<a class="anchor" aria-label="anchor" href="#section-9"><i class="fas fa-link"></i></a>
@@ -96,6 +311,7 @@
 </div>
 </div>
 </div>
+
   <div class="chapter-nav">
 <div class="prev"><a href="hist%C3%B3rias-e-axiomas.html">02: Histórias e axiomas</a></div>
 <div class="next"><a href="probabilidade-condicional.html">04: Probabilidade condicional</a></div>
@@ -124,7 +340,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 06/02/2022)</p>
+    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 07/02/2022)</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

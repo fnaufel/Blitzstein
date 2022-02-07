@@ -17,10 +17,171 @@ embed_yt('LZ5Wergp_PA')
 
 #### 26 {-}
 
+::: {.rmdbox latex=1}
+
+Amostra [com reposição]{.hl} de tamanho $1000$ a partir de uma população de tamanho $1$ milhão. Cada pessoa tem a mesma probabilidade de ser escolhida.
+
+Qual a probabilidade de pelo menos uma pessoa ser escolhida mais de uma vez?
+
+:::
+
+Usando $N = 1.000.000$ e $n = 1.000$:
+
+$$
+\begin{aligned}
+P &= 1 - P(\text{ninguém escolhido mais de uma vez}) \\
+  &= 1 - \frac{\binom{N}{n} \cdot n!}{N^n} \\
+  &= 1 - \frac{N}{N} \cdot \frac{N - 1}{N} \cdot \frac{N - 2}{N} \cdot \cdots \cdot \frac{N - n + 1}{N}
+\end{aligned}
+$$
+
+Na verdade, esta é a mesma distribuição do problema dos aniversários, com $N$ dias e $n$ pessoas.
+
+Para $N$ grande e $n$ pequeno, a probabilidade $P$ de pelo menos uma pessoa ser escolhida mais de uma vez se aproxima de $0$:
+
+```{r}
+maximo <- 6
+N <- 10^maximo
+n <- 10^(maximo:0)
+
+tibble(
+  N = N,
+  n = n,
+  P = map2_dbl(n, N, ~pbirthday(.x, .y))
+) %>% 
+  kbl(
+    format.args = list(big.mark = '.')
+  ) %>% 
+  kable_paper(
+    c('striped', 'hover'),
+    full_width = FALSE
+  )
+```
+
+
 #### 27 {-}
+
+::: {.rmdbox latex=1}
+
+* Função de *hash* $h(x)$.
+
+* $k$ telefones armazenados em $n$ posições, todas com a mesma probabilidade.
+
+* Qual a probabilidade de colisão?
+
+:::
+
+De novo, `pbirthday(k, n)`.
+
 
 #### 57 {-}
 
+::: {.rmdbox latex=1}
+
+* Existem $10^{44}$ moléculas na atmosfera.
+
+* No seu último suspiro, César respirou $10^{22}$ delas ([sem]{.hl} reposição).
+
+* Você respira $10^{22}$ moléculas agora ([com]{.hl} reposição).
+
+* Qual a probabilidade de que pelo menos uma molécula sua tenha sido de César também?
+
+:::
+
+A resposta é $1 - P(\text{nenhuma molécula sua foi de César})$.
+
+Para calcular $P(\text{nenhuma molécula sua foi de César})$:
+
+* Todas as respiradas possíveis (com reposição, com ordem): $\left( 10^{44} \right)^{\left(10^{22} \right)}$.
+
+* Todas as respiradas sem moléculas de César (com reposição, com ordem): $\left( 10^{44} - 10^{22} \right)^{\left(10^{22} \right)}$.
+
+* Daí,
+
+  $$
+  \begin{aligned}
+  P(\text{nenhuma molécula sua foi de César}) 
+  &=
+  \frac{\left( 10^{44} - 10^{22} \right)^{\left(10^{22} \right)}}
+  {\left( 10^{44} \right)^{\left(10^{22} \right)}}
+  \\
+  &= 
+  \left( \frac{10^{44} - 10^{22}}{10^{44}} \right)^{(10^{22})}
+  \\
+  &=
+  \left( 1 - \frac{1}{10^{22}} \right)^{(10^{{22}})}
+  \\
+  &\approx e^{-1}
+  \end{aligned}
+  $$
+
+* Logo, a probabilidade procurada é aproximadamente
+
+  $$
+  1 - e^{-1} \approx `r 1 - exp(-1)`
+  $$
+
+* Formulação original em @paulos-1988-innum:
+
+    ```{r echo=FALSE, out.width='80%'}
+    knitr::include_graphics('images/caesar.png')
+    ```
+
+
 #### 61 {-}
+
+::: {.rmdbox latex=1}
+
+* $n$ passageiros para $n$ assentos.
+
+* Passageiro $k$ inicialmente alocado no assento $k$.
+
+* MAS Passageiro $1$ decide escolher assento ao acaso (cada assento com a mesma probabilidade).
+
+* Então, cada passageiro seguinte se senta no assento inicialmente alocado para ele, se disponível; caso contrário, escolhe um assento ao acaso.
+
+* Qual a probabilidade de que o último passageiro se sente no assento alocado para ele?
+
+:::
+
+##### Possibilidades {-}
+
+O último passageiro só pode se sentar no lugar $1$ ou no lugar $n$.
+
+Aliás, isto é um caso específico de um fenômeno mais geral, Qualquer que seja o valor de $n$:
+
+* O passageiro $3$ nunca fica no assento $2$: ou o passageiro $1$ pegou, ou ficou livre para o passageiro $2$ (que é obrigado a pegá-lo).
+
+* O passageiro $4$ nunca fica nos assentos $2$ nem $3$: ou o passageiro $1$ pegou o assento $3$, ou aconteceu um dos casos acima e o assento $3$ ficou livre para o passageiro $3$ (que é obrigado a pegá-lo).
+
+* O passageiro $5$ nunca fica nos assentos $2$ nem $3$ nem $4$: ou o passageiro $1$ pegou o assento $4$, ou aconteceu um dos casos acima e o assento $4$ ficou livre para o passageiro $4$ (que é obrigado a pegá-lo).
+
+* etc.
+
+* Seguindo o raciocínio, chegamos à conclusão de que o passageiro $n$ só pode ocupar o assento $1$ ou o assento $n$.
+
+
+##### Probabilidades {-}
+
+* Examinando exemplos com $n \in \{3, 4, 5\}$, a probabilidade parece ser $1/2$.
+
+* Por quê?
+
+* O assento do passageiro $n$ depende da pergunta (no momento em que o passageiro $n$ vai se sentar)
+
+  ["O assento $1$ já foi tomado?"]{.hl}
+  
+  cuja resposta é oposta à da pergunta 
+  
+  ["O assento $n$ já foi tomado?"]{.hl}
+
+* Com que probabilidade a resposta a esta última pergunta é sim?
+
+* Em todos os passos anteriores, [como explicado acima em "possibilidades"](#possibilidades), os assentos $1$ e $n$ sempre estão disponíveis para qualquer passageiro que vá escolher um assento ao acaso.
+
+* Como todos os assentos têm a mesma probabilidade de ser escolhidos, a probabilidade de o assento $1$ estar tomado é igual à probabilidade de o assento $n$ estar tomado.
+
+* Logo, a probabilidade de o passageiro $n$ acabar no assento $n$ é $1/2$.
+
 
 #### 62 {-}

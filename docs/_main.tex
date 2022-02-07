@@ -338,7 +338,7 @@
 
 \title{Introduction to Probability (Joe Blitzstein)}
 \author{Fernando Náufel}
-\date{(versão de 06/02/2022)}
+\date{(versão de 07/02/2022)}
 
 \begin{document}
 \maketitle
@@ -424,17 +424,17 @@
 \begin{Highlighting}[]
 \NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{365}\NormalTok{,}\DecValTok{23}\NormalTok{,}\AttributeTok{replace=}\ConstantTok{TRUE}\NormalTok{)}
 \FunctionTok{tabulate}\NormalTok{(b)}
-\DocumentationTok{\#\#   [1] 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1}
-\DocumentationTok{\#\#  [34] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0}
-\DocumentationTok{\#\# [133] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0}
-\DocumentationTok{\#\# [166] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [199] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0}
-\DocumentationTok{\#\# [265] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [298] 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [331] 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1}
+\DocumentationTok{\#\#   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\#  [34] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0}
+\DocumentationTok{\#\# [133] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0}
+\DocumentationTok{\#\# [166] 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [199] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 0}
+\DocumentationTok{\#\# [265] 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [298] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0}
+\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -442,9 +442,9 @@
 \begin{Highlighting}[]
 \FunctionTok{table}\NormalTok{(b)}
 \DocumentationTok{\#\# b}
-\DocumentationTok{\#\#  13  14  25  33  49  52  85 112 131 161 213 215 240 261 268 286 298 }
+\DocumentationTok{\#\#  35  79  83  85 121 128 148 158 161 171 176 187 221 239 241 251 254 }
 \DocumentationTok{\#\#   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1 }
-\DocumentationTok{\#\# 309 314 333 337 348 355 }
+\DocumentationTok{\#\# 260 271 329 340 341 353 }
 \DocumentationTok{\#\#   1   1   1   1   1   1}
 \end{Highlighting}
 \end{Shaded}
@@ -1023,17 +1023,217 @@ Para provar
 \subsubsection*{26}\label{section-5}}
 \addcontentsline{toc}{subsubsection}{26}
 
+\begin{rmdbox}
+Amostra {\hl{com reposição}} de tamanho $1000$ a partir de uma população de tamanho $1$ milhão. Cada pessoa tem a mesma probabilidade de ser escolhida.
+
+Qual a probabilidade de pelo menos uma pessoa ser escolhida mais de uma vez?
+
+\end{rmdbox}
+
+Usando $N = 1.000.000$ e $n = 1.000$:
+
+\[
+\begin{aligned}
+P &= 1 - P(\text{ninguém escolhido mais de uma vez}) \\
+  &= 1 - \frac{\binom{N}{n} \cdot n!}{N^n} \\
+  &= 1 - \frac{N}{N} \cdot \frac{N - 1}{N} \cdot \frac{N - 2}{N} \cdot \cdots \cdot \frac{N - n + 1}{N}
+\end{aligned}
+\]
+
+Na verdade, esta é a mesma distribuição do problema dos aniversários, com $N$ dias e $n$ pessoas.
+
+Para $N$ grande e $n$ pequeno, a probabilidade $P$ de pelo menos uma pessoa ser escolhida mais de uma vez se aproxima de $0$:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{maximo }\OtherTok{\textless{}{-}} \DecValTok{6}
+\NormalTok{N }\OtherTok{\textless{}{-}} \DecValTok{10}\SpecialCharTok{\^{}}\NormalTok{maximo}
+\NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{10}\SpecialCharTok{\^{}}\NormalTok{(maximo}\SpecialCharTok{:}\DecValTok{0}\NormalTok{)}
+
+\FunctionTok{tibble}\NormalTok{(}
+  \AttributeTok{N =}\NormalTok{ N,}
+  \AttributeTok{n =}\NormalTok{ n,}
+  \AttributeTok{P =} \FunctionTok{map2\_dbl}\NormalTok{(n, N, }\SpecialCharTok{\textasciitilde{}}\FunctionTok{pbirthday}\NormalTok{(.x, .y))}
+\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{kbl}\NormalTok{(}
+    \AttributeTok{format.args =} \FunctionTok{list}\NormalTok{(}\AttributeTok{big.mark =} \StringTok{\textquotesingle{}.\textquotesingle{}}\NormalTok{)}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{kable\_paper}\NormalTok{(}
+    \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}striped\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}hover\textquotesingle{}}\NormalTok{),}
+    \AttributeTok{full\_width =} \ConstantTok{FALSE}
+\NormalTok{  )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{table}
+\centering
+\begin{tabular}[t]{r|r|r}
+\hline
+N & n & P\\
+\hline
+1.000.000 & 1.000.000 & 1,0000000\\
+\hline
+1.000.000 & 100.000 & 1,0000000\\
+\hline
+1.000.000 & 10.000 & 1,0000000\\
+\hline
+1.000.000 & 1.000 & 0,3932670\\
+\hline
+1.000.000 & 100 & 0,0049379\\
+\hline
+1.000.000 & 10 & 0,0000450\\
+\hline
+1.000.000 & 1 & 0,0000000\\
+\hline
+\end{tabular}
+\end{table}
+
 \hypertarget{section-6}{%
 \subsubsection*{27}\label{section-6}}
 \addcontentsline{toc}{subsubsection}{27}
+
+\begin{rmdbox}
+
+\begin{itemize}
+\item
+  Função de \emph{hash} $h(x)$.
+\item
+  $k$ telefones armazenados em $n$ posições, todas com a mesma probabilidade.
+\item
+  Qual a probabilidade de colisão?
+\end{itemize}
+
+\end{rmdbox}
+
+De novo, \texttt{pbirthday(k,\ n)}.
 
 \hypertarget{section-7}{%
 \subsubsection*{57}\label{section-7}}
 \addcontentsline{toc}{subsubsection}{57}
 
+\begin{rmdbox}
+
+\begin{itemize}
+\item
+  Existem $10^{44}$ moléculas na atmosfera.
+\item
+  No seu último suspiro, César respirou $10^{22}$ delas ({\hl{sem}} reposição).
+\item
+  Você respira $10^{22}$ moléculas agora ({\hl{com}} reposição).
+\item
+  Qual a probabilidade de que pelo menos uma molécula sua tenha sido de César também?
+\end{itemize}
+
+\end{rmdbox}
+
+A resposta é $1 - P(\text{nenhuma molécula sua foi de César})$.
+
+Para calcular $P(\text{nenhuma molécula sua foi de César})$:
+
+\begin{itemize}
+\item
+  Todas as respiradas possíveis (com reposição, com ordem): $\left( 10^{44} \right)^{\left(10^{22} \right)}$.
+\item
+  Todas as respiradas sem moléculas de César (com reposição, com ordem): $\left( 10^{44} - 10^{22} \right)^{\left(10^{22} \right)}$.
+\item
+  Daí,
+
+  \[
+  \begin{aligned}
+  P(\text{nenhuma molécula sua foi de César}) 
+  &=
+  \frac{\left( 10^{44} - 10^{22} \right)^{\left(10^{22} \right)}}
+  {\left( 10^{44} \right)^{\left(10^{22} \right)}}
+  \\
+  &= 
+  \left( \frac{10^{44} - 10^{22}}{10^{44}} \right)^{(10^{22})}
+  \\
+  &=
+  \left( 1 - \frac{1}{10^{22}} \right)^{(10^{{22}})}
+  \\
+  &\approx e^{-1}
+  \end{aligned}
+  \]
+\item
+  Logo, a probabilidade procurada é aproximadamente
+
+  \[
+  1 - e^{-1} \approx 0{,}63
+  \]
+\item
+  Formulação original em PAULOS (\protect\hyperlink{ref-paulos-1988-innum}{1988}):
+
+  \begin{center}\includegraphics[width=0.8\linewidth]{images/caesar} \end{center}
+\end{itemize}
+
 \hypertarget{section-8}{%
 \subsubsection*{61}\label{section-8}}
 \addcontentsline{toc}{subsubsection}{61}
+
+\begin{rmdbox}
+
+\begin{itemize}
+\item
+  $n$ passageiros para $n$ assentos.
+\item
+  Passageiro $k$ inicialmente alocado no assento $k$.
+\item
+  MAS Passageiro $1$ decide escolher assento ao acaso (cada assento com a mesma probabilidade).
+\item
+  Então, cada passageiro seguinte se senta no assento inicialmente alocado para ele, se disponível; caso contrário, escolhe um assento ao acaso.
+\item
+  Qual a probabilidade de que o último passageiro se sente no assento alocado para ele?
+\end{itemize}
+
+\end{rmdbox}
+
+\hypertarget{possibilidades}{%
+\paragraph*{Possibilidades}\label{possibilidades}}
+\addcontentsline{toc}{paragraph}{Possibilidades}
+
+O último passageiro só pode se sentar no lugar $1$ ou no lugar $n$.
+
+Aliás, isto é um caso específico de um fenômeno mais geral, Qualquer que seja o valor de $n$:
+
+\begin{itemize}
+\item
+  O passageiro $3$ nunca fica no assento $2$: ou o passageiro $1$ pegou, ou ficou livre para o passageiro $2$ (que é obrigado a pegá-lo).
+\item
+  O passageiro $4$ nunca fica nos assentos $2$ nem $3$: ou o passageiro $1$ pegou o assento $3$, ou aconteceu um dos casos acima e o assento $3$ ficou livre para o passageiro $3$ (que é obrigado a pegá-lo).
+\item
+  O passageiro $5$ nunca fica nos assentos $2$ nem $3$ nem $4$: ou o passageiro $1$ pegou o assento $4$, ou aconteceu um dos casos acima e o assento $4$ ficou livre para o passageiro $4$ (que é obrigado a pegá-lo).
+\item
+  etc.
+\item
+  Seguindo o raciocínio, chegamos à conclusão de que o passageiro $n$ só pode ocupar o assento $1$ ou o assento $n$.
+\end{itemize}
+
+\hypertarget{probabilidades}{%
+\paragraph*{Probabilidades}\label{probabilidades}}
+\addcontentsline{toc}{paragraph}{Probabilidades}
+
+\begin{itemize}
+\item
+  Examinando exemplos com $n \in \{3, 4, 5\}$, a probabilidade parece ser $1/2$.
+\item
+  Por quê?
+\item
+  O assento do passageiro $n$ depende da pergunta (no momento em que o passageiro $n$ vai se sentar)
+
+  {\hl{``O assento $1$ já foi tomado?''}}
+
+  cuja resposta é oposta à da pergunta
+
+  {\hl{``O assento $n$ já foi tomado?''}}
+\item
+  Com que probabilidade a resposta a esta última pergunta é sim?
+\item
+  Em todos os passos anteriores, \protect\hyperlink{possibilidades}{como explicado acima em ``possibilidades''}, os assentos $1$ e $n$ sempre estão disponíveis para qualquer passageiro que vá escolher um assento ao acaso.
+\item
+  Como todos os assentos têm a mesma probabilidade de ser escolhidos, a probabilidade de o assento $1$ estar tomado é igual à probabilidade de o assento $n$ estar tomado.
+\item
+  Logo, a probabilidade de o passageiro $n$ acabar no assento $n$ é $1/2$.
+\end{itemize}
 
 \hypertarget{section-9}{%
 \subsubsection*{62}\label{section-9}}
@@ -1141,6 +1341,9 @@ DEVLIN, K. \href{https://doi.org/10.5951/mt.103.8.0579}{The {P}ascal-{F}ermat Co
 
 \leavevmode\vadjust pre{\hypertarget{ref-oliveira-2004-analis}{}}%
 OLIVEIRA MORGADO, A. C. DE et al. \textbf{An{á}lise combinat{ó}ria e probabilidade}. Rio de Janeiro: Impa / Vitae, 2004.
+
+\leavevmode\vadjust pre{\hypertarget{ref-paulos-1988-innum}{}}%
+PAULOS, J. A. \textbf{\href{http://gen.lib.rus.ec/book/index.php?md5=20A842C0E7EB7F8992EDDA0082E9B76F}{Innumeracy: Mathematical Illiteracy and Its Consequences}}. 1. ed. New York: Hill; Wang, 1988.
 
 \end{CSLReferences}
 
