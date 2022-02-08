@@ -1,0 +1,335 @@
+---
+title: 'Assentos'
+author: 'fnaufel'
+email: 'https://fnaufel.github.io/'
+date: '(v. `r format(Sys.Date(), "%d/%m/%Y")`)'
+lang: 'pt-br'
+
+output: fnaufelRmd::html_report
+  # To install these output formats, run
+  #   install.packages("devtools")
+  #   devtools::install_github("fnaufel/fnaufelRmd")
+  
+
+---
+
+```{r setup, include=FALSE}
+# The next command configures MANY things and loads quite a few packages.
+# 
+# If you want to see what's being done, execute 
+# 
+#   cat(
+#     system.file(
+#       "rmarkdown/resources/R/_common_report.R", 
+#       package = "fnaufelRmd"
+#     )
+#   )
+# 
+# to find out the location of the file. Then open the file.
+# 
+# If you want to change the configuration, copy the file, edit it, and
+# source it instead of the package file. 
+# 
+# Or simply write your commands here in this code chunk.
+
+source(
+  system.file(
+    "rmarkdown/resources/R/_common_report.R",
+    package = "fnaufelRmd"
+  )
+)
+```
+
+
+# Gerar e testar, usando `RcppAlgos`
+
+Gerar e testar é ineficiente: das $n!$ sequências possíveis, apenas $2^{n-1}$ passam no teste:
+
+```{r echo=FALSE}
+tibble(
+  n = 3:10,
+  total = factorial(n),
+  passam = 2^(n-1),
+  percentual = 100 * passam / total
+) %>% 
+  kbl(
+    digits = 2,
+    format.args = list(big.mark = '.')
+  ) %>% 
+  kable_paper(
+    c('striped', 'hover'),
+    full_width = FALSE
+  )
+```
+
+```{r}
+library(RcppAlgos)
+```
+
+```{r}
+# Testar se a sequência é boa:
+#
+# * O passageiro $3$ nunca fica no assento $2$: ou o passageiro $1$ pegou, ou
+# ficou livre para o passageiro $2$ (que é obrigado a pegá-lo).
+#
+# * O passageiro $4$ nunca fica nos assentos $2$ nem $3$: ou o passageiro $1$
+# pegou o assento $3$, ou aconteceu um dos casos acima e o assento $3$ ficou
+# livre para o passageiro $3$ (que é obrigado a pegá-lo).
+#
+# * O passageiro $5$ nunca fica nos assentos $2$ nem $3$ nem $4$: ou o
+# passageiro $1$ pegou o assento $4$, ou aconteceu um dos casos acima e o
+# assento $4$ ficou livre para o passageiro $4$ (que é obrigado a pegá-lo).
+#
+# * etc.
+#
+# Estas condições são necessárias e suficientes.
+# 
+good <- function(s) {
+  
+  n <- length(s)
+  
+  for (i in 3:n) {
+    
+    for (j in 2:(i - 1)) {
+      
+      if (s[j] == i)
+        return(FALSE)
+      
+    }
+    
+  }
+  
+  TRUE
+  
+}
+
+# Passageiro n está no lugar n?
+testar_ultimo_n <- function(s) {
+  
+  s[length(s)] == length(s)
+  
+}
+
+# Gerar todas as sequências possíveis
+gerar_tibble <- function(n) {
+
+  iter <- permuteIter(n)
+  seqs <- vector('list', 2^(n-1))
+  
+  i <- 0
+  while (iter$summary()$totalRemaining > 0) {
+    
+    s <- iter$nextIter()
+    
+    if (good(s)) {
+      i <- i + 1
+      seqs[[i]] <- list(s)
+    }
+    
+  }
+  
+  seqs %>% 
+    map_dfr(~ list(seq = .x)) %>% 
+    mutate(
+      seq_str = map_chr(seq, ~str_c(.x, collapse = ', ')), 
+      ultimo_n = map_lgl(seq, ~testar_ultimo_n(.x))
+    )
+  
+}
+
+# Calcular proporção de sequências onde passageiro n está no lugar n
+calcular_p <- function(tib) {
+
+  tib %>% 
+    summarize(p = sum(ultimo_n) / nrow(.)) %>% 
+    pull(p)
+  
+}
+```
+
+Para $n = 5$:
+
+```{r}
+seqs <- gerar_tibble(5)
+seqs
+```
+
+A probabilidade procurada:
+
+```{r}
+seqs %>% 
+  calcular_p()
+```
+
+
+# Gerar recursivamente, sem alocação prévia
+
+::: {.rmdimportant latex=1}
+
+Um *insight*: dada todas as sequências boas de $n - 1$ passageiros, podemos gerar todas as sequências boas de $n$ passageiros do seguinte modo:
+
+1. Colocando o passageiro $n$ no final de cada sequência, e
+
+1. Colocando o passageiro $n$ no início de cada sequência.
+
+De fato, a quantidade de sequências de $n$ passageiros é o dobro da quantidade de sequências de $n - 1$ passageiros.
+
+:::
+
+```{r}
+gerar_tibble_rec <- function(n) {
+  
+  # Para n = 2
+  l2 <- list(
+    c(1, 2),
+    c(2, 1)
+  )
+  
+  gerar_tibble_rec2(l2, 3, n) %>% 
+    map_dfr(~ list(seq = list(.x))) %>%
+    mutate(
+      seq_str = map_chr(seq, ~str_c(.x, collapse = ', ')),
+      ultimo_n = map_lgl(seq, ~testar_ultimo_n(.x))
+    )
+  
+}
+
+gerar_tibble_rec2 <- function(l, i, n) {
+  
+  # l = lista até agora
+  # i = número do novo passageiro (nesta chamada)
+  # n = número total de passageiros
+  
+  if (i > n) {
+    l
+  } else {
+
+    # Acrescentar i no final de cada sequência   
+    l1 <- l %>% 
+      map(~append(., i, after = i - 1))
+    
+    # Acrescentar i no início de cada sequência
+    l2 <- l %>%
+      map(~append(., i, after = 0))
+    
+    # Próximo i
+    gerar_tibble_rec2(
+      c(l1, l2),
+      i + 1,
+      n
+    )
+    
+  }
+  
+}
+```
+
+```{r}
+seqs <- gerar_tibble_rec(5)
+seqs
+```
+
+
+# Comparação: gerar e testar vs. recursiva
+
+```{r}
+library(microbenchmark)
+```
+
+```{r}
+n <- 5
+mbm <- microbenchmark(
+  'iter' = {gerar_tibble(n)},
+  'rec' = {gerar_tibble_rec(n)}
+) 
+
+mbm %>% autoplot()
+print(mbm)
+```
+
+
+# Gerar recursivamente, com alocação prévia
+
+Na versão recursiva acima, apenas os ponteiros da lista são alocados previamente. Os vetores com as sequências são alocados durante as chamadas recursivas.
+
+Tentei evitar isto e alocar o máximo de memória previamente, mas a semântica *copy-on-modify* de R dificulta bastante.
+
+```{r}
+gerar_tibble_rec_aloc <- function(n) {
+  
+  # Alocar lista para o resultado
+  retval <- vector('list', 2^(n - 1))
+  
+  # Sequências possíveis para n = 2
+  retval[[1]] <- c(1, 2, rep(NA_integer_, n - 2))
+  retval[[2]] <- c(2, 1, rep(NA_integer_, n - 2))
+  
+  for (i in 3:length(retval)) {
+    
+    # Vetores diferentes, para tentar burlar compartilhamento de memória
+    retval[[i]] <- i * 1:n
+    
+  }
+  
+  gerar_tibble_rec2_aloc(retval, 3, n) %>% 
+    map_dfr(~ list(seq = list(.x))) %>%
+    mutate(
+      seq_str = map_chr(seq, ~str_c(.x, collapse = ', ')),
+      ultimo_n = map_lgl(seq, ~testar_ultimo_n(.x))
+    )
+  
+}
+
+gerar_tibble_rec2_aloc <- function(retval, i, n) {
+  
+  # Nada a fazer
+  if (i > n) {
+    retval
+  } else {
+    
+    # Última posição ocupada em retval
+    fim <- 2^(i-2)
+    
+    # Bloco já preenchido
+    l <- retval[1:fim]
+
+    # Adicionar i no final
+    retval[1:fim] <- l %>% 
+      map(~`[<-`(., i, i))
+    
+    # Adicionar i no início (aqui vai haver alocação dinâmica...)
+    retval[(fim + 1):(2 * fim)] <- l %>%
+      map(~c(i, .[1:(n-1)]))
+    
+    gerar_tibble_rec2_aloc(
+      retval,
+      i + 1,
+      n
+    )
+    
+  }
+  
+}
+```
+
+```{r}
+seqs <- gerar_tibble_rec_aloc(5)
+seqs
+```
+
+
+# Comparação: gerar e testar vs. recursiva 1 vs. recursiva 2
+
+```{r}
+n <- 5
+mbm <- microbenchmark(
+  'iter' = {gerar_tibble(n)},
+  'rec' = {gerar_tibble_rec(n)},
+  'rec_aloc' = {gerar_tibble_rec_aloc(n)}
+) 
+
+mbm %>% autoplot()
+print(mbm)
+```
+
+A tentativa de alocar os vetores previamente não causou muita diferença em comparação com a outra versão recursiva.
