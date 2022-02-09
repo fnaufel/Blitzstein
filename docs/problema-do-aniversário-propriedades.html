@@ -306,7 +306,108 @@ P(\text{nenhuma molécula sua foi de César})
 <div id="section-9" class="section level4 unnumbered">
 <h4>62<a class="anchor" aria-label="anchor" href="#section-9"><i class="fas fa-link"></i></a>
 </h4>
-
+<div class="rmdbox">
+<p><strong>Problema do aniversário com probabilidades diferentes:</strong></p>
+<ul>
+<li><p>Seja <span class="math inline">\(\vec p = (p_1, p_2, \ldots, p_{365})\)</span> o vetor das probabilidades de alguém nascer em algum dos dias do ano.</p></li>
+<li>
+<p>Seja</p>
+<p><span class="math display">\[
+e_k(x_1, \ldots, x_n) =
+\sum_{1 \leq j_1 &lt; j_2 &lt; \cdots &lt; j_k \leq n}
+\!\!\!\!\!\!\!\!\!\!\!\!\!\! x_{j_1} \ldots x_{j_k}
+\]</span></p>
+<p>o <span class="math inline">\(k\)</span>-ésimo polinômio simétrico elementar sobre as variáveis <span class="math inline">\(x_1, \ldots, x_n\)</span>.</p>
+<p>Por exemplo,
+<span class="math display">\[
+\begin{aligned}
+  e_1(x_1, x_2, x_3) &amp;= x_1 + x_2 + x_3 \\
+  e_2(x_1, x_2, x_3) &amp;= x_1x_2 + x_1x_3 + x_2x_3 \\
+  e_3(x_1, x_2, x_3) &amp;= x_1x_2x_3 \\
+\end{aligned}
+\]</span></p>
+</li>
+</ul>
+<ol style="list-style-type: lower-alpha">
+<li><p>Seja <span class="math inline">\(k \geq 2\)</span>. Qual a probabilidade de pelo menos uma coincidência de aniversários em termos de <span class="math inline">\(\vec p\)</span> e de um polinômio simétrico elementar?</p></li>
+<li><p>Quando <span class="math inline">\(p_j = 1/365\)</span> para todo <span class="math inline">\(j\)</span>, esta probabilidade é mínima.</p></li>
+<li>
+<p>Considere a desigualdade</p>
+<p><span class="math display">\[
+\frac{x + y}{2} \geq \sqrt{xy}
+\]</span></p>
+<p>que vem do raciocínio</p>
+<p><span class="math display">\[
+\begin{aligned}
+  (x + y)^2 - 4xy = (x - y)^2 \geq 0
+  \implies &amp;
+  (x + y)^2 - 4xy \geq 0
+  \\
+  \implies &amp;
+  (x + y)^2 \geq 4xy
+  \\
+  \implies &amp;
+  \frac{(x + y)^2}{4} \geq xy
+  \\
+  \implies &amp;
+  \frac{x + y}{2} \geq \sqrt{xy}
+\end{aligned}
+\]</span></p>
+<p>Defina <span class="math inline">\(\vec r = (r_1, \ldots, r_{365})\)</span> tal que</p>
+<ul>
+<li><p><span class="math inline">\(r_1 = r_2 = (p_1 + p_2)/2\)</span>,</p></li>
+<li><p><span class="math inline">\(r_j = p_j\)</span> para <span class="math inline">\(3 \leq j \leq 365\)</span>.</p></li>
+</ul>
+<p>Verifique que
+<span class="math display">\[\begin{multline*}
+  e_k(x_1, \ldots, x_n) = \\
+  x_1 x_2 e_{k-2}(x_3, \ldots x_n) \;+\;
+  (x_1 + x_2) e_{k-1}(x_3, \ldots x_n) \;+\;
+  e_{k}(x_3, \ldots x_n)
+\end{multline*}\]</span>
+e use a desigualdade para mostrar que, quando <span class="math inline">\(\vec p \neq \vec r\)</span>,</p>
+<p><span class="math display">\[
+P( \text{coincidência} \mid \vec p)
+&gt;
+P( \text{coincidência} \mid \vec r)
+\]</span></p>
+</li>
+</ol>
+</div>
+<ol style="list-style-type: lower-alpha">
+<li>
+<p>A probabilidade de <span class="hl">não haver coincidência</span> é a soma das probabilidades de todos os eventos da forma</p>
+<div class="rmdbox">
+<p>As pessoas <span class="math inline">\(1, 2, \ldots k\)</span> nasceram em dias diferentes <span class="math inline">\(j_1, j_2, \ldots, j_k\)</span>.</p>
+</div>
+<p>Por exemplo, para <span class="math inline">\(k = 3\)</span>, a soma será</p>
+<p><span class="math display">\[
+3! \cdot (p_1 p_2 p_3 + p_1 p_2 p_4 + \cdots + p_{363} p_{364} p_{365})
+\]</span></p>
+<p>Isto é igual a</p>
+<p><span class="math display">\[
+k! \cdot e_k(\vec p)
+\]</span></p>
+<p>A probabilidade de pelo menos uma coincidência é</p>
+<p><span class="math display">\[
+1 - k! \cdot e_k(\vec p)
+\]</span></p>
+</li>
+<li>
+<p>No caso em que <span class="math inline">\(p_j = p = 1/365\)</span> para todo <span class="math inline">\(j\)</span>, temos</p>
+<p><span class="math display">\[
+\begin{aligned}
+  1 - k! \cdot e_k(\vec p)
+  &amp;=
+  1 - k! \cdot \binom{365}{k} \cdot p^k \\
+  &amp;=
+  1 - \frac{365 \cdot 364 \cdot \cdots \cdot (365 - k + 1)}{365^k}
+\end{aligned}
+\]</span></p>
+<p>Neste caso, o valor de <span class="math inline">\(e_k(\vec p)\)</span> é máximo.</p>
+</li>
+<li><p>???</p></li>
+</ol>
 </div>
 </div>
 </div>
@@ -340,7 +441,7 @@ P(\text{nenhuma molécula sua foi de César})
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 07/02/2022)</p>
+    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 09/02/2022)</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

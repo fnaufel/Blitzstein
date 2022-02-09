@@ -130,11 +130,11 @@ a_0, a_1, a_2, \dots, a_n
 \]</span></p>
 </li>
 <li><p>Como a ordem <span class="hl">dentro de cada grupo</span> não importa, vamos escolher primeiro um elemento para ser o de <span class="hl">menor índice do grupo</span> e escolher os restantes <span class="math inline">\(k\)</span> elementos dentre os elementos de índice maior do que o primeiro.</p></li>
-<li><p>Se escolhermos <span class="math inline">\(a_0\)</span> como o de menor índice, temos <span class="math inline">\(n \choose k\)</span> modos de escolher os restantes.</p></li>
-<li><p>Se escolhermos <span class="math inline">\(a_1\)</span> como o de menor índice, temos <span class="math inline">\(n - 1 \choose k\)</span> modos de escolher os restantes.</p></li>
+<li><p>Se escolhermos <span class="math inline">\(a_0\)</span> como o de menor índice, temos <span class="math inline">\(\binom{n}{k}\)</span> modos de escolher os restantes.</p></li>
+<li><p>Se escolhermos <span class="math inline">\(a_1\)</span> como o de menor índice, temos <span class="math inline">\(\binom{n - 1}{k}\)</span> modos de escolher os restantes.</p></li>
 <li><p><span class="math inline">\(\dots\)</span></p></li>
-<li><p>Se escolhermos <span class="math inline">\(a_{n - (k+1)}\)</span> como o de menor índice, temos <span class="math inline">\(k + 1 \choose k\)</span> modos de escolher os restantes.</p></li>
-<li><p>Se escolhermos <span class="math inline">\(a_{n - k}\)</span> como o de menor índice, temos <span class="math inline">\(k \choose k\)</span> modos de escolher os restantes.</p></li>
+<li><p>Se escolhermos <span class="math inline">\(a_{n - (k+1)}\)</span> como o de menor índice, temos <span class="math inline">\(\binom{k + 1}{k}\)</span> modos de escolher os restantes.</p></li>
+<li><p>Se escolhermos <span class="math inline">\(a_{n - k}\)</span> como o de menor índice, temos <span class="math inline">\(\binom{k}{k}\)</span> modos de escolher os restantes.</p></li>
 </ul>
 <div class="rmdbox">
 <ol start="2" style="list-style-type: lower-alpha">
@@ -377,7 +377,7 @@ a_0, a_1, a_2, \dots, a_n
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 07/02/2022)</p>
+    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 09/02/2022)</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

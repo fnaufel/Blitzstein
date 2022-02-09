@@ -185,3 +185,122 @@ Aliás, isto é um caso específico de um fenômeno mais geral, Qualquer que sej
 
 
 #### 62 {-}
+
+::: {.rmdbox latex=1}
+
+**Problema do aniversário com probabilidades diferentes:**
+
+* Seja $\vec p = (p_1, p_2, \ldots, p_{365})$ o vetor das probabilidades de alguém nascer em algum dos dias do ano.
+
+* Seja 
+
+  $$
+  e_k(x_1, \ldots, x_n) = 
+  \sum_{1 \leq j_1 < j_2 < \cdots < j_k \leq n}
+  \!\!\!\!\!\!\!\!\!\!\!\!\!\! x_{j_1} \ldots x_{j_k}
+  $$
+
+  o $k$-ésimo polinômio simétrico elementar sobre as variáveis $x_1, \ldots, x_n$.
+  
+  Por exemplo,
+  $$
+  \begin{aligned}
+    e_1(x_1, x_2, x_3) &= x_1 + x_2 + x_3 \\
+    e_2(x_1, x_2, x_3) &= x_1x_2 + x_1x_3 + x_2x_3 \\
+    e_3(x_1, x_2, x_3) &= x_1x_2x_3 \\
+  \end{aligned}
+  $$
+
+a. Seja $k \geq 2$. Qual a probabilidade de pelo menos uma coincidência de aniversários em termos de $\vec p$ e de um polinômio simétrico elementar?
+
+b. Quando $p_j = 1/365$ para todo $j$, esta probabilidade é mínima.
+
+c. Considere a desigualdade
+
+   $$
+   \frac{x + y}{2} \geq \sqrt{xy}
+   $$
+
+   que vem do raciocínio
+   
+   $$
+   \begin{aligned}
+     (x + y)^2 - 4xy = (x - y)^2 \geq 0
+     \implies &
+     (x + y)^2 - 4xy \geq 0
+     \\
+     \implies &
+     (x + y)^2 \geq 4xy
+     \\
+     \implies &
+     \frac{(x + y)^2}{4} \geq xy
+     \\
+     \implies &
+     \frac{x + y}{2} \geq \sqrt{xy}
+   \end{aligned}
+   $$
+
+   Defina $\vec r = (r_1, \ldots, r_{365})$ tal que 
+   
+   * $r_1 = r_2 = (p_1 + p_2)/2$,
+   
+   * $r_j = p_j$ para $3 \leq j \leq 365$.
+   
+   Verifique que
+   \begin{multline*}
+     e_k(x_1, \ldots, x_n) = \\
+     x_1 x_2 e_{k-2}(x_3, \ldots x_n) \;+\;
+     (x_1 + x_2) e_{k-1}(x_3, \ldots x_n) \;+\;
+     e_{k}(x_3, \ldots x_n)
+   \end{multline*}
+   e use a desigualdade para mostrar que, quando $\vec p \neq \vec r$,
+   
+   $$
+   P( \text{coincidência} \mid \vec p) 
+   >
+   P( \text{coincidência} \mid \vec r)
+   $$
+
+:::
+
+a. A probabilidade de [não haver coincidência]{.hl} é a soma das probabilidades de todos os eventos da forma
+
+   ::: {.rmdbox latex=1}
+   
+   As pessoas $1, 2, \ldots k$ nasceram em dias diferentes $j_1, j_2, \ldots, j_k$.
+   
+   :::
+   
+   Por exemplo, para $k = 3$, a soma será
+   
+   $$
+   3! \cdot (p_1 p_2 p_3 + p_1 p_2 p_4 + \cdots + p_{363} p_{364} p_{365})
+   $$
+   
+   Isto é igual a 
+   
+   $$
+   k! \cdot e_k(\vec p)
+   $$
+   
+   A probabilidade de pelo menos uma coincidência é
+
+   $$
+   1 - k! \cdot e_k(\vec p)
+   $$
+
+b. No caso em que $p_j = p = 1/365$ para todo $j$, temos
+
+   $$
+   \begin{aligned}
+     1 - k! \cdot e_k(\vec p) 
+     &=
+     1 - k! \cdot \binom{365}{k} \cdot p^k \\
+     &=
+     1 - \frac{365 \cdot 364 \cdot \cdots \cdot (365 - k + 1)}{365^k}
+   \end{aligned}
+   $$
+   
+   Neste caso, o valor de $e_k(\vec p)$ é máximo.
+   
+c. ???

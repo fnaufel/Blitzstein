@@ -70,15 +70,15 @@ $$
   
 * Como a ordem [dentro de cada grupo]{.hl} não importa, vamos escolher primeiro um elemento para ser o de [menor índice do grupo]{.hl} e escolher os restantes $k$ elementos dentre os elementos de índice maior do que o primeiro.
 
-* Se escolhermos $a_0$ como o de menor índice, temos $n \choose k$ modos de escolher os restantes.
+* Se escolhermos $a_0$ como o de menor índice, temos $\binom{n}{k}$ modos de escolher os restantes.
 
-* Se escolhermos $a_1$ como o de menor índice, temos $n - 1 \choose k$ modos de escolher os restantes.
+* Se escolhermos $a_1$ como o de menor índice, temos $\binom{n - 1}{k}$ modos de escolher os restantes.
 
 * $\dots$
 
-* Se escolhermos $a_{n - (k+1)}$ como o de menor índice, temos $k + 1 \choose k$ modos de escolher os restantes.
+* Se escolhermos $a_{n - (k+1)}$ como o de menor índice, temos $\binom{k + 1}{k}$ modos de escolher os restantes.
 
-* Se escolhermos $a_{n - k}$ como o de menor índice, temos $k \choose k$ modos de escolher os restantes.
+* Se escolhermos $a_{n - k}$ como o de menor índice, temos $\binom{k}{k}$ modos de escolher os restantes.
 
 ::: {.rmdbox latex=1}
 

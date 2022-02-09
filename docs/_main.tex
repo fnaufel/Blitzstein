@@ -338,7 +338,7 @@
 
 \title{Introduction to Probability (Joe Blitzstein)}
 \author{Fernando Náufel}
-\date{(versão de 07/02/2022)}
+\date{(versão de 09/02/2022)}
 
 \begin{document}
 \maketitle
@@ -424,17 +424,18 @@
 \begin{Highlighting}[]
 \NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{365}\NormalTok{,}\DecValTok{23}\NormalTok{,}\AttributeTok{replace=}\ConstantTok{TRUE}\NormalTok{)}
 \FunctionTok{tabulate}\NormalTok{(b)}
-\DocumentationTok{\#\#   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\#  [34] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0}
-\DocumentationTok{\#\# [133] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0}
-\DocumentationTok{\#\# [166] 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [199] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 0}
-\DocumentationTok{\#\# [265] 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [298] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0}
-\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1}
+\DocumentationTok{\#\#   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0}
+\DocumentationTok{\#\#  [34] 0 1 0 2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0}
+\DocumentationTok{\#\#  [67] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0}
+\DocumentationTok{\#\# [133] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0}
+\DocumentationTok{\#\# [166] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0}
+\DocumentationTok{\#\# [199] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [265] 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0}
+\DocumentationTok{\#\# [298] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [364] 0 1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -442,10 +443,10 @@
 \begin{Highlighting}[]
 \FunctionTok{table}\NormalTok{(b)}
 \DocumentationTok{\#\# b}
-\DocumentationTok{\#\#  35  79  83  85 121 128 148 158 161 171 176 187 221 239 241 251 254 }
-\DocumentationTok{\#\#   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1 }
-\DocumentationTok{\#\# 260 271 329 340 341 353 }
-\DocumentationTok{\#\#   1   1   1   1   1   1}
+\DocumentationTok{\#\#  32  35  37  38  60  61  70 126 156 161 169 186 197 200 276 284 292 }
+\DocumentationTok{\#\#   1   1   2   1   1   1   1   1   1   1   1   1   1   1   1   1   1 }
+\DocumentationTok{\#\# 293 300 321 350 365 }
+\DocumentationTok{\#\#   1   1   1   1   1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -721,15 +722,15 @@ How many different $10$-card hands can be dealt from the superdeck? The order of
 \item
   Como a ordem {\hl{dentro de cada grupo}} não importa, vamos escolher primeiro um elemento para ser o de {\hl{menor índice do grupo}} e escolher os restantes $k$ elementos dentre os elementos de índice maior do que o primeiro.
 \item
-  Se escolhermos $a_0$ como o de menor índice, temos $n \choose k$ modos de escolher os restantes.
+  Se escolhermos $a_0$ como o de menor índice, temos $\binom{n}{k}$ modos de escolher os restantes.
 \item
-  Se escolhermos $a_1$ como o de menor índice, temos $n - 1 \choose k$ modos de escolher os restantes.
+  Se escolhermos $a_1$ como o de menor índice, temos $\binom{n - 1}{k}$ modos de escolher os restantes.
 \item
   $\dots$
 \item
-  Se escolhermos $a_{n - (k+1)}$ como o de menor índice, temos $k + 1 \choose k$ modos de escolher os restantes.
+  Se escolhermos $a_{n - (k+1)}$ como o de menor índice, temos $\binom{k + 1}{k}$ modos de escolher os restantes.
 \item
-  Se escolhermos $a_{n - k}$ como o de menor índice, temos $k \choose k$ modos de escolher os restantes.
+  Se escolhermos $a_{n - k}$ como o de menor índice, temos $\binom{k}{k}$ modos de escolher os restantes.
 \end{itemize}
 
 \begin{rmdbox}
@@ -1238,6 +1239,138 @@ Aliás, isto é um caso específico de um fenômeno mais geral, Qualquer que sej
 \hypertarget{section-9}{%
 \subsubsection*{62}\label{section-9}}
 \addcontentsline{toc}{subsubsection}{62}
+
+\begin{rmdbox}
+
+\textbf{Problema do aniversário com probabilidades diferentes:}
+
+\begin{itemize}
+\item
+  Seja $\vec p = (p_1, p_2, \ldots, p_{365})$ o vetor das probabilidades de alguém nascer em algum dos dias do ano.
+\item
+  Seja
+
+  \[
+  e_k(x_1, \ldots, x_n) = 
+  \sum_{1 \leq j_1 < j_2 < \cdots < j_k \leq n}
+  \!\!\!\!\!\!\!\!\!\!\!\!\!\! x_{j_1} \ldots x_{j_k}
+  \]
+
+  o $k$-ésimo polinômio simétrico elementar sobre as variáveis $x_1, \ldots, x_n$.
+
+  Por exemplo,
+  \[
+  \begin{aligned}
+    e_1(x_1, x_2, x_3) &= x_1 + x_2 + x_3 \\
+    e_2(x_1, x_2, x_3) &= x_1x_2 + x_1x_3 + x_2x_3 \\
+    e_3(x_1, x_2, x_3) &= x_1x_2x_3 \\
+  \end{aligned}
+  \]
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Seja $k \geq 2$. Qual a probabilidade de pelo menos uma coincidência de aniversários em termos de $\vec p$ e de um polinômio simétrico elementar?
+\item
+  Quando $p_j = 1/365$ para todo $j$, esta probabilidade é mínima.
+\item
+  Considere a desigualdade
+
+  \[
+  \frac{x + y}{2} \geq \sqrt{xy}
+  \]
+
+  que vem do raciocínio
+
+  \[
+  \begin{aligned}
+    (x + y)^2 - 4xy = (x - y)^2 \geq 0
+    \implies &
+    (x + y)^2 - 4xy \geq 0
+    \\
+    \implies &
+    (x + y)^2 \geq 4xy
+    \\
+    \implies &
+    \frac{(x + y)^2}{4} \geq xy
+    \\
+    \implies &
+    \frac{x + y}{2} \geq \sqrt{xy}
+  \end{aligned}
+  \]
+
+  Defina $\vec r = (r_1, \ldots, r_{365})$ tal que
+
+  \begin{itemize}
+  \item
+    $r_1 = r_2 = (p_1 + p_2)/2$,
+  \item
+    $r_j = p_j$ para $3 \leq j \leq 365$.
+  \end{itemize}
+
+  Verifique que
+  \begin{multline*}
+    e_k(x_1, \ldots, x_n) = \\
+    x_1 x_2 e_{k-2}(x_3, \ldots x_n) \;+\;
+    (x_1 + x_2) e_{k-1}(x_3, \ldots x_n) \;+\;
+    e_{k}(x_3, \ldots x_n)
+  \end{multline*}
+  e use a desigualdade para mostrar que, quando $\vec p \neq \vec r$,
+
+  \[
+  P( \text{coincidência} \mid \vec p) 
+  >
+  P( \text{coincidência} \mid \vec r)
+  \]
+\end{enumerate}
+
+\end{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  A probabilidade de {\hl{não haver coincidência}} é a soma das probabilidades de todos os eventos da forma
+
+  \begin{rmdbox}
+  As pessoas $1, 2, \ldots k$ nasceram em dias diferentes $j_1, j_2, \ldots, j_k$.
+
+  \end{rmdbox}
+
+  Por exemplo, para $k = 3$, a soma será
+
+  \[
+  3! \cdot (p_1 p_2 p_3 + p_1 p_2 p_4 + \cdots + p_{363} p_{364} p_{365})
+  \]
+
+  Isto é igual a
+
+  \[
+  k! \cdot e_k(\vec p)
+  \]
+
+  A probabilidade de pelo menos uma coincidência é
+
+  \[
+  1 - k! \cdot e_k(\vec p)
+  \]
+\item
+  No caso em que $p_j = p = 1/365$ para todo $j$, temos
+
+  \[
+  \begin{aligned}
+    1 - k! \cdot e_k(\vec p) 
+    &=
+    1 - k! \cdot \binom{365}{k} \cdot p^k \\
+    &=
+    1 - \frac{365 \cdot 364 \cdot \cdots \cdot (365 - k + 1)}{365^k}
+  \end{aligned}
+  \]
+
+  Neste caso, o valor de $e_k(\vec p)$ é máximo.
+\item
+  ???
+\end{enumerate}
 
 \hypertarget{probabilidade-condicional}{%
 \chapter*{04: Probabilidade condicional}\label{probabilidade-condicional}}

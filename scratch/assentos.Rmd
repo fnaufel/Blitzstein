@@ -318,12 +318,11 @@ seqs
 ```
 
 
-# Comparação: gerar e testar vs. recursiva 1 vs. recursiva 2
+# Comparação: recursiva 1 vs. recursiva 2
 
 ```{r}
-n <- 5
+n <- 10
 mbm <- microbenchmark(
-  'iter' = {gerar_tibble(n)},
   'rec' = {gerar_tibble_rec(n)},
   'rec_aloc' = {gerar_tibble_rec_aloc(n)}
 ) 
