@@ -39,7 +39,7 @@ Na verdade, esta é a mesma distribuição do problema dos aniversários, com $N
 
 Para $N$ grande e $n$ pequeno, a probabilidade $P$ de pelo menos uma pessoa ser escolhida mais de uma vez se aproxima de $0$:
 
-```{r}
+```{r echo=FALSE}
 maximo <- 6
 N <- 10^maximo
 n <- 10^(maximo:0)
@@ -247,12 +247,16 @@ c. Considere a desigualdade
    * $r_j = p_j$ para $3 \leq j \leq 365$.
    
    Verifique que
-   \begin{multline*}
-     e_k(x_1, \ldots, x_n) = \\
-     x_1 x_2 e_{k-2}(x_3, \ldots x_n) \;+\;
-     (x_1 + x_2) e_{k-1}(x_3, \ldots x_n) \;+\;
-     e_{k}(x_3, \ldots x_n)
-   \end{multline*}
+   $$
+   \begin{aligned}
+     e_k(x_1, \ldots, x_n)
+     &=
+     x_1 x_2 e_{k-2}(x_3, \ldots x_n) \;+ \\
+     &\phantom{{}={}} (x_1 + x_2) e_{k-1}(x_3, \ldots x_n) \;+ \\
+     &\phantom{{}={}} e_{k}(x_3, \ldots x_n)
+   \end{aligned}
+   $$
+   
    e use a desigualdade para mostrar que, quando $\vec p \neq \vec r$,
    
    $$

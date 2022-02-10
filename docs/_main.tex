@@ -338,7 +338,7 @@
 
 \title{Introduction to Probability (Joe Blitzstein)}
 \author{Fernando Náufel}
-\date{(versão de 09/02/2022)}
+\date{(versão de 10/02/2022)}
 
 \begin{document}
 \maketitle
@@ -424,18 +424,17 @@
 \begin{Highlighting}[]
 \NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{365}\NormalTok{,}\DecValTok{23}\NormalTok{,}\AttributeTok{replace=}\ConstantTok{TRUE}\NormalTok{)}
 \FunctionTok{tabulate}\NormalTok{(b)}
-\DocumentationTok{\#\#   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0}
-\DocumentationTok{\#\#  [34] 0 1 0 2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0}
-\DocumentationTok{\#\#  [67] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0}
-\DocumentationTok{\#\# [133] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0}
-\DocumentationTok{\#\# [166] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0}
-\DocumentationTok{\#\# [199] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [265] 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 1 0 0 0 0}
-\DocumentationTok{\#\# [298] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [364] 0 1}
+\DocumentationTok{\#\#   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0}
+\DocumentationTok{\#\#  [34] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\#  [67] 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0}
+\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0}
+\DocumentationTok{\#\# [133] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [166] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [199] 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [265] 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0}
+\DocumentationTok{\#\# [298] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [331] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 2}
 \end{Highlighting}
 \end{Shaded}
 
@@ -443,10 +442,10 @@
 \begin{Highlighting}[]
 \FunctionTok{table}\NormalTok{(b)}
 \DocumentationTok{\#\# b}
-\DocumentationTok{\#\#  32  35  37  38  60  61  70 126 156 161 169 186 197 200 276 284 292 }
-\DocumentationTok{\#\#   1   1   2   1   1   1   1   1   1   1   1   1   1   1   1   1   1 }
-\DocumentationTok{\#\# 293 300 321 350 365 }
-\DocumentationTok{\#\#   1   1   1   1   1}
+\DocumentationTok{\#\#  21  26  68  75  79  83  94 107 117 126 158 205 252 254 256 272 279 }
+\DocumentationTok{\#\#   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1 }
+\DocumentationTok{\#\# 291 292 331 360 363 }
+\DocumentationTok{\#\#   1   1   1   1   2}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1045,27 +1044,6 @@ Na verdade, esta é a mesma distribuição do problema dos aniversários, com $N
 
 Para $N$ grande e $n$ pequeno, a probabilidade $P$ de pelo menos uma pessoa ser escolhida mais de uma vez se aproxima de $0$:
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{maximo }\OtherTok{\textless{}{-}} \DecValTok{6}
-\NormalTok{N }\OtherTok{\textless{}{-}} \DecValTok{10}\SpecialCharTok{\^{}}\NormalTok{maximo}
-\NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{10}\SpecialCharTok{\^{}}\NormalTok{(maximo}\SpecialCharTok{:}\DecValTok{0}\NormalTok{)}
-
-\FunctionTok{tibble}\NormalTok{(}
-  \AttributeTok{N =}\NormalTok{ N,}
-  \AttributeTok{n =}\NormalTok{ n,}
-  \AttributeTok{P =} \FunctionTok{map2\_dbl}\NormalTok{(n, N, }\SpecialCharTok{\textasciitilde{}}\FunctionTok{pbirthday}\NormalTok{(.x, .y))}
-\NormalTok{) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{kbl}\NormalTok{(}
-    \AttributeTok{format.args =} \FunctionTok{list}\NormalTok{(}\AttributeTok{big.mark =} \StringTok{\textquotesingle{}.\textquotesingle{}}\NormalTok{)}
-\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{kable\_paper}\NormalTok{(}
-    \FunctionTok{c}\NormalTok{(}\StringTok{\textquotesingle{}striped\textquotesingle{}}\NormalTok{, }\StringTok{\textquotesingle{}hover\textquotesingle{}}\NormalTok{),}
-    \AttributeTok{full\_width =} \ConstantTok{FALSE}
-\NormalTok{  )}
-\end{Highlighting}
-\end{Shaded}
-
 \begin{table}
 \centering
 \begin{tabular}[t]{r|r|r}
@@ -1310,12 +1288,16 @@ Aliás, isto é um caso específico de um fenômeno mais geral, Qualquer que sej
   \end{itemize}
 
   Verifique que
-  \begin{multline*}
-    e_k(x_1, \ldots, x_n) = \\
-    x_1 x_2 e_{k-2}(x_3, \ldots x_n) \;+\;
-    (x_1 + x_2) e_{k-1}(x_3, \ldots x_n) \;+\;
-    e_{k}(x_3, \ldots x_n)
-  \end{multline*}
+  \[
+  \begin{aligned}
+    e_k(x_1, \ldots, x_n)
+    &=
+    x_1 x_2 e_{k-2}(x_3, \ldots x_n) \;+ \\
+    &\phantom{{}={}} (x_1 + x_2) e_{k-1}(x_3, \ldots x_n) \;+ \\
+    &\phantom{{}={}} e_{k}(x_3, \ldots x_n)
+  \end{aligned}
+  \]
+
   e use a desigualdade para mostrar que, quando $\vec p \neq \vec r$,
 
   \[

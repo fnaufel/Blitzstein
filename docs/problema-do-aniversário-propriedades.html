@@ -90,23 +90,6 @@ P &amp;= 1 - P(\text{ninguém escolhido mais de uma vez}) \\
 \]</span></p>
 <p>Na verdade, esta é a mesma distribuição do problema dos aniversários, com <span class="math inline">\(N\)</span> dias e <span class="math inline">\(n\)</span> pessoas.</p>
 <p>Para <span class="math inline">\(N\)</span> grande e <span class="math inline">\(n\)</span> pequeno, a probabilidade <span class="math inline">\(P\)</span> de pelo menos uma pessoa ser escolhida mais de uma vez se aproxima de <span class="math inline">\(0\)</span>:</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">maximo</span> <span class="op">&lt;-</span> <span class="fl">6</span>
-<span class="va">N</span> <span class="op">&lt;-</span> <span class="fl">10</span><span class="op">^</span><span class="va">maximo</span>
-<span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">10</span><span class="op">^</span><span class="op">(</span><span class="va">maximo</span><span class="op">:</span><span class="fl">0</span><span class="op">)</span>
-
-<span class="fu">tibble</span><span class="op">(</span>
-  N <span class="op">=</span> <span class="va">N</span>,
-  n <span class="op">=</span> <span class="va">n</span>,
-  P <span class="op">=</span> <span class="fu">map2_dbl</span><span class="op">(</span><span class="va">n</span>, <span class="va">N</span>, <span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/stats/birthday.html">pbirthday</a></span><span class="op">(</span><span class="va">.x</span>, <span class="va">.y</span><span class="op">)</span><span class="op">)</span>
-<span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu">kbl</span><span class="op">(</span>
-    format.args <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html">list</a></span><span class="op">(</span>big.mark <span class="op">=</span> <span class="st">'.'</span><span class="op">)</span>
-  <span class="op">)</span> <span class="op">%&gt;%</span> 
-  <span class="fu">kable_paper</span><span class="op">(</span>
-    <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="st">'striped'</span>, <span class="st">'hover'</span><span class="op">)</span>,
-    full_width <span class="op">=</span> <span class="cn">FALSE</span>
-  <span class="op">)</span></code></pre></div>
 <div class="inline-table"><table class=" lightable-paper lightable-striped lightable-hover" style='font-family: "Arial Narrow", arial, helvetica, sans-serif; width: auto !important; margin-left: auto; margin-right: auto;'>
 <thead><tr>
 <th style="text-align:right;">
@@ -359,13 +342,16 @@ e_k(x_1, \ldots, x_n) =
 <li><p><span class="math inline">\(r_j = p_j\)</span> para <span class="math inline">\(3 \leq j \leq 365\)</span>.</p></li>
 </ul>
 <p>Verifique que
-<span class="math display">\[\begin{multline*}
-  e_k(x_1, \ldots, x_n) = \\
-  x_1 x_2 e_{k-2}(x_3, \ldots x_n) \;+\;
-  (x_1 + x_2) e_{k-1}(x_3, \ldots x_n) \;+\;
-  e_{k}(x_3, \ldots x_n)
-\end{multline*}\]</span>
-e use a desigualdade para mostrar que, quando <span class="math inline">\(\vec p \neq \vec r\)</span>,</p>
+<span class="math display">\[
+\begin{aligned}
+  e_k(x_1, \ldots, x_n)
+  &amp;=
+  x_1 x_2 e_{k-2}(x_3, \ldots x_n) \;+ \\
+  &amp;\phantom{{}={}} (x_1 + x_2) e_{k-1}(x_3, \ldots x_n) \;+ \\
+  &amp;\phantom{{}={}} e_{k}(x_3, \ldots x_n)
+\end{aligned}
+\]</span></p>
+<p>e use a desigualdade para mostrar que, quando <span class="math inline">\(\vec p \neq \vec r\)</span>,</p>
 <p><span class="math display">\[
 P( \text{coincidência} \mid \vec p)
 &gt;
@@ -441,7 +427,7 @@ k! \cdot e_k(\vec p)
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 09/02/2022)</p>
+    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 10/02/2022)</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
