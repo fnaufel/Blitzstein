@@ -200,7 +200,7 @@ Aliás, isto é um caso específico de um fenômeno mais geral, Qualquer que sej
   \!\!\!\!\!\!\!\!\!\!\!\!\!\! x_{j_1} \ldots x_{j_k}
   $$
 
-  o $k$-ésimo polinômio simétrico elementar sobre as variáveis $x_1, \ldots, x_n$.
+  o $k$-ésimo [polinômio simétrico elementar]{.hl} sobre as variáveis $x_1, \ldots, x_n$.
   
   Por exemplo,
   $$
@@ -213,7 +213,50 @@ Aliás, isto é um caso específico de um fenômeno mais geral, Qualquer que sej
 
 a. Seja $k \geq 2$. Qual a probabilidade de pelo menos uma coincidência de aniversários em termos de $\vec p$ e de um polinômio simétrico elementar?
 
+:::
+
+A probabilidade de [não haver coincidência]{.hl} é a soma das probabilidades de todos os eventos da forma
+
+> [As pessoas $1, 2, \ldots k$ nasceram em dias diferentes $j_1, j_2, \ldots, j_k$.]{.hl}
+
+Por exemplo, para $k = 3$, a soma será
+
+$$
+3! \cdot (p_1 p_2 p_3 + p_1 p_2 p_4 + \cdots + p_{363} p_{364} p_{365})
+$$
+
+Isto é igual a 
+
+$$
+k! \cdot e_k(\vec p)
+$$
+
+A probabilidade de pelo menos uma coincidência é
+$$
+1 - k! \cdot e_k(\vec p)
+$$
+
+::: {.rmdbox latex=1}
+
 b. Quando $p_j = 1/365$ para todo $j$, esta probabilidade é mínima.
+
+:::
+
+No caso em que $p_j = p = 1/365$ para todo $j$, temos
+
+   $$
+   \begin{aligned}
+     1 - k! \cdot e_k(\vec p) 
+     &=
+     1 - k! \cdot \binom{365}{k} \cdot p^k \\
+     &=
+     1 - \frac{365 \cdot 364 \cdot \cdots \cdot (365 - k + 1)}{365^k}
+   \end{aligned}
+   $$
+   
+   Neste caso, o valor de $e_k(\vec p)$ é máximo.
+   
+::: {.rmdbox latex=1}
 
 c. Considere a desigualdade
 
@@ -267,44 +310,56 @@ c. Considere a desigualdade
 
 :::
 
-a. A probabilidade de [não haver coincidência]{.hl} é a soma das probabilidades de todos os eventos da forma
+* Observe que 
 
-   ::: {.rmdbox latex=1}
-   
-   As pessoas $1, 2, \ldots k$ nasceram em dias diferentes $j_1, j_2, \ldots, j_k$.
-   
-   :::
-   
-   Por exemplo, para $k = 3$, a soma será
-   
-   $$
-   3! \cdot (p_1 p_2 p_3 + p_1 p_2 p_4 + \cdots + p_{363} p_{364} p_{365})
-   $$
-   
-   Isto é igual a 
-   
-   $$
-   k! \cdot e_k(\vec p)
-   $$
-   
-   A probabilidade de pelo menos uma coincidência é
+  $$
+  \frac{x + y}{2} = \sqrt{xy} \implies x = y
+  $$
 
-   $$
-   1 - k! \cdot e_k(\vec p)
-   $$
+  Ou seja, quando $x \neq y$, a desigualdade é estrita.
 
-b. No caso em que $p_j = p = 1/365$ para todo $j$, temos
+* Para o vetor $\vec p$:
 
-   $$
-   \begin{aligned}
-     1 - k! \cdot e_k(\vec p) 
-     &=
-     1 - k! \cdot \binom{365}{k} \cdot p^k \\
-     &=
-     1 - \frac{365 \cdot 364 \cdot \cdots \cdot (365 - k + 1)}{365^k}
-   \end{aligned}
-   $$
-   
-   Neste caso, o valor de $e_k(\vec p)$ é máximo.
-   
-c. ???
+  $$
+  \begin{aligned}
+  &
+  P( \text{coincidência} \mid \vec p) \\
+  &=
+  1 - k! \cdot e_k(\vec p) \\
+  &=
+  1 - k! \cdot \left[ 
+  p_1p_2 \cdot e_{k-2}(p_3, \ldots p_n) +
+  (p_1 + p_2) \cdot e_{k-1}(p_3, \ldots p_n) +
+  e_{k}(p_3, \ldots p_n)
+  \right]
+  \end{aligned}
+  $$
+  
+* Para o vetor $\vec r$:
+
+  $$
+  \begin{aligned}
+  &
+  P( \text{coincidência} \mid \vec r) \\
+  &=
+  1 - k! \cdot e_k(\vec r) \\
+  &=
+  1 - k! \cdot \left[ 
+  \frac{(p_1 + p_2)^2}{4} \cdot e_{k-2}(p_3, \ldots p_n) +
+  (p_1 + p_2) \cdot e_{k-1}(p_3, \ldots p_n) +
+  e_{k}(p_3, \ldots p_n)
+  \right]
+  \end{aligned}
+  $$  
+  
+* A única diferença está no primeiro fator dentro dos colchetes.
+
+* Pela desigualdade:
+
+  $$
+  \frac{p_1 + p_2}{2} \geq \sqrt{p_1p_2} \implies 
+  \frac{(p_1 + p_2)^2}{4} \geq p_1p_2
+  $$
+
+* Conclusão: para todo vetor $\vec p$ de probabilidades, é possível preservar ou diminuir a probabilidade de uma coincidência substituindo quaisquer $2$ de suas componentes pelo valor da média aritmética delas. Assim, o vetor que minimiza a probabilidade precisa ter todas as suas componentes iguais.
+

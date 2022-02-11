@@ -338,7 +338,7 @@
 
 \title{Introduction to Probability (Joe Blitzstein)}
 \author{Fernando Náufel}
-\date{(versão de 10/02/2022)}
+\date{(versão de 11/02/2022)}
 
 \begin{document}
 \maketitle
@@ -424,17 +424,17 @@
 \begin{Highlighting}[]
 \NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{365}\NormalTok{,}\DecValTok{23}\NormalTok{,}\AttributeTok{replace=}\ConstantTok{TRUE}\NormalTok{)}
 \FunctionTok{tabulate}\NormalTok{(b)}
-\DocumentationTok{\#\#   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0}
-\DocumentationTok{\#\#  [34] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\#  [67] 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0}
-\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0}
-\DocumentationTok{\#\# [133] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [166] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [199] 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [265] 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0}
-\DocumentationTok{\#\# [298] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [331] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 2}
+\DocumentationTok{\#\#   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
+\DocumentationTok{\#\#  [34] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [100] 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0}
+\DocumentationTok{\#\# [133] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0}
+\DocumentationTok{\#\# [166] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0}
+\DocumentationTok{\#\# [199] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
+\DocumentationTok{\#\# [265] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [298] 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 0 0 1 0 1 0 1 0 0 0 0 0 0 1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -442,10 +442,10 @@
 \begin{Highlighting}[]
 \FunctionTok{table}\NormalTok{(b)}
 \DocumentationTok{\#\# b}
-\DocumentationTok{\#\#  21  26  68  75  79  83  94 107 117 126 158 205 252 254 256 272 279 }
-\DocumentationTok{\#\#   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1 }
-\DocumentationTok{\#\# 291 292 331 360 363 }
-\DocumentationTok{\#\#   1   1   1   1   2}
+\DocumentationTok{\#\#  15  33  55  92 106 125 127 134 149 159 168 197 201 248 264 277 283 }
+\DocumentationTok{\#\#   1   1   1   1   1   1   1   1   1   1   1   1   1   2   1   1   1 }
+\DocumentationTok{\#\# 306 341 343 345 352 }
+\DocumentationTok{\#\#   1   1   1   1   1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1234,7 +1234,7 @@ Aliás, isto é um caso específico de um fenômeno mais geral, Qualquer que sej
   \!\!\!\!\!\!\!\!\!\!\!\!\!\! x_{j_1} \ldots x_{j_k}
   \]
 
-  o $k$-ésimo polinômio simétrico elementar sobre as variáveis $x_1, \ldots, x_n$.
+  o $k$-ésimo {\hl{polinômio simétrico elementar}} sobre as variáveis $x_1, \ldots, x_n$.
 
   Por exemplo,
   \[
@@ -1248,10 +1248,67 @@ Aliás, isto é um caso específico de um fenômeno mais geral, Qualquer que sej
 
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
+\tightlist
 \item
   Seja $k \geq 2$. Qual a probabilidade de pelo menos uma coincidência de aniversários em termos de $\vec p$ e de um polinômio simétrico elementar?
+\end{enumerate}
+
+\end{rmdbox}
+
+A probabilidade de {\hl{não haver coincidência}} é a soma das probabilidades de todos os eventos da forma
+
+\begin{quote}
+{\hl{As pessoas $1, 2, \ldots k$ nasceram em dias diferentes $j_1, j_2, \ldots, j_k$.}}
+\end{quote}
+
+Por exemplo, para $k = 3$, a soma será
+
+\[
+3! \cdot (p_1 p_2 p_3 + p_1 p_2 p_4 + \cdots + p_{363} p_{364} p_{365})
+\]
+
+Isto é igual a
+
+\[
+k! \cdot e_k(\vec p)
+\]
+
+A probabilidade de pelo menos uma coincidência é
+\[
+1 - k! \cdot e_k(\vec p)
+\]
+
+\begin{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
 \item
   Quando $p_j = 1/365$ para todo $j$, esta probabilidade é mínima.
+\end{enumerate}
+
+\end{rmdbox}
+
+No caso em que $p_j = p = 1/365$ para todo $j$, temos
+
+\[
+   \begin{aligned}
+     1 - k! \cdot e_k(\vec p) 
+     &=
+     1 - k! \cdot \binom{365}{k} \cdot p^k \\
+     &=
+     1 - \frac{365 \cdot 364 \cdot \cdots \cdot (365 - k + 1)}{365^k}
+   \end{aligned}
+   \]
+
+Neste caso, o valor de $e_k(\vec p)$ é máximo.
+
+\begin{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
 \item
   Considere a desigualdade
 
@@ -1309,50 +1366,61 @@ Aliás, isto é um caso específico de um fenômeno mais geral, Qualquer que sej
 
 \end{rmdbox}
 
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
+\begin{itemize}
 \item
-  A probabilidade de {\hl{não haver coincidência}} é a soma das probabilidades de todos os eventos da forma
-
-  \begin{rmdbox}
-  As pessoas $1, 2, \ldots k$ nasceram em dias diferentes $j_1, j_2, \ldots, j_k$.
-
-  \end{rmdbox}
-
-  Por exemplo, para $k = 3$, a soma será
+  Observe que
 
   \[
-  3! \cdot (p_1 p_2 p_3 + p_1 p_2 p_4 + \cdots + p_{363} p_{364} p_{365})
+  \frac{x + y}{2} = \sqrt{xy} \implies x = y
   \]
 
-  Isto é igual a
-
-  \[
-  k! \cdot e_k(\vec p)
-  \]
-
-  A probabilidade de pelo menos uma coincidência é
-
-  \[
-  1 - k! \cdot e_k(\vec p)
-  \]
+  Ou seja, quando $x \neq y$, a desigualdade é estrita.
 \item
-  No caso em que $p_j = p = 1/365$ para todo $j$, temos
+  Para o vetor $\vec p$:
 
   \[
   \begin{aligned}
-    1 - k! \cdot e_k(\vec p) 
-    &=
-    1 - k! \cdot \binom{365}{k} \cdot p^k \\
-    &=
-    1 - \frac{365 \cdot 364 \cdot \cdots \cdot (365 - k + 1)}{365^k}
+  &
+  P( \text{coincidência} \mid \vec p) \\
+  &=
+  1 - k! \cdot e_k(\vec p) \\
+  &=
+  1 - k! \cdot \left[ 
+  p_1p_2 \cdot e_{k-2}(p_3, \ldots p_n) +
+  (p_1 + p_2) \cdot e_{k-1}(p_3, \ldots p_n) +
+  e_{k}(p_3, \ldots p_n)
+  \right]
   \end{aligned}
   \]
-
-  Neste caso, o valor de $e_k(\vec p)$ é máximo.
 \item
-  ???
-\end{enumerate}
+  Para o vetor $\vec r$:
+
+  \[
+  \begin{aligned}
+  &
+  P( \text{coincidência} \mid \vec r) \\
+  &=
+  1 - k! \cdot e_k(\vec r) \\
+  &=
+  1 - k! \cdot \left[ 
+  \frac{(p_1 + p_2)^2}{4} \cdot e_{k-2}(p_3, \ldots p_n) +
+  (p_1 + p_2) \cdot e_{k-1}(p_3, \ldots p_n) +
+  e_{k}(p_3, \ldots p_n)
+  \right]
+  \end{aligned}
+  \]
+\item
+  A única diferença está no primeiro fator dentro dos colchetes.
+\item
+  Pela desigualdade:
+
+  \[
+  \frac{p_1 + p_2}{2} \geq \sqrt{p_1p_2} \implies 
+  \frac{(p_1 + p_2)^2}{4} \geq p_1p_2
+  \]
+\item
+  Conclusão: para todo vetor $\vec p$ de probabilidades, é possível preservar ou diminuir a probabilidade de uma coincidência substituindo quaisquer $2$ de suas componentes pelo valor da média aritmética delas. Assim, o vetor que minimiza a probabilidade precisa ter todas as suas componentes iguais.
+\end{itemize}
 
 \hypertarget{probabilidade-condicional}{%
 \chapter*{04: Probabilidade condicional}\label{probabilidade-condicional}}
