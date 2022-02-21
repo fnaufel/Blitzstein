@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>04: Probabilidade condicional | Introduction to Probability (Joe Blitzstein)</title>
 <meta name="author" content="Fernando Náufel">
-<meta name="description" content="Vídeo   Exercícios Enunciados (pdf). Homework  3.1 Lewis Carroll  A bag contains one marble which is either green or blue, with equal probabilities. A green marble is put in the bag (so there are...">
+<meta name="description" content="Vídeo   Exercícios Enunciados (pdf). Homework  3.1 Lewis Carroll  Este problema foi proposto pela primeira vez por Lewis Carroll em 1893. Uma bolsa contém uma bola, que é ou azul, ou verde, com...">
 <meta name="generator" content="bookdown 0.24.7 with bs4_book()">
 <meta property="og:title" content="04: Probabilidade condicional | Introduction to Probability (Joe Blitzstein)">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Vídeo   Exercícios Enunciados (pdf). Homework  3.1 Lewis Carroll  A bag contains one marble which is either green or blue, with equal probabilities. A green marble is put in the bag (so there are...">
+<meta property="og:description" content="Vídeo   Exercícios Enunciados (pdf). Homework  3.1 Lewis Carroll  Este problema foi proposto pela primeira vez por Lewis Carroll em 1893. Uma bolsa contém uma bola, que é ou azul, ou verde, com...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="04: Probabilidade condicional | Introduction to Probability (Joe Blitzstein)">
-<meta name="twitter:description" content="Vídeo   Exercícios Enunciados (pdf). Homework  3.1 Lewis Carroll  A bag contains one marble which is either green or blue, with equal probabilities. A green marble is put in the bag (so there are...">
+<meta name="twitter:description" content="Vídeo   Exercícios Enunciados (pdf). Homework  3.1 Lewis Carroll  Este problema foi proposto pela primeira vez por Lewis Carroll em 1893. Uma bolsa contém uma bola, que é ou azul, ou verde, com...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11.14/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/_Lexend-0.4.0/font.css" rel="stylesheet">
@@ -78,21 +78,268 @@
 <h4>3.1 Lewis Carroll<a class="anchor" aria-label="anchor" href="#lewis-carroll"><i class="fas fa-link"></i></a>
 </h4>
 <div class="rmdbox">
-<p>A bag contains one marble which is either green or blue, with equal probabilities. A green marble is put in the bag (so there are <span class="math inline">\(2\)</span> marbles now), and then a random marble is taken out. The marble taken out is green. What is the probability that the remaining marble is also green?</p>
-<p>This problem was first posed by Lewis Carroll in 1893.</p>
+<p>Este problema foi proposto pela primeira vez por Lewis Carroll em 1893.</p>
+<ul>
+<li><p>Uma bolsa contém uma bola, que é ou azul, ou verde, com probabilidades iguais.</p></li>
+<li><p>Uma bola verde é colocada na bolsa; agora, há <span class="math inline">\(2\)</span> bolas na bolsa.</p></li>
+<li><p>Uma bola é retirada da bolsa ao acaso.</p></li>
+<li><p>A bola retirada é verde.</p></li>
+<li><p>Qual é a probabilidade de que a bola que sobrou na bolsa seja verde?</p></li>
+</ul>
 </div>
+<ul>
+<li>
+<p>Antes de mais nada, vamos definir os eventos:</p>
+<p><span class="math display">\[
+\begin{aligned}
+  O &amp;= \text{bola original é verde} \\
+  R &amp;= \text{bola retirada é verde} \\
+  S &amp;= \text{bola que sobrou é verde}
+\end{aligned}
+\]</span></p>
+</li>
+<li><p>O importante é perceber que o enunciado diz que o evento <span class="math inline">\(R\)</span> aconteceu, mas as probabilidades devem ser calculadas pensando em todos os resultados possíveis, <span class="hl">antes de o experimento acontecer.</span></p></li>
+<li><p>Ou seja, em vez de tomar <span class="math inline">\(P(R) = 1\)</span> — <span class="hl">o que seria errado</span> — vamos calcular <span class="math inline">\(P(S \mid R)\)</span>: a probabilidade de que a bola que sobrou seja verde, <span class="hl">sabendo que a bola retirada foi verde.</span></p></li>
+<li>
+<p>Começamos com a lei da probabilidade total, condicionando aos dois casos possíveis:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(S \mid R) &amp;=
+\underbrace{P(S \mid R, O) \cdot P(O \mid R)}_{\text{caso 1: bola original verde}}
+\;+\;
+\underbrace{P(S \mid R, \neg O) \cdot P(\neg O \mid R)}_{\text{caso 2: bola original azul}}  
+\end{aligned}
+\]</span></p>
+</li>
+<li>
+<p>No caso <span class="math inline">\(1\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(S \mid R, O) \cdot P(O \mid R)
+&amp;= 1 \cdot P(O \mid R) \\
+&amp;= P(O \mid R)
+\end{aligned}
+\]</span></p>
+</li>
+<li>
+<p>No caso <span class="math inline">\(2\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(S \mid R, \neg O) \cdot P(\neg O \mid R)
+&amp;= 0 \cdot P(\neg O \mid R) \\
+&amp;= 0
+\end{aligned}
+\]</span></p>
+<p>Isto faz sentido: <span class="hl">se a bola original era azul, não há como a bola que sobrou ser verde.</span></p>
+</li>
+<li>
+<p>Só precisamos calcular a probabilidade do caso <span class="math inline">\(1\)</span>, que é <span class="math inline">\(P(O \mid R)\)</span>. Vamos usar Bayes:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(O \mid R)
+&amp;= \frac{P(R \mid O) \cdot P(O)}{P(R)} \\
+&amp;= \frac{1 \cdot 1/2}{P(R)}
+\end{aligned}
+\]</span></p>
+</li>
+<li>
+<p>Para calcular <span class="math inline">\(P(R)\)</span>, lei da probabilidade total de novo, condicionando sobre a bola original:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(R)
+&amp;= P(R \mid O) \cdot P(O) + P(R \mid \neg O) \cdot P(\neg O) \\
+&amp;= 1 \cdot 1/2 + 1/2 \cdot 1/2 \\
+&amp;= 3/4
+\end{aligned}
+\]</span></p>
+</li>
+<li>
+<p>Chegamos a</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(O \mid R)
+&amp;= \frac{P(R \mid O) \cdot P(O)}{P(R)} \\
+&amp;= \frac{1 \cdot 1/2}{P(R)} \\
+&amp;= \frac{1/2}{3/4} \\
+&amp;= \frac{2}{3}
+\end{aligned}
+\]</span></p>
+</li>
+<li>
+<p>Outra maneira de calcular <span class="math inline">\(P(S \mid R)\)</span> seria aplicar Bayes primeiro:</p>
+<p><span class="math display">\[
+P(S \mid R) = \frac{P(R \mid S) \cdot P(S)}{P(R)}
+\]</span></p>
+<p>mas as probabilidades do numerador são mais difíceis de calcular! Teríamos que usar a lei da probabilidade total duas vezes para o numerador (além de uma vez para o denominador).</p>
+</li>
+</ul>
 </div>
 <div id="xadrez" class="section level4 unnumbered">
 <h4>3.5 Xadrez<a class="anchor" aria-label="anchor" href="#xadrez"><i class="fas fa-link"></i></a>
 </h4>
 <div class="rmdbox">
-<p>You are going to play <span class="math inline">\(2\)</span> games of chess with an opponent whom you have never played against before (for the sake of this problem). Your opponent is equally likely to be a beginner, intermediate, or a master. Depending on which, your chances of winning an individual game are <span class="math inline">\(90\%\)</span>, <span class="math inline">\(50\%\)</span>, or <span class="math inline">\(30\%\)</span>, respectively.</p>
+<ul>
+<li><p>Você vai jogar <span class="math inline">\(2\)</span> partidas de xadrez contra um adversário desconhecido.</p></li>
+<li><p>O nível do seu adversário pode ser novato, intermediário, ou avançado, com probabilidades iguais.</p></li>
+<li><p>As probabilidades de você vencer uma partida são, dependendo do nível do adversário, respectivamente, <span class="math inline">\(90\%\)</span>, <span class="math inline">\(50\%\)</span>, e <span class="math inline">\(30\%\)</span>.</p></li>
+</ul>
 <ol style="list-style-type: lower-alpha">
-<li><p>What is your probability of winning the first game?</p></li>
-<li><p>Congratulations: you won the first game! Given this information, what is the probability that you will also win the second game (assume that, given the skill level of your opponent, the outcomes of the games are independent)?</p></li>
-<li><p>Explain the distinction between assuming that the outcomes of the games are independent and assuming that they are conditionally independent given the opponent’s skill level. Which of these assumptions seems more reasonable, and why?</p></li>
+<li><p>Qual a probabilidade de você vencer a primeira partida?</p></li>
+<li><p>Parabéns, você venceu a primeira partida. Dada esta informação, qual a probabilidade de que você também vença a segunda partida (suponha que, <span class="hl">dado o nível do seu adversário</span>, os resultados das partidas são independentes)?</p></li>
+<li>
+<p>Explique a diferença entre</p>
+<ol style="list-style-type: decimal">
+<li><p>supor que os resultados das partidas são independentes, e</p></li>
+<li><p>supor que os resultados das partidas são independentes, dado o nível do seu adversário.</p></li>
+</ol>
+<p>Qual destas suposições parece mais razoável? Por quê?</p>
+</li>
 </ol>
 </div>
+<ul>
+<li>
+<p>Antes de mais nada, vamos definir os eventos:</p>
+<p><span class="math display">\[
+\begin{aligned}
+  N &amp;= \text{o adversário é novato} \\
+  I &amp;= \text{o adversário é intermediário} \\
+  A &amp;= \text{o adversário é avançado} \\
+  V_1 &amp;= \text{você vence a primeira partida} \\
+  V_2 &amp;= \text{você vence a segunda partida}
+\end{aligned}
+\]</span></p>
+</li>
+<li>
+<p>O enunciado dá as probabilidades</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(N) &amp;= 1/3 \\
+P(I) &amp;= 1/3 \\
+P(A) &amp;= 1/3 \\
+P(V_1 \mid N) &amp;= 9/10 \\
+P(V_1 \mid I) &amp;= 5/10 \\
+P(V_1 \mid A) &amp;= 3/10
+\end{aligned}
+\]</span></p>
+</li>
+<li>
+<p>Para resolver (a), basta usar probabilidade total, condicionando sobre o nível do adversário:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(V_1)
+&amp;=
+P(V_1 \mid N) \cdot P(N) \;+\;
+P(V_1 \mid I) \cdot P(I) \;+\;
+P(V_1 \mid A) \cdot P(A)
+\\
+&amp;=
+\frac{9}{10} \cdot \frac{1}{3} +
+\frac{5}{10} \cdot \frac{1}{3} +
+\frac{3}{10} \cdot \frac{1}{3} \\
+&amp;=
+\frac{1}{3} \cdot \left(
+\frac{9}{10} +
+\frac{5}{10} +
+\frac{3}{10} \right) \\
+&amp;=
+\frac{17}{30}
+\end{aligned}
+\]</span></p>
+<p>Faz sentido. Como as probabilidades dos níveis possíveis do adversário são iguais, a probabilidade de vencer é <span class="hl">a média aritmética</span> das probabilidades de vencer contra cada nível.</p>
+<p>Se as probabilidades dos níveis do adversário fossem diferentes, seria a <span class="hl">média ponderada.</span></p>
+</li>
+<li>
+<p>Para (b), queremos calcular <span class="math inline">\(P(V_2 \mid V_1)\)</span>.</p>
+<p>Dizer que <span class="math inline">\(V_1\)</span> e <span class="math inline">\(V_2\)</span> são independentes <span class="hl">dado o nível do adversário</span> é dizer</p>
+<p><span class="math display">\[
+P(V_2 \mid V_1, N) = P(V_1 \mid V_2, N) = P(V_2 \mid N) = P(V_1 \mid N)
+\]</span></p>
+<p>e analogamente para probabilidades condicionadas a <span class="math inline">\(I\)</span> e a <span class="math inline">\(A\)</span>.</p>
+<p>Ou seja, dado um nível específico do adversário, saber que <span class="math inline">\(V_1\)</span> ocorreu não altera a probabilidade de <span class="math inline">\(V_2\)</span> ocorrer, e vice-versa.</p>
+<p>Vamos calcular <span class="math inline">\(P(V_2 \mid V_1)\)</span> usando probabilidade total, condicionando ao nível:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\underbrace{P(V_2 \mid V_1, N) \cdot P(N \mid V_1)}_{\text{novato}}
+\;+\;
+\underbrace{P(V_2 \mid V_1, I) \cdot P(I \mid V_1)}_{\text{intermediário}}
+\;+\;
+\underbrace{P(V_2 \mid V_1, A) \cdot P(A \mid V_1)}_{\text{avançado}}
+\end{aligned}
+\]</span></p>
+<p>Para o lado esquerdo de cada produto, a independência condicional diz que</p>
+<p><span class="math display">\[\begin{alignat*}{3}
+P(V_2 \mid V_1, N) &amp;= P(V_1 \mid N) &amp;= 9/10 \\
+P(V_2 \mid V_1, I) &amp;= P(V_1 \mid I) &amp;= 5/10 \\
+P(V_2 \mid V_1, A) &amp;= P(V_1 \mid A) &amp;= 3/10
+\end{alignat*}\]</span></p>
+<p>Para o lado direito de cada produto, usamos Bayes. Todas as probabilidades envolvidas já foram calculadas.</p>
+<p>Novato:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(N \mid V_1)
+&amp;=
+\frac{P(V_1 \mid N) \cdot P(N)}{P(V_1)}
+\\
+&amp;= \frac{9/10 \cdot 1/3}{17/30}
+\\
+&amp;= \frac{9}{17}
+\end{aligned}
+\]</span></p>
+<p>Intermediário:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(I \mid V_1)
+&amp;=
+\frac{P(V_1 \mid I) \cdot P(I)}{P(V_1)}
+\\
+&amp;= \frac{5/10 \cdot 1/3}{17/30}
+\\
+&amp;= \frac{5}{17}
+\end{aligned}
+\]</span></p>
+<p>Avançado:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(A \mid V_1)
+&amp;=
+\frac{P(V_1 \mid A) \cdot P(A)}{P(V_1)}
+\\
+&amp;= \frac{3/10 \cdot 1/3}{17/30}
+\\
+&amp;= \frac{3}{17}
+\end{aligned}
+\]</span></p>
+<p>A resposta final é</p>
+<p><span class="math display">\[
+\frac{9}{10} \cdot \frac{9}{17} \;+\;
+\frac{5}{10} \cdot \frac{5}{17} \;+\;
+\frac{3}{10} \cdot \frac{3}{17}
+\;=\;
+\frac{23}{34}
+\]</span></p>
+</li>
+<li>
+<p>Para responder (c):</p>
+<p>Dizer que <span class="math inline">\(V_1\)</span> e <span class="math inline">\(V_2\)</span> são <span class="hl">incondicionalmente</span> independentes seria dizer que</p>
+<p><span class="math display">\[
+P(V_2 \mid V_1) = P(V_2)
+\]</span></p>
+<p>Ainda mais, como o nível do adversário não muda de uma partida para outra, teríamos também</p>
+<p><span class="math display">\[
+P(V_2) = P(V_1)
+\]</span></p>
+<p>Ou seja, cada partida seria uma prova de Bernoulli com a mesma probabilidade de sucesso.</p>
+<p>Considerando independência <span class="hl">condicional</span>, saber que vencemos a primeira partida nos dá informação sobre o nível do adversário, e esta informação é considerada para calcular a probabilidade de vencer a segunda partida.</p>
+<p>De fato, usando independência condicional, temos</p>
+<p><span class="math display">\[
+P(V_1) \approx 0{,}57
+\]</span></p>
+<p>e</p>
+<p><span class="math display">\[
+P(V_2 \mid V_1) \approx 0{,}68
+\]</span></p>
+</li>
+</ul>
 </div>
 </div>
 <div id="exercícios-do-livro-cap.-2" class="section level3 unnumbered">
@@ -169,7 +416,7 @@
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 11/02/2022)</p>
+    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 21/02/2022)</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
