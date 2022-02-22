@@ -348,10 +348,151 @@ P(V_2 \mid V_1) \approx 0{,}68
 <div id="section-10" class="section level4 unnumbered">
 <h4>2<a class="anchor" aria-label="anchor" href="#section-10"><i class="fas fa-link"></i></a>
 </h4>
+<div class="rmdbox">
+<ul>
+<li><p>Uma mulher está grávida de meninos gêmeos.</p></li>
+<li><p>Gêmeos podem ser idênticos ou fraternos.</p></li>
+<li><p><span class="math inline">\(1/3\)</span> dos gêmeos são idênticos.</p></li>
+<li><p>Gêmeos idênticos têm <span class="math inline">\(50\%\)</span> de chance de serem ambos meninos, e <span class="math inline">\(50\%\)</span> de chance de serem ambos meninas.</p></li>
+<li><p>Para gêmeos fraternos, cada gêmeo tem, independentemente, <span class="math inline">\(50\%\)</span> de chance de ser menino, e <span class="math inline">\(50\%\)</span> de chance de ser menina.</p></li>
+<li><p>Qual a probabilidade de a mulher estar grávida de gêmeos idênticos?</p></li>
+</ul>
+</div>
+<ul>
+<li>
+<p>Eventos:</p>
+<p><span class="math display">\[
+\begin{aligned}
+I &amp;= \text{os gêmeos são idênticos} \\
+M &amp;= \text{os gêmeos são dois meninos}
+\end{aligned}
+\]</span></p>
+</li>
+<li>
+<p>Probabilidades dadas:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(I) &amp;= 1/3 \\
+P(M \mid I) &amp;= 1/2 \\
+P(M \mid \neg I) &amp;= 1/4
+\end{aligned}
+\]</span></p>
+</li>
+<li>
+<p>Queremos calcular <span class="math inline">\(P(I \mid M)\)</span>. Usamos Bayes:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(I \mid M)
+&amp;=
+\frac{P(M \mid I) \cdot P(I)}{P(M)}
+\end{aligned}
+\]</span></p>
+</li>
+<li>
+<p>Só falta o valor de <span class="math inline">\(P(M)\)</span>, que calculamos usando probabilidade total:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(M)
+&amp;=
+P(M \mid I)P(I) + P(M \mid \neg I)P(\neg I) \\
+&amp;=
+1/2 \cdot 1/3 + 1/4 \cdot 2/3 \\
+&amp;=
+1/3
+\end{aligned}
+\]</span></p>
+</li>
+<li>
+<p>Concluímos</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(I \mid M)
+&amp;=
+\frac{P(M \mid I) \cdot P(I)}{P(M)} \\
+&amp;=
+\frac{1/2 \cdot 1/3}{1/3} \\
+&amp;=
+1/2
+\end{aligned}
+\]</span></p>
+</li>
+</ul>
 </div>
 <div id="section-11" class="section level4 unnumbered">
 <h4>4<a class="anchor" aria-label="anchor" href="#section-11"><i class="fas fa-link"></i></a>
 </h4>
+<div class="rmdbox">
+<ul>
+<li><p>Um aluno está resolvendo uma questão de múltipla escolha com <span class="math inline">\(n\)</span> opções.</p></li>
+<li><p><span class="math inline">\(K\)</span> é o evento que corresponde a ele saber a resposta correta.</p></li>
+<li><p><span class="math inline">\(R\)</span> é o evento que corresponde a ele acertar (sabendo ou chutando).</p></li>
+<li><p>Se ele sabe a resposta, ele acerta.</p></li>
+<li><p>Se ele não sabe, ele chuta uma opção ao acaso.</p></li>
+<li><p>Considere <span class="math inline">\(P(K) = p\)</span>.</p></li>
+</ul>
+<ol style="list-style-type: lower-alpha">
+<li><p>Ache <span class="math inline">\(P(K \mid R)\)</span>.</p></li>
+<li><p>Mostre que <span class="math inline">\(P(K \mid R) \geq p\)</span>. Por que isto faz sentido? Quando a igualdade é exata?</p></li>
+</ol>
+</div>
+<ol style="list-style-type: lower-alpha">
+<li>
+<p>Vamos usar Bayes, supondo <span class="math inline">\(p = P(K) &gt; 0\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(K \mid R)
+&amp;=
+\frac{P(R \mid K) \cdot P(K)}{P(R)} \\
+&amp;=
+\frac{1 \cdot p}{
+  P(R \mid K) \cdot P(K) +
+  P(R \mid \neg K) \cdot P(\neg K)
+} \\
+&amp;=
+\frac{p}{
+  1 \cdot p +
+  \frac{1}{n} \cdot (1 - p)
+} \\
+&amp;=
+\frac{np}{np + (1 - p)}
+\end{aligned}
+\]</span></p>
+</li>
+<li>
+<p>Isto equivale a mostrar</p>
+<p><span class="math display">\[
+\frac{np}{np + (1 - p)} \geq p
+\]</span></p>
+<p>Como todos os valores são positivos, isto equivale a</p>
+<p><span class="math display">\[
+np \geq np^2 + (1 - p)p
+\]</span></p>
+<p>Dividindo ambos os lados por <span class="math inline">\(p &gt; 0\)</span>:</p>
+<p><span class="math display">\[
+n \geq np + 1 - p
+\]</span></p>
+<p>Daí,</p>
+<p><span class="math display">\[
+\begin{aligned}
+n \geq np + 1 - p
+&amp;\iff n - np \geq 1 - p \\
+&amp;\iff n(1 - p) \geq 1 - p \\
+&amp;\iff n \geq 1 &amp; \text{(supondo } p &lt; 1 \text{)}
+\end{aligned}
+\]</span>
+O que é verdade, pois existe pelo menos uma opção (a correta).</p>
+<p>Se <span class="math inline">\(p = 1\)</span>, a igualdade vale, e <span class="math inline">\(P(K \mid R) = 1\)</span>, pois o aluno sempre sabe a resposta e sempre acerta.</p>
+<p>Se <span class="math inline">\(n = 1\)</span>, a igualdade vale, e <span class="math inline">\(P(K \mid R) = p\)</span>, pois o aluno acertar (ele sempre acerta!) e o aluno saber são independentes.</p>
+<p>Imagine <span class="math inline">\(n &gt; 1\)</span>.</p>
+<p>Lembre-se de que <span class="math inline">\(P(K \mid R) = \frac{P(K \cap R)}{P(R)}\)</span>.</p>
+<p>O numerador é a probabilidade do evento “o aluno sabe e o aluno acerta”. Esta probabilidade é exatamente <span class="math inline">\(p\)</span>, pois “o aluno sabe” é sub-evento de “o aluno acerta”.</p>
+<p>O numerador <span class="math inline">\(P(R)\)</span> é um número tal que <span class="math inline">\(0 &lt; P(R) &lt; 1\)</span>. Vamos chamar este número de <span class="math inline">\(1/x\)</span>, para <span class="math inline">\(x &gt; 1\)</span>.</p>
+<p>Então,</p>
+<p><span class="math display">\[
+P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp &gt; p
+\]</span></p>
+</li>
+</ol>
 </div>
 <div id="section-12" class="section level4 unnumbered">
 <h4>9<a class="anchor" aria-label="anchor" href="#section-12"><i class="fas fa-link"></i></a>
@@ -416,7 +557,7 @@ P(V_2 \mid V_1) \approx 0{,}68
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 21/02/2022)</p>
+    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 22/02/2022)</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

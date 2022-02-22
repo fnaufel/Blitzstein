@@ -338,7 +338,7 @@
 
 \title{Introduction to Probability (Joe Blitzstein)}
 \author{Fernando Náufel}
-\date{(versão de 21/02/2022)}
+\date{(versão de 22/02/2022)}
 
 \begin{document}
 \maketitle
@@ -424,17 +424,17 @@
 \begin{Highlighting}[]
 \NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{365}\NormalTok{,}\DecValTok{23}\NormalTok{,}\AttributeTok{replace=}\ConstantTok{TRUE}\NormalTok{)}
 \FunctionTok{tabulate}\NormalTok{(b)}
-\DocumentationTok{\#\#   [1] 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0}
-\DocumentationTok{\#\#  [34] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [100] 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [133] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0}
-\DocumentationTok{\#\# [166] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [199] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0}
-\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [265] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
-\DocumentationTok{\#\# [298] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0}
-\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
+\DocumentationTok{\#\#   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0}
+\DocumentationTok{\#\#  [34] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [100] 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1}
+\DocumentationTok{\#\# [133] 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
+\DocumentationTok{\#\# [166] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [199] 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0}
+\DocumentationTok{\#\# [265] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [298] 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0}
+\DocumentationTok{\#\# [331] 0 0 0 0 0 0 1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -442,10 +442,10 @@
 \begin{Highlighting}[]
 \FunctionTok{table}\NormalTok{(b)}
 \DocumentationTok{\#\# b}
-\DocumentationTok{\#\#   5  16  31  35  55  75  87 103 153 160 180 221 226 239 254 255 267 }
-\DocumentationTok{\#\#   1   1   1   1   1   1   1   2   1   1   1   1   1   1   1   1   1 }
-\DocumentationTok{\#\# 297 310 317 328 355 }
-\DocumentationTok{\#\#   1   1   1   1   1}
+\DocumentationTok{\#\#  18  27  48  73  80  85 101 107 123 132 139 165 202 209 248 260 283 }
+\DocumentationTok{\#\#   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1 }
+\DocumentationTok{\#\# 284 306 313 317 324 337 }
+\DocumentationTok{\#\#   1   1   1   1   1   1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1773,9 +1773,189 @@ Este problema foi proposto pela primeira vez por Lewis Carroll em 1893.
 \subsubsection*{2}\label{section-10}}
 \addcontentsline{toc}{subsubsection}{2}
 
+\begin{rmdbox}
+
+\begin{itemize}
+\item
+  Uma mulher está grávida de meninos gêmeos.
+\item
+  Gêmeos podem ser idênticos ou fraternos.
+\item
+  $1/3$ dos gêmeos são idênticos.
+\item
+  Gêmeos idênticos têm $50\%$ de chance de serem ambos meninos, e $50\%$ de chance de serem ambos meninas.
+\item
+  Para gêmeos fraternos, cada gêmeo tem, independentemente, $50\%$ de chance de ser menino, e $50\%$ de chance de ser menina.
+\item
+  Qual a probabilidade de a mulher estar grávida de gêmeos idênticos?
+\end{itemize}
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Eventos:
+
+  \[
+  \begin{aligned}
+  I &= \text{os gêmeos são idênticos} \\
+  M &= \text{os gêmeos são dois meninos}
+  \end{aligned}
+  \]
+\item
+  Probabilidades dadas:
+
+  \[
+  \begin{aligned}
+  P(I) &= 1/3 \\
+  P(M \mid I) &= 1/2 \\
+  P(M \mid \neg I) &= 1/4
+  \end{aligned}
+  \]
+\item
+  Queremos calcular $P(I \mid M)$. Usamos Bayes:
+
+  \[
+  \begin{aligned}
+  P(I \mid M) 
+  &=
+  \frac{P(M \mid I) \cdot P(I)}{P(M)}
+  \end{aligned}
+  \]
+\item
+  Só falta o valor de $P(M)$, que calculamos usando probabilidade total:
+
+  \[
+  \begin{aligned}
+  P(M) 
+  &=
+  P(M \mid I)P(I) + P(M \mid \neg I)P(\neg I) \\
+  &=
+  1/2 \cdot 1/3 + 1/4 \cdot 2/3 \\
+  &=
+  1/3
+  \end{aligned}
+  \]
+\item
+  Concluímos
+
+  \[
+  \begin{aligned}
+  P(I \mid M) 
+  &=
+  \frac{P(M \mid I) \cdot P(I)}{P(M)} \\
+  &=
+  \frac{1/2 \cdot 1/3}{1/3} \\
+  &=
+  1/2
+  \end{aligned}
+  \]
+\end{itemize}
+
 \hypertarget{section-11}{%
 \subsubsection*{4}\label{section-11}}
 \addcontentsline{toc}{subsubsection}{4}
+
+\begin{rmdbox}
+
+\begin{itemize}
+\item
+  Um aluno está resolvendo uma questão de múltipla escolha com $n$ opções.
+\item
+  $K$ é o evento que corresponde a ele saber a resposta correta.
+\item
+  $R$ é o evento que corresponde a ele acertar (sabendo ou chutando).
+\item
+  Se ele sabe a resposta, ele acerta.
+\item
+  Se ele não sabe, ele chuta uma opção ao acaso.
+\item
+  Considere $P(K) = p$.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  Ache $P(K \mid R)$.
+\item
+  Mostre que $P(K \mid R) \geq p$. Por que isto faz sentido? Quando a igualdade é exata?
+\end{enumerate}
+
+\end{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Vamos usar Bayes, supondo $p = P(K) > 0$:
+
+  \[
+  \begin{aligned}
+  P(K \mid R)
+  &=
+  \frac{P(R \mid K) \cdot P(K)}{P(R)} \\
+  &=
+  \frac{1 \cdot p}{
+    P(R \mid K) \cdot P(K) + 
+    P(R \mid \neg K) \cdot P(\neg K)
+  } \\
+  &=
+  \frac{p}{
+    1 \cdot p + 
+    \frac{1}{n} \cdot (1 - p)
+  } \\
+  &=
+  \frac{np}{np + (1 - p)}
+  \end{aligned}
+  \]
+\item
+  Isto equivale a mostrar
+
+  \[
+  \frac{np}{np + (1 - p)} \geq p
+  \]
+
+  Como todos os valores são positivos, isto equivale a
+
+  \[
+  np \geq np^2 + (1 - p)p
+  \]
+
+  Dividindo ambos os lados por $p > 0$:
+
+  \[
+  n \geq np + 1 - p
+  \]
+
+  Daí,
+
+  \[
+  \begin{aligned}
+  n \geq np + 1 - p 
+  &\iff n - np \geq 1 - p \\
+  &\iff n(1 - p) \geq 1 - p \\
+  &\iff n \geq 1 & \text{(supondo } p < 1 \text{)}
+  \end{aligned}
+  \]
+  O que é verdade, pois existe pelo menos uma opção (a correta).
+
+  Se $p = 1$, a igualdade vale, e $P(K \mid R) = 1$, pois o aluno sempre sabe a resposta e sempre acerta.
+
+  Se $n = 1$, a igualdade vale, e $P(K \mid R) = p$, pois o aluno acertar (ele sempre acerta!) e o aluno saber são independentes.
+
+  Imagine $n > 1$.
+
+  Lembre-se de que $P(K \mid R) = \frac{P(K \cap R)}{P(R)}$.
+
+  O numerador é a probabilidade do evento ``o aluno sabe e o aluno acerta''. Esta probabilidade é exatamente $p$, pois ``o aluno sabe'' é sub-evento de ``o aluno acerta''.
+
+  O numerador $P(R)$ é um número tal que $0 < P(R) < 1$. Vamos chamar este número de $1/x$, para $x > 1$.
+
+  Então,
+
+  \[
+  P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp > p
+  \]
+\end{enumerate}
 
 \hypertarget{section-12}{%
 \subsubsection*{9}\label{section-12}}

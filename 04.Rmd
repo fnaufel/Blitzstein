@@ -323,10 +323,173 @@ c. Explique a diferença entre
 
 #### 2 {-}
 
+::: {.rmdbox latex=1}
+
+* Uma mulher está grávida de meninos gêmeos.
+
+* Gêmeos podem ser idênticos ou fraternos.
+
+* $1/3$ dos gêmeos são idênticos.
+
+* Gêmeos idênticos têm $50\%$ de chance de serem ambos meninos, e $50\%$ de chance de serem ambos meninas.
+
+* Para gêmeos fraternos, cada gêmeo tem, independentemente, $50\%$ de chance de ser menino, e $50\%$ de chance de ser menina.
+
+* Qual a probabilidade de a mulher estar grávida de gêmeos idênticos?
+
+:::
+
+* Eventos:
+
+  $$
+  \begin{aligned}
+  I &= \text{os gêmeos são idênticos} \\
+  M &= \text{os gêmeos são dois meninos}
+  \end{aligned}
+  $$
+
+* Probabilidades dadas:
+
+  $$
+  \begin{aligned}
+  P(I) &= 1/3 \\
+  P(M \mid I) &= 1/2 \\
+  P(M \mid \neg I) &= 1/4
+  \end{aligned}
+  $$
+
+* Queremos calcular $P(I \mid M)$. Usamos Bayes:
+
+  $$
+  \begin{aligned}
+  P(I \mid M) 
+  &=
+  \frac{P(M \mid I) \cdot P(I)}{P(M)}
+  \end{aligned}
+  $$
+
+* Só falta o valor de $P(M)$, que calculamos usando probabilidade total:
+
+  $$
+  \begin{aligned}
+  P(M) 
+  &=
+  P(M \mid I)P(I) + P(M \mid \neg I)P(\neg I) \\
+  &=
+  1/2 \cdot 1/3 + 1/4 \cdot 2/3 \\
+  &=
+  1/3
+  \end{aligned}
+  $$
+
+* Concluímos
+
+  $$
+  \begin{aligned}
+  P(I \mid M) 
+  &=
+  \frac{P(M \mid I) \cdot P(I)}{P(M)} \\
+  &=
+  \frac{1/2 \cdot 1/3}{1/3} \\
+  &=
+  1/2
+  \end{aligned}
+  $$
+
 
 #### 4 {-}
 
+::: {.rmdbox latex=1}
 
+* Um aluno está resolvendo uma questão de múltipla escolha com $n$ opções.
+
+* $K$ é o evento que corresponde a ele saber a resposta correta.
+
+* $R$ é o evento que corresponde a ele acertar (sabendo ou chutando).
+
+* Se ele sabe a resposta, ele acerta.
+
+* Se ele não sabe, ele chuta uma opção ao acaso.
+
+* Considere $P(K) = p$.
+
+(a) Ache $P(K \mid R)$.
+
+(b) Mostre que $P(K \mid R) \geq p$. Por que isto faz sentido? Quando a igualdade é exata?
+
+:::
+
+a. Vamos usar Bayes, supondo $p = P(K) > 0$:
+
+   $$
+   \begin{aligned}
+   P(K \mid R)
+   &=
+   \frac{P(R \mid K) \cdot P(K)}{P(R)} \\
+   &=
+   \frac{1 \cdot p}{
+     P(R \mid K) \cdot P(K) + 
+     P(R \mid \neg K) \cdot P(\neg K)
+   } \\
+   &=
+   \frac{p}{
+     1 \cdot p + 
+     \frac{1}{n} \cdot (1 - p)
+   } \\
+   &=
+   \frac{np}{np + (1 - p)}
+   \end{aligned}
+   $$
+
+b. Isto equivale a mostrar
+
+   $$
+   \frac{np}{np + (1 - p)} \geq p
+   $$
+
+   Como todos os valores são positivos, isto equivale a 
+   
+   $$
+   np \geq np^2 + (1 - p)p
+   $$
+
+   Dividindo ambos os lados por $p > 0$:
+   
+   $$
+   n \geq np + 1 - p
+   $$
+   
+   Daí,
+   
+   $$
+   \begin{aligned}
+   n \geq np + 1 - p 
+   &\iff n - np \geq 1 - p \\
+   &\iff n(1 - p) \geq 1 - p \\
+   &\iff n \geq 1 & \text{(supondo } p < 1 \text{)}
+   \end{aligned}
+   $$
+   O que é verdade, pois existe pelo menos uma opção (a correta).
+   
+   Se $p = 1$, a igualdade vale, e $P(K \mid R) = 1$, pois o aluno sempre sabe a resposta e sempre acerta.
+   
+   Se $n = 1$, a igualdade vale, e $P(K \mid R) = p$, pois o aluno acertar (ele sempre acerta!) e o aluno saber são independentes.
+   
+   Imagine $n > 1$. 
+   
+   Lembre-se de que $P(K \mid R) = \frac{P(K \cap R)}{P(R)}$.
+   
+   O numerador é a probabilidade do evento "o aluno sabe e o aluno acerta". Esta probabilidade é exatamente $p$, pois "o aluno sabe" é sub-evento de "o aluno acerta".
+   
+   O numerador $P(R)$ é um número tal que $0 < P(R) < 1$. Vamos chamar este número de $1/x$, para $x > 1$.
+   
+   Então, 
+   
+   $$
+   P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp > p
+   $$
+   
+   
 #### 9 {-}
 
 
