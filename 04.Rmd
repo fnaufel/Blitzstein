@@ -489,11 +489,195 @@ b. Isto equivale a mostrar
    P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp > p
    $$
    
-   
-#### 9 {-}
+##### Em R {-}
+
+Valores teóricos:
+
+```{r}
+n <- 1:9
+p <- seq(0, 1, .25)
+
+df <- expand.grid(n = n, p = p) %>% 
+  mutate(
+    pkr_teorico = n * p / (p * (n - 1) + 1)
+  ) %>% 
+  arrange(n)
+
+df
+```
+
+Gráfico:
+
+```{r}
+df %>% 
+  ggplot(aes(p, pkr_teorico)) +
+    geom_line(
+      aes(group = n, color = fct_rev(as.factor(n))),
+      size = 1.25
+    ) +
+    labs(
+      x = 'P(K)',
+      y = 'P(K|R)',
+      color = 'n'
+    )
+```
+
+::: {.rmdnote latex=1}
+
+Conclusão óbvia: quanto maior o número $n$ de opções, maior a probabilidade $P(K \mid R)$ de o aluno ter acertado sabendo, em oposição a ter acertado chutando:
+
+$$
+\begin{aligned}
+\lim_{n \to \infty} P(K \mid R) 
+&=
+\lim_{n \to \infty} \frac{np}{np + 1 - p} \\
+&=
+\lim_{n \to \infty} \frac{p}{p} \\
+&= 1
+\end{aligned}
+$$
+
+:::
+
+Simulação:
+
+```{r}
+sim <- function(n, p, reps = 1e7) {
+  
+  sabe <- sample(
+    c(TRUE, FALSE), 
+    reps,
+    replace = TRUE,
+    c(p, 1 - p)
+  )
+
+  acerta <- sabe
+  nao_sabe <- sum(!sabe)
+  
+  acerta[which(!sabe)] <- 
+    sample(
+      c(TRUE, FALSE),
+      nao_sabe,
+      replace = TRUE,
+      prob = c(1/n, 1 - 1/n)
+    )
+  
+  sum(sabe) / sum(acerta)
+  
+}
+
+sim <- Vectorize(sim)
+```
+
+```{r}
+df <- df %>% 
+  mutate(
+    pkr_simulado = sim(n, p)
+  )
+
+df
+```
+
+```{r}
+df %>% 
+  pivot_longer(
+    cols = starts_with('pkr'),
+    names_to = 'tipo',
+    names_prefix = 'pkr_',
+    values_to = 'valor'
+  ) %>% 
+  ggplot(aes(p, valor)) +
+    geom_line(
+      aes(group = n, color = fct_rev(as.factor(n))),
+      size = 1.25
+    ) +
+    labs(
+      x = 'P(K)',
+      y = 'P(K|R)',
+      color = 'n'
+    ) +
+    facet_wrap(~fct_rev(tipo)) +
+    theme(panel.spacing.x = unit(.5, 'cm'))
+```
 
 
 #### 12 {-}
+
+::: {.rmdbox latex=1}
+
+Alice está tentando enviar uma mensagem codificada em binário para Bob.
+
+a. Ela envia um *bit*: $0$ ou $1$ com probabilidades iguais. Se ela envia $0$, há probabilidade $5\%$ de erro. Se ela envia $1$, há probabilidade $10\%$ de erro.
+
+   Dado que Bob recebeu $1$, qual a probabilidade de Alice ter enviado $1$?
+
+:::
+
+* Eventos:
+
+  $$
+  \begin{aligned}
+  A &= \text{Alice envia } 1 \\
+  B &= \text{Bob recebe } 1 \\
+  E &= \text{Houve erro}
+  \end{aligned}
+  $$
+
+* Queremos achar $P(A \mid B)$. Usando Bayes:
+
+  $$
+  P(A \mid B) = \frac{P(B \mid A) \cdot P(A)}{P(B)}
+  $$
+
+::: {.rmdwarning latex=1}
+
+Não sei se o cálculo abaixo está ok.
+
+Não seria $P(B \mid A) = \frac{90}{100} \cdot \frac12$? Acho que não.
+
+Pensar.
+
+Simular.
+
+:::
+
+* Para calcular $P(B \mid A)$: a probabilidade de Bob receber $1$ se Alice enviar $1$ é a probabilidade de não haver erro quando Alice envia $1$: 
+
+  $$P(B \mid A) = \frac{90}{100}$$
+
+* $P(A)$ é a probabilidade de Alice enviar $1$:
+
+  $$P(A) = \frac12$$
+
+* Para calcular $P(B)$, usamos probabilidade total, condicionando sobre o erro:
+
+  $$
+  P(B) = P(B \mid E) \cdot P(E) \;+\;
+  P(B \mid \neg E) \cdot P(\neg E)
+  $$
+
+* $P(B \mid E)$ é a probabilidade de Bob receber $1$ se houve erro; i.e., a probabilidade de Alice enviar $0$ e haver erro:
+
+  $$P(B \mid E) = \frac{5}{100}$$
+
+* Para calcular $P(E)$, vamos condicionar sobre $A$:
+
+  $$
+  \begin{aligned}
+  P(E) 
+  &=
+  P(E \mid A) \cdot P(A) \;+\;
+  P(E \mid \neg A) \cdot P(\neg A) \\
+  &=
+  \frac{10}{100} \cdot \frac12 \;+\;
+  \frac{5}{100} \cdot \frac12 \\
+  &= \frac{3}{40}
+  \end{aligned}
+  $$
+
+* Daí, $P(B) = P(B \mid E) \cdot P(E) = \frac{3}{800}$.
+
+* Continuar...
 
 
 #### 14 {-}

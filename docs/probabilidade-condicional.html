@@ -493,33 +493,200 @@ P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp &gt; p
 \]</span></p>
 </li>
 </ol>
+<div id="em-r" class="section level5 unnumbered">
+<h5>Em R<a class="anchor" aria-label="anchor" href="#em-r"><i class="fas fa-link"></i></a>
+</h5>
+<p>Valores teóricos:</p>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">9</span>
+<span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">.25</span><span class="op">)</span>
+
+<span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/expand.grid.html">expand.grid</a></span><span class="op">(</span>n <span class="op">=</span> <span class="va">n</span>, p <span class="op">=</span> <span class="va">p</span><span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">mutate</span><span class="op">(</span>
+    pkr_teorico <span class="op">=</span> <span class="va">n</span> <span class="op">*</span> <span class="va">p</span> <span class="op">/</span> <span class="op">(</span><span class="va">p</span> <span class="op">*</span> <span class="op">(</span><span class="va">n</span> <span class="op">-</span> <span class="fl">1</span><span class="op">)</span> <span class="op">+</span> <span class="fl">1</span><span class="op">)</span>
+  <span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">arrange</span><span class="op">(</span><span class="va">n</span><span class="op">)</span>
+
+<span class="va">df</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["n"],"name":[1],"type":["int"],"align":["right"]},{"label":["p"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["pkr_teorico"],"name":[3],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"0,00","3":"0,0000000"},{"1":"1","2":"0,25","3":"0,2500000"},{"1":"1","2":"0,50","3":"0,5000000"},{"1":"1","2":"0,75","3":"0,7500000"},{"1":"1","2":"1,00","3":"1,0000000"},{"1":"2","2":"0,00","3":"0,0000000"},{"1":"2","2":"0,25","3":"0,4000000"},{"1":"2","2":"0,50","3":"0,6666667"},{"1":"2","2":"0,75","3":"0,8571429"},{"1":"2","2":"1,00","3":"1,0000000"},{"1":"3","2":"0,00","3":"0,0000000"},{"1":"3","2":"0,25","3":"0,5000000"},{"1":"3","2":"0,50","3":"0,7500000"},{"1":"3","2":"0,75","3":"0,9000000"},{"1":"3","2":"1,00","3":"1,0000000"},{"1":"4","2":"0,00","3":"0,0000000"},{"1":"4","2":"0,25","3":"0,5714286"},{"1":"4","2":"0,50","3":"0,8000000"},{"1":"4","2":"0,75","3":"0,9230769"},{"1":"4","2":"1,00","3":"1,0000000"},{"1":"5","2":"0,00","3":"0,0000000"},{"1":"5","2":"0,25","3":"0,6250000"},{"1":"5","2":"0,50","3":"0,8333333"},{"1":"5","2":"0,75","3":"0,9375000"},{"1":"5","2":"1,00","3":"1,0000000"},{"1":"6","2":"0,00","3":"0,0000000"},{"1":"6","2":"0,25","3":"0,6666667"},{"1":"6","2":"0,50","3":"0,8571429"},{"1":"6","2":"0,75","3":"0,9473684"},{"1":"6","2":"1,00","3":"1,0000000"},{"1":"7","2":"0,00","3":"0,0000000"},{"1":"7","2":"0,25","3":"0,7000000"},{"1":"7","2":"0,50","3":"0,8750000"},{"1":"7","2":"0,75","3":"0,9545455"},{"1":"7","2":"1,00","3":"1,0000000"},{"1":"8","2":"0,00","3":"0,0000000"},{"1":"8","2":"0,25","3":"0,7272727"},{"1":"8","2":"0,50","3":"0,8888889"},{"1":"8","2":"0,75","3":"0,9600000"},{"1":"8","2":"1,00","3":"1,0000000"},{"1":"9","2":"0,00","3":"0,0000000"},{"1":"9","2":"0,25","3":"0,7500000"},{"1":"9","2":"0,50","3":"0,9000000"},{"1":"9","2":"0,75","3":"0,9642857"},{"1":"9","2":"1,00","3":"1,0000000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<p>Gráfico:</p>
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">df</span> <span class="op">%&gt;%</span> 
+  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">p</span>, <span class="va">pkr_teorico</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu">geom_line</span><span class="op">(</span>
+      <span class="fu">aes</span><span class="op">(</span>group <span class="op">=</span> <span class="va">n</span>, color <span class="op">=</span> <span class="fu">fct_rev</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,
+      size <span class="op">=</span> <span class="fl">1.25</span>
+    <span class="op">)</span> <span class="op">+</span>
+    <span class="fu">labs</span><span class="op">(</span>
+      x <span class="op">=</span> <span class="st">'P(K)'</span>,
+      y <span class="op">=</span> <span class="st">'P(K|R)'</span>,
+      color <span class="op">=</span> <span class="st">'n'</span>
+    <span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="_main_files/figure-html/unnamed-chunk-24-1.png" width="100%" style="display: block; margin: auto;"></div>
+<div class="rmdnote">
+<p>Conclusão óbvia: quanto maior o número <span class="math inline">\(n\)</span> de opções, maior a probabilidade <span class="math inline">\(P(K \mid R)\)</span> de o aluno ter acertado sabendo, em oposição a ter acertado chutando:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\lim_{n \to \infty} P(K \mid R)
+&amp;=
+\lim_{n \to \infty} \frac{np}{np + 1 - p} \\
+&amp;=
+\lim_{n \to \infty} \frac{p}{p} \\
+&amp;= 1
+\end{aligned}
+\]</span></p>
+</div>
+<p>Simulação:</p>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">sim</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span>, <span class="va">p</span>, <span class="va">reps</span> <span class="op">=</span> <span class="fl">1e7</span><span class="op">)</span> <span class="op">{</span>
+  
+  <span class="va">sabe</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>
+    <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span>, 
+    <span class="va">reps</span>,
+    replace <span class="op">=</span> <span class="cn">TRUE</span>,
+    <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="va">p</span>, <span class="fl">1</span> <span class="op">-</span> <span class="va">p</span><span class="op">)</span>
+  <span class="op">)</span>
+
+  <span class="va">acerta</span> <span class="op">&lt;-</span> <span class="va">sabe</span>
+  <span class="va">nao_sabe</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="op">!</span><span class="va">sabe</span><span class="op">)</span>
+  
+  <span class="va">acerta</span><span class="op">[</span><span class="fu"><a href="https://rdrr.io/r/base/which.html">which</a></span><span class="op">(</span><span class="op">!</span><span class="va">sabe</span><span class="op">)</span><span class="op">]</span> <span class="op">&lt;-</span> 
+    <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>
+      <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="cn">TRUE</span>, <span class="cn">FALSE</span><span class="op">)</span>,
+      <span class="va">nao_sabe</span>,
+      replace <span class="op">=</span> <span class="cn">TRUE</span>,
+      prob <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">1</span><span class="op">/</span><span class="va">n</span>, <span class="fl">1</span> <span class="op">-</span> <span class="fl">1</span><span class="op">/</span><span class="va">n</span><span class="op">)</span>
+    <span class="op">)</span>
+  
+  <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">sabe</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">acerta</span><span class="op">)</span>
+  
+<span class="op">}</span>
+
+<span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Vectorize.html">Vectorize</a></span><span class="op">(</span><span class="va">sim</span><span class="op">)</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op">%&gt;%</span> 
+  <span class="fu">mutate</span><span class="op">(</span>
+    pkr_simulado <span class="op">=</span> <span class="fu">sim</span><span class="op">(</span><span class="va">n</span>, <span class="va">p</span><span class="op">)</span>
+  <span class="op">)</span>
+
+<span class="va">df</span></code></pre></div>
+<div data-pagedtable="false">
+<script data-pagedtable-source type="application/json">
+{"columns":[{"label":["n"],"name":[1],"type":["int"],"align":["right"]},{"label":["p"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["pkr_teorico"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["pkr_simulado"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"1","2":"0,25","3":"0,2500000","4":"0,2500802"},{"1":"1","2":"0,50","3":"0,5000000","4":"0,5001868"},{"1":"1","2":"0,75","3":"0,7500000","4":"0,7502147"},{"1":"1","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"2","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"2","2":"0,25","3":"0,4000000","4":"0,4000700"},{"1":"2","2":"0,50","3":"0,6666667","4":"0,6666584"},{"1":"2","2":"0,75","3":"0,8571429","4":"0,8570874"},{"1":"2","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"3","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"3","2":"0,25","3":"0,5000000","4":"0,5003166"},{"1":"3","2":"0,50","3":"0,7500000","4":"0,7500861"},{"1":"3","2":"0,75","3":"0,9000000","4":"0,9002338"},{"1":"3","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"4","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"4","2":"0,25","3":"0,5714286","4":"0,5713149"},{"1":"4","2":"0,50","3":"0,8000000","4":"0,8000151"},{"1":"4","2":"0,75","3":"0,9230769","4":"0,9230385"},{"1":"4","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"5","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"5","2":"0,25","3":"0,6250000","4":"0,6252268"},{"1":"5","2":"0,50","3":"0,8333333","4":"0,8335215"},{"1":"5","2":"0,75","3":"0,9375000","4":"0,9374750"},{"1":"5","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"6","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"6","2":"0,25","3":"0,6666667","4":"0,6668486"},{"1":"6","2":"0,50","3":"0,8571429","4":"0,8570601"},{"1":"6","2":"0,75","3":"0,9473684","4":"0,9473988"},{"1":"6","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"7","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"7","2":"0,25","3":"0,7000000","4":"0,6995544"},{"1":"7","2":"0,50","3":"0,8750000","4":"0,8750378"},{"1":"7","2":"0,75","3":"0,9545455","4":"0,9545722"},{"1":"7","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"8","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"8","2":"0,25","3":"0,7272727","4":"0,7270769"},{"1":"8","2":"0,50","3":"0,8888889","4":"0,8887373"},{"1":"8","2":"0,75","3":"0,9600000","4":"0,9599059"},{"1":"8","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"9","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"9","2":"0,25","3":"0,7500000","4":"0,7498078"},{"1":"9","2":"0,50","3":"0,9000000","4":"0,9001333"},{"1":"9","2":"0,75","3":"0,9642857","4":"0,9642276"},{"1":"9","2":"1,00","3":"1,0000000","4":"1,0000000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+  </script>
+</div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">df</span> <span class="op">%&gt;%</span> 
+  <span class="fu">pivot_longer</span><span class="op">(</span>
+    cols <span class="op">=</span> <span class="fu">starts_with</span><span class="op">(</span><span class="st">'pkr'</span><span class="op">)</span>,
+    names_to <span class="op">=</span> <span class="st">'tipo'</span>,
+    names_prefix <span class="op">=</span> <span class="st">'pkr_'</span>,
+    values_to <span class="op">=</span> <span class="st">'valor'</span>
+  <span class="op">)</span> <span class="op">%&gt;%</span> 
+  <span class="fu">ggplot</span><span class="op">(</span><span class="fu">aes</span><span class="op">(</span><span class="va">p</span>, <span class="va">valor</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu">geom_line</span><span class="op">(</span>
+      <span class="fu">aes</span><span class="op">(</span>group <span class="op">=</span> <span class="va">n</span>, color <span class="op">=</span> <span class="fu">fct_rev</span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/factor.html">as.factor</a></span><span class="op">(</span><span class="va">n</span><span class="op">)</span><span class="op">)</span><span class="op">)</span>,
+      size <span class="op">=</span> <span class="fl">1.25</span>
+    <span class="op">)</span> <span class="op">+</span>
+    <span class="fu">labs</span><span class="op">(</span>
+      x <span class="op">=</span> <span class="st">'P(K)'</span>,
+      y <span class="op">=</span> <span class="st">'P(K|R)'</span>,
+      color <span class="op">=</span> <span class="st">'n'</span>
+    <span class="op">)</span> <span class="op">+</span>
+    <span class="fu">facet_wrap</span><span class="op">(</span><span class="op">~</span><span class="fu">fct_rev</span><span class="op">(</span><span class="va">tipo</span><span class="op">)</span><span class="op">)</span> <span class="op">+</span>
+    <span class="fu">theme</span><span class="op">(</span>panel.spacing.x <span class="op">=</span> <span class="fu">unit</span><span class="op">(</span><span class="fl">.5</span>, <span class="st">'cm'</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<div class="inline-figure"><img src="_main_files/figure-html/unnamed-chunk-27-1.png" width="100%" style="display: block; margin: auto;"></div>
+</div>
 </div>
 <div id="section-12" class="section level4 unnumbered">
-<h4>9<a class="anchor" aria-label="anchor" href="#section-12"><i class="fas fa-link"></i></a>
+<h4>12<a class="anchor" aria-label="anchor" href="#section-12"><i class="fas fa-link"></i></a>
 </h4>
+<div class="rmdbox">
+<p>Alice está tentando enviar uma mensagem codificada em binário para Bob.</p>
+<ol style="list-style-type: lower-alpha">
+<li>
+<p>Ela envia um <strong>bit</strong>: <span class="math inline">\(0\)</span> ou <span class="math inline">\(1\)</span> com probabilidades iguais. Se ela envia <span class="math inline">\(0\)</span>, há probabilidade <span class="math inline">\(5\%\)</span> de erro. Se ela envia <span class="math inline">\(1\)</span>, há probabilidade <span class="math inline">\(10\%\)</span> de erro.</p>
+<p>Dado que Bob recebeu <span class="math inline">\(1\)</span>, qual a probabilidade de Alice ter enviado <span class="math inline">\(1\)</span>?</p>
+</li>
+</ol>
+</div>
+<ul>
+<li>
+<p>Eventos:</p>
+<p><span class="math display">\[
+\begin{aligned}
+A &amp;= \text{Alice envia } 1 \\
+B &amp;= \text{Bob recebe } 1 \\
+E &amp;= \text{Houve erro}
+\end{aligned}
+\]</span></p>
+</li>
+<li>
+<p>Queremos achar <span class="math inline">\(P(A \mid B)\)</span>. Usando Bayes:</p>
+<p><span class="math display">\[
+P(A \mid B) = \frac{P(B \mid A) \cdot P(A)}{P(B)}
+\]</span></p>
+</li>
+<li>
+<p>Para calcular <span class="math inline">\(P(B \mid A)\)</span>: a probabilidade de Bob receber <span class="math inline">\(1\)</span> se Alice enviar <span class="math inline">\(1\)</span> é a probabilidade de não haver erro quando Alice envia <span class="math inline">\(1\)</span>:</p>
+<p><span class="math display">\[P(B \mid A) = \frac{90}{100}\]</span></p>
+</li>
+<li>
+<p><span class="math inline">\(P(A)\)</span> é a probabilidade de Alice enviar <span class="math inline">\(1\)</span>:</p>
+<p><span class="math display">\[P(A) = \frac12\]</span></p>
+</li>
+<li>
+<p>Para calcular <span class="math inline">\(P(B)\)</span>, usamos probabilidade total, condicionando sobre o erro:</p>
+<p><span class="math display">\[
+P(B) = P(B \mid E) \cdot P(E) \;+\;
+P(B \mid \neg E) \cdot P(\neg E)
+\]</span></p>
+</li>
+<li>
+<p><span class="math inline">\(P(B \mid E)\)</span> é a probabilidade de Bob receber <span class="math inline">\(1\)</span> se houve erro; i.e., a probabilidade de Alice enviar <span class="math inline">\(0\)</span> e haver erro:</p>
+<p><span class="math display">\[P(B \mid E) = \frac{5}{100}\]</span></p>
+</li>
+<li>
+<p>Para calcular <span class="math inline">\(P(E)\)</span>, vamos condicionar sobre <span class="math inline">\(A\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(E)
+&amp;=
+P(E \mid A) \cdot P(A) \;+\;
+P(E \mid \neg A) \cdot P(\neg A) \\
+&amp;=
+\frac{10}{100} \cdot \frac12 \;+\;
+\frac{5}{100} \cdot \frac12 \\
+&amp;= \frac{3}{40}
+\end{aligned}
+\]</span></p>
+</li>
+<li><p>Daí, <span class="math inline">\(P(B) = P(B \mid E) \cdot P(E) = \frac{3}{800}\)</span>.</p></li>
+<li><p>Continuar…</p></li>
+</ul>
 </div>
 <div id="section-13" class="section level4 unnumbered">
-<h4>12<a class="anchor" aria-label="anchor" href="#section-13"><i class="fas fa-link"></i></a>
+<h4>14<a class="anchor" aria-label="anchor" href="#section-13"><i class="fas fa-link"></i></a>
 </h4>
 </div>
 <div id="section-14" class="section level4 unnumbered">
-<h4>14<a class="anchor" aria-label="anchor" href="#section-14"><i class="fas fa-link"></i></a>
+<h4>15<a class="anchor" aria-label="anchor" href="#section-14"><i class="fas fa-link"></i></a>
 </h4>
 </div>
 <div id="section-15" class="section level4 unnumbered">
-<h4>15<a class="anchor" aria-label="anchor" href="#section-15"><i class="fas fa-link"></i></a>
+<h4>16<a class="anchor" aria-label="anchor" href="#section-15"><i class="fas fa-link"></i></a>
 </h4>
 </div>
 <div id="section-16" class="section level4 unnumbered">
-<h4>16<a class="anchor" aria-label="anchor" href="#section-16"><i class="fas fa-link"></i></a>
+<h4>17<a class="anchor" aria-label="anchor" href="#section-16"><i class="fas fa-link"></i></a>
 </h4>
 </div>
 <div id="section-17" class="section level4 unnumbered">
-<h4>17<a class="anchor" aria-label="anchor" href="#section-17"><i class="fas fa-link"></i></a>
-</h4>
-</div>
-<div id="section-18" class="section level4 unnumbered">
-<h4>29<a class="anchor" aria-label="anchor" href="#section-18"><i class="fas fa-link"></i></a>
+<h4>29<a class="anchor" aria-label="anchor" href="#section-17"><i class="fas fa-link"></i></a>
 </h4>
 
 </div>
@@ -557,7 +724,7 @@ P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp &gt; p
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 22/02/2022)</p>
+    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 24/02/2022)</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
