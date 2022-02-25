@@ -569,7 +569,7 @@ sim <- function(n, p, reps = 1e7) {
 sim <- Vectorize(sim)
 ```
 
-```{r}
+```{r cache=TRUE}
 df <- df %>% 
   mutate(
     pkr_simulado = sim(n, p)
@@ -623,27 +623,35 @@ a. Ela envia um *bit*: $0$ ou $1$ com probabilidades iguais. Se ela envia $0$, h
   \end{aligned}
   $$
 
+* Probabilidades dadas:
+
+  $$
+  \begin{aligned}
+  P(A) &= 1/2 \\
+  P(E \mid A) &= 10/100 \\
+  P(E \mid \neg A) &= 5/100 
+  \end{aligned}
+  $$
+
 * Queremos achar $P(A \mid B)$. Usando Bayes:
 
   $$
   P(A \mid B) = \frac{P(B \mid A) \cdot P(A)}{P(B)}
   $$
 
-::: {.rmdwarning latex=1}
-
-Não sei se o cálculo abaixo está ok.
-
-Não seria $P(B \mid A) = \frac{90}{100} \cdot \frac12$? Acho que não.
-
-Pensar.
-
-Simular.
-
-:::
-
 * Para calcular $P(B \mid A)$: a probabilidade de Bob receber $1$ se Alice enviar $1$ é a probabilidade de não haver erro quando Alice envia $1$: 
 
   $$P(B \mid A) = \frac{90}{100}$$
+  
+  Ou, se quisermos ser mais formais, usando a definição:
+  
+  $$
+  \begin{aligned}
+  P(B \mid A) &= \frac{P(A \cap B)}{P(A)} \\
+  &= \frac{1/2 \cdot 90/100}{1/2} \\
+  &= \frac{90}{100}
+  \end{aligned}
+  $$
 
 * $P(A)$ é a probabilidade de Alice enviar $1$:
 
@@ -655,10 +663,6 @@ Simular.
   P(B) = P(B \mid E) \cdot P(E) \;+\;
   P(B \mid \neg E) \cdot P(\neg E)
   $$
-
-* $P(B \mid E)$ é a probabilidade de Bob receber $1$ se houve erro; i.e., a probabilidade de Alice enviar $0$ e haver erro:
-
-  $$P(B \mid E) = \frac{5}{100}$$
 
 * Para calcular $P(E)$, vamos condicionar sobre $A$:
 
@@ -675,9 +679,85 @@ Simular.
   \end{aligned}
   $$
 
-* Daí, $P(B) = P(B \mid E) \cdot P(E) = \frac{3}{800}$.
+* $P(B \mid E)$, por definição, é
 
-* Continuar...
+  $$
+  \begin{aligned}
+  P(B \mid E) &= \frac{P(B \cap E)}{P(E)} \\
+  &= \frac{1/2 \cdot 5/100}{3/40} \\
+  &= \frac{1}{3}
+  \end{aligned}
+  $$
+
+* Agora, calcular $P(B \mid \neg E) \cdot P(\neg E)$:
+
+  $$
+  \begin{aligned}
+  P(B \mid \neg E) &= \frac{P(B \cap \neg E)}{P(\neg E)} \\
+  &= \frac{1/2 \cdot 90/100}{37/40} \\
+  &= \frac{18}{37}
+  \end{aligned}
+  $$
+
+  e
+  
+  $$
+  P(\neg E) = 1 - P(E) = \frac{37}{40}
+  $$
+
+* Daí
+
+  $$
+  \begin{aligned}
+  P(B) &= P(B \mid E) \cdot P(E) \;+\;
+  P(B \mid \neg E) \cdot P(\neg E) \\
+  &=
+  \frac13 \cdot \frac{3}{40} \;+\; \frac{18}{37} \cdot \frac{37}{40} \\
+  &= 
+  \frac{19}{40}
+  \end{aligned}
+  $$
+
+* Concluindo:
+
+  $$
+  \begin{aligned}
+  P(A \mid B) &= \frac{P(B \mid A) \cdot P(A)}{P(B)} \\
+  &=
+  \frac{90/100 \cdot 1/2}{19/40} \\
+  &=
+  \frac{18}{19} \\
+  &\approx `r 18/19`
+  \end{aligned}
+  $$
+
+* Simulação:
+
+    ```{r cache=TRUE}
+    reps <- 1e7
+    alice_envia <- sample(c(0, 1), reps, replace = TRUE)
+    bob_recebe <- alice_envia
+    
+    bob_recebe[which(alice_envia == 0)] <- 
+      sample(
+        c(0, 1), 
+        length(which(alice_envia == 0)),
+        replace = TRUE,
+        prob = c(95/100, 5/100)
+      )
+    
+    bob_recebe[which(alice_envia == 1)] <- 
+      sample(
+        c(0, 1), 
+        length(which(alice_envia == 1)),
+        replace = TRUE,
+        # Atenção: aqui, erro é 1 virar 0:
+        prob = c(10/100, 90/100)  
+      )
+    
+    pab <- sum(alice_envia & bob_recebe) / sum(bob_recebe)
+    pab
+    ```
 
 
 #### 14 {-}
