@@ -338,7 +338,7 @@
 
 \title{Introduction to Probability (Joe Blitzstein)}
 \author{Fernando Náufel}
-\date{(versão de 24/02/2022)}
+\date{(versão de 02/03/2022)}
 
 \begin{document}
 \maketitle
@@ -424,17 +424,17 @@
 \begin{Highlighting}[]
 \NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{365}\NormalTok{,}\DecValTok{23}\NormalTok{,}\AttributeTok{replace=}\ConstantTok{TRUE}\NormalTok{)}
 \FunctionTok{tabulate}\NormalTok{(b)}
-\DocumentationTok{\#\#   [1] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\#  [34] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0}
-\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [133] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [166] 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [199] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [232] 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [265] 0 1 0 0 0 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [298] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
+\DocumentationTok{\#\#   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0}
+\DocumentationTok{\#\#  [34] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0}
+\DocumentationTok{\#\# [100] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1}
+\DocumentationTok{\#\# [133] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [166] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [199] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [265] 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [298] 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -442,10 +442,10 @@
 \begin{Highlighting}[]
 \FunctionTok{table}\NormalTok{(b)}
 \DocumentationTok{\#\# b}
-\DocumentationTok{\#\#   2  83  88  95 113 120 133 156 157 170 175 190 216 221 235 237 266 }
-\DocumentationTok{\#\#   1   1   1   1   1   1   1   1   1   1   1   2   1   1   1   1   1 }
-\DocumentationTok{\#\# 270 299 315 348 }
-\DocumentationTok{\#\#   2   1   1   1}
+\DocumentationTok{\#\#  27  28  35  51  55  93 100 121 129 132 219 221 247 251 266 271 283 }
+\DocumentationTok{\#\#   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1 }
+\DocumentationTok{\#\# 302 314 321 348 357 362 }
+\DocumentationTok{\#\#   1   1   1   1   1   1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2109,90 +2109,286 @@ Simulação:
 
 \begin{rmdbox}
 
-Alice está tentando enviar uma mensagem codificada em binário para Bob.
-
 \begin{enumerate}
 \def\labelenumi{\alph{enumi}.}
 \item
-  Ela envia um \textbf{bit}: $0$ ou $1$ com probabilidades iguais. Se ela envia $0$, há probabilidade $5\%$ de erro. Se ela envia $1$, há probabilidade $10\%$ de erro.
+  Alice está tentando enviar uma mensagem codificada em binário para Bob.
 
-  Dado que Bob recebeu $1$, qual a probabilidade de Alice ter enviado $1$?
+  \begin{itemize}
+  \item
+    Ela envia um \emph{bit}: $0$ ou $1$ com probabilidades iguais.
+  \item
+    Se ela envia $0$, há probabilidade $5\%$ de erro.
+  \item
+    Se ela envia $1$, há probabilidade $10\%$ de erro.
+  \item
+    Dado que Bob recebeu $1$, qual a probabilidade de Alice ter enviado $1$?
+  \end{itemize}
 \end{enumerate}
 
 \end{rmdbox}
 
 \begin{itemize}
 \item
-  Eventos:
+  Eventos e probabilidades:
 
-  \[
-  \begin{aligned}
-  A &= \text{Alice envia } 1 \\
-  B &= \text{Bob recebe } 1 \\
-  E &= \text{Houve erro}
-  \end{aligned}
-  \]
+  \begin{center}\includegraphics[width=1\linewidth]{images/alice01} \end{center}
 \item
   Queremos achar $P(A \mid B)$. Usando Bayes:
 
+  \begin{center}\includegraphics[width=0.75\linewidth]{images/alice02} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p0 }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{05}
+\NormalTok{p1 }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{1}
+\NormalTok{q0 }\OtherTok{\textless{}{-}} \DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ p0}
+\NormalTok{q1 }\OtherTok{\textless{}{-}} \DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ p1}
+
+\NormalTok{pA }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{/}\DecValTok{2}
+\NormalTok{pBIA }\OtherTok{\textless{}{-}}\NormalTok{ q1}
+\NormalTok{pB }\OtherTok{\textless{}{-}}\NormalTok{ (q1 }\SpecialCharTok{+}\NormalTok{ p0) }\SpecialCharTok{/} \DecValTok{2}
+\NormalTok{pAIB }\OtherTok{\textless{}{-}}\NormalTok{ pBIA }\SpecialCharTok{*}\NormalTok{ pA }\SpecialCharTok{/}\NormalTok{ pB}
+
+\NormalTok{pAIB}
+\DocumentationTok{\#\# [1] 0,9473684}
+\end{Highlighting}
+\end{Shaded}
+\item
+  Para sermos completos, vamos calcular outras probabilidades, com $P(A) = P(\neg A) = 1/2$:
+
+  \begin{center}\includegraphics[width=0.5\linewidth]{images/alice03} \end{center}
+
+  \begin{center}\includegraphics[width=0.5\linewidth]{images/alice04} \end{center}
+\item
+  Simulação:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{reps }\OtherTok{\textless{}{-}} \FloatTok{1e7}
+\NormalTok{alice\_envia }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), reps, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{bob\_recebe }\OtherTok{\textless{}{-}}\NormalTok{ alice\_envia}
+
+\NormalTok{bob\_recebe[}\FunctionTok{which}\NormalTok{(alice\_envia }\SpecialCharTok{==} \DecValTok{0}\NormalTok{)] }\OtherTok{\textless{}{-}} 
+  \FunctionTok{sample}\NormalTok{(}
+    \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }
+    \FunctionTok{length}\NormalTok{(}\FunctionTok{which}\NormalTok{(alice\_envia }\SpecialCharTok{==} \DecValTok{0}\NormalTok{)),}
+    \AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}
+    \AttributeTok{prob =} \FunctionTok{c}\NormalTok{(}\DecValTok{95}\SpecialCharTok{/}\DecValTok{100}\NormalTok{, }\DecValTok{5}\SpecialCharTok{/}\DecValTok{100}\NormalTok{)}
+\NormalTok{  )}
+
+\NormalTok{bob\_recebe[}\FunctionTok{which}\NormalTok{(alice\_envia }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)] }\OtherTok{\textless{}{-}} 
+  \FunctionTok{sample}\NormalTok{(}
+    \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }
+    \FunctionTok{length}\NormalTok{(}\FunctionTok{which}\NormalTok{(alice\_envia }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)),}
+    \AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}
+    \CommentTok{\# Atenção: aqui, erro é 1 virar 0:}
+    \AttributeTok{prob =} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\SpecialCharTok{/}\DecValTok{100}\NormalTok{, }\DecValTok{90}\SpecialCharTok{/}\DecValTok{100}\NormalTok{)  }
+\NormalTok{  )}
+
+\NormalTok{pab }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(alice\_envia }\SpecialCharTok{\&}\NormalTok{ bob\_recebe) }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(bob\_recebe)}
+\NormalTok{pab}
+\DocumentationTok{\#\# [1] 0,9473928}
+\end{Highlighting}
+\end{Shaded}
+\end{itemize}
+
+\begin{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Agora, eles usam um {\hl{código com repetição}}:
+
+  \begin{itemize}
+  \item
+    Alice envia $000$ para representar $0$ e $111$ para representar $1$.
+  \item
+    Bob decodifica a mensagem tomando o \emph{bit} que está em maioria.
+  \item
+    As probabilidades de erro são como antes, e os erros em \emph{bits} diferentes são independentes.
+  \item
+    Dado que Bob recebe $110$, qual a probabilidade de que Alice tenha enviado $111$?
+  \end{itemize}
+\end{enumerate}
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Teoricamente:
+
+  \begin{center}\includegraphics[width=0.5\linewidth]{images/alice05} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(q1}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{*}\NormalTok{ p1) }\SpecialCharTok{/}\NormalTok{ ((q1 }\SpecialCharTok{+}\NormalTok{ p0)}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{*}\NormalTok{ (p1 }\SpecialCharTok{+}\NormalTok{ q0))}
+\DocumentationTok{\#\# [1] 0,08547685}
+\end{Highlighting}
+\end{Shaded}
+\item
+  Simulação:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{reps }\OtherTok{\textless{}{-}} \FloatTok{1e6}
+
+\NormalTok{alice\_envia }\OtherTok{\textless{}{-}} \FunctionTok{replicate}\NormalTok{(}
+\NormalTok{  reps,}
+  \FunctionTok{sample}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DecValTok{3}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{),}
+  \AttributeTok{simplify =} \ConstantTok{FALSE}
+\NormalTok{)}
+
+\NormalTok{bob\_recebe }\OtherTok{\textless{}{-}}\NormalTok{ alice\_envia}
+
+\NormalTok{inserir\_erros }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(v) \{}
+
+\NormalTok{  original }\OtherTok{\textless{}{-}}\NormalTok{ v}
+
+\NormalTok{  v[}\FunctionTok{which}\NormalTok{(original }\SpecialCharTok{==} \DecValTok{0}\NormalTok{)] }\OtherTok{\textless{}{-}} 
+    \FunctionTok{sample}\NormalTok{(}
+      \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }
+      \FunctionTok{length}\NormalTok{(}\FunctionTok{which}\NormalTok{(original }\SpecialCharTok{==} \DecValTok{0}\NormalTok{)),}
+      \AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}
+      \AttributeTok{prob =} \FunctionTok{c}\NormalTok{(}\DecValTok{95}\SpecialCharTok{/}\DecValTok{100}\NormalTok{, }\DecValTok{5}\SpecialCharTok{/}\DecValTok{100}\NormalTok{)}
+\NormalTok{    )}
+
+\NormalTok{  v[}\FunctionTok{which}\NormalTok{(original }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)] }\OtherTok{\textless{}{-}} 
+    \FunctionTok{sample}\NormalTok{(}
+      \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }
+      \FunctionTok{length}\NormalTok{(}\FunctionTok{which}\NormalTok{(original }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)),}
+      \AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}
+      \CommentTok{\# Atenção: aqui, erro é 1 virar 0:}
+      \AttributeTok{prob =} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\SpecialCharTok{/}\DecValTok{100}\NormalTok{, }\DecValTok{90}\SpecialCharTok{/}\DecValTok{100}\NormalTok{)  }
+\NormalTok{    )}
+
+\NormalTok{  v}
+
+\NormalTok{\} }
+
+\NormalTok{bob\_recebe }\OtherTok{\textless{}{-}}\NormalTok{ bob\_recebe }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{map}\NormalTok{(}
+    \SpecialCharTok{\textasciitilde{}}\FunctionTok{inserir\_erros}\NormalTok{(.x)  }
+\NormalTok{  )}
+
+\NormalTok{bob\_recebe }\OtherTok{\textless{}{-}} 
+\NormalTok{  bob\_recebe }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{map\_lgl}\NormalTok{(}\SpecialCharTok{\textasciitilde{}} \FunctionTok{all}\NormalTok{(.x }\SpecialCharTok{==} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)))}
+
+\NormalTok{alice\_envia }\OtherTok{\textless{}{-}} 
+\NormalTok{  alice\_envia }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{map\_lgl}\NormalTok{(}\SpecialCharTok{\textasciitilde{}} \FunctionTok{all}\NormalTok{(.x }\SpecialCharTok{==} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{)))}
+
+
+\FunctionTok{sum}\NormalTok{(alice\_envia }\SpecialCharTok{\&}\NormalTok{ bob\_recebe) }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(bob\_recebe)}
+\DocumentationTok{\#\# [1] 0,08546727}
+\end{Highlighting}
+\end{Shaded}
+\item
+  A vantagem do esquema de repetição é que o envio de $111$ corresponde ao recebimento de $4$ cadeias diferentes: $111$, $011$, $101$, e $110$.
+\item
+  Sem repetição, a probabilidade de Bob receber $1$ quando Alice transimiu $1$ é
+
   \[
-  P(A \mid B) = \frac{P(B \mid A) \cdot P(A)}{P(B)}
+  P(B \mid A) = q_1 = 0{,}9
   \]
 \item
-  Para calcular $P(B \mid A)$: a probabilidade de Bob receber $1$ se Alice enviar $1$ é a probabilidade de não haver erro quando Alice envia $1$:
+  Com repetição, a probabilidade de Bob receber uma das $4$ cadeias que representam $1$ (evento $R$) quando Alice transmitiu $111$ (evento $T$) é
 
-  \[P(B \mid A) = \frac{90}{100}\]
-\item
-  $P(A)$ é a probabilidade de Alice enviar $1$:
-
-  \[P(A) = \frac12\]
-\item
-  Para calcular $P(B)$, usamos probabilidade total, condicionando sobre o erro:
-
-  \[
-  P(B) = P(B \mid E) \cdot P(E) \;+\;
-  P(B \mid \neg E) \cdot P(\neg E)
-  \]
-\item
-  $P(B \mid E)$ é a probabilidade de Bob receber $1$ se houve erro; i.e., a probabilidade de Alice enviar $0$ e haver erro:
-
-  \[P(B \mid E) = \frac{5}{100}\]
-\item
-  Para calcular $P(E)$, vamos condicionar sobre $A$:
-
-  \[
-  \begin{aligned}
-  P(E) 
-  &=
-  P(E \mid A) \cdot P(A) \;+\;
-  P(E \mid \neg A) \cdot P(\neg A) \\
-  &=
-  \frac{10}{100} \cdot \frac12 \;+\;
-  \frac{5}{100} \cdot \frac12 \\
-  &= \frac{3}{40}
-  \end{aligned}
-  \]
-\item
-  Daí, $P(B) = P(B \mid E) \cdot P(E) = \frac{3}{800}$.
-\item
-  Continuar\ldots{}
+  \begin{center}\includegraphics[width=0.75\linewidth]{images/alice06} \end{center}
 \end{itemize}
 
 \hypertarget{section-13}{%
 \subsubsection*{14}\label{section-13}}
 \addcontentsline{toc}{subsubsection}{14}
 
+Almost OK.
+
 \hypertarget{section-14}{%
 \subsubsection*{15}\label{section-14}}
 \addcontentsline{toc}{subsubsection}{15}
+
+OK.
 
 \hypertarget{section-15}{%
 \subsubsection*{16}\label{section-15}}
 \addcontentsline{toc}{subsubsection}{16}
 
+OK.
+
 \hypertarget{section-16}{%
 \subsubsection*{17}\label{section-16}}
 \addcontentsline{toc}{subsubsection}{17}
+
+\begin{rmdbox}
+
+Em lógica determinística, $A \to B \iff \neg B \to \neg A$.
+
+Em probabilidades?
+
+Considere eventos $A$ e $B$ com $P(A), P(B) \not\in \{0, 1\}$.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Mostre que $P(B \mid A) = 1 \implies P(\neg A \mid \neg B) = 1$.
+\end{enumerate}
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  $A$ está contido em $B$:
+
+  \[
+  P(B \mid A) = 1 
+  \iff \frac{P(A \cap B)}{P(A)} = 1
+  \iff P(A \cap B) = P(A)
+  \]
+\item
+  Vamos mostrar que $P(\neg A \mid \neg B) = 1$:
+
+  \[
+  \begin{aligned}
+  P(\neg A \mid \neg B) 
+  &= \frac{P(\neg A \cap \neg B)}{P(\neg B)} \\
+  &= \frac{P(\neg (A \cup B))}{P(\neg B)} \\
+  &= \frac{1 - P(A \cup B)}{P(\neg B)} \\
+  &= \frac{1 - \left[ P(A) + P(B) - P(A \cap B) \right]}{P(\neg B)} \\
+  &= \frac{1 - P(B)}{P(\neg B)} \\
+  &= \frac{P(\neg B)}{P(\neg B)} \\
+  &= 1
+  \end{aligned}
+  \]
+\end{itemize}
+
+\begin{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Mostre que, se ``$=$'' for substituído por ``$\approx$'', o resultado não vale. Ache um exemplo em que $P(B \mid A)$ seja quase $1$, mas $P(\neg A \mid \neg B)$ seja quase $0$.
+\end{enumerate}
+
+\end{rmdbox}
+
+Valores de exemplo, com $A$ e $B$ independentes:
+
+\[
+\begin{aligned}
+P(A) &= 80/100 \\
+P(B) &= 90/100 \\
+P(\neg A) &= 20/100 \\
+P(\neg B) &= 10/100 \\
+P(A \cap B) &= P(A) \cdot P(B) = 72/100 \\
+P(A \cup B) &= P(A) + P(B) - P(A \cap B) = 98/100\\
+P(B \mid A) &= \frac{P(A \cap B)}{P(A)} = 72/80 \approx 1 \\
+P(\neg A \mid \neg B) &= \frac{P(\neg A \cap \neg B)}{P(\neg B)} = 
+  \frac{1 - P(A \cup B)}{P(\neg B)} = 2/10 \approx 0
+\end{aligned}
+\]
 
 \hypertarget{section-17}{%
 \subsubsection*{29}\label{section-17}}

@@ -617,91 +617,46 @@ a. Alice está tentando enviar uma mensagem codificada em binário para Bob.
 
 :::
 
-* Eventos:
+* Eventos e probabilidades:
 
-  $$
-  \begin{aligned}
-  A &= \text{Alice envia } 1 \\
-  B &= \text{Bob recebe } 1 \\
-  E &= \text{Houve erro}
-  \end{aligned}
-  $$
-
-* Probabilidades dadas:
-
-  $$
-  \begin{aligned}
-  P(A) &= 1/2 \\
-  P(E \mid A) &= 10/100 \\
-  P(E \mid \neg A) &= 5/100 
-  \end{aligned}
-  $$
+    ```{r echo=FALSE}
+    include_graphics('images/alice01.png')
+    ```
+  
 
 * Queremos achar $P(A \mid B)$. Usando Bayes:
 
-  $$
-  P(A \mid B) = \frac{P(B \mid A) \cdot P(A)}{P(B)}
-  $$
+    ```{r echo=FALSE, out.width='75%'}
+    include_graphics('images/alice02.png')
+    ```
 
-* Para calcular $P(B \mid A)$: a probabilidade de Bob receber $1$ se Alice enviar $1$ é a probabilidade de não haver erro quando Alice envia $1$: 
+    ```{r}
+    p0 <- .05
+    p1 <- .1
+    q0 <- 1 - p0
+    q1 <- 1 - p1
+    
+    pA <- 1/2
+    pBIA <- q1
+    pB <- (q1 + p0) / 2
+    pAIB <- pBIA * pA / pB
+    
+    pAIB
+    ```
 
-  $$P(B \mid A) = \frac{90}{100}$$
-  
-  Ou, se quisermos ser mais formais, usando a definição:
-  
-  $$
-  \begin{aligned}
-  P(B \mid A) &= \frac{P(A \cap B)}{P(A)} \\
-  &= \frac{1/2 \cdot 90/100}{1/2} \\
-  &= \frac{90}{100}
-  \end{aligned}
-  $$
+* Para sermos completos, vamos calcular outras probabilidades, com $P(A) = P(\neg A) = 1/2$:
 
-* $P(A)$ é a probabilidade de Alice enviar $1$:
-
-  $$P(A) = \frac12$$
-  
-* Então, $P(B \mid A) \cdot P(A) = \frac{90}{100} \cdot \frac12 = \frac{9}{20}$.
-
-* Para calcular $P(B)$, usamos probabilidade total, condicionando sobre $A$:
-
-  $$
-  P(B) = P(B \mid A) \cdot P(A) \;+\;
-  P(B \mid \neg A) \cdot P(\neg A)
-  $$
-
-* A primeira parcela foi calculada acima. A segunda parcela é
-
-  $$
-  \begin{aligned}
-  P(B \mid \neg A) \cdot P(\neg A) &=
-  \frac{P(\neg A \cap B)}{P(\neg A)} \cdot \frac12 \\
-  &=
-  \frac{1/2 \cdot 5/100}{1/2} \cdot \frac12 \\
-  &=
-  \frac{5}{100} \cdot \frac12 \\
-  &= \frac{1}{40}
-  \end{aligned}
-  $$
-
-* Daí, $P(B) = \frac{9}{20} + \frac{1}{40} = \frac{19}{40}$
-
-* Concluindo:
-
-  $$
-  \begin{aligned}
-  P(A \mid B) &= \frac{P(B \mid A) \cdot P(A)}{P(B)} \\
-  &=
-  \frac{9/20}{19/40} \\
-  &=
-  \frac{18}{19} \\
-  &\approx `r 18/19`
-  \end{aligned}
-  $$
+    ```{r echo=FALSE, out.width='50%'}
+    include_graphics('images/alice03.png')
+    ```
+    
+    ```{r echo=FALSE, out.width='50%'}
+    include_graphics('images/alice04.png')
+    ```
 
 * Simulação:
 
-    ```{r cache=TRUE}
+    ```{r sim1, cache=TRUE}
     reps <- 1e7
     alice_envia <- sample(c(0, 1), reps, replace = TRUE)
     bob_recebe <- alice_envia
@@ -741,38 +696,19 @@ b. Agora, eles usam um [código com repetição]{.hl}:
 
 :::
 
-* Queremos calcular $P(AAA \mid BB\neg B)$, onde $AAA$ é o evento "Alice enviou $111$" e $BB\neg B$ é o evento "Bob recebeu $110$".
+* Teoricamente:
 
-* Como os erros são independentes para cada *bit*, basta calcular
+    ```{r echo=FALSE, out.width='50%'}
+    include_graphics('images/alice05.png')
+    ```
 
-  $$
-  P(A \mid B) \cdot P(A \mid B) \cdot P(A \mid \neg B)
-  $$
-
-  com a notação do item (a).
-  
-* Usando Bayes:
-
-  $$
-  P(A \mid \neg B) = \frac{P(\neg B \mid A) \cdot P(A)}{P(B)}
-  $$
-
-* Temos que $P(\neg B \mid A) = 1/10$.
-
-* Temos que $P(\neg B) = 1 - 19/40 = 21/40$.
-
-* Concluímos que $P(A \mid \neg B) = 2/21$.
-
-* A probabilidade procurada é
-
-  $$
-  P(AAA \mid BB\neg B) = \left(\frac{18}{19}\right)^2 \cdot \frac{2}{21} =
-  \frac{216}{2527} \approx `r (216/2527) %>% fm(6)`
-  $$
+    ```{r}
+    (q1^2 * p1) / ((q1 + p0)^2 * (p1 + q0))
+    ```
 
 * Simulação:
 
-    ```{r cache=TRUE}
+    ```{r sim2, cache=TRUE}
     reps <- 1e6
     
     alice_envia <- replicate(
@@ -820,40 +756,97 @@ b. Agora, eles usam um [código com repetição]{.hl}:
       alice_envia %>% map_lgl(~ all(.x == c(1, 1, 1)))
     
     
-    pab <- sum(alice_envia & bob_recebe) / sum(bob_recebe)
-    pab
+    sum(alice_envia & bob_recebe) / sum(bob_recebe)
     ```
 
 * A vantagem do esquema de repetição é que o envio de $111$ corresponde ao recebimento de $4$ cadeias diferentes: $111$, $011$, $101$, e $110$.
 
-* No esquema [sem repetição]{.hl}, a probabilidade de Bob receber $1$ quando Alice transmitiu $1$ era $0{,}9$.
-
-* No esquema [com repetição]{.hl}, a probabilidade de Bob receber uma das $4$ cadeias quando Alice transmitiu $111$ é
+* Sem repetição, a probabilidade de Bob receber $1$ quando Alice transimiu $1$ é
 
   $$
-  \frac{9^3}{10^3} +
-  \frac{9^2}{10^3} \cdot 3 
-  = \frac{243}{250}
-  \approx 
-  `r ((3 * 9^2 + 9^3) / 10^3) %>% fm(6)`
+  P(B \mid A) = q_1 = 0{,}9
   $$
 
-* No esquema [sem repetição]{.hl}, a probabilidade de Alice ter enviado $1$ quando Bob recebeu $1$ (calculada no item (a)) era $0{,}95$.
+* Com repetição, a probabilidade de Bob receber uma das $4$ cadeias que representam $1$ (evento $R$) quando Alice transmitiu $111$ (evento $T$) é
 
-* No esquema [com repetição]{.hl}, a probabilidade de Alice ter enviado $111$ quando Bob recebeu alguma das cadeias é ???
-
+    ```{r echo=FALSE, out.width='75%'}
+    include_graphics('images/alice06.png')
+    ```
 
 
 #### 14 {-}
 
+Almost OK.
+
 
 #### 15 {-}
+
+OK.
 
 
 #### 16 {-}
 
+OK.
+
 
 #### 17 {-}
+
+::: {.rmdbox latex=1}
+
+Em lógica determinística, $A \to B \iff \neg B \to \neg A$.
+
+Em probabilidades?
+
+Considere eventos $A$ e $B$ com $P(A), P(B) \not\in \{0, 1\}$.
+
+a. Mostre que $P(B \mid A) = 1 \implies P(\neg A \mid \neg B) = 1$.
+
+:::
+
+* $A$ está contido em $B$:
+
+  $$
+  P(B \mid A) = 1 
+  \iff \frac{P(A \cap B)}{P(A)} = 1
+  \iff P(A \cap B) = P(A)
+  $$
+
+* Vamos mostrar que $P(\neg A \mid \neg B) = 1$:
+
+  $$
+  \begin{aligned}
+  P(\neg A \mid \neg B) 
+  &= \frac{P(\neg A \cap \neg B)}{P(\neg B)} \\
+  &= \frac{P(\neg (A \cup B))}{P(\neg B)} \\
+  &= \frac{1 - P(A \cup B)}{P(\neg B)} \\
+  &= \frac{1 - \left[ P(A) + P(B) - P(A \cap B) \right]}{P(\neg B)} \\
+  &= \frac{1 - P(B)}{P(\neg B)} \\
+  &= \frac{P(\neg B)}{P(\neg B)} \\
+  &= 1
+  \end{aligned}
+  $$
+
+::: {.rmdbox latex=1}
+
+b. Mostre que, se "$=$" for substituído por "$\approx$", o resultado não vale. Ache um exemplo em que $P(B \mid A)$ seja quase $1$, mas $P(\neg A \mid \neg B)$ seja quase $0$.
+
+:::
+
+Valores de exemplo, com $A$ e $B$ independentes:
+
+$$
+\begin{aligned}
+P(A) &= 80/100 \\
+P(B) &= 90/100 \\
+P(\neg A) &= 20/100 \\
+P(\neg B) &= 10/100 \\
+P(A \cap B) &= P(A) \cdot P(B) = 72/100 \\
+P(A \cup B) &= P(A) + P(B) - P(A \cap B) = 98/100\\
+P(B \mid A) &= \frac{P(A \cap B)}{P(A)} = 72/80 \approx 1 \\
+P(\neg A \mid \neg B) &= \frac{P(\neg A \cap \neg B)}{P(\neg B)} = 
+  \frac{1 - P(A \cup B)}{P(\neg B)} = 2/10 \approx 0
+\end{aligned}
+$$
 
 
 #### 29 {-}
