@@ -848,5 +848,134 @@ P(\neg A \mid \neg B) &= \frac{P(\neg A \cap \neg B)}{P(\neg B)} =
 \end{aligned}
 $$
 
+::: {.rmdnote latex=1}
+
+Vamos criar uma medida de independência. Se $P(A) \neq 0$  e $P(B) \neq 0$, definimos
+
+$$
+I = \frac{P(A \cap B)}{P(A)P(B)}
+$$
+
+Com isso,
+
+* $A$ e $B$ são disjuntos ${} \iff I = 0$ 
+
+* $A$ e $B$ são independentes ${} \iff I = 1$ 
+
+* $A$ e $B$ se atrapalham ${} \iff I < 1$. 
+
+  I.e., $P(A) > P(A \mid B)$ e $P(B) > P(B \mid A)$.
+
+* $A$ e $B$ se ajudam ${} \iff I > 1$. 
+
+  I.e., $P(A) < P(A \mid B)$ e $P(B) < P(B \mid A)$.
+
+:::
+
+
+```{r echo=FALSE}
+pa <- seq(0, .99, .01)[-1]
+pb <- seq(0, .99, .01)[-1]
+pab <- seq(0, .99, .01)[-1]
+
+df <- expand_grid(pa, pb, pab) %>% 
+  filter(pab <= pa, pab <= pb) %>% 
+  mutate(
+    I = pab / (pa * pb),
+    pbIa = (pab / pa),
+    pnaInb = (1 - pa - pb + pab) / (1 - pb)
+  ) %>% 
+  filter(pnaInb >= 0)
+```
+
+```{r echo=FALSE}
+df %>%  
+  arrange(I) %>% 
+  ggplot() +
+    geom_line(aes(1:nrow(df), I)) +
+    scale_x_continuous(breaks = NULL) +
+    labs(
+      x = '',
+      y = '',
+      title = TeX(
+        'Valores de $I$ para $P(A), P(B), P(A, B) \\in \\{.01,\\ldots, .99\\}$'
+      )
+    )
+  
+```
+
+```{r echo=FALSE}
+corte <- .8
+
+df1 <- df %>% 
+  filter(
+    pbIa > corte,
+    pnaInb < 1 - corte
+  )
+
+df1 %>% 
+  arrange(I) %>% 
+  ggplot() +
+    geom_line(aes(1:nrow(df1), I, color = '1. I')) +
+    geom_line(aes(1:nrow(df1), pbIa, color = '2. P(B | A)')) +
+    geom_line(aes(1:nrow(df1), pnaInb, color = '3. P(~A | ~B)')) +
+    scale_x_continuous(breaks = NULL) +
+    labs(
+      x = '',
+      y = '',
+      color = '',
+      title = TeX(
+        paste(
+          '$(P(B | A) \\approx 1 \\vee P(\\neg A | \\neg B) \\approx 0) ',
+          '{}\\to I \\approx 1$'
+        )
+      )
+    )
+```
+
+```{r echo=FALSE}
+corte <- .2
+
+df1 <- df %>% 
+  filter(
+    between(I, 1 - corte, 1 + corte)
+  )
+
+df1 %>% 
+  arrange(I) %>% 
+  ggplot() +
+    geom_line(aes(1:nrow(df1), I, color = '1. I')) +
+    geom_line(aes(1:nrow(df1), pbIa, color = '2. P(B | A)'), alpha = .5) +
+    geom_line(aes(1:nrow(df1), pnaInb, color = '3. P(~A | ~B)'), alpha = .5) +
+    scale_x_continuous(breaks = NULL) +
+    labs(
+      x = '',
+      y = '',
+      color = '',
+      title = TeX(
+        paste(
+          'Mas não',
+          '$I \\approx 1',
+          '\\to (P(B | A) \\approx 1 \\vee P(\\neg A | \\neg B) \\approx 0)$'
+        )
+      )
+    )
+```
+
+
+* Pode acontecer que $P(\neg A \mid \neg B) = 0$ mas $P(B \mid A) \neq 1$!?
+
+  ```{r}
+  df %>% 
+    filter(pnaInb == 0, pbIa != 1)
+  ```
+
+* E vice-versa!?
+
+  ```{r}
+  df %>% 
+    filter(pnaInb != 0, pbIa == 1)
+  ```
+
 
 #### 29 {-}
