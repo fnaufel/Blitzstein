@@ -338,7 +338,7 @@
 
 \title{Introduction to Probability (Joe Blitzstein)}
 \author{Fernando Náufel}
-\date{(versão de 05/03/2022)}
+\date{(versão de 09/03/2022)}
 
 \begin{document}
 \maketitle
@@ -353,13 +353,9 @@
 
 \begin{itemize}
 \item
-  Página do livro: \url{https://projects.iq.harvard.edu/stat110/home}
+  Página do curso (com \emph{link} para pdf do livro): \url{https://projects.iq.harvard.edu/stat110/home}
 \item
-  Strategic practice and homework: \url{https://projects.iq.harvard.edu/stat110/strategic-practice-problems}
-\item
-  Handouts: \url{https://projects.iq.harvard.edu/stat110/handouts} --- includes solutions to exercises marked with (s) in the book.
-\item
-  Playlist: \url{https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo}
+  \emph{Playlist}: \url{https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo}
 \end{itemize}
 
 \hypertarget{probabilidade-e-contagem}{%
@@ -424,17 +420,17 @@
 \begin{Highlighting}[]
 \NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{365}\NormalTok{,}\DecValTok{23}\NormalTok{,}\AttributeTok{replace=}\ConstantTok{TRUE}\NormalTok{)}
 \FunctionTok{tabulate}\NormalTok{(b)}
-\DocumentationTok{\#\#   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0}
-\DocumentationTok{\#\#  [34] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [133] 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [166] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [199] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [232] 0 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [265] 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1}
-\DocumentationTok{\#\# [298] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 1 0 0}
-\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
+\DocumentationTok{\#\#   [1] 0 1 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\#  [34] 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0}
+\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [133] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [166] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
+\DocumentationTok{\#\# [199] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [265] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0}
+\DocumentationTok{\#\# [298] 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -442,9 +438,9 @@
 \begin{Highlighting}[]
 \FunctionTok{table}\NormalTok{(b)}
 \DocumentationTok{\#\# b}
-\DocumentationTok{\#\#  14  24  32  76  80 115 140 154 157 168 188 200 233 236 276 277 289 }
+\DocumentationTok{\#\#   2   8   9  47  53  73  95 110 154 156 167 198 214 223 266 291 293 }
 \DocumentationTok{\#\#   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1 }
-\DocumentationTok{\#\# 297 312 325 327 328 358 }
+\DocumentationTok{\#\# 298 303 323 343 352 360 }
 \DocumentationTok{\#\#   1   1   1   1   1   1}
 \end{Highlighting}
 \end{Shaded}
@@ -483,19 +479,36 @@ Para no mínimo $3$ no mesmo dia:
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{exercuxedcios}{%
-\section*{Exercícios}\label{exercuxedcios}}
-\addcontentsline{toc}{section}{Exercícios}
+\hypertarget{exercuxedcios-cap.-1}{%
+\section*{Exercícios (cap. 1)}\label{exercuxedcios-cap.-1}}
+\addcontentsline{toc}{section}{Exercícios (cap. 1)}
 
-\href{https://projects.iq.harvard.edu/files/stat110/files/strategic_practice_and_homework_1.pdf}{Enunciados (pdf).}
+\hypertarget{superbaralho}{%
+\subsection*{13. Superbaralho}\label{superbaralho}}
+\addcontentsline{toc}{subsection}{13. Superbaralho}
 
-\hypertarget{practice}{%
-\subsection*{Practice}\label{practice}}
-\addcontentsline{toc}{subsection}{Practice}
+\begin{rmdbox}
+A certain casino uses $10$ standard decks of cards mixed together into one big deck, which we will call a superdeck. Thus, the superdeck has $52 \cdot 10 = 520$ cards, with $10$ copies of each card.
+
+How many different $10$-card hands can be dealt from the superdeck? The order of the cards does not matter, nor does it matter which of the original $10$ decks the cards came from. Express your answer as a binomial coefficient.
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Usando a notação de OLIVEIRA MORGADO et al. (\protect\hyperlink{ref-oliveira-2004-analis}{2004}), onde $\text{CR}_k^n$ é o número de combinações completas de $n$ elementos de $k$ tipos diferentes, a resposta é
+
+  \[
+  \text{CR}_{52}^{10} = \binom{52 + 10 - 1}{10} = \binom{61}{10} =
+  90.177.170.226
+  \]
+\item
+  Só foi possível usar combinações completas porque a mão tem $10$ cartas, o que faz com que haja, essencialmente, um {\hl{número infinito de cópias de cada um dos $52$ tipos de carta}}. Se a mão tivesse $11$ ou mais cartas, seria impossível que todas as cartas fossem iguais, e este raciocínio não poderia ser usado.
+\end{itemize}
 
 \hypertarget{norepeat-words}{%
-\subsubsection*{4. Norepeat words}\label{norepeat-words}}
-\addcontentsline{toc}{subsubsection}{4. Norepeat words}
+\subsection*{42. Norepeat words}\label{norepeat-words}}
+\addcontentsline{toc}{subsection}{42. Norepeat words}
 
 \begin{rmdbox}
 A \emph{norepeatword} is a sequence of at least one (and possibly all) of the usual $26$ letters a, b, c, \ldots,z, with repetitions not allowed.
@@ -590,33 +603,6 @@ A \emph{norepeatword} is chosen randomly, with all \emph{norepeatwords} equally 
 \end{Shaded}
 \end{itemize}
 
-\hypertarget{exercuxedcios-do-livro-cap.-1}{%
-\subsection*{Exercícios do livro (cap. 1)}\label{exercuxedcios-do-livro-cap.-1}}
-\addcontentsline{toc}{subsection}{Exercícios do livro (cap. 1)}
-
-\hypertarget{section}{%
-\subsubsection*{13}\label{section}}
-\addcontentsline{toc}{subsubsection}{13}
-
-\begin{rmdbox}
-A certain casino uses $10$ standard decks of cards mixed together into one big deck, which we will call a superdeck. Thus, the superdeck has $52 \cdot 10 = 520$ cards, with $10$ copies of each card.
-
-How many different $10$-card hands can be dealt from the superdeck? The order of the cards does not matter, nor does it matter which of the original $10$ decks the cards came from. Express your answer as a binomial coefficient.
-
-\end{rmdbox}
-
-\begin{itemize}
-\item
-  Usando a notação de OLIVEIRA MORGADO et al. (\protect\hyperlink{ref-oliveira-2004-analis}{2004}), onde $\text{CR}_k^n$ é o número de combinações completas de $n$ elementos de $k$ tipos diferentes, a resposta é
-
-  \[
-  \text{CR}_{52}^{10} = \binom{52 + 10 - 1}{10} = \binom{61}{10} =
-  90.177.170.226
-  \]
-\item
-  Só foi possível usar combinações completas porque a mão tem $10$ cartas, o que faz com que haja, essencialmente, um {\hl{número infinito de cópias de cada um dos $52$ tipos de carta}}. Se a mão tivesse $11$ ou mais cartas, seria impossível que todas as cartas fossem iguais, e este raciocínio não poderia ser usado.
-\end{itemize}
-
 \hypertarget{histuxf3rias-e-axiomas}{%
 \chapter*{02: Histórias e axiomas}\label{histuxf3rias-e-axiomas}}
 \addcontentsline{toc}{chapter}{02: Histórias e axiomas}
@@ -627,19 +613,130 @@ How many different $10$-card hands can be dealt from the superdeck? The order of
 
 \begin{center} \url{https://youtu.be/FJd_1H3rZGg} \end{center}
 
-\hypertarget{exercuxedcios-1}{%
-\section*{Exercícios}\label{exercuxedcios-1}}
-\addcontentsline{toc}{section}{Exercícios}
+\hypertarget{exercuxedcios-do-livro-cap.-1}{%
+\section*{Exercícios do livro (cap. 1)}\label{exercuxedcios-do-livro-cap.-1}}
+\addcontentsline{toc}{section}{Exercícios do livro (cap. 1)}
 
-\href{https://projects.iq.harvard.edu/files/stat110/files/strategic_practice_and_homework_1.pdf}{Enunciados (pdf).}
+\hypertarget{section}{%
+\subsection*{17}\label{section}}
+\addcontentsline{toc}{subsection}{17}
 
-\hypertarget{homework}{%
-\subsection*{Homework}\label{homework}}
-\addcontentsline{toc}{subsection}{Homework}
+\begin{rmdbox}
+\[
+\sum_{k = 0}^n \binom{n}{k}^2 = \binom{2n}{n}
+\]
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Quero escolher $n$ pessoas dentre $2n$ pessoas (lado direito).
+\item
+  Divido as $2n$ pessoas em dois grupos de $n$ cada.
+\item
+  Para $k \in \{0, 1, \ldots n\}$:
+
+  \begin{itemize}
+  \item
+    Escolho $k$ pessoas do primeiro grupo --- $\binom{n}{k}$ --- para entrar.
+  \item
+    Escolho $k$ pessoas do segundo grupo --- $\binom{n}{k}$ --- para {\hl{não}} entrar.
+  \item
+    Para este valor de $k$, tenho $\binom{n}{k}^2$ maneiras de selecionar $n$ pessoas, com $k$ pessoas do primeiro grupo e $n-k$ pessoas do segundo.
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{section-1}{%
+\subsection*{18}\label{section-1}}
+\addcontentsline{toc}{subsection}{18}
+
+\begin{rmdbox}
+\[
+\sum_{k = 1}^n k\binom{n}{k}^2 = n\binom{2n-1}{n-1}
+\]
+
+\end{rmdbox}
+
+Usamos o mesmo raciocínio do exercício anterior, com a seguinte modificação:
+
+\begin{itemize}
+\item
+  Temos $2n$ pessoas, divididas em dois grupos de $n$, como antes.
+\item
+  Como antes, quero escolher $n$ pessoas dentre as $2n$.
+\item
+  Mas agora, para cada escolha, quero designar uma das $n$ pessoas do primeiro grupo como chefe (i.e., sempre haverá pelo menos uma pessoa do primeiro grupo). Isto corresponde ao fator $n$ no lado direito.
+\item
+  Escolhido o chefe, preciso escolher $n - 1$ pessoas dentre as $2n - 1$ restantes ($n - 1$ do primeiro grupo, $n$ do segundo). Isto corresponde ao segundo fator do lado direito.
+\item
+  Do lado esquerdo, para $k \in \{1, 2, \ldots, n \}$:
+
+  \begin{itemize}
+  \item
+    Vou escolher $k$ pessoas do primeiro grupo --- $\binom{n}{k}$ --- para entrar.
+  \item
+    Dentre elas, vou escolher um chefe --- $k$.
+  \item
+    Vou escolher $k$ pessoas do segundo grupo --- $\binom{n}{k}$ --- para {\hl{não}} entrar.
+  \end{itemize}
+\end{itemize}
+
+\hypertarget{section-2}{%
+\subsection*{19}\label{section-2}}
+\addcontentsline{toc}{subsection}{19}
+
+\begin{rmdbox}
+\[
+\sum_{k=2}^n \binom k2 \binom{n-k+2}{2} = \binom{n+3}{5}, \quad \forall n \geq 2
+\]
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Um exemplo concreto: $n = 3$
+\item
+  Queremos escolher $5$ elementos dentre $6$.
+\item
+  Para $k \in \{ 2, 3 \}$:
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \item
+    Escolhemos sempre o elemento $k + 1$:
+
+    \[
+    \begin{aligned}
+    1 \quad 2 \quad \underbrace{3}_{k = 2} \quad 4 \quad 5 \quad 6 \\
+    1 \quad 2 \quad 3 \quad \underbrace{4}_{k = 3} \quad 5 \quad 6
+    \end{aligned}
+    \]
+
+    Este é o elemento que vai estar {\hl{no meio}} do grupo dos escolhidos.
+  \item
+    Escolhemos $2$ dentre os $k$ primeiros elementos:
+
+    \[
+    \begin{aligned}
+    \underbrace{1 \quad 2}_{k = 2} \quad 3 \quad 4 \quad 5 \quad 6 \\
+    \underbrace{1 \quad 2 \quad 3}_{k = 3} \quad 4 \quad 5 \quad 6
+    \end{aligned}
+    \]
+  \item
+    Escolhemos $2$ dentre os $n - k + 2$ últimos elementos:
+
+    \[
+    \begin{aligned}
+    1 \quad 2 \quad 3 \quad \underbrace{4 \quad 5 \quad 6}_{k = 2}\\
+    1 \quad 2 \quad 3 \quad 4 \quad \underbrace{5 \quad 6}_{k = 3}
+    \end{aligned}
+    \]
+  \end{enumerate}
+\end{itemize}
 
 \hypertarget{teorema-das-colunas}{%
-\subsubsection*{4. Teorema das colunas}\label{teorema-das-colunas}}
-\addcontentsline{toc}{subsubsection}{4. Teorema das colunas}
+\subsection*{20. Teorema das colunas}\label{teorema-das-colunas}}
+\addcontentsline{toc}{subsection}{20. Teorema das colunas}
 
 \begin{rmdbox}
 
@@ -762,130 +859,9 @@ How many different $10$-card hands can be dealt from the superdeck? The order of
   \]
 \end{itemize}
 
-\hypertarget{exercuxedcios-do-livro-cap.-1-1}{%
-\subsection*{Exercícios do livro (cap. 1)}\label{exercuxedcios-do-livro-cap.-1-1}}
-\addcontentsline{toc}{subsection}{Exercícios do livro (cap. 1)}
-
-\hypertarget{section-1}{%
-\subsubsection*{17}\label{section-1}}
-\addcontentsline{toc}{subsubsection}{17}
-
-\begin{rmdbox}
-\[
-\sum_{k = 0}^n \binom{n}{k}^2 = \binom{2n}{n}
-\]
-
-\end{rmdbox}
-
-\begin{itemize}
-\item
-  Quero escolher $n$ pessoas dentre $2n$ pessoas (lado direito).
-\item
-  Divido as $2n$ pessoas em dois grupos de $n$ cada.
-\item
-  Para $k \in \{0, 1, \ldots n\}$:
-
-  \begin{itemize}
-  \item
-    Escolho $k$ pessoas do primeiro grupo --- $\binom{n}{k}$ --- para entrar.
-  \item
-    Escolho $k$ pessoas do segundo grupo --- $\binom{n}{k}$ --- para {\hl{não}} entrar.
-  \item
-    Para este valor de $k$, tenho $\binom{n}{k}^2$ maneiras de selecionar $n$ pessoas, com $k$ pessoas do primeiro grupo e $n-k$ pessoas do segundo.
-  \end{itemize}
-\end{itemize}
-
-\hypertarget{section-2}{%
-\subsubsection*{18}\label{section-2}}
-\addcontentsline{toc}{subsubsection}{18}
-
-\begin{rmdbox}
-\[
-\sum_{k = 1}^n k\binom{n}{k}^2 = n\binom{2n-1}{n-1}
-\]
-
-\end{rmdbox}
-
-Usamos o mesmo raciocínio do exercício anterior, com a seguinte modificação:
-
-\begin{itemize}
-\item
-  Temos $2n$ pessoas, divididas em dois grupos de $n$, como antes.
-\item
-  Como antes, quero escolher $n$ pessoas dentre as $2n$.
-\item
-  Mas agora, para cada escolha, quero designar uma das $n$ pessoas do primeiro grupo como chefe (i.e., sempre haverá pelo menos uma pessoa do primeiro grupo). Isto corresponde ao fator $n$ no lado direito.
-\item
-  Escolhido o chefe, preciso escolher $n - 1$ pessoas dentre as $2n - 1$ restantes ($n - 1$ do primeiro grupo, $n$ do segundo). Isto corresponde ao segundo fator do lado direito.
-\item
-  Do lado esquerdo, para $k \in \{1, 2, \ldots, n \}$:
-
-  \begin{itemize}
-  \item
-    Vou escolher $k$ pessoas do primeiro grupo --- $\binom{n}{k}$ --- para entrar.
-  \item
-    Dentre elas, vou escolher um chefe --- $k$.
-  \item
-    Vou escolher $k$ pessoas do segundo grupo --- $\binom{n}{k}$ --- para {\hl{não}} entrar.
-  \end{itemize}
-\end{itemize}
-
-\hypertarget{section-3}{%
-\subsubsection*{19}\label{section-3}}
-\addcontentsline{toc}{subsubsection}{19}
-
-\begin{rmdbox}
-\[
-\sum_{k=2}^n \binom k2 \binom{n-k+2}{2} = \binom{n+3}{5}, \quad \forall n \geq 2
-\]
-
-\end{rmdbox}
-
-\begin{itemize}
-\item
-  Um exemplo concreto: $n = 3$
-\item
-  Queremos escolher $5$ elementos dentre $6$.
-\item
-  Para $k \in \{ 2, 3 \}$:
-
-  \begin{enumerate}
-  \def\labelenumi{\arabic{enumi}.}
-  \item
-    Escolhemos sempre o elemento $k + 1$:
-
-    \[
-    \begin{aligned}
-    1 \quad 2 \quad \underbrace{3}_{k = 2} \quad 4 \quad 5 \quad 6 \\
-    1 \quad 2 \quad 3 \quad \underbrace{4}_{k = 3} \quad 5 \quad 6
-    \end{aligned}
-    \]
-
-    Este é o elemento que vai estar {\hl{no meio}} do grupo dos escolhidos.
-  \item
-    Escolhemos $2$ dentre os $k$ primeiros elementos:
-
-    \[
-    \begin{aligned}
-    \underbrace{1 \quad 2}_{k = 2} \quad 3 \quad 4 \quad 5 \quad 6 \\
-    \underbrace{1 \quad 2 \quad 3}_{k = 3} \quad 4 \quad 5 \quad 6
-    \end{aligned}
-    \]
-  \item
-    Escolhemos $2$ dentre os $n - k + 2$ últimos elementos:
-
-    \[
-    \begin{aligned}
-    1 \quad 2 \quad 3 \quad \underbrace{4 \quad 5 \quad 6}_{k = 2}\\
-    1 \quad 2 \quad 3 \quad 4 \quad \underbrace{5 \quad 6}_{k = 3}
-    \end{aligned}
-    \]
-  \end{enumerate}
-\end{itemize}
-
-\hypertarget{section-4}{%
-\subsubsection*{22}\label{section-4}}
-\addcontentsline{toc}{subsubsection}{22}
+\hypertarget{soma-de-cubos}{%
+\subsection*{22. Soma de cubos}\label{soma-de-cubos}}
+\addcontentsline{toc}{subsection}{22. Soma de cubos}
 
 \begin{rmdbox}
 
@@ -1011,17 +987,13 @@ Para provar
 
 \begin{center} \url{https://youtu.be/LZ5Wergp_PA} \end{center}
 
-\hypertarget{exercuxedcios-2}{%
-\section*{Exercícios}\label{exercuxedcios-2}}
-\addcontentsline{toc}{section}{Exercícios}
+\hypertarget{exercuxedcios-do-livro-cap.-1-1}{%
+\section*{Exercícios do livro (cap. 1)}\label{exercuxedcios-do-livro-cap.-1-1}}
+\addcontentsline{toc}{section}{Exercícios do livro (cap. 1)}
 
-\hypertarget{exercuxedcios-do-livro-cap.-1-2}{%
-\subsection*{Exercícios do livro (cap. 1)}\label{exercuxedcios-do-livro-cap.-1-2}}
-\addcontentsline{toc}{subsection}{Exercícios do livro (cap. 1)}
-
-\hypertarget{section-5}{%
-\subsubsection*{26}\label{section-5}}
-\addcontentsline{toc}{subsubsection}{26}
+\hypertarget{section-3}{%
+\subsection*{26}\label{section-3}}
+\addcontentsline{toc}{subsection}{26}
 
 \begin{rmdbox}
 Amostra {\hl{com reposição}} de tamanho $1000$ a partir de uma população de tamanho $1$ milhão. Cada pessoa tem a mesma probabilidade de ser escolhida.
@@ -1067,9 +1039,9 @@ N & n & P\\
 \end{tabular}
 \end{table}
 
-\hypertarget{section-6}{%
-\subsubsection*{27}\label{section-6}}
-\addcontentsline{toc}{subsubsection}{27}
+\hypertarget{section-4}{%
+\subsection*{27}\label{section-4}}
+\addcontentsline{toc}{subsection}{27}
 
 \begin{rmdbox}
 
@@ -1086,9 +1058,9 @@ N & n & P\\
 
 De novo, \texttt{pbirthday(k,\ n)}.
 
-\hypertarget{section-7}{%
-\subsubsection*{57}\label{section-7}}
-\addcontentsline{toc}{subsubsection}{57}
+\hypertarget{section-5}{%
+\subsection*{57}\label{section-5}}
+\addcontentsline{toc}{subsection}{57}
 
 \begin{rmdbox}
 
@@ -1142,12 +1114,12 @@ Para calcular $P(\text{nenhuma molécula sua foi de César})$:
 \item
   Formulação original em PAULOS (\protect\hyperlink{ref-paulos-1988-innum}{1988}):
 
-  \begin{center}\includegraphics[width=0.8\linewidth]{images/caesar} \end{center}
+  \begin{center}\includegraphics[width=0.6\linewidth]{images/caesar} \end{center}
 \end{itemize}
 
-\hypertarget{section-8}{%
-\subsubsection*{61}\label{section-8}}
-\addcontentsline{toc}{subsubsection}{61}
+\hypertarget{section-6}{%
+\subsection*{61}\label{section-6}}
+\addcontentsline{toc}{subsection}{61}
 
 \begin{rmdbox}
 
@@ -1167,8 +1139,8 @@ Para calcular $P(\text{nenhuma molécula sua foi de César})$:
 \end{rmdbox}
 
 \hypertarget{possibilidades}{%
-\paragraph*{Possibilidades}\label{possibilidades}}
-\addcontentsline{toc}{paragraph}{Possibilidades}
+\subsubsection*{Possibilidades}\label{possibilidades}}
+\addcontentsline{toc}{subsubsection}{Possibilidades}
 
 O último passageiro só pode se sentar no lugar $1$ ou no lugar $n$.
 
@@ -1188,8 +1160,8 @@ Aliás, isto é um caso específico de um fenômeno mais geral, Qualquer que sej
 \end{itemize}
 
 \hypertarget{probabilidades}{%
-\paragraph*{Probabilidades}\label{probabilidades}}
-\addcontentsline{toc}{paragraph}{Probabilidades}
+\subsubsection*{Probabilidades}\label{probabilidades}}
+\addcontentsline{toc}{subsubsection}{Probabilidades}
 
 \begin{itemize}
 \item
@@ -1214,9 +1186,9 @@ Aliás, isto é um caso específico de um fenômeno mais geral, Qualquer que sej
   Logo, a probabilidade de o passageiro $n$ acabar no assento $n$ é $1/2$.
 \end{itemize}
 
-\hypertarget{section-9}{%
-\subsubsection*{62}\label{section-9}}
-\addcontentsline{toc}{subsubsection}{62}
+\hypertarget{section-7}{%
+\subsection*{62}\label{section-7}}
+\addcontentsline{toc}{subsection}{62}
 
 \begin{rmdbox}
 
@@ -1432,19 +1404,741 @@ Neste caso, o valor de $e_k(\vec p)$ é máximo.
 
 \begin{center} \url{https://youtu.be/P7NE4WF8j-Q} \end{center}
 
-\hypertarget{exercuxedcios-3}{%
-\section*{Exercícios}\label{exercuxedcios-3}}
-\addcontentsline{toc}{section}{Exercícios}
+\hypertarget{exercuxedcios-do-livro-cap.-2}{%
+\section*{Exercícios do livro (cap. 2)}\label{exercuxedcios-do-livro-cap.-2}}
+\addcontentsline{toc}{section}{Exercícios do livro (cap. 2)}
 
-\href{https://projects.iq.harvard.edu/files/stat110/files/strategic_practice_and_homework_2.pdf}{Enunciados (pdf).}
+\hypertarget{section-8}{%
+\subsection*{2}\label{section-8}}
+\addcontentsline{toc}{subsection}{2}
 
-\hypertarget{homework-1}{%
-\subsection*{Homework}\label{homework-1}}
-\addcontentsline{toc}{subsection}{Homework}
+\begin{rmdbox}
 
-\hypertarget{lewis-carroll}{%
-\subsubsection*{3.1 Lewis Carroll}\label{lewis-carroll}}
-\addcontentsline{toc}{subsubsection}{3.1 Lewis Carroll}
+\begin{itemize}
+\item
+  Uma mulher está grávida de meninos gêmeos.
+\item
+  Gêmeos podem ser idênticos ou fraternos.
+\item
+  $1/3$ dos gêmeos são idênticos.
+\item
+  Gêmeos idênticos têm $50\%$ de chance de serem ambos meninos, e $50\%$ de chance de serem ambos meninas.
+\item
+  Para gêmeos fraternos, cada gêmeo tem, independentemente, $50\%$ de chance de ser menino, e $50\%$ de chance de ser menina.
+\item
+  Qual a probabilidade de a mulher estar grávida de gêmeos idênticos?
+\end{itemize}
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Eventos:
+
+  \[
+  \begin{aligned}
+  I &= \text{os gêmeos são idênticos} \\
+  M &= \text{os gêmeos são dois meninos}
+  \end{aligned}
+  \]
+\item
+  Probabilidades dadas:
+
+  \[
+  \begin{aligned}
+  P(I) &= 1/3 \\
+  P(M \mid I) &= 1/2 \\
+  P(M \mid \neg I) &= 1/4
+  \end{aligned}
+  \]
+\item
+  Queremos calcular $P(I \mid M)$. Usamos Bayes:
+
+  \[
+  \begin{aligned}
+  P(I \mid M) 
+  &=
+  \frac{P(M \mid I) \cdot P(I)}{P(M)}
+  \end{aligned}
+  \]
+\item
+  Só falta o valor de $P(M)$, que calculamos usando probabilidade total:
+
+  \[
+  \begin{aligned}
+  P(M) 
+  &=
+  P(M \mid I)P(I) + P(M \mid \neg I)P(\neg I) \\
+  &=
+  1/2 \cdot 1/3 + 1/4 \cdot 2/3 \\
+  &=
+  1/3
+  \end{aligned}
+  \]
+\item
+  Concluímos
+
+  \[
+  \begin{aligned}
+  P(I \mid M) 
+  &=
+  \frac{P(M \mid I) \cdot P(I)}{P(M)} \\
+  &=
+  \frac{1/2 \cdot 1/3}{1/3} \\
+  &=
+  1/2
+  \end{aligned}
+  \]
+\end{itemize}
+
+\hypertarget{section-9}{%
+\subsection*{4}\label{section-9}}
+\addcontentsline{toc}{subsection}{4}
+
+\begin{rmdbox}
+
+\begin{itemize}
+\item
+  Um aluno está resolvendo uma questão de múltipla escolha com $n$ opções.
+\item
+  $K$ é o evento que corresponde a ele saber a resposta correta.
+\item
+  $R$ é o evento que corresponde a ele acertar (sabendo ou chutando).
+\item
+  Se ele sabe a resposta, ele acerta.
+\item
+  Se ele não sabe, ele chuta uma opção ao acaso.
+\item
+  Considere $P(K) = p$.
+\end{itemize}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  Ache $P(K \mid R)$.
+\item
+  Mostre que $P(K \mid R) \geq p$. Por que isto faz sentido? Quando a igualdade é exata?
+\end{enumerate}
+
+\end{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Vamos usar Bayes, supondo $p = P(K) > 0$:
+
+  \[
+  \begin{aligned}
+  P(K \mid R)
+  &=
+  \frac{P(R \mid K) \cdot P(K)}{P(R)} \\
+  &=
+  \frac{1 \cdot p}{
+    P(R \mid K) \cdot P(K) + 
+    P(R \mid \neg K) \cdot P(\neg K)
+  } \\
+  &=
+  \frac{p}{
+    1 \cdot p + 
+    \frac{1}{n} \cdot (1 - p)
+  } \\
+  &=
+  \frac{np}{np + (1 - p)}
+  \end{aligned}
+  \]
+\item
+  Isto equivale a mostrar
+
+  \[
+  \frac{np}{np + (1 - p)} \geq p
+  \]
+
+  Como todos os valores são positivos, isto equivale a
+
+  \[
+  np \geq np^2 + (1 - p)p
+  \]
+
+  Dividindo ambos os lados por $p > 0$:
+
+  \[
+  n \geq np + 1 - p
+  \]
+
+  Daí,
+
+  \[
+  \begin{aligned}
+  n \geq np + 1 - p 
+  &\iff n - np \geq 1 - p \\
+  &\iff n(1 - p) \geq 1 - p \\
+  &\iff n \geq 1 & \text{(supondo } p < 1 \text{)}
+  \end{aligned}
+  \]
+  O que é verdade, pois existe pelo menos uma opção (a correta).
+
+  Se $p = 1$, a igualdade vale, e $P(K \mid R) = 1$, pois o aluno sempre sabe a resposta e sempre acerta.
+
+  Se $n = 1$, a igualdade vale, e $P(K \mid R) = p$, pois o aluno acertar (ele sempre acerta!) e o aluno saber são independentes.
+
+  Imagine $n > 1$.
+
+  Lembre-se de que $P(K \mid R) = \frac{P(K \cap R)}{P(R)}$.
+
+  O numerador é a probabilidade do evento ``o aluno sabe e o aluno acerta''. Esta probabilidade é exatamente $p$, pois ``o aluno sabe'' é sub-evento de ``o aluno acerta''.
+
+  O numerador $P(R)$ é um número tal que $0 < P(R) < 1$. Vamos chamar este número de $1/x$, para $x > 1$.
+
+  Então,
+
+  \[
+  P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp > p
+  \]
+\end{enumerate}
+
+\hypertarget{em-r}{%
+\subsubsection*{Em R}\label{em-r}}
+\addcontentsline{toc}{subsubsection}{Em R}
+
+Valores teóricos:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{9}
+\NormalTok{p }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, .}\DecValTok{25}\NormalTok{)}
+
+\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{expand.grid}\NormalTok{(}\AttributeTok{n =}\NormalTok{ n, }\AttributeTok{p =}\NormalTok{ p) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{pkr\_teorico =}\NormalTok{ n }\SpecialCharTok{*}\NormalTok{ p }\SpecialCharTok{/}\NormalTok{ (p }\SpecialCharTok{*}\NormalTok{ (n }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+} \DecValTok{1}\NormalTok{)}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{arrange}\NormalTok{(n)}
+
+\NormalTok{df}
+\DocumentationTok{\#\# \# A tibble: 45 x 3}
+\DocumentationTok{\#\#       n     p pkr\_teorico}
+\DocumentationTok{\#\#   \textless{}int\textgreater{} \textless{}dbl\textgreater{}       \textless{}dbl\textgreater{}}
+\DocumentationTok{\#\# 1     1  0           0   }
+\DocumentationTok{\#\# 2     1  0.25        0.25}
+\DocumentationTok{\#\# 3     1  0.5         0.5 }
+\DocumentationTok{\#\# 4     1  0.75        0.75}
+\DocumentationTok{\#\# 5     1  1           1   }
+\DocumentationTok{\#\# 6     2  0           0   }
+\DocumentationTok{\#\# \# ... with 39 more rows}
+\end{Highlighting}
+\end{Shaded}
+
+Gráfico:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(p, pkr\_teorico)) }\SpecialCharTok{+}
+    \FunctionTok{geom\_line}\NormalTok{(}
+      \FunctionTok{aes}\NormalTok{(}\AttributeTok{group =}\NormalTok{ n, }\AttributeTok{color =} \FunctionTok{fct\_rev}\NormalTok{(}\FunctionTok{as.factor}\NormalTok{(n))),}
+      \AttributeTok{size =} \FloatTok{1.25}
+\NormalTok{    ) }\SpecialCharTok{+}
+    \FunctionTok{labs}\NormalTok{(}
+      \AttributeTok{x =} \StringTok{\textquotesingle{}P(K)\textquotesingle{}}\NormalTok{,}
+      \AttributeTok{y =} \StringTok{\textquotesingle{}P(K|R)\textquotesingle{}}\NormalTok{,}
+      \AttributeTok{color =} \StringTok{\textquotesingle{}n\textquotesingle{}}
+\NormalTok{    )}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/unnamed-chunk-24-1} \end{center}
+
+\begin{rmdnote}
+Conclusão óbvia: quanto maior o número $n$ de opções, maior a probabilidade $P(K \mid R)$ de o aluno ter acertado sabendo, em oposição a ter acertado chutando:
+
+\[
+\begin{aligned}
+\lim_{n \to \infty} P(K \mid R) 
+&=
+\lim_{n \to \infty} \frac{np}{np + 1 - p} \\
+&=
+\lim_{n \to \infty} \frac{p}{p} \\
+&= 1
+\end{aligned}
+\]
+
+\end{rmdnote}
+
+Simulação:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sim }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(n, p, }\AttributeTok{reps =} \FloatTok{1e7}\NormalTok{) \{}
+  
+\NormalTok{  sabe }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}
+    \FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{), }
+\NormalTok{    reps,}
+    \AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}
+    \FunctionTok{c}\NormalTok{(p, }\DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ p)}
+\NormalTok{  )}
+
+\NormalTok{  acerta }\OtherTok{\textless{}{-}}\NormalTok{ sabe}
+\NormalTok{  nao\_sabe }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(}\SpecialCharTok{!}\NormalTok{sabe)}
+  
+\NormalTok{  acerta[}\FunctionTok{which}\NormalTok{(}\SpecialCharTok{!}\NormalTok{sabe)] }\OtherTok{\textless{}{-}} 
+    \FunctionTok{sample}\NormalTok{(}
+      \FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{),}
+\NormalTok{      nao\_sabe,}
+      \AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}
+      \AttributeTok{prob =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\NormalTok{n, }\DecValTok{1} \SpecialCharTok{{-}} \DecValTok{1}\SpecialCharTok{/}\NormalTok{n)}
+\NormalTok{    )}
+  
+  \FunctionTok{sum}\NormalTok{(sabe) }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(acerta)}
+  
+\NormalTok{\}}
+
+\NormalTok{sim }\OtherTok{\textless{}{-}} \FunctionTok{Vectorize}\NormalTok{(sim)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\OtherTok{\textless{}{-}}\NormalTok{ df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{mutate}\NormalTok{(}
+    \AttributeTok{pkr\_simulado =} \FunctionTok{sim}\NormalTok{(n, p)}
+\NormalTok{  )}
+
+\NormalTok{df}
+\DocumentationTok{\#\# \# A tibble: 45 x 4}
+\DocumentationTok{\#\#       n     p pkr\_teorico pkr\_simulado}
+\DocumentationTok{\#\#   \textless{}int\textgreater{} \textless{}dbl\textgreater{}       \textless{}dbl\textgreater{}        \textless{}dbl\textgreater{}}
+\DocumentationTok{\#\# 1     1  0           0           0    }
+\DocumentationTok{\#\# 2     1  0.25        0.25        0.250}
+\DocumentationTok{\#\# 3     1  0.5         0.5         0.500}
+\DocumentationTok{\#\# 4     1  0.75        0.75        0.750}
+\DocumentationTok{\#\# 5     1  1           1           1    }
+\DocumentationTok{\#\# 6     2  0           0           0    }
+\DocumentationTok{\#\# \# ... with 39 more rows}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{pivot\_longer}\NormalTok{(}
+    \AttributeTok{cols =} \FunctionTok{starts\_with}\NormalTok{(}\StringTok{\textquotesingle{}pkr\textquotesingle{}}\NormalTok{),}
+    \AttributeTok{names\_to =} \StringTok{\textquotesingle{}tipo\textquotesingle{}}\NormalTok{,}
+    \AttributeTok{names\_prefix =} \StringTok{\textquotesingle{}pkr\_\textquotesingle{}}\NormalTok{,}
+    \AttributeTok{values\_to =} \StringTok{\textquotesingle{}valor\textquotesingle{}}
+\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(p, valor)) }\SpecialCharTok{+}
+    \FunctionTok{geom\_line}\NormalTok{(}
+      \FunctionTok{aes}\NormalTok{(}\AttributeTok{group =}\NormalTok{ n, }\AttributeTok{color =} \FunctionTok{fct\_rev}\NormalTok{(}\FunctionTok{as.factor}\NormalTok{(n))),}
+      \AttributeTok{size =} \FloatTok{1.25}
+\NormalTok{    ) }\SpecialCharTok{+}
+    \FunctionTok{labs}\NormalTok{(}
+      \AttributeTok{x =} \StringTok{\textquotesingle{}P(K)\textquotesingle{}}\NormalTok{,}
+      \AttributeTok{y =} \StringTok{\textquotesingle{}P(K|R)\textquotesingle{}}\NormalTok{,}
+      \AttributeTok{color =} \StringTok{\textquotesingle{}n\textquotesingle{}}
+\NormalTok{    ) }\SpecialCharTok{+}
+    \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\FunctionTok{fct\_rev}\NormalTok{(tipo)) }\SpecialCharTok{+}
+    \FunctionTok{theme}\NormalTok{(}\AttributeTok{panel.spacing.x =} \FunctionTok{unit}\NormalTok{(.}\DecValTok{5}\NormalTok{, }\StringTok{\textquotesingle{}cm\textquotesingle{}}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/unnamed-chunk-27-1} \end{center}
+
+\hypertarget{section-10}{%
+\subsection*{12}\label{section-10}}
+\addcontentsline{toc}{subsection}{12}
+
+\begin{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\item
+  Alice está tentando enviar uma mensagem codificada em binário para Bob.
+
+  \begin{itemize}
+  \item
+    Ela envia um \emph{bit}: $0$ ou $1$ com probabilidades iguais.
+  \item
+    Se ela envia $0$, há probabilidade $5\%$ de erro.
+  \item
+    Se ela envia $1$, há probabilidade $10\%$ de erro.
+  \item
+    Dado que Bob recebeu $1$, qual a probabilidade de Alice ter enviado $1$?
+  \end{itemize}
+\end{enumerate}
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Eventos e probabilidades:
+
+  \begin{center}\includegraphics[width=1\linewidth]{images/alice01} \end{center}
+\item
+  Queremos achar $P(A \mid B)$. Usando Bayes:
+
+  \begin{center}\includegraphics[width=0.75\linewidth]{images/alice02} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p0 }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{05}
+\NormalTok{p1 }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{1}
+\NormalTok{q0 }\OtherTok{\textless{}{-}} \DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ p0}
+\NormalTok{q1 }\OtherTok{\textless{}{-}} \DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ p1}
+
+\NormalTok{pA }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{/}\DecValTok{2}
+\NormalTok{pBIA }\OtherTok{\textless{}{-}}\NormalTok{ q1}
+\NormalTok{pB }\OtherTok{\textless{}{-}}\NormalTok{ (q1 }\SpecialCharTok{+}\NormalTok{ p0) }\SpecialCharTok{/} \DecValTok{2}
+\NormalTok{pAIB }\OtherTok{\textless{}{-}}\NormalTok{ pBIA }\SpecialCharTok{*}\NormalTok{ pA }\SpecialCharTok{/}\NormalTok{ pB}
+
+\NormalTok{pAIB}
+\DocumentationTok{\#\# [1] 0,9473684}
+\end{Highlighting}
+\end{Shaded}
+\item
+  Para sermos completos, vamos calcular outras probabilidades, com $P(A) = P(\neg A) = 1/2$:
+
+  \begin{center}\includegraphics[width=0.5\linewidth]{images/alice03} \end{center}
+
+  \begin{center}\includegraphics[width=0.5\linewidth]{images/alice04} \end{center}
+\item
+  Simulação:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{reps }\OtherTok{\textless{}{-}} \FloatTok{1e7}
+\NormalTok{alice\_envia }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), reps, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{)}
+\NormalTok{bob\_recebe }\OtherTok{\textless{}{-}}\NormalTok{ alice\_envia}
+
+\NormalTok{bob\_recebe[}\FunctionTok{which}\NormalTok{(alice\_envia }\SpecialCharTok{==} \DecValTok{0}\NormalTok{)] }\OtherTok{\textless{}{-}} 
+  \FunctionTok{sample}\NormalTok{(}
+    \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }
+    \FunctionTok{length}\NormalTok{(}\FunctionTok{which}\NormalTok{(alice\_envia }\SpecialCharTok{==} \DecValTok{0}\NormalTok{)),}
+    \AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}
+    \AttributeTok{prob =} \FunctionTok{c}\NormalTok{(}\DecValTok{95}\SpecialCharTok{/}\DecValTok{100}\NormalTok{, }\DecValTok{5}\SpecialCharTok{/}\DecValTok{100}\NormalTok{)}
+\NormalTok{  )}
+
+\NormalTok{bob\_recebe[}\FunctionTok{which}\NormalTok{(alice\_envia }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)] }\OtherTok{\textless{}{-}} 
+  \FunctionTok{sample}\NormalTok{(}
+    \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }
+    \FunctionTok{length}\NormalTok{(}\FunctionTok{which}\NormalTok{(alice\_envia }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)),}
+    \AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}
+    \CommentTok{\# Atenção: aqui, erro é 1 virar 0:}
+    \AttributeTok{prob =} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\SpecialCharTok{/}\DecValTok{100}\NormalTok{, }\DecValTok{90}\SpecialCharTok{/}\DecValTok{100}\NormalTok{)  }
+\NormalTok{  )}
+
+\NormalTok{pab }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(alice\_envia }\SpecialCharTok{\&}\NormalTok{ bob\_recebe) }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(bob\_recebe)}
+\NormalTok{pab}
+\DocumentationTok{\#\# [1] 0,9473928}
+\end{Highlighting}
+\end{Shaded}
+\end{itemize}
+
+\begin{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\item
+  Agora, eles usam um {\hl{código com repetição}}:
+
+  \begin{itemize}
+  \item
+    Alice envia $000$ para representar $0$ e $111$ para representar $1$.
+  \item
+    Bob decodifica a mensagem tomando o \emph{bit} que está em maioria.
+  \item
+    As probabilidades de erro são como antes, e os erros em \emph{bits} diferentes são independentes.
+  \item
+    Dado que Bob recebe $110$, qual a probabilidade de que Alice tenha enviado $111$?
+  \end{itemize}
+\end{enumerate}
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Teoricamente:
+
+  \begin{center}\includegraphics[width=0.5\linewidth]{images/alice05} \end{center}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{(q1}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{*}\NormalTok{ p1) }\SpecialCharTok{/}\NormalTok{ ((q1 }\SpecialCharTok{+}\NormalTok{ p0)}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{*}\NormalTok{ (p1 }\SpecialCharTok{+}\NormalTok{ q0))}
+\DocumentationTok{\#\# [1] 0,08547685}
+\end{Highlighting}
+\end{Shaded}
+\item
+  Simulação:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{reps }\OtherTok{\textless{}{-}} \FloatTok{1e6}
+
+\NormalTok{alice\_envia }\OtherTok{\textless{}{-}} \FunctionTok{replicate}\NormalTok{(}
+\NormalTok{  reps,}
+  \FunctionTok{sample}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DecValTok{3}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{),}
+  \AttributeTok{simplify =} \ConstantTok{FALSE}
+\NormalTok{)}
+
+\NormalTok{bob\_recebe }\OtherTok{\textless{}{-}}\NormalTok{ alice\_envia}
+
+\NormalTok{inserir\_erros }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(v) \{}
+
+\NormalTok{  original }\OtherTok{\textless{}{-}}\NormalTok{ v}
+
+\NormalTok{  v[}\FunctionTok{which}\NormalTok{(original }\SpecialCharTok{==} \DecValTok{0}\NormalTok{)] }\OtherTok{\textless{}{-}} 
+    \FunctionTok{sample}\NormalTok{(}
+      \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }
+      \FunctionTok{length}\NormalTok{(}\FunctionTok{which}\NormalTok{(original }\SpecialCharTok{==} \DecValTok{0}\NormalTok{)),}
+      \AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}
+      \AttributeTok{prob =} \FunctionTok{c}\NormalTok{(}\DecValTok{95}\SpecialCharTok{/}\DecValTok{100}\NormalTok{, }\DecValTok{5}\SpecialCharTok{/}\DecValTok{100}\NormalTok{)}
+\NormalTok{    )}
+
+\NormalTok{  v[}\FunctionTok{which}\NormalTok{(original }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)] }\OtherTok{\textless{}{-}} 
+    \FunctionTok{sample}\NormalTok{(}
+      \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }
+      \FunctionTok{length}\NormalTok{(}\FunctionTok{which}\NormalTok{(original }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)),}
+      \AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}
+      \CommentTok{\# Atenção: aqui, erro é 1 virar 0:}
+      \AttributeTok{prob =} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\SpecialCharTok{/}\DecValTok{100}\NormalTok{, }\DecValTok{90}\SpecialCharTok{/}\DecValTok{100}\NormalTok{)  }
+\NormalTok{    )}
+
+\NormalTok{  v}
+
+\NormalTok{\} }
+
+\NormalTok{bob\_recebe }\OtherTok{\textless{}{-}}\NormalTok{ bob\_recebe }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{map}\NormalTok{(}
+    \SpecialCharTok{\textasciitilde{}}\FunctionTok{inserir\_erros}\NormalTok{(.x)  }
+\NormalTok{  )}
+
+\NormalTok{bob\_recebe }\OtherTok{\textless{}{-}} 
+\NormalTok{  bob\_recebe }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{map\_lgl}\NormalTok{(}\SpecialCharTok{\textasciitilde{}} \FunctionTok{all}\NormalTok{(.x }\SpecialCharTok{==} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)))}
+
+\NormalTok{alice\_envia }\OtherTok{\textless{}{-}} 
+\NormalTok{  alice\_envia }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{map\_lgl}\NormalTok{(}\SpecialCharTok{\textasciitilde{}} \FunctionTok{all}\NormalTok{(.x }\SpecialCharTok{==} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{)))}
+
+
+\FunctionTok{sum}\NormalTok{(alice\_envia }\SpecialCharTok{\&}\NormalTok{ bob\_recebe) }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(bob\_recebe)}
+\DocumentationTok{\#\# [1] 0,08546727}
+\end{Highlighting}
+\end{Shaded}
+\item
+  A vantagem do esquema de repetição é que o envio de $111$ corresponde ao recebimento de $4$ cadeias diferentes: $111$, $011$, $101$, e $110$.
+\item
+  Sem repetição, a probabilidade de Bob receber $1$ quando Alice transimiu $1$ é
+
+  \[
+  P(B \mid A) = q_1 = 0{,}9
+  \]
+\item
+  Com repetição, a probabilidade de Bob receber uma das $4$ cadeias que representam $1$ (evento $R$) quando Alice transmitiu $111$ (evento $T$) é
+
+  \begin{center}\includegraphics[width=0.75\linewidth]{images/alice06} \end{center}
+\end{itemize}
+
+\hypertarget{section-11}{%
+\subsection*{14}\label{section-11}}
+\addcontentsline{toc}{subsection}{14}
+
+\begin{rmdbox}
+Se $P(A), P(B) \in (0, 1)$, então
+
+\[
+P(A \mid B) > P(A \mid \neg B) \iff
+P(B \mid A) > P(B \mid \neg A)
+\]
+
+\end{rmdbox}
+
+???
+
+\hypertarget{section-12}{%
+\subsection*{15}\label{section-12}}
+\addcontentsline{toc}{subsection}{15}
+
+\begin{rmdbox}
+
+$A$ e $B$ são eventos com
+
+\[
+0 < P(A \cap B) < P(A) < P(B) < P(A \cup B) < 1
+\]
+
+Você está torcendo para que $A$ e $B$ {\hl{ambos}} ocorram.
+
+O que você ficaria mais feliz em observar?
+
+\begin{itemize}
+\item
+  Que $A$ ocorreu?
+\item
+  Que $B$ ocorreu?
+\item
+  Que $A \cup B$ ocorreu?
+\end{itemize}
+
+\end{rmdbox}
+
+Queremos observar o evento $E$ tal que $P(A \cap B \mid E)$ seja máximo.
+
+\[
+\begin{aligned}
+P(A \cap B \mid A) &= \frac{P(A \cap B)}{P(A)} \\
+P(A \cap B \mid B) &= \frac{P(A \cap B)}{P(B)} \\
+P(A \cap B \mid A \cup B) &= 
+  \frac{P((A \cap B) \cap (A \cup B))}{P(A \cup B)} \\
+  &= \frac{P(A \cap B)}{P(A \cup B)}
+\end{aligned}
+\]
+
+Como $P(A)$ é o menor denominador, observar $A$ maximiza $P(A \cap B \mid E)$.
+
+Intuitivamente, como $A$ é o evento menos provável dos dois, saber que $A$ ocorreu nos deixa mais próximo da ocorrência dos dois eventos do que saber que $B$ (ou que algum dos dois) ocorreu.
+
+\hypertarget{section-13}{%
+\subsection*{16}\label{section-13}}
+\addcontentsline{toc}{subsection}{16}
+
+\begin{rmdbox}
+\[
+P(A \mid B) \leq P(A) \implies P(A \mid \neg B) \geq P(A)
+\]
+
+\end{rmdbox}
+
+Se a ocorrência de $B$ torna $A$ menos provável, então a não-ocorrência de $B$ torna $A$ mais provável.
+
+Pela lei da probabilidade total:
+
+\[
+\begin{aligned}
+P(A) &= P(A \mid B)P(B) + P(A \mid \neg B)P(\neg B) \\
+\therefore P(A \mid \neg B) &= 
+  \frac{P(A) - P(A \mid B)P(B)}{P(\neg B)}
+\end{aligned}
+\]
+
+Daí,
+
+\[
+\begin{aligned}
+P(A \mid \neg B) 
+&\geq
+  \frac{P(A) - P(A)P(B)}{P(\neg B)} & \text{pois } P(A \mid B) \leq P(A) \\
+&= \frac{P(A)(1 - P(B))}{P(\neg B)} \\
+&= P(A)
+\end{aligned}
+\]
+
+\hypertarget{section-14}{%
+\subsection*{17}\label{section-14}}
+\addcontentsline{toc}{subsection}{17}
+
+\begin{rmdbox}
+
+Em lógica determinística, $A \to B \iff \neg B \to \neg A$.
+
+Em probabilidades?
+
+Considere eventos $A$ e $B$ com $P(A), P(B) \not\in \{0, 1\}$.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Mostre que $P(B \mid A) = 1 \implies P(\neg A \mid \neg B) = 1$.
+\end{enumerate}
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  $A$ está contido em $B$:
+
+  \[
+  P(B \mid A) = 1 
+  \iff \frac{P(A \cap B)}{P(A)} = 1
+  \iff P(A \cap B) = P(A)
+  \]
+\item
+  Vamos mostrar que $P(\neg A \mid \neg B) = 1$:
+
+  \[
+  \begin{aligned}
+  P(\neg A \mid \neg B) 
+  &= \frac{P(\neg A \cap \neg B)}{P(\neg B)} \\
+  &= \frac{P(\neg (A \cup B))}{P(\neg B)} \\
+  &= \frac{1 - P(A \cup B)}{P(\neg B)} \\
+  &= \frac{1 - \left[ P(A) + P(B) - P(A \cap B) \right]}{P(\neg B)} \\
+  &= \frac{1 - P(B)}{P(\neg B)} \\
+  &= \frac{P(\neg B)}{P(\neg B)} \\
+  &= 1
+  \end{aligned}
+  \]
+\end{itemize}
+
+\begin{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Mostre que, se ``$=$'' for substituído por ``$\approx$'', o resultado não vale. Ache um exemplo em que $P(B \mid A)$ seja quase $1$, mas $P(\neg A \mid \neg B)$ seja quase $0$.
+\end{enumerate}
+
+\end{rmdbox}
+
+Valores de exemplo, com $A$ e $B$ independentes:
+
+\[
+\begin{aligned}
+P(A) &= 80/100 \\
+P(B) &= 90/100 \\
+P(\neg A) &= 20/100 \\
+P(\neg B) &= 10/100 \\
+P(A \cap B) &= P(A) \cdot P(B) = 72/100 \\
+P(A \cup B) &= P(A) + P(B) - P(A \cap B) = 98/100\\
+P(B \mid A) &= \frac{P(A \cap B)}{P(A)} = 72/80 \approx 1 \\
+P(\neg A \mid \neg B) &= \frac{P(\neg A \cap \neg B)}{P(\neg B)} = 
+  \frac{1 - P(A \cup B)}{P(\neg B)} = 2/10 \approx 0
+\end{aligned}
+\]
+
+\begin{rmdnote}
+
+Vamos criar uma medida de independência. Se $P(A) \neq 0$ e $P(B) \neq 0$, definimos
+
+\[
+I = \frac{P(A \cap B)}{P(A)P(B)}
+\]
+
+Com isso,
+
+\begin{itemize}
+\item
+  $A$ e $B$ são disjuntos ${} \iff I = 0$
+\item
+  $A$ e $B$ são independentes ${} \iff I = 1$
+\item
+  $A$ e $B$ se atrapalham ${} \iff I < 1$.
+
+  I.e., $P(A) > P(A \mid B)$ e $P(B) > P(B \mid A)$.
+\item
+  $A$ e $B$ se ajudam ${} \iff I > 1$.
+
+  I.e., $P(A) < P(A \mid B)$ e $P(B) < P(B \mid A)$.
+\end{itemize}
+
+\end{rmdnote}
+
+\begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/unnamed-chunk-37-1} \end{center}
+
+\begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/unnamed-chunk-38-1} \end{center}
+
+\hypertarget{section-15}{%
+\subsection*{22}\label{section-15}}
+\addcontentsline{toc}{subsection}{22}
 
 \begin{rmdbox}
 
@@ -1556,9 +2250,70 @@ Este problema foi proposto pela primeira vez por Lewis Carroll em 1893.
   mas as probabilidades do numerador são mais difíceis de calcular! Teríamos que usar a lei da probabilidade total duas vezes para o numerador (além de uma vez para o denominador).
 \end{itemize}
 
+\hypertarget{section-16}{%
+\subsection*{29}\label{section-16}}
+\addcontentsline{toc}{subsection}{29}
+
+\begin{rmdbox}
+
+Uma família tem $2$ crias.
+
+Cada cria tem a mesma probabilidade de ser menino ou menina, e os sexos delas são independentes.
+
+Cada cria tem a característica $C$ com probabilidade $p$, independentemente uma da outra e do sexo.
+
+Mostre que a probabilidade de serem {\hl{duas meninas}}, dado que {\hl{pelo menos uma das crias é uma menina com a característica $C$}}, é
+
+\[
+\frac{2 - p}{4 - p}
+\]
+
+Observe:
+
+\begin{itemize}
+\item
+  Se $p = 1$, então a probabilidade é $1/3$.
+\item
+  Se $p \to 0$, então a probabilidade tende a $1/2$ pela esquerda.
+\end{itemize}
+
+\end{rmdbox}
+
+???
+
+\hypertarget{probabilidade-condicional-continuauxe7uxe3o}{%
+\chapter*{05: Probabilidade condicional (continuação)}\label{probabilidade-condicional-continuauxe7uxe3o}}
+\addcontentsline{toc}{chapter}{05: Probabilidade condicional (continuação)}
+
+\hypertarget{vuxeddeo-4}{%
+\section*{Vídeo}\label{vuxeddeo-4}}
+\addcontentsline{toc}{section}{Vídeo}
+
+\begin{center} \url{https://youtu.be/JzDvVgNDxo8} \end{center}
+
+\hypertarget{exercuxedcios-do-livro-cap.-2-1}{%
+\section*{Exercícios do livro (cap. 2)}\label{exercuxedcios-do-livro-cap.-2-1}}
+\addcontentsline{toc}{section}{Exercícios do livro (cap. 2)}
+
+\hypertarget{section-17}{%
+\subsection*{30}\label{section-17}}
+\addcontentsline{toc}{subsection}{30}
+
+\hypertarget{section-18}{%
+\subsection*{31}\label{section-18}}
+\addcontentsline{toc}{subsection}{31}
+
+\hypertarget{section-19}{%
+\subsection*{32}\label{section-19}}
+\addcontentsline{toc}{subsection}{32}
+
+\hypertarget{section-20}{%
+\subsection*{33}\label{section-20}}
+\addcontentsline{toc}{subsection}{33}
+
 \hypertarget{xadrez}{%
-\subsubsection*{3.5 Xadrez}\label{xadrez}}
-\addcontentsline{toc}{subsubsection}{3.5 Xadrez}
+\subsection*{35. Xadrez}\label{xadrez}}
+\addcontentsline{toc}{subsection}{35. Xadrez}
 
 \begin{rmdbox}
 
@@ -1765,634 +2520,17 @@ Este problema foi proposto pela primeira vez por Lewis Carroll em 1893.
   \]
 \end{itemize}
 
-\hypertarget{exercuxedcios-do-livro-cap.-2}{%
-\subsection*{Exercícios do livro (cap. 2)}\label{exercuxedcios-do-livro-cap.-2}}
-\addcontentsline{toc}{subsection}{Exercícios do livro (cap. 2)}
-
-\hypertarget{section-10}{%
-\subsubsection*{2}\label{section-10}}
-\addcontentsline{toc}{subsubsection}{2}
-
-\begin{rmdbox}
-
-\begin{itemize}
-\item
-  Uma mulher está grávida de meninos gêmeos.
-\item
-  Gêmeos podem ser idênticos ou fraternos.
-\item
-  $1/3$ dos gêmeos são idênticos.
-\item
-  Gêmeos idênticos têm $50\%$ de chance de serem ambos meninos, e $50\%$ de chance de serem ambos meninas.
-\item
-  Para gêmeos fraternos, cada gêmeo tem, independentemente, $50\%$ de chance de ser menino, e $50\%$ de chance de ser menina.
-\item
-  Qual a probabilidade de a mulher estar grávida de gêmeos idênticos?
-\end{itemize}
-
-\end{rmdbox}
-
-\begin{itemize}
-\item
-  Eventos:
-
-  \[
-  \begin{aligned}
-  I &= \text{os gêmeos são idênticos} \\
-  M &= \text{os gêmeos são dois meninos}
-  \end{aligned}
-  \]
-\item
-  Probabilidades dadas:
-
-  \[
-  \begin{aligned}
-  P(I) &= 1/3 \\
-  P(M \mid I) &= 1/2 \\
-  P(M \mid \neg I) &= 1/4
-  \end{aligned}
-  \]
-\item
-  Queremos calcular $P(I \mid M)$. Usamos Bayes:
-
-  \[
-  \begin{aligned}
-  P(I \mid M) 
-  &=
-  \frac{P(M \mid I) \cdot P(I)}{P(M)}
-  \end{aligned}
-  \]
-\item
-  Só falta o valor de $P(M)$, que calculamos usando probabilidade total:
-
-  \[
-  \begin{aligned}
-  P(M) 
-  &=
-  P(M \mid I)P(I) + P(M \mid \neg I)P(\neg I) \\
-  &=
-  1/2 \cdot 1/3 + 1/4 \cdot 2/3 \\
-  &=
-  1/3
-  \end{aligned}
-  \]
-\item
-  Concluímos
-
-  \[
-  \begin{aligned}
-  P(I \mid M) 
-  &=
-  \frac{P(M \mid I) \cdot P(I)}{P(M)} \\
-  &=
-  \frac{1/2 \cdot 1/3}{1/3} \\
-  &=
-  1/2
-  \end{aligned}
-  \]
-\end{itemize}
-
-\hypertarget{section-11}{%
-\subsubsection*{4}\label{section-11}}
-\addcontentsline{toc}{subsubsection}{4}
-
-\begin{rmdbox}
-
-\begin{itemize}
-\item
-  Um aluno está resolvendo uma questão de múltipla escolha com $n$ opções.
-\item
-  $K$ é o evento que corresponde a ele saber a resposta correta.
-\item
-  $R$ é o evento que corresponde a ele acertar (sabendo ou chutando).
-\item
-  Se ele sabe a resposta, ele acerta.
-\item
-  Se ele não sabe, ele chuta uma opção ao acaso.
-\item
-  Considere $P(K) = p$.
-\end{itemize}
-
-\begin{enumerate}
-\def\labelenumi{(\alph{enumi})}
-\item
-  Ache $P(K \mid R)$.
-\item
-  Mostre que $P(K \mid R) \geq p$. Por que isto faz sentido? Quando a igualdade é exata?
-\end{enumerate}
-
-\end{rmdbox}
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\item
-  Vamos usar Bayes, supondo $p = P(K) > 0$:
-
-  \[
-  \begin{aligned}
-  P(K \mid R)
-  &=
-  \frac{P(R \mid K) \cdot P(K)}{P(R)} \\
-  &=
-  \frac{1 \cdot p}{
-    P(R \mid K) \cdot P(K) + 
-    P(R \mid \neg K) \cdot P(\neg K)
-  } \\
-  &=
-  \frac{p}{
-    1 \cdot p + 
-    \frac{1}{n} \cdot (1 - p)
-  } \\
-  &=
-  \frac{np}{np + (1 - p)}
-  \end{aligned}
-  \]
-\item
-  Isto equivale a mostrar
-
-  \[
-  \frac{np}{np + (1 - p)} \geq p
-  \]
-
-  Como todos os valores são positivos, isto equivale a
-
-  \[
-  np \geq np^2 + (1 - p)p
-  \]
-
-  Dividindo ambos os lados por $p > 0$:
-
-  \[
-  n \geq np + 1 - p
-  \]
-
-  Daí,
-
-  \[
-  \begin{aligned}
-  n \geq np + 1 - p 
-  &\iff n - np \geq 1 - p \\
-  &\iff n(1 - p) \geq 1 - p \\
-  &\iff n \geq 1 & \text{(supondo } p < 1 \text{)}
-  \end{aligned}
-  \]
-  O que é verdade, pois existe pelo menos uma opção (a correta).
-
-  Se $p = 1$, a igualdade vale, e $P(K \mid R) = 1$, pois o aluno sempre sabe a resposta e sempre acerta.
-
-  Se $n = 1$, a igualdade vale, e $P(K \mid R) = p$, pois o aluno acertar (ele sempre acerta!) e o aluno saber são independentes.
-
-  Imagine $n > 1$.
-
-  Lembre-se de que $P(K \mid R) = \frac{P(K \cap R)}{P(R)}$.
-
-  O numerador é a probabilidade do evento ``o aluno sabe e o aluno acerta''. Esta probabilidade é exatamente $p$, pois ``o aluno sabe'' é sub-evento de ``o aluno acerta''.
-
-  O numerador $P(R)$ é um número tal que $0 < P(R) < 1$. Vamos chamar este número de $1/x$, para $x > 1$.
-
-  Então,
-
-  \[
-  P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp > p
-  \]
-\end{enumerate}
-
-\hypertarget{em-r}{%
-\paragraph*{Em R}\label{em-r}}
-\addcontentsline{toc}{paragraph}{Em R}
-
-Valores teóricos:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{n }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{:}\DecValTok{9}
-\NormalTok{p }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, .}\DecValTok{25}\NormalTok{)}
-
-\NormalTok{df }\OtherTok{\textless{}{-}} \FunctionTok{expand.grid}\NormalTok{(}\AttributeTok{n =}\NormalTok{ n, }\AttributeTok{p =}\NormalTok{ p) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{mutate}\NormalTok{(}
-    \AttributeTok{pkr\_teorico =}\NormalTok{ n }\SpecialCharTok{*}\NormalTok{ p }\SpecialCharTok{/}\NormalTok{ (p }\SpecialCharTok{*}\NormalTok{ (n }\SpecialCharTok{{-}} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+} \DecValTok{1}\NormalTok{)}
-\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{arrange}\NormalTok{(n)}
-
-\NormalTok{df}
-\DocumentationTok{\#\# \# A tibble: 45 x 3}
-\DocumentationTok{\#\#       n     p pkr\_teorico}
-\DocumentationTok{\#\#   \textless{}int\textgreater{} \textless{}dbl\textgreater{}       \textless{}dbl\textgreater{}}
-\DocumentationTok{\#\# 1     1  0           0   }
-\DocumentationTok{\#\# 2     1  0.25        0.25}
-\DocumentationTok{\#\# 3     1  0.5         0.5 }
-\DocumentationTok{\#\# 4     1  0.75        0.75}
-\DocumentationTok{\#\# 5     1  1           1   }
-\DocumentationTok{\#\# 6     2  0           0   }
-\DocumentationTok{\#\# \# ... with 39 more rows}
-\end{Highlighting}
-\end{Shaded}
-
-Gráfico:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(p, pkr\_teorico)) }\SpecialCharTok{+}
-    \FunctionTok{geom\_line}\NormalTok{(}
-      \FunctionTok{aes}\NormalTok{(}\AttributeTok{group =}\NormalTok{ n, }\AttributeTok{color =} \FunctionTok{fct\_rev}\NormalTok{(}\FunctionTok{as.factor}\NormalTok{(n))),}
-      \AttributeTok{size =} \FloatTok{1.25}
-\NormalTok{    ) }\SpecialCharTok{+}
-    \FunctionTok{labs}\NormalTok{(}
-      \AttributeTok{x =} \StringTok{\textquotesingle{}P(K)\textquotesingle{}}\NormalTok{,}
-      \AttributeTok{y =} \StringTok{\textquotesingle{}P(K|R)\textquotesingle{}}\NormalTok{,}
-      \AttributeTok{color =} \StringTok{\textquotesingle{}n\textquotesingle{}}
-\NormalTok{    )}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/unnamed-chunk-24-1} \end{center}
-
-\begin{rmdnote}
-Conclusão óbvia: quanto maior o número $n$ de opções, maior a probabilidade $P(K \mid R)$ de o aluno ter acertado sabendo, em oposição a ter acertado chutando:
-
-\[
-\begin{aligned}
-\lim_{n \to \infty} P(K \mid R) 
-&=
-\lim_{n \to \infty} \frac{np}{np + 1 - p} \\
-&=
-\lim_{n \to \infty} \frac{p}{p} \\
-&= 1
-\end{aligned}
-\]
-
-\end{rmdnote}
-
-Simulação:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{sim }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(n, p, }\AttributeTok{reps =} \FloatTok{1e7}\NormalTok{) \{}
-  
-\NormalTok{  sabe }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}
-    \FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{), }
-\NormalTok{    reps,}
-    \AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}
-    \FunctionTok{c}\NormalTok{(p, }\DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ p)}
-\NormalTok{  )}
-
-\NormalTok{  acerta }\OtherTok{\textless{}{-}}\NormalTok{ sabe}
-\NormalTok{  nao\_sabe }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(}\SpecialCharTok{!}\NormalTok{sabe)}
-  
-\NormalTok{  acerta[}\FunctionTok{which}\NormalTok{(}\SpecialCharTok{!}\NormalTok{sabe)] }\OtherTok{\textless{}{-}} 
-    \FunctionTok{sample}\NormalTok{(}
-      \FunctionTok{c}\NormalTok{(}\ConstantTok{TRUE}\NormalTok{, }\ConstantTok{FALSE}\NormalTok{),}
-\NormalTok{      nao\_sabe,}
-      \AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}
-      \AttributeTok{prob =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{/}\NormalTok{n, }\DecValTok{1} \SpecialCharTok{{-}} \DecValTok{1}\SpecialCharTok{/}\NormalTok{n)}
-\NormalTok{    )}
-  
-  \FunctionTok{sum}\NormalTok{(sabe) }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(acerta)}
-  
-\NormalTok{\}}
-
-\NormalTok{sim }\OtherTok{\textless{}{-}} \FunctionTok{Vectorize}\NormalTok{(sim)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{df }\OtherTok{\textless{}{-}}\NormalTok{ df }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{mutate}\NormalTok{(}
-    \AttributeTok{pkr\_simulado =} \FunctionTok{sim}\NormalTok{(n, p)}
-\NormalTok{  )}
-
-\NormalTok{df}
-\DocumentationTok{\#\# \# A tibble: 45 x 4}
-\DocumentationTok{\#\#       n     p pkr\_teorico pkr\_simulado}
-\DocumentationTok{\#\#   \textless{}int\textgreater{} \textless{}dbl\textgreater{}       \textless{}dbl\textgreater{}        \textless{}dbl\textgreater{}}
-\DocumentationTok{\#\# 1     1  0           0           0    }
-\DocumentationTok{\#\# 2     1  0.25        0.25        0.250}
-\DocumentationTok{\#\# 3     1  0.5         0.5         0.500}
-\DocumentationTok{\#\# 4     1  0.75        0.75        0.750}
-\DocumentationTok{\#\# 5     1  1           1           1    }
-\DocumentationTok{\#\# 6     2  0           0           0    }
-\DocumentationTok{\#\# \# ... with 39 more rows}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{pivot\_longer}\NormalTok{(}
-    \AttributeTok{cols =} \FunctionTok{starts\_with}\NormalTok{(}\StringTok{\textquotesingle{}pkr\textquotesingle{}}\NormalTok{),}
-    \AttributeTok{names\_to =} \StringTok{\textquotesingle{}tipo\textquotesingle{}}\NormalTok{,}
-    \AttributeTok{names\_prefix =} \StringTok{\textquotesingle{}pkr\_\textquotesingle{}}\NormalTok{,}
-    \AttributeTok{values\_to =} \StringTok{\textquotesingle{}valor\textquotesingle{}}
-\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(p, valor)) }\SpecialCharTok{+}
-    \FunctionTok{geom\_line}\NormalTok{(}
-      \FunctionTok{aes}\NormalTok{(}\AttributeTok{group =}\NormalTok{ n, }\AttributeTok{color =} \FunctionTok{fct\_rev}\NormalTok{(}\FunctionTok{as.factor}\NormalTok{(n))),}
-      \AttributeTok{size =} \FloatTok{1.25}
-\NormalTok{    ) }\SpecialCharTok{+}
-    \FunctionTok{labs}\NormalTok{(}
-      \AttributeTok{x =} \StringTok{\textquotesingle{}P(K)\textquotesingle{}}\NormalTok{,}
-      \AttributeTok{y =} \StringTok{\textquotesingle{}P(K|R)\textquotesingle{}}\NormalTok{,}
-      \AttributeTok{color =} \StringTok{\textquotesingle{}n\textquotesingle{}}
-\NormalTok{    ) }\SpecialCharTok{+}
-    \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\FunctionTok{fct\_rev}\NormalTok{(tipo)) }\SpecialCharTok{+}
-    \FunctionTok{theme}\NormalTok{(}\AttributeTok{panel.spacing.x =} \FunctionTok{unit}\NormalTok{(.}\DecValTok{5}\NormalTok{, }\StringTok{\textquotesingle{}cm\textquotesingle{}}\NormalTok{))}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/unnamed-chunk-27-1} \end{center}
-
-\hypertarget{section-12}{%
-\subsubsection*{12}\label{section-12}}
-\addcontentsline{toc}{subsubsection}{12}
-
-\begin{rmdbox}
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\item
-  Alice está tentando enviar uma mensagem codificada em binário para Bob.
-
-  \begin{itemize}
-  \item
-    Ela envia um \emph{bit}: $0$ ou $1$ com probabilidades iguais.
-  \item
-    Se ela envia $0$, há probabilidade $5\%$ de erro.
-  \item
-    Se ela envia $1$, há probabilidade $10\%$ de erro.
-  \item
-    Dado que Bob recebeu $1$, qual a probabilidade de Alice ter enviado $1$?
-  \end{itemize}
-\end{enumerate}
-
-\end{rmdbox}
-
-\begin{itemize}
-\item
-  Eventos e probabilidades:
-
-  \begin{center}\includegraphics[width=1\linewidth]{images/alice01} \end{center}
-\item
-  Queremos achar $P(A \mid B)$. Usando Bayes:
-
-  \begin{center}\includegraphics[width=0.75\linewidth]{images/alice02} \end{center}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{p0 }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{05}
-\NormalTok{p1 }\OtherTok{\textless{}{-}}\NormalTok{ .}\DecValTok{1}
-\NormalTok{q0 }\OtherTok{\textless{}{-}} \DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ p0}
-\NormalTok{q1 }\OtherTok{\textless{}{-}} \DecValTok{1} \SpecialCharTok{{-}}\NormalTok{ p1}
-
-\NormalTok{pA }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{/}\DecValTok{2}
-\NormalTok{pBIA }\OtherTok{\textless{}{-}}\NormalTok{ q1}
-\NormalTok{pB }\OtherTok{\textless{}{-}}\NormalTok{ (q1 }\SpecialCharTok{+}\NormalTok{ p0) }\SpecialCharTok{/} \DecValTok{2}
-\NormalTok{pAIB }\OtherTok{\textless{}{-}}\NormalTok{ pBIA }\SpecialCharTok{*}\NormalTok{ pA }\SpecialCharTok{/}\NormalTok{ pB}
-
-\NormalTok{pAIB}
-\DocumentationTok{\#\# [1] 0,9473684}
-\end{Highlighting}
-\end{Shaded}
-\item
-  Para sermos completos, vamos calcular outras probabilidades, com $P(A) = P(\neg A) = 1/2$:
-
-  \begin{center}\includegraphics[width=0.5\linewidth]{images/alice03} \end{center}
-
-  \begin{center}\includegraphics[width=0.5\linewidth]{images/alice04} \end{center}
-\item
-  Simulação:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{reps }\OtherTok{\textless{}{-}} \FloatTok{1e7}
-\NormalTok{alice\_envia }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), reps, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{)}
-\NormalTok{bob\_recebe }\OtherTok{\textless{}{-}}\NormalTok{ alice\_envia}
-
-\NormalTok{bob\_recebe[}\FunctionTok{which}\NormalTok{(alice\_envia }\SpecialCharTok{==} \DecValTok{0}\NormalTok{)] }\OtherTok{\textless{}{-}} 
-  \FunctionTok{sample}\NormalTok{(}
-    \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }
-    \FunctionTok{length}\NormalTok{(}\FunctionTok{which}\NormalTok{(alice\_envia }\SpecialCharTok{==} \DecValTok{0}\NormalTok{)),}
-    \AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}
-    \AttributeTok{prob =} \FunctionTok{c}\NormalTok{(}\DecValTok{95}\SpecialCharTok{/}\DecValTok{100}\NormalTok{, }\DecValTok{5}\SpecialCharTok{/}\DecValTok{100}\NormalTok{)}
-\NormalTok{  )}
-
-\NormalTok{bob\_recebe[}\FunctionTok{which}\NormalTok{(alice\_envia }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)] }\OtherTok{\textless{}{-}} 
-  \FunctionTok{sample}\NormalTok{(}
-    \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }
-    \FunctionTok{length}\NormalTok{(}\FunctionTok{which}\NormalTok{(alice\_envia }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)),}
-    \AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}
-    \CommentTok{\# Atenção: aqui, erro é 1 virar 0:}
-    \AttributeTok{prob =} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\SpecialCharTok{/}\DecValTok{100}\NormalTok{, }\DecValTok{90}\SpecialCharTok{/}\DecValTok{100}\NormalTok{)  }
-\NormalTok{  )}
-
-\NormalTok{pab }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(alice\_envia }\SpecialCharTok{\&}\NormalTok{ bob\_recebe) }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(bob\_recebe)}
-\NormalTok{pab}
-\DocumentationTok{\#\# [1] 0,9473928}
-\end{Highlighting}
-\end{Shaded}
-\end{itemize}
-
-\begin{rmdbox}
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\setcounter{enumi}{1}
-\item
-  Agora, eles usam um {\hl{código com repetição}}:
-
-  \begin{itemize}
-  \item
-    Alice envia $000$ para representar $0$ e $111$ para representar $1$.
-  \item
-    Bob decodifica a mensagem tomando o \emph{bit} que está em maioria.
-  \item
-    As probabilidades de erro são como antes, e os erros em \emph{bits} diferentes são independentes.
-  \item
-    Dado que Bob recebe $110$, qual a probabilidade de que Alice tenha enviado $111$?
-  \end{itemize}
-\end{enumerate}
-
-\end{rmdbox}
-
-\begin{itemize}
-\item
-  Teoricamente:
-
-  \begin{center}\includegraphics[width=0.5\linewidth]{images/alice05} \end{center}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{(q1}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{*}\NormalTok{ p1) }\SpecialCharTok{/}\NormalTok{ ((q1 }\SpecialCharTok{+}\NormalTok{ p0)}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{*}\NormalTok{ (p1 }\SpecialCharTok{+}\NormalTok{ q0))}
-\DocumentationTok{\#\# [1] 0,08547685}
-\end{Highlighting}
-\end{Shaded}
-\item
-  Simulação:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{reps }\OtherTok{\textless{}{-}} \FloatTok{1e6}
-
-\NormalTok{alice\_envia }\OtherTok{\textless{}{-}} \FunctionTok{replicate}\NormalTok{(}
-\NormalTok{  reps,}
-  \FunctionTok{sample}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DecValTok{3}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{),}
-  \AttributeTok{simplify =} \ConstantTok{FALSE}
-\NormalTok{)}
-
-\NormalTok{bob\_recebe }\OtherTok{\textless{}{-}}\NormalTok{ alice\_envia}
-
-\NormalTok{inserir\_erros }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(v) \{}
-
-\NormalTok{  original }\OtherTok{\textless{}{-}}\NormalTok{ v}
-
-\NormalTok{  v[}\FunctionTok{which}\NormalTok{(original }\SpecialCharTok{==} \DecValTok{0}\NormalTok{)] }\OtherTok{\textless{}{-}} 
-    \FunctionTok{sample}\NormalTok{(}
-      \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }
-      \FunctionTok{length}\NormalTok{(}\FunctionTok{which}\NormalTok{(original }\SpecialCharTok{==} \DecValTok{0}\NormalTok{)),}
-      \AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}
-      \AttributeTok{prob =} \FunctionTok{c}\NormalTok{(}\DecValTok{95}\SpecialCharTok{/}\DecValTok{100}\NormalTok{, }\DecValTok{5}\SpecialCharTok{/}\DecValTok{100}\NormalTok{)}
-\NormalTok{    )}
-
-\NormalTok{  v[}\FunctionTok{which}\NormalTok{(original }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)] }\OtherTok{\textless{}{-}} 
-    \FunctionTok{sample}\NormalTok{(}
-      \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }
-      \FunctionTok{length}\NormalTok{(}\FunctionTok{which}\NormalTok{(original }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)),}
-      \AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}
-      \CommentTok{\# Atenção: aqui, erro é 1 virar 0:}
-      \AttributeTok{prob =} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\SpecialCharTok{/}\DecValTok{100}\NormalTok{, }\DecValTok{90}\SpecialCharTok{/}\DecValTok{100}\NormalTok{)  }
-\NormalTok{    )}
-
-\NormalTok{  v}
-
-\NormalTok{\} }
-
-\NormalTok{bob\_recebe }\OtherTok{\textless{}{-}}\NormalTok{ bob\_recebe }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{map}\NormalTok{(}
-    \SpecialCharTok{\textasciitilde{}}\FunctionTok{inserir\_erros}\NormalTok{(.x)  }
-\NormalTok{  )}
-
-\NormalTok{bob\_recebe }\OtherTok{\textless{}{-}} 
-\NormalTok{  bob\_recebe }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{map\_lgl}\NormalTok{(}\SpecialCharTok{\textasciitilde{}} \FunctionTok{all}\NormalTok{(.x }\SpecialCharTok{==} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)))}
-
-\NormalTok{alice\_envia }\OtherTok{\textless{}{-}} 
-\NormalTok{  alice\_envia }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{map\_lgl}\NormalTok{(}\SpecialCharTok{\textasciitilde{}} \FunctionTok{all}\NormalTok{(.x }\SpecialCharTok{==} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{)))}
-
-
-\FunctionTok{sum}\NormalTok{(alice\_envia }\SpecialCharTok{\&}\NormalTok{ bob\_recebe) }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(bob\_recebe)}
-\DocumentationTok{\#\# [1] 0,08546727}
-\end{Highlighting}
-\end{Shaded}
-\item
-  A vantagem do esquema de repetição é que o envio de $111$ corresponde ao recebimento de $4$ cadeias diferentes: $111$, $011$, $101$, e $110$.
-\item
-  Sem repetição, a probabilidade de Bob receber $1$ quando Alice transimiu $1$ é
-
-  \[
-  P(B \mid A) = q_1 = 0{,}9
-  \]
-\item
-  Com repetição, a probabilidade de Bob receber uma das $4$ cadeias que representam $1$ (evento $R$) quando Alice transmitiu $111$ (evento $T$) é
-
-  \begin{center}\includegraphics[width=0.75\linewidth]{images/alice06} \end{center}
-\end{itemize}
-
-\hypertarget{section-13}{%
-\subsubsection*{14}\label{section-13}}
-\addcontentsline{toc}{subsubsection}{14}
-
-Almost OK.
-
-\hypertarget{section-14}{%
-\subsubsection*{15}\label{section-14}}
-\addcontentsline{toc}{subsubsection}{15}
-
-OK.
-
-\hypertarget{section-15}{%
-\subsubsection*{16}\label{section-15}}
-\addcontentsline{toc}{subsubsection}{16}
-
-OK.
-
-\hypertarget{section-16}{%
-\subsubsection*{17}\label{section-16}}
-\addcontentsline{toc}{subsubsection}{17}
-
-\begin{rmdbox}
-
-Em lógica determinística, $A \to B \iff \neg B \to \neg A$.
-
-Em probabilidades?
-
-Considere eventos $A$ e $B$ com $P(A), P(B) \not\in \{0, 1\}$.
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\tightlist
-\item
-  Mostre que $P(B \mid A) = 1 \implies P(\neg A \mid \neg B) = 1$.
-\end{enumerate}
-
-\end{rmdbox}
-
-\begin{itemize}
-\item
-  $A$ está contido em $B$:
-
-  \[
-  P(B \mid A) = 1 
-  \iff \frac{P(A \cap B)}{P(A)} = 1
-  \iff P(A \cap B) = P(A)
-  \]
-\item
-  Vamos mostrar que $P(\neg A \mid \neg B) = 1$:
-
-  \[
-  \begin{aligned}
-  P(\neg A \mid \neg B) 
-  &= \frac{P(\neg A \cap \neg B)}{P(\neg B)} \\
-  &= \frac{P(\neg (A \cup B))}{P(\neg B)} \\
-  &= \frac{1 - P(A \cup B)}{P(\neg B)} \\
-  &= \frac{1 - \left[ P(A) + P(B) - P(A \cap B) \right]}{P(\neg B)} \\
-  &= \frac{1 - P(B)}{P(\neg B)} \\
-  &= \frac{P(\neg B)}{P(\neg B)} \\
-  &= 1
-  \end{aligned}
-  \]
-\end{itemize}
-
-\begin{rmdbox}
-
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
-\setcounter{enumi}{1}
-\tightlist
-\item
-  Mostre que, se ``$=$'' for substituído por ``$\approx$'', o resultado não vale. Ache um exemplo em que $P(B \mid A)$ seja quase $1$, mas $P(\neg A \mid \neg B)$ seja quase $0$.
-\end{enumerate}
-
-\end{rmdbox}
-
-Valores de exemplo, com $A$ e $B$ independentes:
-
-\[
-\begin{aligned}
-P(A) &= 80/100 \\
-P(B) &= 90/100 \\
-P(\neg A) &= 20/100 \\
-P(\neg B) &= 10/100 \\
-P(A \cap B) &= P(A) \cdot P(B) = 72/100 \\
-P(A \cup B) &= P(A) + P(B) - P(A \cap B) = 98/100\\
-P(B \mid A) &= \frac{P(A \cap B)}{P(A)} = 72/80 \approx 1 \\
-P(\neg A \mid \neg B) &= \frac{P(\neg A \cap \neg B)}{P(\neg B)} = 
-  \frac{1 - P(A \cup B)}{P(\neg B)} = 2/10 \approx 0
-\end{aligned}
-\]
-
-\hypertarget{section-17}{%
-\subsubsection*{29}\label{section-17}}
-\addcontentsline{toc}{subsubsection}{29}
+\hypertarget{section-21}{%
+\subsection*{36}\label{section-21}}
+\addcontentsline{toc}{subsection}{36}
+
+\hypertarget{section-22}{%
+\subsection*{37}\label{section-22}}
+\addcontentsline{toc}{subsection}{37}
+
+\hypertarget{section-23}{%
+\subsection*{38}\label{section-23}}
+\addcontentsline{toc}{subsection}{38}
 
 \hypertarget{referuxeancias}{%
 \chapter*{Referências}\label{referuxeancias}}

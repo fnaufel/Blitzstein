@@ -11,11 +11,9 @@ embed_yt('LZ5Wergp_PA')
 ```
 
 
-## Exercícios {-}
+## Exercícios do livro (cap. 1) {-}
 
-### Exercícios do livro (cap. 1) {-}
-
-#### 26 {-}
+### 26 {-}
 
 ::: {.rmdbox latex=1}
 
@@ -59,7 +57,7 @@ tibble(
 ```
 
 
-#### 27 {-}
+### 27 {-}
 
 ::: {.rmdbox latex=1}
 
@@ -74,7 +72,7 @@ tibble(
 De novo, `pbirthday(k, n)`.
 
 
-#### 57 {-}
+### 57 {-}
 
 ::: {.rmdbox latex=1}
 
@@ -123,12 +121,12 @@ Para calcular $P(\text{nenhuma molécula sua foi de César})$:
 
 * Formulação original em @paulos-1988-innum:
 
-    ```{r echo=FALSE, out.width='80%'}
+    ```{r echo=FALSE, out.width='60%'}
     knitr::include_graphics('images/caesar.png')
     ```
 
 
-#### 61 {-}
+### 61 {-}
 
 ::: {.rmdbox latex=1}
 
@@ -144,7 +142,7 @@ Para calcular $P(\text{nenhuma molécula sua foi de César})$:
 
 :::
 
-##### Possibilidades {-}
+#### Possibilidades {-}
 
 O último passageiro só pode se sentar no lugar $1$ ou no lugar $n$.
 
@@ -161,7 +159,7 @@ Aliás, isto é um caso específico de um fenômeno mais geral, Qualquer que sej
 * Seguindo o raciocínio, chegamos à conclusão de que o passageiro $n$ só pode ocupar o assento $1$ ou o assento $n$.
 
 
-##### Probabilidades {-}
+#### Probabilidades {-}
 
 * Examinando exemplos com $n \in \{3, 4, 5\}$, a probabilidade parece ser $1/2$.
 
@@ -184,7 +182,7 @@ Aliás, isto é um caso específico de um fenômeno mais geral, Qualquer que sej
 * Logo, a probabilidade de o passageiro $n$ acabar no assento $n$ é $1/2$.
 
 
-#### 62 {-}
+### 62 {-}
 
 ::: {.rmdbox latex=1}
 

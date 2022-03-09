@@ -26,12 +26,8 @@ csl: |
 
 # Apresentação {-}
 
-* Página do livro: https://projects.iq.harvard.edu/stat110/home
+* Página do curso (com *link* para pdf do livro): https://projects.iq.harvard.edu/stat110/home
 
-* Strategic practice and homework: https://projects.iq.harvard.edu/stat110/strategic-practice-problems
-
-* Handouts: https://projects.iq.harvard.edu/stat110/handouts --- includes solutions to exercises marked with (s) in the book.
-
-* Playlist: https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo
+* *Playlist*: https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo
 
 

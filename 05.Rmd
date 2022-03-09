@@ -1,0 +1,229 @@
+---
+knit: "bookdown::render_book"
+---
+
+# 05: Probabilidade condicional (continuação) {-}
+
+## Vídeo {-}
+
+```{r echo=FALSE, results='asis', out.extra=center()}
+embed_yt('JzDvVgNDxo8')
+```
+
+
+## Exercícios do livro (cap. 2) {-}
+
+### 30 {-}
+
+
+### 31 {-}
+
+
+### 32 {-}
+
+
+### 33 {-}
+
+
+### 35. Xadrez {-}
+
+::: {.rmdbox latex=1}
+
+* Você vai jogar $2$ partidas de xadrez contra um adversário desconhecido. 
+
+* O nível do seu adversário pode ser novato, intermediário, ou avançado, com probabilidades iguais.
+
+* As probabilidades de você vencer uma partida são, dependendo do nível do adversário, respectivamente, $90\%$, $50\%$, e $30\%$.
+
+a. Qual a probabilidade de você vencer a primeira partida?
+
+b. Parabéns, você venceu a primeira partida. Dada esta informação, qual a probabilidade de que você também vença a segunda partida (suponha que, [dado o nível do seu adversário]{.hl}, os resultados das partidas são independentes)?
+
+c. Explique a diferença entre 
+
+   1. supor que os resultados das partidas são independentes, e
+   
+   2. supor que os resultados das partidas são independentes, dado o nível do seu adversário.
+   
+   Qual destas suposições parece mais razoável? Por quê?
+
+:::
+
+* Antes de mais nada, vamos definir os eventos:
+
+  $$
+  \begin{aligned}
+    N &= \text{o adversário é novato} \\
+    I &= \text{o adversário é intermediário} \\
+    A &= \text{o adversário é avançado} \\
+    V_1 &= \text{você vence a primeira partida} \\
+    V_2 &= \text{você vence a segunda partida} 
+  \end{aligned}
+  $$
+
+* O enunciado dá as probabilidades
+
+  $$
+  \begin{aligned}
+  P(N) &= 1/3 \\
+  P(I) &= 1/3 \\
+  P(A) &= 1/3 \\
+  P(V_1 \mid N) &= 9/10 \\
+  P(V_1 \mid I) &= 5/10 \\
+  P(V_1 \mid A) &= 3/10
+  \end{aligned}
+  $$
+
+* Para resolver (a), basta usar probabilidade total, condicionando sobre o nível do adversário:
+
+  $$
+  \begin{aligned}
+  P(V_1) 
+  &= 
+  P(V_1 \mid N) \cdot P(N) \;+\;
+  P(V_1 \mid I) \cdot P(I) \;+\;
+  P(V_1 \mid A) \cdot P(A)
+  \\
+  &= 
+  \frac{9}{10} \cdot \frac{1}{3} + 
+  \frac{5}{10} \cdot \frac{1}{3} + 
+  \frac{3}{10} \cdot \frac{1}{3} \\
+  &= 
+  \frac{1}{3} \cdot \left(
+  \frac{9}{10} + 
+  \frac{5}{10} + 
+  \frac{3}{10} \right) \\
+  &=
+  \frac{17}{30}
+  \end{aligned}
+  $$
+
+  Faz sentido. Como as probabilidades dos níveis possíveis do adversário são iguais, a probabilidade de vencer é [a média aritmética]{.hl} das probabilidades de vencer contra cada nível.
+  
+  Se as probabilidades dos níveis do adversário fossem diferentes, seria a [média ponderada.]{.hl}
+  
+* Para (b), queremos calcular $P(V_2 \mid V_1)$.
+
+  Dizer que $V_1$ e $V_2$ são independentes [dado o nível do adversário]{.hl} é dizer
+  
+  $$
+  P(V_2 \mid V_1, N) = P(V_1 \mid V_2, N) = P(V_2 \mid N) = P(V_1 \mid N)
+  $$
+
+  e analogamente para probabilidades condicionadas a $I$ e a $A$.
+  
+  Ou seja, dado um nível específico do adversário, saber que $V_1$ ocorreu não altera a probabilidade de $V_2$ ocorrer, e vice-versa.
+  
+  Vamos calcular $P(V_2 \mid V_1)$ usando probabilidade total, condicionando ao nível:
+  
+  $$
+  \begin{aligned}
+  \underbrace{P(V_2 \mid V_1, N) \cdot P(N \mid V_1)}_{\text{novato}}
+  \;+\;
+  \underbrace{P(V_2 \mid V_1, I) \cdot P(I \mid V_1)}_{\text{intermediário}}
+  \;+\;
+  \underbrace{P(V_2 \mid V_1, A) \cdot P(A \mid V_1)}_{\text{avançado}}
+  \end{aligned}
+  $$
+
+  Para o lado esquerdo de cada produto, a independência condicional diz que
+  
+  \begin{alignat*}{3}
+  P(V_2 \mid V_1, N) &= P(V_1 \mid N) &= 9/10 \\
+  P(V_2 \mid V_1, I) &= P(V_1 \mid I) &= 5/10 \\
+  P(V_2 \mid V_1, A) &= P(V_1 \mid A) &= 3/10
+  \end{alignat*}
+
+  Para o lado direito de cada produto, usamos Bayes. Todas as probabilidades envolvidas já foram calculadas.
+  
+  Novato:
+  
+  $$
+  \begin{aligned}
+  P(N \mid V_1) 
+  &=
+  \frac{P(V_1 \mid N) \cdot P(N)}{P(V_1)}
+  \\
+  &= \frac{9/10 \cdot 1/3}{17/30}
+  \\
+  &= \frac{9}{17}
+  \end{aligned}
+  $$
+
+  Intermediário:
+  
+  $$
+  \begin{aligned}
+  P(I \mid V_1) 
+  &=
+  \frac{P(V_1 \mid I) \cdot P(I)}{P(V_1)}
+  \\
+  &= \frac{5/10 \cdot 1/3}{17/30}
+  \\
+  &= \frac{5}{17}
+  \end{aligned}
+  $$
+  
+  Avançado:
+  
+  $$
+  \begin{aligned}
+  P(A \mid V_1) 
+  &=
+  \frac{P(V_1 \mid A) \cdot P(A)}{P(V_1)}
+  \\
+  &= \frac{3/10 \cdot 1/3}{17/30}
+  \\
+  &= \frac{3}{17}
+  \end{aligned}
+  $$
+
+  A resposta final é
+  
+  $$
+  \frac{9}{10} \cdot \frac{9}{17} \;+\;
+  \frac{5}{10} \cdot \frac{5}{17} \;+\;
+  \frac{3}{10} \cdot \frac{3}{17}
+  \;=\;
+  \frac{`r (81 + 25 + 9)/5`}{`r 170/5`}
+  $$
+
+* Para responder (c):
+
+  Dizer que $V_1$ e $V_2$ são [incondicionalmente]{.hl} independentes seria dizer que 
+  
+  $$
+  P(V_2 \mid V_1) = P(V_2)
+  $$
+
+  Ainda mais, como o nível do adversário não muda de uma partida para outra, teríamos também 
+  
+  $$
+  P(V_2) = P(V_1)
+  $$
+
+  Ou seja, cada partida seria uma prova de Bernoulli com a mesma probabilidade de sucesso.
+  
+  Considerando independência [condicional]{.hl}, saber que vencemos a primeira partida nos dá informação sobre o nível do adversário, e esta informação é considerada para calcular a probabilidade de vencer a segunda partida.
+  
+  De fato, usando independência condicional, temos
+  
+  $$
+  P(V_1) \approx `r 17/30`
+  $$
+  
+  e
+  
+  $$
+  P(V_2 \mid V_1) \approx `r 23/34`
+  $$
+  
+
+### 36 {-}
+
+
+### 37 {-}
+
+
+### 38 {-}
+

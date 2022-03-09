@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>02: Histórias e axiomas | Introduction to Probability (Joe Blitzstein)</title>
 <meta name="author" content="Fernando Náufel">
-<meta name="description" content="Vídeo   Exercícios Enunciados (pdf). Homework  4. Teorema das colunas  Mostre que \[ \binom{k}{k} + \binom{k + 1}{k} + \binom{k + 2}{k} + \cdots + \binom{n}{k} = \binom{n + 1}{k + 1} \] O lado...">
+<meta name="description" content="Vídeo   Exercícios do livro (cap. 1)  17  \[ \sum_{k = 0}^n \binom{n}{k}^2 = \binom{2n}{n} \] Quero escolher \(n\) pessoas dentre \(2n\) pessoas (lado direito). Divido as \(2n\) pessoas em dois...">
 <meta name="generator" content="bookdown 0.24.7 with bs4_book()">
 <meta property="og:title" content="02: Histórias e axiomas | Introduction to Probability (Joe Blitzstein)">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Vídeo   Exercícios Enunciados (pdf). Homework  4. Teorema das colunas  Mostre que \[ \binom{k}{k} + \binom{k + 1}{k} + \binom{k + 2}{k} + \cdots + \binom{n}{k} = \binom{n + 1}{k + 1} \] O lado...">
+<meta property="og:description" content="Vídeo   Exercícios do livro (cap. 1)  17  \[ \sum_{k = 0}^n \binom{n}{k}^2 = \binom{2n}{n} \] Quero escolher \(n\) pessoas dentre \(2n\) pessoas (lado direito). Divido as \(2n\) pessoas em dois...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="02: Histórias e axiomas | Introduction to Probability (Joe Blitzstein)">
-<meta name="twitter:description" content="Vídeo   Exercícios Enunciados (pdf). Homework  4. Teorema das colunas  Mostre que \[ \binom{k}{k} + \binom{k + 1}{k} + \binom{k + 2}{k} + \cdots + \binom{n}{k} = \binom{n + 1}{k + 1} \] O lado...">
+<meta name="twitter:description" content="Vídeo   Exercícios do livro (cap. 1)  17  \[ \sum_{k = 0}^n \binom{n}{k}^2 = \binom{2n}{n} \] Quero escolher \(n\) pessoas dentre \(2n\) pessoas (lado direito). Divido as \(2n\) pessoas em dois...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11.14/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/_Lexend-0.4.0/font.css" rel="stylesheet">
@@ -50,6 +50,7 @@
 <li><a class="active" href="hist%C3%B3rias-e-axiomas.html">02: Histórias e axiomas</a></li>
 <li><a class="" href="problema-do-anivers%C3%A1rio-propriedades.html">03: Problema do aniversário, propriedades</a></li>
 <li><a class="" href="probabilidade-condicional.html">04: Probabilidade condicional</a></li>
+<li><a class="" href="probabilidade-condicional-continua%C3%A7%C3%A3o.html">05: Probabilidade condicional (continuação)</a></li>
 <li><a class="" href="refer%C3%AAncias.html">Referências</a></li>
 </ul>
 
@@ -67,16 +68,103 @@
 <iframe src="https://www.youtube.com/embed/FJd_1H3rZGg" width="100%" height="400px" data-external="1" class="center" style="width: 80%;">
 </iframe>
 </div>
-<div id="exercícios-1" class="section level2 unnumbered">
-<h2>Exercícios<a class="anchor" aria-label="anchor" href="#exerc%C3%ADcios-1"><i class="fas fa-link"></i></a>
+<div id="exercícios-do-livro-cap.-1" class="section level2 unnumbered">
+<h2>Exercícios do livro (cap. 1)<a class="anchor" aria-label="anchor" href="#exerc%C3%ADcios-do-livro-cap.-1"><i class="fas fa-link"></i></a>
 </h2>
-<p><a href="https://projects.iq.harvard.edu/files/stat110/files/strategic_practice_and_homework_1.pdf">Enunciados (pdf).</a></p>
-<div id="homework" class="section level3 unnumbered">
-<h3>Homework<a class="anchor" aria-label="anchor" href="#homework"><i class="fas fa-link"></i></a>
+<div id="section" class="section level3 unnumbered">
+<h3>17<a class="anchor" aria-label="anchor" href="#section"><i class="fas fa-link"></i></a>
 </h3>
-<div id="teorema-das-colunas" class="section level4 unnumbered">
-<h4>4. Teorema das colunas<a class="anchor" aria-label="anchor" href="#teorema-das-colunas"><i class="fas fa-link"></i></a>
-</h4>
+<div class="rmdbox">
+<p><span class="math display">\[
+\sum_{k = 0}^n \binom{n}{k}^2 = \binom{2n}{n}
+\]</span></p>
+</div>
+<ul>
+<li><p>Quero escolher <span class="math inline">\(n\)</span> pessoas dentre <span class="math inline">\(2n\)</span> pessoas (lado direito).</p></li>
+<li><p>Divido as <span class="math inline">\(2n\)</span> pessoas em dois grupos de <span class="math inline">\(n\)</span> cada.</p></li>
+<li>
+<p>Para <span class="math inline">\(k \in \{0, 1, \ldots n\}\)</span>:</p>
+<ul>
+<li><p>Escolho <span class="math inline">\(k\)</span> pessoas do primeiro grupo — <span class="math inline">\(\binom{n}{k}\)</span> — para entrar.</p></li>
+<li><p>Escolho <span class="math inline">\(k\)</span> pessoas do segundo grupo — <span class="math inline">\(\binom{n}{k}\)</span> — para <span class="hl">não</span> entrar.</p></li>
+<li><p>Para este valor de <span class="math inline">\(k\)</span>, tenho <span class="math inline">\(\binom{n}{k}^2\)</span> maneiras de selecionar <span class="math inline">\(n\)</span> pessoas, com <span class="math inline">\(k\)</span> pessoas do primeiro grupo e <span class="math inline">\(n-k\)</span> pessoas do segundo.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="section-1" class="section level3 unnumbered">
+<h3>18<a class="anchor" aria-label="anchor" href="#section-1"><i class="fas fa-link"></i></a>
+</h3>
+<div class="rmdbox">
+<p><span class="math display">\[
+\sum_{k = 1}^n k\binom{n}{k}^2 = n\binom{2n-1}{n-1}
+\]</span></p>
+</div>
+<p>Usamos o mesmo raciocínio do exercício anterior, com a seguinte modificação:</p>
+<ul>
+<li><p>Temos <span class="math inline">\(2n\)</span> pessoas, divididas em dois grupos de <span class="math inline">\(n\)</span>, como antes.</p></li>
+<li><p>Como antes, quero escolher <span class="math inline">\(n\)</span> pessoas dentre as <span class="math inline">\(2n\)</span>.</p></li>
+<li><p>Mas agora, para cada escolha, quero designar uma das <span class="math inline">\(n\)</span> pessoas do primeiro grupo como chefe (i.e., sempre haverá pelo menos uma pessoa do primeiro grupo). Isto corresponde ao fator <span class="math inline">\(n\)</span> no lado direito.</p></li>
+<li><p>Escolhido o chefe, preciso escolher <span class="math inline">\(n - 1\)</span> pessoas dentre as <span class="math inline">\(2n - 1\)</span> restantes (<span class="math inline">\(n - 1\)</span> do primeiro grupo, <span class="math inline">\(n\)</span> do segundo). Isto corresponde ao segundo fator do lado direito.</p></li>
+<li>
+<p>Do lado esquerdo, para <span class="math inline">\(k \in \{1, 2, \ldots, n \}\)</span>:</p>
+<ul>
+<li><p>Vou escolher <span class="math inline">\(k\)</span> pessoas do primeiro grupo — <span class="math inline">\(\binom{n}{k}\)</span> — para entrar.</p></li>
+<li><p>Dentre elas, vou escolher um chefe — <span class="math inline">\(k\)</span>.</p></li>
+<li><p>Vou escolher <span class="math inline">\(k\)</span> pessoas do segundo grupo — <span class="math inline">\(\binom{n}{k}\)</span> — para <span class="hl">não</span> entrar.</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div id="section-2" class="section level3 unnumbered">
+<h3>19<a class="anchor" aria-label="anchor" href="#section-2"><i class="fas fa-link"></i></a>
+</h3>
+<div class="rmdbox">
+<p><span class="math display">\[
+\sum_{k=2}^n \binom k2 \binom{n-k+2}{2} = \binom{n+3}{5}, \quad \forall n \geq 2
+\]</span></p>
+</div>
+<ul>
+<li><p>Um exemplo concreto: <span class="math inline">\(n = 3\)</span></p></li>
+<li><p>Queremos escolher <span class="math inline">\(5\)</span> elementos dentre <span class="math inline">\(6\)</span>.</p></li>
+<li>
+<p>Para <span class="math inline">\(k \in \{ 2, 3 \}\)</span>:</p>
+<ol style="list-style-type: decimal">
+<li>
+<p>Escolhemos sempre o elemento <span class="math inline">\(k + 1\)</span>:</p>
+<p><span class="math display">\[
+\begin{aligned}
+1 \quad 2 \quad \underbrace{3}_{k = 2} \quad 4 \quad 5 \quad 6 \\
+1 \quad 2 \quad 3 \quad \underbrace{4}_{k = 3} \quad 5 \quad 6
+\end{aligned}
+\]</span></p>
+<p>Este é o elemento que vai estar <span class="hl">no meio</span> do grupo dos escolhidos.</p>
+</li>
+<li>
+<p>Escolhemos <span class="math inline">\(2\)</span> dentre os <span class="math inline">\(k\)</span> primeiros elementos:</p>
+<p><span class="math display">\[
+\begin{aligned}
+\underbrace{1 \quad 2}_{k = 2} \quad 3 \quad 4 \quad 5 \quad 6 \\
+\underbrace{1 \quad 2 \quad 3}_{k = 3} \quad 4 \quad 5 \quad 6
+\end{aligned}
+\]</span></p>
+</li>
+<li>
+<p>Escolhemos <span class="math inline">\(2\)</span> dentre os <span class="math inline">\(n - k + 2\)</span> últimos elementos:</p>
+<p><span class="math display">\[
+\begin{aligned}
+1 \quad 2 \quad 3 \quad \underbrace{4 \quad 5 \quad 6}_{k = 2}\\
+1 \quad 2 \quad 3 \quad 4 \quad \underbrace{5 \quad 6}_{k = 3}
+\end{aligned}
+\]</span></p>
+</li>
+</ol>
+</li>
+</ul>
+</div>
+<div id="teorema-das-colunas" class="section level3 unnumbered">
+<h3>20. Teorema das colunas<a class="anchor" aria-label="anchor" href="#teorema-das-colunas"><i class="fas fa-link"></i></a>
+</h3>
 <div class="rmdbox">
 <ol style="list-style-type: lower-alpha">
 <li>Mostre que</li>
@@ -159,104 +247,9 @@ a_0, a_1, a_2, \dots, a_n
 </li>
 </ul>
 </div>
-</div>
-<div id="exercícios-do-livro-cap.-1-1" class="section level3 unnumbered">
-<h3>Exercícios do livro (cap. 1)<a class="anchor" aria-label="anchor" href="#exerc%C3%ADcios-do-livro-cap.-1-1"><i class="fas fa-link"></i></a>
+<div id="soma-de-cubos" class="section level3 unnumbered">
+<h3>22. Soma de cubos<a class="anchor" aria-label="anchor" href="#soma-de-cubos"><i class="fas fa-link"></i></a>
 </h3>
-<div id="section-1" class="section level4 unnumbered">
-<h4>17<a class="anchor" aria-label="anchor" href="#section-1"><i class="fas fa-link"></i></a>
-</h4>
-<div class="rmdbox">
-<p><span class="math display">\[
-\sum_{k = 0}^n \binom{n}{k}^2 = \binom{2n}{n}
-\]</span></p>
-</div>
-<ul>
-<li><p>Quero escolher <span class="math inline">\(n\)</span> pessoas dentre <span class="math inline">\(2n\)</span> pessoas (lado direito).</p></li>
-<li><p>Divido as <span class="math inline">\(2n\)</span> pessoas em dois grupos de <span class="math inline">\(n\)</span> cada.</p></li>
-<li>
-<p>Para <span class="math inline">\(k \in \{0, 1, \ldots n\}\)</span>:</p>
-<ul>
-<li><p>Escolho <span class="math inline">\(k\)</span> pessoas do primeiro grupo — <span class="math inline">\(\binom{n}{k}\)</span> — para entrar.</p></li>
-<li><p>Escolho <span class="math inline">\(k\)</span> pessoas do segundo grupo — <span class="math inline">\(\binom{n}{k}\)</span> — para <span class="hl">não</span> entrar.</p></li>
-<li><p>Para este valor de <span class="math inline">\(k\)</span>, tenho <span class="math inline">\(\binom{n}{k}^2\)</span> maneiras de selecionar <span class="math inline">\(n\)</span> pessoas, com <span class="math inline">\(k\)</span> pessoas do primeiro grupo e <span class="math inline">\(n-k\)</span> pessoas do segundo.</p></li>
-</ul>
-</li>
-</ul>
-</div>
-<div id="section-2" class="section level4 unnumbered">
-<h4>18<a class="anchor" aria-label="anchor" href="#section-2"><i class="fas fa-link"></i></a>
-</h4>
-<div class="rmdbox">
-<p><span class="math display">\[
-\sum_{k = 1}^n k\binom{n}{k}^2 = n\binom{2n-1}{n-1}
-\]</span></p>
-</div>
-<p>Usamos o mesmo raciocínio do exercício anterior, com a seguinte modificação:</p>
-<ul>
-<li><p>Temos <span class="math inline">\(2n\)</span> pessoas, divididas em dois grupos de <span class="math inline">\(n\)</span>, como antes.</p></li>
-<li><p>Como antes, quero escolher <span class="math inline">\(n\)</span> pessoas dentre as <span class="math inline">\(2n\)</span>.</p></li>
-<li><p>Mas agora, para cada escolha, quero designar uma das <span class="math inline">\(n\)</span> pessoas do primeiro grupo como chefe (i.e., sempre haverá pelo menos uma pessoa do primeiro grupo). Isto corresponde ao fator <span class="math inline">\(n\)</span> no lado direito.</p></li>
-<li><p>Escolhido o chefe, preciso escolher <span class="math inline">\(n - 1\)</span> pessoas dentre as <span class="math inline">\(2n - 1\)</span> restantes (<span class="math inline">\(n - 1\)</span> do primeiro grupo, <span class="math inline">\(n\)</span> do segundo). Isto corresponde ao segundo fator do lado direito.</p></li>
-<li>
-<p>Do lado esquerdo, para <span class="math inline">\(k \in \{1, 2, \ldots, n \}\)</span>:</p>
-<ul>
-<li><p>Vou escolher <span class="math inline">\(k\)</span> pessoas do primeiro grupo — <span class="math inline">\(\binom{n}{k}\)</span> — para entrar.</p></li>
-<li><p>Dentre elas, vou escolher um chefe — <span class="math inline">\(k\)</span>.</p></li>
-<li><p>Vou escolher <span class="math inline">\(k\)</span> pessoas do segundo grupo — <span class="math inline">\(\binom{n}{k}\)</span> — para <span class="hl">não</span> entrar.</p></li>
-</ul>
-</li>
-</ul>
-</div>
-<div id="section-3" class="section level4 unnumbered">
-<h4>19<a class="anchor" aria-label="anchor" href="#section-3"><i class="fas fa-link"></i></a>
-</h4>
-<div class="rmdbox">
-<p><span class="math display">\[
-\sum_{k=2}^n \binom k2 \binom{n-k+2}{2} = \binom{n+3}{5}, \quad \forall n \geq 2
-\]</span></p>
-</div>
-<ul>
-<li><p>Um exemplo concreto: <span class="math inline">\(n = 3\)</span></p></li>
-<li><p>Queremos escolher <span class="math inline">\(5\)</span> elementos dentre <span class="math inline">\(6\)</span>.</p></li>
-<li>
-<p>Para <span class="math inline">\(k \in \{ 2, 3 \}\)</span>:</p>
-<ol style="list-style-type: decimal">
-<li>
-<p>Escolhemos sempre o elemento <span class="math inline">\(k + 1\)</span>:</p>
-<p><span class="math display">\[
-\begin{aligned}
-1 \quad 2 \quad \underbrace{3}_{k = 2} \quad 4 \quad 5 \quad 6 \\
-1 \quad 2 \quad 3 \quad \underbrace{4}_{k = 3} \quad 5 \quad 6
-\end{aligned}
-\]</span></p>
-<p>Este é o elemento que vai estar <span class="hl">no meio</span> do grupo dos escolhidos.</p>
-</li>
-<li>
-<p>Escolhemos <span class="math inline">\(2\)</span> dentre os <span class="math inline">\(k\)</span> primeiros elementos:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\underbrace{1 \quad 2}_{k = 2} \quad 3 \quad 4 \quad 5 \quad 6 \\
-\underbrace{1 \quad 2 \quad 3}_{k = 3} \quad 4 \quad 5 \quad 6
-\end{aligned}
-\]</span></p>
-</li>
-<li>
-<p>Escolhemos <span class="math inline">\(2\)</span> dentre os <span class="math inline">\(n - k + 2\)</span> últimos elementos:</p>
-<p><span class="math display">\[
-\begin{aligned}
-1 \quad 2 \quad 3 \quad \underbrace{4 \quad 5 \quad 6}_{k = 2}\\
-1 \quad 2 \quad 3 \quad 4 \quad \underbrace{5 \quad 6}_{k = 3}
-\end{aligned}
-\]</span></p>
-</li>
-</ol>
-</li>
-</ul>
-</div>
-<div id="section-4" class="section level4 unnumbered">
-<h4>22<a class="anchor" aria-label="anchor" href="#section-4"><i class="fas fa-link"></i></a>
-</h4>
 <div class="rmdbox">
 <p>Para provar</p>
 <p><span class="math display">\[
@@ -344,7 +337,6 @@ a_0, a_1, a_2, \dots, a_n
 </div>
 </div>
 </div>
-</div>
 
   <div class="chapter-nav">
 <div class="prev"><a href="probabilidade-e-contagem.html">01: Probabilidade e contagem</a></div>
@@ -355,9 +347,12 @@ a_0, a_1, a_2, \dots, a_n
 <li><a class="nav-link" href="#hist%C3%B3rias-e-axiomas">02: Histórias e axiomas</a></li>
 <li><a class="nav-link" href="#v%C3%ADdeo-1">Vídeo</a></li>
 <li>
-<a class="nav-link" href="#exerc%C3%ADcios-1">Exercícios</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#homework">Homework</a></li>
-<li><a class="nav-link" href="#exerc%C3%ADcios-do-livro-cap.-1-1">Exercícios do livro (cap. 1)</a></li>
+<a class="nav-link" href="#exerc%C3%ADcios-do-livro-cap.-1">Exercícios do livro (cap. 1)</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#section">17</a></li>
+<li><a class="nav-link" href="#section-1">18</a></li>
+<li><a class="nav-link" href="#section-2">19</a></li>
+<li><a class="nav-link" href="#teorema-das-colunas">20. Teorema das colunas</a></li>
+<li><a class="nav-link" href="#soma-de-cubos">22. Soma de cubos</a></li>
 </ul>
 </li>
 </ul>
@@ -377,7 +372,7 @@ a_0, a_1, a_2, \dots, a_n
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 07/03/2022)</p>
+    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 09/03/2022)</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">
