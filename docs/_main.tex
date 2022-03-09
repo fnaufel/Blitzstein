@@ -420,17 +420,17 @@
 \begin{Highlighting}[]
 \NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{365}\NormalTok{,}\DecValTok{23}\NormalTok{,}\AttributeTok{replace=}\ConstantTok{TRUE}\NormalTok{)}
 \FunctionTok{tabulate}\NormalTok{(b)}
-\DocumentationTok{\#\#   [1] 0 1 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\#  [34] 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0}
-\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [133] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [166] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
-\DocumentationTok{\#\# [199] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [265] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0}
-\DocumentationTok{\#\# [298] 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1}
+\DocumentationTok{\#\#   [1] 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\#  [34] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [100] 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0}
+\DocumentationTok{\#\# [133] 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [166] 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [199] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0}
+\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [265] 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [298] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
+\DocumentationTok{\#\# [331] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -438,9 +438,9 @@
 \begin{Highlighting}[]
 \FunctionTok{table}\NormalTok{(b)}
 \DocumentationTok{\#\# b}
-\DocumentationTok{\#\#   2   8   9  47  53  73  95 110 154 156 167 198 214 223 266 291 293 }
+\DocumentationTok{\#\#   3  10  76  87  92 104 116 130 142 151 171 175 186 225 246 255 257 }
 \DocumentationTok{\#\#   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1 }
-\DocumentationTok{\#\# 298 303 323 343 352 360 }
+\DocumentationTok{\#\# 276 330 331 347 357 360 }
 \DocumentationTok{\#\#   1   1   1   1   1   1}
 \end{Highlighting}
 \end{Shaded}
@@ -2272,14 +2272,71 @@ Observe:
 
 \begin{itemize}
 \item
-  Se $p = 1$, então a probabilidade é $1/3$.
+  Se $p = 1$, então a probabilidade é $1/3$, como no exemplo 2.2.5.
 \item
-  Se $p \to 0$, então a probabilidade tende a $1/2$ pela esquerda.
+  Se $p \to 0$, então a probabilidade tende a $1/2$ pela esquerda, como no exemplo 2.2.7.
 \end{itemize}
 
 \end{rmdbox}
 
-???
+Eventos:
+
+\[
+\begin{aligned}
+AA &= \text{As duas são meninas} \\
+AC &= \text{Pelo menos uma é menina e tem } C
+\end{aligned}
+\]
+
+Vamos usar Bayes:
+
+\[
+P(AA \mid AC) = \frac{P(AC \mid AA) \cdot P(AA)}{P(AC)}
+\]
+
+A probabilidade de ambas serem meninas é
+
+\[
+P(AA) = 1/4
+\]
+
+A probabilidade $P(AC)$ de pelo menos uma ser menina e ter $C$ é a soma das probabilidades de
+
+\begin{itemize}
+\item
+  Ambas serem meninas, ambas terem $C$: $\frac14 \cdot p^2$.
+\item
+  Ambas serem meninas, só uma ter $C$ (a primeira ou a segunda): $2 \cdot \frac14 \cdot p \cdot (1 - p)$.
+\item
+  Uma ser menina com $C$, a outra ser menino (com ou sem $C$): $\frac12 \cdot p$.
+\end{itemize}
+
+Logo,
+\[
+P(AC) = \frac{p \cdot (4 - p)}{4}
+\]
+
+A probabilidade $P(AC \mid AA)$ de uma ser menina com $C$, dado que ambas são meninas, é
+
+\[
+\begin{aligned}
+P(AC \mid AA) &= 1 - (1 - p)^2 \\
+&= p \cdot (2 - p)
+\end{aligned}
+\]
+
+Juntando tudo:
+
+\[
+\begin{aligned}
+P(AA \mid AC) 
+&= \frac{P(AC \mid AA) P(AA)}{P(AC)} \\
+&= \frac
+  {p \cdot (2 - p) \cdot 1/4}
+  {p \cdot (4 - p) \cdot 1/4} \\
+&= \frac{2 - p}{4 - p}
+\end{aligned}
+\]
 
 \hypertarget{probabilidade-condicional-continuauxe7uxe3o}{%
 \chapter*{05: Probabilidade condicional (continuação)}\label{probabilidade-condicional-continuauxe7uxe3o}}

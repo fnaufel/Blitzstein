@@ -833,11 +833,65 @@ $$
 
 Observe:
 
-* Se $p = 1$, então a probabilidade é $1/3$.
+* Se $p = 1$, então a probabilidade é $1/3$, como no exemplo 2.2.5.
 
-* Se $p \to 0$, então a probabilidade tende a $1/2$ pela esquerda.
+* Se $p \to 0$, então a probabilidade tende a $1/2$ pela esquerda, como no exemplo 2.2.7.
 
 :::
 
+Eventos:
 
-???
+$$
+\begin{aligned}
+AA &= \text{As duas são meninas} \\
+AC &= \text{Pelo menos uma é menina e tem } C
+\end{aligned}
+$$
+
+Vamos usar Bayes:
+
+$$
+P(AA \mid AC) = \frac{P(AC \mid AA) \cdot P(AA)}{P(AC)}
+$$
+
+A probabilidade de ambas serem meninas é 
+
+$$
+P(AA) = 1/4
+$$
+
+A probabilidade $P(AC)$ de pelo menos uma ser menina e ter $C$ é a soma das probabilidades de
+
+* Ambas serem meninas, ambas terem $C$: $\frac14 \cdot p^2$.
+
+* Ambas serem meninas, só uma ter $C$ (a primeira ou a segunda): $2 \cdot \frac14 \cdot p \cdot (1 - p)$.
+
+* Uma ser menina com $C$, a outra ser menino (com ou sem $C$): $\frac12 \cdot p$.
+
+Logo, 
+$$
+P(AC) = \frac{p \cdot (4 - p)}{4}
+$$
+
+A probabilidade $P(AC \mid AA)$ de uma ser menina com $C$, dado que ambas são meninas, é
+
+$$
+\begin{aligned}
+P(AC \mid AA) &= 1 - (1 - p)^2 \\
+&= p \cdot (2 - p)
+\end{aligned}
+$$
+
+Juntando tudo:
+
+$$
+\begin{aligned}
+P(AA \mid AC) 
+&= \frac{P(AC \mid AA) P(AA)}{P(AC)} \\
+&= \frac
+  {p \cdot (2 - p) \cdot 1/4}
+  {p \cdot (4 - p) \cdot 1/4} \\
+&= \frac{2 - p}{4 - p}
+\end{aligned}
+$$
+

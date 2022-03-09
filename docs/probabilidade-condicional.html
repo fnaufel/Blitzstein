@@ -746,11 +746,53 @@ P(S \mid R) = \frac{P(R \mid S) \cdot P(S)}{P(R)}
 \]</span></p>
 <p>Observe:</p>
 <ul>
-<li><p>Se <span class="math inline">\(p = 1\)</span>, então a probabilidade é <span class="math inline">\(1/3\)</span>.</p></li>
-<li><p>Se <span class="math inline">\(p \to 0\)</span>, então a probabilidade tende a <span class="math inline">\(1/2\)</span> pela esquerda.</p></li>
+<li><p>Se <span class="math inline">\(p = 1\)</span>, então a probabilidade é <span class="math inline">\(1/3\)</span>, como no exemplo 2.2.5.</p></li>
+<li><p>Se <span class="math inline">\(p \to 0\)</span>, então a probabilidade tende a <span class="math inline">\(1/2\)</span> pela esquerda, como no exemplo 2.2.7.</p></li>
 </ul>
 </div>
-<p>???</p>
+<p>Eventos:</p>
+<p><span class="math display">\[
+\begin{aligned}
+AA &amp;= \text{As duas são meninas} \\
+AC &amp;= \text{Pelo menos uma é menina e tem } C
+\end{aligned}
+\]</span></p>
+<p>Vamos usar Bayes:</p>
+<p><span class="math display">\[
+P(AA \mid AC) = \frac{P(AC \mid AA) \cdot P(AA)}{P(AC)}
+\]</span></p>
+<p>A probabilidade de ambas serem meninas é</p>
+<p><span class="math display">\[
+P(AA) = 1/4
+\]</span></p>
+<p>A probabilidade <span class="math inline">\(P(AC)\)</span> de pelo menos uma ser menina e ter <span class="math inline">\(C\)</span> é a soma das probabilidades de</p>
+<ul>
+<li><p>Ambas serem meninas, ambas terem <span class="math inline">\(C\)</span>: <span class="math inline">\(\frac14 \cdot p^2\)</span>.</p></li>
+<li><p>Ambas serem meninas, só uma ter <span class="math inline">\(C\)</span> (a primeira ou a segunda): <span class="math inline">\(2 \cdot \frac14 \cdot p \cdot (1 - p)\)</span>.</p></li>
+<li><p>Uma ser menina com <span class="math inline">\(C\)</span>, a outra ser menino (com ou sem <span class="math inline">\(C\)</span>): <span class="math inline">\(\frac12 \cdot p\)</span>.</p></li>
+</ul>
+<p>Logo,
+<span class="math display">\[
+P(AC) = \frac{p \cdot (4 - p)}{4}
+\]</span></p>
+<p>A probabilidade <span class="math inline">\(P(AC \mid AA)\)</span> de uma ser menina com <span class="math inline">\(C\)</span>, dado que ambas são meninas, é</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(AC \mid AA) &amp;= 1 - (1 - p)^2 \\
+&amp;= p \cdot (2 - p)
+\end{aligned}
+\]</span></p>
+<p>Juntando tudo:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(AA \mid AC)
+&amp;= \frac{P(AC \mid AA) P(AA)}{P(AC)} \\
+&amp;= \frac
+  {p \cdot (2 - p) \cdot 1/4}
+  {p \cdot (4 - p) \cdot 1/4} \\
+&amp;= \frac{2 - p}{4 - p}
+\end{aligned}
+\]</span></p>
 
 </div>
 </div>
