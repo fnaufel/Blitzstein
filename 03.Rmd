@@ -23,7 +23,7 @@ Qual a probabilidade de pelo menos uma pessoa ser escolhida mais de uma vez?
 
 :::
 
-Usando $N = 1.000.000$ e $n = 1.000$:
+* Usando $N = 1.000.000$ e $n = 1.000$:
 
 $$
 \begin{aligned}
@@ -33,28 +33,28 @@ P &= 1 - P(\text{ninguém escolhido mais de uma vez}) \\
 \end{aligned}
 $$
 
-Na verdade, esta é a mesma distribuição do problema dos aniversários, com $N$ dias e $n$ pessoas.
+* Na verdade, esta é a mesma distribuição do problema dos aniversários, com $N$ dias e $n$ pessoas.
 
-Para $N$ grande e $n$ pequeno, a probabilidade $P$ de pelo menos uma pessoa ser escolhida mais de uma vez se aproxima de $0$:
+* Para $N$ grande e $n$ pequeno, a probabilidade $P$ de pelo menos uma pessoa ser escolhida mais de uma vez se aproxima de $0$:
 
-```{r echo=FALSE}
-maximo <- 6
-N <- 10^maximo
-n <- 10^(maximo:0)
-
-tibble(
-  N = N,
-  n = n,
-  P = map2_dbl(n, N, ~pbirthday(.x, .y))
-) %>% 
-  kbl(
-    format.args = list(big.mark = '.')
+  ```{r echo=FALSE}
+  maximo <- 6
+  N <- 10^maximo
+  n <- 10^(maximo:0)
+  
+  tibble(
+    N = N,
+    n = n,
+    P = map2_dbl(n, N, ~pbirthday(.x, .y))
   ) %>% 
-  kable_paper(
-    c('striped', 'hover'),
-    full_width = FALSE
-  )
-```
+    kbl(
+      format.args = list(big.mark = '.')
+    ) %>% 
+    kable_paper(
+      c('striped', 'hover'),
+      full_width = FALSE
+    )
+  ```
 
 
 ### 27 {-}
@@ -69,7 +69,7 @@ tibble(
 
 :::
 
-De novo, `pbirthday(k, n)`.
+* De novo, `pbirthday(k, n)`.
 
 
 ### 57 {-}
@@ -86,9 +86,9 @@ De novo, `pbirthday(k, n)`.
 
 :::
 
-A resposta é $1 - P(\text{nenhuma molécula sua foi de César})$.
+* A resposta é $1 - P(\text{nenhuma molécula sua foi de César})$.
 
-Para calcular $P(\text{nenhuma molécula sua foi de César})$:
+* Vamos calcular $P(\text{nenhuma molécula sua foi de César})$.
 
 * Todas as respiradas possíveis (com reposição, com ordem): $\left( 10^{44} \right)^{\left(10^{22} \right)}$.
 
@@ -144,17 +144,17 @@ Para calcular $P(\text{nenhuma molécula sua foi de César})$:
 
 #### Possibilidades {-}
 
-O último passageiro só pode se sentar no lugar $1$ ou no lugar $n$.
+* O último passageiro só pode se sentar no lugar $1$ ou no lugar $n$.
 
-Aliás, isto é um caso específico de um fenômeno mais geral, Qualquer que seja o valor de $n$:
+* Aliás, isto é um caso específico de um fenômeno mais geral: qualquer que seja o valor de $n$:
 
-* O passageiro $3$ nunca fica no assento $2$: ou o passageiro $1$ pegou, ou ficou livre para o passageiro $2$ (que é obrigado a pegá-lo).
-
-* O passageiro $4$ nunca fica nos assentos $2$ nem $3$: ou o passageiro $1$ pegou o assento $3$, ou aconteceu um dos casos acima e o assento $3$ ficou livre para o passageiro $3$ (que é obrigado a pegá-lo).
-
-* O passageiro $5$ nunca fica nos assentos $2$ nem $3$ nem $4$: ou o passageiro $1$ pegou o assento $4$, ou aconteceu um dos casos acima e o assento $4$ ficou livre para o passageiro $4$ (que é obrigado a pegá-lo).
-
-* etc.
+  * O passageiro $3$ nunca fica no assento $2$: ou o passageiro $1$ pegou, ou   ficou livre para o passageiro $2$ (que é obrigado a pegá-lo).
+  
+  * O passageiro $4$ nunca fica nos assentos $2$ nem $3$: ou o passageiro $1$   pegou o assento $3$, ou aconteceu um dos casos acima e o assento $3$ ficou   livre para o passageiro $3$ (que é obrigado a pegá-lo).
+  
+  * O passageiro $5$ nunca fica nos assentos $2$ nem $3$ nem $4$: ou o   passageiro $1$ pegou o assento $4$, ou aconteceu um dos casos acima e o   assento $4$ ficou livre para o passageiro $4$ (que é obrigado a pegá-lo).
+  
+  * etc.
 
 * Seguindo o raciocínio, chegamos à conclusão de que o passageiro $n$ só pode ocupar o assento $1$ ou o assento $n$.
 
@@ -213,26 +213,26 @@ a. Seja $k \geq 2$. Qual a probabilidade de pelo menos uma coincidência de aniv
 
 :::
 
-A probabilidade de [não haver coincidência]{.hl} é a soma das probabilidades de todos os eventos da forma
+* A probabilidade de [não haver coincidência]{.hl} é a soma das probabilidades de todos os eventos da forma
 
-> [As pessoas $1, 2, \ldots k$ nasceram em dias diferentes $j_1, j_2, \ldots, j_k$.]{.hl}
+  > [As pessoas $1, 2, \ldots k$ nasceram em dias diferentes $j_1, j_2, \ldots,   j_k$.]{.hl}
 
-Por exemplo, para $k = 3$, a soma será
+* Por exemplo, para $k = 3$, a soma será
 
-$$
-3! \cdot (p_1 p_2 p_3 + p_1 p_2 p_4 + \cdots + p_{363} p_{364} p_{365})
-$$
+  $$
+  3! \cdot (p_1 p_2 p_3 + p_1 p_2 p_4 + \cdots + p_{363} p_{364} p_{365})
+  $$
 
-Isto é igual a 
+* Isto é igual a 
 
-$$
-k! \cdot e_k(\vec p)
-$$
+  $$
+  k! \cdot e_k(\vec p)
+  $$
 
-A probabilidade de pelo menos uma coincidência é
-$$
-1 - k! \cdot e_k(\vec p)
-$$
+* A probabilidade de pelo menos uma coincidência é
+  $$
+  1 - k! \cdot e_k(\vec p)
+  $$
 
 ::: {.rmdbox latex=1}
 
@@ -240,7 +240,7 @@ b. Quando $p_j = 1/365$ para todo $j$, esta probabilidade é mínima.
 
 :::
 
-No caso em que $p_j = p = 1/365$ para todo $j$, temos
+* No caso em que $p_j = p = 1/365$ para todo $j$, temos
 
    $$
    \begin{aligned}
@@ -252,7 +252,7 @@ No caso em que $p_j = p = 1/365$ para todo $j$, temos
    \end{aligned}
    $$
    
-   Neste caso, o valor de $e_k(\vec p)$ é máximo.
+* Neste caso, o valor de $e_k(\vec p)$ é máximo.
    
 ::: {.rmdbox latex=1}
 

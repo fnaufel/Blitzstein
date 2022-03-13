@@ -46,7 +46,7 @@ $$
 
 :::
 
-Usamos o mesmo raciocínio do exercício anterior, com a seguinte modificação:
+* Usamos o mesmo raciocínio do exercício anterior, com uma modificação.
 
 * Temos $2n$ pessoas, divididas em dois grupos de $n$, como antes.
 
