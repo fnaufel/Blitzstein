@@ -388,81 +388,66 @@ b. Agora, eles usam um [código com repetição]{.hl}:
 
 :::
 
-* Teoricamente:
+* Eventos:
 
-    ```{r echo=FALSE, out.width='50%'}
-    include_graphics('images/alice05.png')
-    ```
+  $$
+  \begin{aligned}
+  AAA &= \text{Alice envia } 111 \\
+  BB\neg B &= \text{Bob recebe } 110
+  \end{aligned}
+  $$
+
+* $P(AAA) = 1/2$, pois Alice envia somente $111$ ou $000$.
+
+* Usando Bayes:
+
+  $$
+  P(AAA \mid BB\neg B) = 
+  \frac{P(BB\neg B \mid AAA) \cdot P(AAA)}{P(BB\neg B)}
+  $$
+
+* $P(BB\neg B \mid AAA) = q_1 \cdot q_1 \cdot p_1$, pois erros em *bits* diferentes são independentes.
+
+* Pela lei da probabilidade total:
+
+  $$
+  \begin{aligned}
+  P(BB\neg B) 
+  &= P(BB\neg B \mid AAA) \cdot P(AAA) + 
+     P(BB\neg B \mid \neg(AAA))P(\neg(AAA)) \\
+  &= \frac12 \cdot \left( q_1 \cdot q_1 \cdot p_1 +
+     p_0 \cdot p_0 \cdot q-0 \right)
+  \end{aligned}
+  $$
+
+* Daí,
+
+  $$
+  \begin{aligned}
+  P(AAA \mid BB\neg B) 
+  &= 
+  \frac{P(BB\neg B \mid AAA) \cdot P(AAA)}{P(BB\neg B)} \\
+  &= 
+  \frac{
+    q_1 \cdot q_1 \cdot p_1 \cdot 1/2
+  }{
+    \left( q_1 \cdot q_1 \cdot p_1 +
+     p_0 \cdot p_0 \cdot q_0 \right)\cdot 1/2
+  } \\
+  &= 
+  \frac{
+    q_1 \cdot q_1 \cdot p_1
+  }{
+    \left( q_1 \cdot q_1 \cdot p_1 +
+     p_0 \cdot p_0 \cdot q_0 \right)
+  }
+  \end{aligned}
+  $$
+
+* Numericamente:
 
     ```{r}
-    (q1^2 * p1) / ((q1 + p0)^2 * (p1 + q0))
-    ```
-
-* Simulação:
-
-    ```{r sim2, cache=TRUE}
-    reps <- 1e6
-    
-    alice_envia <- replicate(
-      reps,
-      sample(c(0, 1), 3, replace = TRUE),
-      simplify = FALSE
-    )
-    
-    bob_recebe <- alice_envia
-
-    inserir_erros <- function(v) {
-      
-      original <- v
-      
-      v[which(original == 0)] <- 
-        sample(
-          c(0, 1), 
-          length(which(original == 0)),
-          replace = TRUE,
-          prob = c(95/100, 5/100)
-        )
-      
-      v[which(original == 1)] <- 
-        sample(
-          c(0, 1), 
-          length(which(original == 1)),
-          replace = TRUE,
-          # Atenção: aqui, erro é 1 virar 0:
-          prob = c(10/100, 90/100)  
-        )
-
-      v
-      
-    } 
-    
-    bob_recebe <- bob_recebe %>% 
-      map(
-        ~inserir_erros(.x)  
-      )
-    
-    bob_recebe <- 
-      bob_recebe %>% map_lgl(~ all(.x == c(1, 1, 0)))
-    
-    alice_envia <- 
-      alice_envia %>% map_lgl(~ all(.x == c(1, 1, 1)))
-    
-    
-    sum(alice_envia & bob_recebe) / sum(bob_recebe)
-    ```
-
-* A vantagem do esquema de repetição é que o envio de $111$ corresponde ao recebimento de $4$ cadeias diferentes: $111$, $011$, $101$, e $110$.
-
-* Sem repetição, a probabilidade de Bob receber $1$ quando Alice transimiu $1$ é
-
-  $$
-  P(B \mid A) = q_1 = 0{,}9
-  $$
-
-* Com repetição, a probabilidade de Bob receber uma das $4$ cadeias que representam $1$ (evento $R$) quando Alice transmitiu $111$ (evento $T$) é
-
-    ```{r echo=FALSE, out.width='75%'}
-    include_graphics('images/alice06.png')
+    q1 * q1 * p1 / (q1 * q1 * p1 + p0 * p0 * q0)
     ```
 
 
@@ -504,21 +489,21 @@ O que você ficaria mais feliz em observar?
 
 :::
 
-Queremos observar o evento $E$ tal que $P(A \cap B \mid E)$ seja máximo.
+* Queremos observar o evento $E$ tal que $P(A \cap B \mid E)$ seja máximo.
 
-$$
-\begin{aligned}
-P(A \cap B \mid A) &= \frac{P(A \cap B)}{P(A)} \\
-P(A \cap B \mid B) &= \frac{P(A \cap B)}{P(B)} \\
-P(A \cap B \mid A \cup B) &= 
-  \frac{P((A \cap B) \cap (A \cup B))}{P(A \cup B)} \\
-  &= \frac{P(A \cap B)}{P(A \cup B)}
-\end{aligned}
-$$
+  $$
+  \begin{aligned}
+  P(A \cap B \mid A) &= \frac{P(A \cap B)}{P(A)} \\
+  P(A \cap B \mid B) &= \frac{P(A \cap B)}{P(B)} \\
+  P(A \cap B \mid A \cup B) &= 
+    \frac{P((A \cap B) \cap (A \cup B))}{P(A \cup B)} \\
+    &= \frac{P(A \cap B)}{P(A \cup B)}
+  \end{aligned}
+  $$
 
-Como $P(A)$ é o menor denominador, observar $A$ maximiza $P(A \cap B \mid E)$.
+* Como $P(A)$ é o menor denominador, observar $A$ maximiza $P(A \cap B \mid E)$.
 
-Intuitivamente, como $A$ é o evento menos provável dos dois, saber que $A$ ocorreu nos deixa mais próximo da ocorrência dos dois eventos do que saber que $B$ (ou que algum dos dois) ocorreu.
+* Intuitivamente, como $A$ é o evento menos provável dos dois, saber que $A$ ocorreu nos deixa mais próximo da ocorrência dos dois eventos do que saber que $B$ (ou que algum dos dois) ocorreu.
 
 
 ### 16 {-}
@@ -531,29 +516,29 @@ $$
 
 :::
 
-Se a ocorrência de $B$ torna $A$ menos provável, então a não-ocorrência de $B$ torna $A$ mais provável.
+* Se a ocorrência de $B$ torna $A$ menos provável, então a não-ocorrência de $B$ torna $A$ mais provável.
 
-Pela lei da probabilidade total:
+* Pela lei da probabilidade total:
 
-$$
-\begin{aligned}
-P(A) &= P(A \mid B)P(B) + P(A \mid \neg B)P(\neg B) \\
-\therefore P(A \mid \neg B) &= 
-  \frac{P(A) - P(A \mid B)P(B)}{P(\neg B)}
-\end{aligned}
-$$
+  $$
+  \begin{aligned}
+  P(A) &= P(A \mid B)P(B) + P(A \mid \neg B)P(\neg B) \\
+  \therefore P(A \mid \neg B) &= 
+    \frac{P(A) - P(A \mid B)P(B)}{P(\neg B)}
+  \end{aligned}
+  $$
 
-Daí,
+* Daí,
 
-$$
-\begin{aligned}
-P(A \mid \neg B) 
-&\geq
-  \frac{P(A) - P(A)P(B)}{P(\neg B)} & \text{pois } P(A \mid B) \leq P(A) \\
-&= \frac{P(A)(1 - P(B))}{P(\neg B)} \\
-&= P(A)
-\end{aligned}
-$$
+  $$
+  \begin{aligned}
+  P(A \mid \neg B) 
+  &\geq
+    \frac{P(A) - P(A)P(B)}{P(\neg B)} & \text{pois } P(A \mid B) \leq P(A) \\
+  &= \frac{P(A)(1 - P(B))}{P(\neg B)} \\
+  &= P(A)
+  \end{aligned}
+  $$
 
 
 ### 17 {-}
@@ -599,21 +584,21 @@ b. Mostre que, se "$=$" for substituído por "$\approx$", o resultado não vale.
 
 :::
 
-Valores de exemplo, com $A$ e $B$ independentes:
+* Valores de exemplo, com $A$ e $B$ independentes:
 
-$$
-\begin{aligned}
-P(A) &= 80/100 \\
-P(B) &= 90/100 \\
-P(\neg A) &= 20/100 \\
-P(\neg B) &= 10/100 \\
-P(A \cap B) &= P(A) \cdot P(B) = 72/100 \\
-P(A \cup B) &= P(A) + P(B) - P(A \cap B) = 98/100\\
-P(B \mid A) &= \frac{P(A \cap B)}{P(A)} = 72/80 \approx 1 \\
-P(\neg A \mid \neg B) &= \frac{P(\neg A \cap \neg B)}{P(\neg B)} = 
-  \frac{1 - P(A \cup B)}{P(\neg B)} = 2/10 \approx 0
-\end{aligned}
-$$
+  $$
+  \begin{aligned}
+  P(A) &= 80/100 \\
+  P(B) &= 90/100 \\
+  P(\neg A) &= 20/100 \\
+  P(\neg B) &= 10/100 \\
+  P(A \cap B) &= P(A) \cdot P(B) = 72/100 \\
+  P(A \cup B) &= P(A) + P(B) - P(A \cap B) = 98/100\\
+  P(B \mid A) &= \frac{P(A \cap B)}{P(A)} = 72/80 \approx 1 \\
+  P(\neg A \mid \neg B) &= \frac{P(\neg A \cap \neg B)}{P(\neg B)} = 
+    \frac{1 - P(A \cup B)}{P(\neg B)} = 2/10 \approx 0
+  \end{aligned}
+  $$
 
 ::: {.rmdnote latex=1}
 
@@ -839,80 +824,80 @@ Observe:
 
 :::
 
-Eventos:
+* Eventos:
 
-$$
-\begin{aligned}
-AA &= \text{As duas são meninas} \\
-AC &= \text{Pelo menos uma é menina e tem } C
-\end{aligned}
-$$
+  $$
+  \begin{aligned}
+  AA &= \text{As duas são meninas} \\
+  AC &= \text{Pelo menos uma é menina e tem } C
+  \end{aligned}
+  $$
 
-Vamos usar Bayes:
+* Vamos usar Bayes:
 
-$$
-P(AA \mid AC) = \frac{P(AC \mid AA) \cdot P(AA)}{P(AC)}
-$$
+  $$
+  P(AA \mid AC) = \frac{P(AC \mid AA) \cdot P(AA)}{P(AC)}
+  $$
 
-A probabilidade de ambas serem meninas é 
+* A probabilidade de ambas serem meninas é 
 
-$$
-P(AA) = 1/4
-$$
+  $$
+  P(AA) = 1/4
+  $$
 
-A probabilidade $P(AC)$ de pelo menos uma ser menina e ter $C$ é a soma das probabilidades de
+* A probabilidade $P(AC)$ de pelo menos uma ser menina e ter $C$ é a soma das probabilidades de
 
-* Ambas serem meninas, ambas terem $C$: $\frac14 \cdot p^2$.
+  * Ambas serem meninas, ambas terem $C$: $\frac14 \cdot p^2$.
+  
+  * Ambas serem meninas, só uma ter $C$ (a primeira ou a segunda): $2 \cdot   \frac14 \cdot p \cdot (1 - p)$.
+  
+  * Uma ser menina com $C$, a outra ser menino (com ou sem $C$): $\frac12 \cdot p$.
 
-* Ambas serem meninas, só uma ter $C$ (a primeira ou a segunda): $2 \cdot \frac14 \cdot p \cdot (1 - p)$.
+  * Logo, 
+    $$
+    P(AC) = \frac{p \cdot (4 - p)}{4}
+    $$
 
-* Uma ser menina com $C$, a outra ser menino (com ou sem $C$): $\frac12 \cdot p$.
+* A probabilidade $P(AC \mid AA)$ de uma ser menina com $C$, dado que ambas são meninas, é
 
-Logo, 
-$$
-P(AC) = \frac{p \cdot (4 - p)}{4}
-$$
+  $$
+  \begin{aligned}
+  P(AC \mid AA) &= 1 - (1 - p)^2 \\
+  &= p \cdot (2 - p)
+  \end{aligned}
+  $$
 
-A probabilidade $P(AC \mid AA)$ de uma ser menina com $C$, dado que ambas são meninas, é
+* Juntando tudo:
 
-$$
-\begin{aligned}
-P(AC \mid AA) &= 1 - (1 - p)^2 \\
-&= p \cdot (2 - p)
-\end{aligned}
-$$
+  $$
+  \begin{aligned}
+  P(AA \mid AC) 
+  &= \frac{P(AC \mid AA) P(AA)}{P(AC)} \\
+  &= \frac
+    {p \cdot (2 - p) \cdot 1/4}
+    {p \cdot (4 - p) \cdot 1/4} \\
+  &= \frac{2 - p}{4 - p}
+  \end{aligned}
+  $$
 
-Juntando tudo:
+* Um gráfico:
 
-$$
-\begin{aligned}
-P(AA \mid AC) 
-&= \frac{P(AC \mid AA) P(AA)}{P(AC)} \\
-&= \frac
-  {p \cdot (2 - p) \cdot 1/4}
-  {p \cdot (4 - p) \cdot 1/4} \\
-&= \frac{2 - p}{4 - p}
-\end{aligned}
-$$
-
-Um gráfico:
-
-```{r echo=FALSE}
-ggplot() +
-  stat_function(
-    fun = ~ (2 - .x) / (4 - .x),
-    xlim = c(0, 1)
-  ) +
-  scale_y_continuous(
-    limits = c(0, .6),
-    breaks = c(seq(0, 1, .25), 1/3) %>% round(2),
-  ) +
-  labs(
-    title = TeX(
-      'Valor de $\\frac{2 - p}{4 - p}$ em função de $p$'
-    ),
-    y = '',
-    x = 'p'
-  )
-```
+    ```{r echo=FALSE}
+    ggplot() +
+      stat_function(
+        fun = ~ (2 - .x) / (4 - .x),
+        xlim = c(0, 1)
+      ) +
+      scale_y_continuous(
+        limits = c(0, .6),
+        breaks = c(seq(0, 1, .25), 1/3) %>% round(2),
+      ) +
+      labs(
+        title = TeX(
+          'Valor de $\\frac{2 - p}{4 - p}$ em função de $p$'
+        ),
+        y = '',
+        x = 'p'
+      )
+    ```
 
