@@ -338,7 +338,7 @@
 
 \title{Introduction to Probability (Joe Blitzstein)}
 \author{Fernando Náufel}
-\date{(versão de 09/03/2022)}
+\date{(versão de 12/03/2022)}
 
 \begin{document}
 \maketitle
@@ -420,17 +420,17 @@
 \begin{Highlighting}[]
 \NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{365}\NormalTok{,}\DecValTok{23}\NormalTok{,}\AttributeTok{replace=}\ConstantTok{TRUE}\NormalTok{)}
 \FunctionTok{tabulate}\NormalTok{(b)}
-\DocumentationTok{\#\#   [1] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\#  [34] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0}
-\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 2 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 1 0 1}
-\DocumentationTok{\#\# [133] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [166] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [199] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
-\DocumentationTok{\#\# [265] 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [298] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
+\DocumentationTok{\#\#   [1] 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0}
+\DocumentationTok{\#\#  [34] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\#  [67] 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 2}
+\DocumentationTok{\#\# [133] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [166] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [199] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [232] 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [265] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [298] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -438,9 +438,9 @@
 \begin{Highlighting}[]
 \FunctionTok{table}\NormalTok{(b)}
 \DocumentationTok{\#\# b}
-\DocumentationTok{\#\#   3  24  64  89  90 112 126 129 130 132 136 155 239 247 264 267 275 }
-\DocumentationTok{\#\#   1   1   1   1   2   1   1   1   1   1   1   1   1   1   1   1   1 }
-\DocumentationTok{\#\# 282 300 323 358 }
+\DocumentationTok{\#\#   6  30  35  72  77 107 124 130 132 133 166 221 224 236 243 247 255 }
+\DocumentationTok{\#\#   1   1   1   1   1   1   1   1   2   1   1   1   1   1   1   1   1 }
+\DocumentationTok{\#\# 300 315 346 349 }
 \DocumentationTok{\#\#   1   1   2   1}
 \end{Highlighting}
 \end{Shaded}
@@ -657,9 +657,9 @@ A \emph{norepeatword} is chosen randomly, with all \emph{norepeatwords} equally 
 
 \end{rmdbox}
 
-Usamos o mesmo raciocínio do exercício anterior, com a seguinte modificação:
-
 \begin{itemize}
+\item
+  Usamos o mesmo raciocínio do exercício anterior, com uma modificação.
 \item
   Temos $2n$ pessoas, divididas em dois grupos de $n$, como antes.
 \item
@@ -1002,7 +1002,11 @@ Qual a probabilidade de pelo menos uma pessoa ser escolhida mais de uma vez?
 
 \end{rmdbox}
 
-Usando $N = 1.000.000$ e $n = 1.000$:
+\begin{itemize}
+\tightlist
+\item
+  Usando $N = 1.000.000$ e $n = 1.000$:
+\end{itemize}
 
 \[
 \begin{aligned}
@@ -1012,32 +1016,35 @@ P &= 1 - P(\text{ninguém escolhido mais de uma vez}) \\
 \end{aligned}
 \]
 
-Na verdade, esta é a mesma distribuição do problema dos aniversários, com $N$ dias e $n$ pessoas.
+\begin{itemize}
+\item
+  Na verdade, esta é a mesma distribuição do problema dos aniversários, com $N$ dias e $n$ pessoas.
+\item
+  Para $N$ grande e $n$ pequeno, a probabilidade $P$ de pelo menos uma pessoa ser escolhida mais de uma vez se aproxima de $0$:
 
-Para $N$ grande e $n$ pequeno, a probabilidade $P$ de pelo menos uma pessoa ser escolhida mais de uma vez se aproxima de $0$:
-
-\begin{table}
-\centering
-\begin{tabular}[t]{r|r|r}
-\hline
-N & n & P\\
-\hline
-1.000.000 & 1.000.000 & 1,0000000\\
-\hline
-1.000.000 & 100.000 & 1,0000000\\
-\hline
-1.000.000 & 10.000 & 1,0000000\\
-\hline
-1.000.000 & 1.000 & 0,3932670\\
-\hline
-1.000.000 & 100 & 0,0049379\\
-\hline
-1.000.000 & 10 & 0,0000450\\
-\hline
-1.000.000 & 1 & 0,0000000\\
-\hline
-\end{tabular}
-\end{table}
+  \begin{table}
+  \centering
+  \begin{tabular}[t]{r|r|r}
+  \hline
+  N & n & P\\
+  \hline
+  1.000.000 & 1.000.000 & 1,0000000\\
+  \hline
+  1.000.000 & 100.000 & 1,0000000\\
+  \hline
+  1.000.000 & 10.000 & 1,0000000\\
+  \hline
+  1.000.000 & 1.000 & 0,3932670\\
+  \hline
+  1.000.000 & 100 & 0,0049379\\
+  \hline
+  1.000.000 & 10 & 0,0000450\\
+  \hline
+  1.000.000 & 1 & 0,0000000\\
+  \hline
+  \end{tabular}
+  \end{table}
+\end{itemize}
 
 \hypertarget{section-4}{%
 \subsection*{27}\label{section-4}}
@@ -1056,7 +1063,11 @@ N & n & P\\
 
 \end{rmdbox}
 
-De novo, \texttt{pbirthday(k,\ n)}.
+\begin{itemize}
+\tightlist
+\item
+  De novo, \texttt{pbirthday(k,\ n)}.
+\end{itemize}
 
 \hypertarget{section-5}{%
 \subsection*{57}\label{section-5}}
@@ -1077,11 +1088,11 @@ De novo, \texttt{pbirthday(k,\ n)}.
 
 \end{rmdbox}
 
-A resposta é $1 - P(\text{nenhuma molécula sua foi de César})$.
-
-Para calcular $P(\text{nenhuma molécula sua foi de César})$:
-
 \begin{itemize}
+\item
+  A resposta é $1 - P(\text{nenhuma molécula sua foi de César})$.
+\item
+  Vamos calcular $P(\text{nenhuma molécula sua foi de César})$.
 \item
   Todas as respiradas possíveis (com reposição, com ordem): $\left( 10^{44} \right)^{\left(10^{22} \right)}$.
 \item
@@ -1142,19 +1153,22 @@ Para calcular $P(\text{nenhuma molécula sua foi de César})$:
 \subsubsection*{Possibilidades}\label{possibilidades}}
 \addcontentsline{toc}{subsubsection}{Possibilidades}
 
-O último passageiro só pode se sentar no lugar $1$ ou no lugar $n$.
-
-Aliás, isto é um caso específico de um fenômeno mais geral, Qualquer que seja o valor de $n$:
-
 \begin{itemize}
 \item
-  O passageiro $3$ nunca fica no assento $2$: ou o passageiro $1$ pegou, ou ficou livre para o passageiro $2$ (que é obrigado a pegá-lo).
+  O último passageiro só pode se sentar no lugar $1$ ou no lugar $n$.
 \item
-  O passageiro $4$ nunca fica nos assentos $2$ nem $3$: ou o passageiro $1$ pegou o assento $3$, ou aconteceu um dos casos acima e o assento $3$ ficou livre para o passageiro $3$ (que é obrigado a pegá-lo).
-\item
-  O passageiro $5$ nunca fica nos assentos $2$ nem $3$ nem $4$: ou o passageiro $1$ pegou o assento $4$, ou aconteceu um dos casos acima e o assento $4$ ficou livre para o passageiro $4$ (que é obrigado a pegá-lo).
-\item
-  etc.
+  Aliás, isto é um caso específico de um fenômeno mais geral: qualquer que seja o valor de $n$:
+
+  \begin{itemize}
+  \item
+    O passageiro $3$ nunca fica no assento $2$: ou o passageiro $1$ pegou, ou ficou livre para o passageiro $2$ (que é obrigado a pegá-lo).
+  \item
+    O passageiro $4$ nunca fica nos assentos $2$ nem $3$: ou o passageiro $1$ pegou o assento $3$, ou aconteceu um dos casos acima e o assento $3$ ficou livre para o passageiro $3$ (que é obrigado a pegá-lo).
+  \item
+    O passageiro $5$ nunca fica nos assentos $2$ nem $3$ nem $4$: ou o passageiro $1$ pegou o assento $4$, ou aconteceu um dos casos acima e o assento $4$ ficou livre para o passageiro $4$ (que é obrigado a pegá-lo).
+  \item
+    etc.
+  \end{itemize}
 \item
   Seguindo o raciocínio, chegamos à conclusão de que o passageiro $n$ só pode ocupar o assento $1$ ou o assento $n$.
 \end{itemize}
@@ -1227,28 +1241,31 @@ Aliás, isto é um caso específico de um fenômeno mais geral, Qualquer que sej
 
 \end{rmdbox}
 
-A probabilidade de {\hl{não haver coincidência}} é a soma das probabilidades de todos os eventos da forma
+\begin{itemize}
+\item
+  A probabilidade de {\hl{não haver coincidência}} é a soma das probabilidades de todos os eventos da forma
 
-\begin{quote}
-{\hl{As pessoas $1, 2, \ldots k$ nasceram em dias diferentes $j_1, j_2, \ldots, j_k$.}}
-\end{quote}
+  \begin{quote}
+  {\hl{As pessoas $1, 2, \ldots k$ nasceram em dias diferentes $j_1, j_2, \ldots, j_k$.}}
+  \end{quote}
+\item
+  Por exemplo, para $k = 3$, a soma será
 
-Por exemplo, para $k = 3$, a soma será
+  \[
+  3! \cdot (p_1 p_2 p_3 + p_1 p_2 p_4 + \cdots + p_{363} p_{364} p_{365})
+  \]
+\item
+  Isto é igual a
 
-\[
-3! \cdot (p_1 p_2 p_3 + p_1 p_2 p_4 + \cdots + p_{363} p_{364} p_{365})
-\]
-
-Isto é igual a
-
-\[
-k! \cdot e_k(\vec p)
-\]
-
-A probabilidade de pelo menos uma coincidência é
-\[
-1 - k! \cdot e_k(\vec p)
-\]
+  \[
+  k! \cdot e_k(\vec p)
+  \]
+\item
+  A probabilidade de pelo menos uma coincidência é
+  \[
+  1 - k! \cdot e_k(\vec p)
+  \]
+\end{itemize}
 
 \begin{rmdbox}
 
@@ -1262,9 +1279,11 @@ A probabilidade de pelo menos uma coincidência é
 
 \end{rmdbox}
 
-No caso em que $p_j = p = 1/365$ para todo $j$, temos
+\begin{itemize}
+\item
+  No caso em que $p_j = p = 1/365$ para todo $j$, temos
 
-\[
+  \[
    \begin{aligned}
      1 - k! \cdot e_k(\vec p) 
      &=
@@ -1273,8 +1292,9 @@ No caso em que $p_j = p = 1/365$ para todo $j$, temos
      1 - \frac{365 \cdot 364 \cdot \cdots \cdot (365 - k + 1)}{365^k}
    \end{aligned}
    \]
-
-Neste caso, o valor de $e_k(\vec p)$ é máximo.
+\item
+  Neste caso, o valor de $e_k(\vec p)$ é máximo.
+\end{itemize}
 
 \begin{rmdbox}
 
@@ -1629,22 +1649,6 @@ Valores teóricos:
 
 Gráfico:
 
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(p, pkr\_teorico)) }\SpecialCharTok{+}
-    \FunctionTok{geom\_line}\NormalTok{(}
-      \FunctionTok{aes}\NormalTok{(}\AttributeTok{group =}\NormalTok{ n, }\AttributeTok{color =} \FunctionTok{fct\_rev}\NormalTok{(}\FunctionTok{as.factor}\NormalTok{(n))),}
-      \AttributeTok{size =} \FloatTok{1.25}
-\NormalTok{    ) }\SpecialCharTok{+}
-    \FunctionTok{labs}\NormalTok{(}
-      \AttributeTok{x =} \StringTok{\textquotesingle{}P(K)\textquotesingle{}}\NormalTok{,}
-      \AttributeTok{y =} \StringTok{\textquotesingle{}P(K|R)\textquotesingle{}}\NormalTok{,}
-      \AttributeTok{color =} \StringTok{\textquotesingle{}n\textquotesingle{}}
-\NormalTok{    )}
-\end{Highlighting}
-\end{Shaded}
-
 \begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/unnamed-chunk-24-1} \end{center}
 
 \begin{rmdnote}
@@ -1713,30 +1717,6 @@ Simulação:
 \DocumentationTok{\#\# 5     1  1           1           1    }
 \DocumentationTok{\#\# 6     2  0           0           0    }
 \DocumentationTok{\#\# \# ... with 39 more rows}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{df }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{pivot\_longer}\NormalTok{(}
-    \AttributeTok{cols =} \FunctionTok{starts\_with}\NormalTok{(}\StringTok{\textquotesingle{}pkr\textquotesingle{}}\NormalTok{),}
-    \AttributeTok{names\_to =} \StringTok{\textquotesingle{}tipo\textquotesingle{}}\NormalTok{,}
-    \AttributeTok{names\_prefix =} \StringTok{\textquotesingle{}pkr\_\textquotesingle{}}\NormalTok{,}
-    \AttributeTok{values\_to =} \StringTok{\textquotesingle{}valor\textquotesingle{}}
-\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(p, valor)) }\SpecialCharTok{+}
-    \FunctionTok{geom\_line}\NormalTok{(}
-      \FunctionTok{aes}\NormalTok{(}\AttributeTok{group =}\NormalTok{ n, }\AttributeTok{color =} \FunctionTok{fct\_rev}\NormalTok{(}\FunctionTok{as.factor}\NormalTok{(n))),}
-      \AttributeTok{size =} \FloatTok{1.25}
-\NormalTok{    ) }\SpecialCharTok{+}
-    \FunctionTok{labs}\NormalTok{(}
-      \AttributeTok{x =} \StringTok{\textquotesingle{}P(K)\textquotesingle{}}\NormalTok{,}
-      \AttributeTok{y =} \StringTok{\textquotesingle{}P(K|R)\textquotesingle{}}\NormalTok{,}
-      \AttributeTok{color =} \StringTok{\textquotesingle{}n\textquotesingle{}}
-\NormalTok{    ) }\SpecialCharTok{+}
-    \FunctionTok{facet\_wrap}\NormalTok{(}\SpecialCharTok{\textasciitilde{}}\FunctionTok{fct\_rev}\NormalTok{(tipo)) }\SpecialCharTok{+}
-    \FunctionTok{theme}\NormalTok{(}\AttributeTok{panel.spacing.x =} \FunctionTok{unit}\NormalTok{(.}\DecValTok{5}\NormalTok{, }\StringTok{\textquotesingle{}cm\textquotesingle{}}\NormalTok{))}
 \end{Highlighting}
 \end{Shaded}
 
@@ -1856,84 +1836,70 @@ Simulação:
 
 \begin{itemize}
 \item
-  Teoricamente:
-
-  \begin{center}\includegraphics[width=0.5\linewidth]{images/alice05} \end{center}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{(q1}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{*}\NormalTok{ p1) }\SpecialCharTok{/}\NormalTok{ ((q1 }\SpecialCharTok{+}\NormalTok{ p0)}\SpecialCharTok{\^{}}\DecValTok{2} \SpecialCharTok{*}\NormalTok{ (p1 }\SpecialCharTok{+}\NormalTok{ q0))}
-\DocumentationTok{\#\# [1] 0,08547685}
-\end{Highlighting}
-\end{Shaded}
-\item
-  Simulação:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{reps }\OtherTok{\textless{}{-}} \FloatTok{1e6}
-
-\NormalTok{alice\_envia }\OtherTok{\textless{}{-}} \FunctionTok{replicate}\NormalTok{(}
-\NormalTok{  reps,}
-  \FunctionTok{sample}\NormalTok{(}\FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }\DecValTok{3}\NormalTok{, }\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{),}
-  \AttributeTok{simplify =} \ConstantTok{FALSE}
-\NormalTok{)}
-
-\NormalTok{bob\_recebe }\OtherTok{\textless{}{-}}\NormalTok{ alice\_envia}
-
-\NormalTok{inserir\_erros }\OtherTok{\textless{}{-}} \ControlFlowTok{function}\NormalTok{(v) \{}
-
-\NormalTok{  original }\OtherTok{\textless{}{-}}\NormalTok{ v}
-
-\NormalTok{  v[}\FunctionTok{which}\NormalTok{(original }\SpecialCharTok{==} \DecValTok{0}\NormalTok{)] }\OtherTok{\textless{}{-}} 
-    \FunctionTok{sample}\NormalTok{(}
-      \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }
-      \FunctionTok{length}\NormalTok{(}\FunctionTok{which}\NormalTok{(original }\SpecialCharTok{==} \DecValTok{0}\NormalTok{)),}
-      \AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}
-      \AttributeTok{prob =} \FunctionTok{c}\NormalTok{(}\DecValTok{95}\SpecialCharTok{/}\DecValTok{100}\NormalTok{, }\DecValTok{5}\SpecialCharTok{/}\DecValTok{100}\NormalTok{)}
-\NormalTok{    )}
-
-\NormalTok{  v[}\FunctionTok{which}\NormalTok{(original }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)] }\OtherTok{\textless{}{-}} 
-    \FunctionTok{sample}\NormalTok{(}
-      \FunctionTok{c}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{), }
-      \FunctionTok{length}\NormalTok{(}\FunctionTok{which}\NormalTok{(original }\SpecialCharTok{==} \DecValTok{1}\NormalTok{)),}
-      \AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}
-      \CommentTok{\# Atenção: aqui, erro é 1 virar 0:}
-      \AttributeTok{prob =} \FunctionTok{c}\NormalTok{(}\DecValTok{10}\SpecialCharTok{/}\DecValTok{100}\NormalTok{, }\DecValTok{90}\SpecialCharTok{/}\DecValTok{100}\NormalTok{)  }
-\NormalTok{    )}
-
-\NormalTok{  v}
-
-\NormalTok{\} }
-
-\NormalTok{bob\_recebe }\OtherTok{\textless{}{-}}\NormalTok{ bob\_recebe }\SpecialCharTok{\%\textgreater{}\%} 
-  \FunctionTok{map}\NormalTok{(}
-    \SpecialCharTok{\textasciitilde{}}\FunctionTok{inserir\_erros}\NormalTok{(.x)  }
-\NormalTok{  )}
-
-\NormalTok{bob\_recebe }\OtherTok{\textless{}{-}} 
-\NormalTok{  bob\_recebe }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{map\_lgl}\NormalTok{(}\SpecialCharTok{\textasciitilde{}} \FunctionTok{all}\NormalTok{(.x }\SpecialCharTok{==} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{0}\NormalTok{)))}
-
-\NormalTok{alice\_envia }\OtherTok{\textless{}{-}} 
-\NormalTok{  alice\_envia }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{map\_lgl}\NormalTok{(}\SpecialCharTok{\textasciitilde{}} \FunctionTok{all}\NormalTok{(.x }\SpecialCharTok{==} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{1}\NormalTok{)))}
-
-
-\FunctionTok{sum}\NormalTok{(alice\_envia }\SpecialCharTok{\&}\NormalTok{ bob\_recebe) }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(bob\_recebe)}
-\DocumentationTok{\#\# [1] 0,08546727}
-\end{Highlighting}
-\end{Shaded}
-\item
-  A vantagem do esquema de repetição é que o envio de $111$ corresponde ao recebimento de $4$ cadeias diferentes: $111$, $011$, $101$, e $110$.
-\item
-  Sem repetição, a probabilidade de Bob receber $1$ quando Alice transimiu $1$ é
+  Eventos:
 
   \[
-  P(B \mid A) = q_1 = 0{,}9
+  \begin{aligned}
+  AAA &= \text{Alice envia } 111 \\
+  BB\neg B &= \text{Bob recebe } 110
+  \end{aligned}
   \]
 \item
-  Com repetição, a probabilidade de Bob receber uma das $4$ cadeias que representam $1$ (evento $R$) quando Alice transmitiu $111$ (evento $T$) é
+  $P(AAA) = 1/2$, pois Alice envia somente $111$ ou $000$.
+\item
+  Usando Bayes:
 
-  \begin{center}\includegraphics[width=0.75\linewidth]{images/alice06} \end{center}
+  \[
+  P(AAA \mid BB\neg B) = 
+  \frac{P(BB\neg B \mid AAA) \cdot P(AAA)}{P(BB\neg B)}
+  \]
+\item
+  $P(BB\neg B \mid AAA) = q_1 \cdot q_1 \cdot p_1$, pois erros em \emph{bits} diferentes são independentes.
+\item
+  Pela lei da probabilidade total:
+
+  \[
+  \begin{aligned}
+  P(BB\neg B) 
+  &= P(BB\neg B \mid AAA) \cdot P(AAA) + 
+     P(BB\neg B \mid \neg(AAA))P(\neg(AAA)) \\
+  &= \frac12 \cdot \left( q_1 \cdot q_1 \cdot p_1 +
+     p_0 \cdot p_0 \cdot q_0 \right)
+  \end{aligned}
+  \]
+\item
+  Daí,
+
+  \[
+  \begin{aligned}
+  P(AAA \mid BB\neg B) 
+  &= 
+  \frac{P(BB\neg B \mid AAA) \cdot P(AAA)}{P(BB\neg B)} \\
+  &= 
+  \frac{
+    q_1 \cdot q_1 \cdot p_1 \cdot 1/2
+  }{
+    \left( q_1 \cdot q_1 \cdot p_1 +
+     p_0 \cdot p_0 \cdot q_0 \right)\cdot 1/2
+  } \\
+  &= 
+  \frac{
+    q_1 \cdot q_1 \cdot p_1
+  }{
+    \left( q_1 \cdot q_1 \cdot p_1 +
+     p_0 \cdot p_0 \cdot q_0 \right)
+  }
+  \end{aligned}
+  \]
+\item
+  Numericamente:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{q1 }\SpecialCharTok{*}\NormalTok{ q1 }\SpecialCharTok{*}\NormalTok{ p1 }\SpecialCharTok{/}\NormalTok{ (q1 }\SpecialCharTok{*}\NormalTok{ q1 }\SpecialCharTok{*}\NormalTok{ p1 }\SpecialCharTok{+}\NormalTok{ p0 }\SpecialCharTok{*}\NormalTok{ p0 }\SpecialCharTok{*}\NormalTok{ q0)}
+\DocumentationTok{\#\# [1] 0,9715142}
+\end{Highlighting}
+\end{Shaded}
 \end{itemize}
 
 \hypertarget{section-11}{%
@@ -1979,21 +1945,24 @@ O que você ficaria mais feliz em observar?
 
 \end{rmdbox}
 
-Queremos observar o evento $E$ tal que $P(A \cap B \mid E)$ seja máximo.
+\begin{itemize}
+\item
+  Queremos observar o evento $E$ tal que $P(A \cap B \mid E)$ seja máximo.
 
-\[
-\begin{aligned}
-P(A \cap B \mid A) &= \frac{P(A \cap B)}{P(A)} \\
-P(A \cap B \mid B) &= \frac{P(A \cap B)}{P(B)} \\
-P(A \cap B \mid A \cup B) &= 
-  \frac{P((A \cap B) \cap (A \cup B))}{P(A \cup B)} \\
-  &= \frac{P(A \cap B)}{P(A \cup B)}
-\end{aligned}
-\]
-
-Como $P(A)$ é o menor denominador, observar $A$ maximiza $P(A \cap B \mid E)$.
-
-Intuitivamente, como $A$ é o evento menos provável dos dois, saber que $A$ ocorreu nos deixa mais próximo da ocorrência dos dois eventos do que saber que $B$ (ou que algum dos dois) ocorreu.
+  \[
+  \begin{aligned}
+  P(A \cap B \mid A) &= \frac{P(A \cap B)}{P(A)} \\
+  P(A \cap B \mid B) &= \frac{P(A \cap B)}{P(B)} \\
+  P(A \cap B \mid A \cup B) &= 
+    \frac{P((A \cap B) \cap (A \cup B))}{P(A \cup B)} \\
+    &= \frac{P(A \cap B)}{P(A \cup B)}
+  \end{aligned}
+  \]
+\item
+  Como $P(A)$ é o menor denominador, observar $A$ maximiza $P(A \cap B \mid E)$.
+\item
+  Intuitivamente, como $A$ é o evento menos provável dos dois, saber que $A$ ocorreu nos deixa mais próximo da ocorrência dos dois eventos do que saber que $B$ (ou que algum dos dois) ocorreu.
+\end{itemize}
 
 \hypertarget{section-13}{%
 \subsection*{16}\label{section-13}}
@@ -2006,29 +1975,32 @@ P(A \mid B) \leq P(A) \implies P(A \mid \neg B) \geq P(A)
 
 \end{rmdbox}
 
-Se a ocorrência de $B$ torna $A$ menos provável, então a não-ocorrência de $B$ torna $A$ mais provável.
+\begin{itemize}
+\item
+  Se a ocorrência de $B$ torna $A$ menos provável, então a não-ocorrência de $B$ torna $A$ mais provável.
+\item
+  Pela lei da probabilidade total:
 
-Pela lei da probabilidade total:
+  \[
+  \begin{aligned}
+  P(A) &= P(A \mid B)P(B) + P(A \mid \neg B)P(\neg B) \\
+  \therefore P(A \mid \neg B) &= 
+    \frac{P(A) - P(A \mid B)P(B)}{P(\neg B)}
+  \end{aligned}
+  \]
+\item
+  Daí,
 
-\[
-\begin{aligned}
-P(A) &= P(A \mid B)P(B) + P(A \mid \neg B)P(\neg B) \\
-\therefore P(A \mid \neg B) &= 
-  \frac{P(A) - P(A \mid B)P(B)}{P(\neg B)}
-\end{aligned}
-\]
-
-Daí,
-
-\[
-\begin{aligned}
-P(A \mid \neg B) 
-&\geq
-  \frac{P(A) - P(A)P(B)}{P(\neg B)} & \text{pois } P(A \mid B) \leq P(A) \\
-&= \frac{P(A)(1 - P(B))}{P(\neg B)} \\
-&= P(A)
-\end{aligned}
-\]
+  \[
+  \begin{aligned}
+  P(A \mid \neg B) 
+  &\geq
+    \frac{P(A) - P(A)P(B)}{P(\neg B)} & \text{pois } P(A \mid B) \leq P(A) \\
+  &= \frac{P(A)(1 - P(B))}{P(\neg B)} \\
+  &= P(A)
+  \end{aligned}
+  \]
+\end{itemize}
 
 \hypertarget{section-14}{%
 \subsection*{17}\label{section-14}}
@@ -2089,21 +2061,24 @@ Considere eventos $A$ e $B$ com $P(A), P(B) \not\in \{0, 1\}$.
 
 \end{rmdbox}
 
-Valores de exemplo, com $A$ e $B$ independentes:
+\begin{itemize}
+\item
+  Valores de exemplo, com $A$ e $B$ independentes:
 
-\[
-\begin{aligned}
-P(A) &= 80/100 \\
-P(B) &= 90/100 \\
-P(\neg A) &= 20/100 \\
-P(\neg B) &= 10/100 \\
-P(A \cap B) &= P(A) \cdot P(B) = 72/100 \\
-P(A \cup B) &= P(A) + P(B) - P(A \cap B) = 98/100\\
-P(B \mid A) &= \frac{P(A \cap B)}{P(A)} = 72/80 \approx 1 \\
-P(\neg A \mid \neg B) &= \frac{P(\neg A \cap \neg B)}{P(\neg B)} = 
-  \frac{1 - P(A \cup B)}{P(\neg B)} = 2/10 \approx 0
-\end{aligned}
-\]
+  \[
+  \begin{aligned}
+  P(A) &= 80/100 \\
+  P(B) &= 90/100 \\
+  P(\neg A) &= 20/100 \\
+  P(\neg B) &= 10/100 \\
+  P(A \cap B) &= P(A) \cdot P(B) = 72/100 \\
+  P(A \cup B) &= P(A) + P(B) - P(A \cap B) = 98/100\\
+  P(B \mid A) &= \frac{P(A \cap B)}{P(A)} = 72/80 \approx 1 \\
+  P(\neg A \mid \neg B) &= \frac{P(\neg A \cap \neg B)}{P(\neg B)} = 
+    \frac{1 - P(A \cup B)}{P(\neg B)} = 2/10 \approx 0
+  \end{aligned}
+  \]
+\end{itemize}
 
 \begin{rmdnote}
 
@@ -2121,7 +2096,7 @@ Com isso,
 \item
   $A$ e $B$ são independentes ${} \iff I = 1$
 \item
-  $A$ e $B$ se atrapalham ${} \iff I < 1$.
+  $A$ e $B$ se atrapalham ${} \iff 0 < I < 1$.
 
   I.e., $P(A) > P(A \mid B)$ e $P(B) > P(B \mid A)$.
 \item
@@ -2132,9 +2107,9 @@ Com isso,
 
 \end{rmdnote}
 
-\begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/unnamed-chunk-37-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/unnamed-chunk-35-1} \end{center}
 
-\begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/unnamed-chunk-38-1} \end{center}
+\begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/unnamed-chunk-36-1} \end{center}
 
 \hypertarget{section-15}{%
 \subsection*{22}\label{section-15}}
@@ -2279,68 +2254,71 @@ Observe:
 
 \end{rmdbox}
 
-Eventos:
-
-\[
-\begin{aligned}
-AA &= \text{As duas são meninas} \\
-AC &= \text{Pelo menos uma é menina e tem } C
-\end{aligned}
-\]
-
-Vamos usar Bayes:
-
-\[
-P(AA \mid AC) = \frac{P(AC \mid AA) \cdot P(AA)}{P(AC)}
-\]
-
-A probabilidade de ambas serem meninas é
-
-\[
-P(AA) = 1/4
-\]
-
-A probabilidade $P(AC)$ de pelo menos uma ser menina e ter $C$ é a soma das probabilidades de
-
 \begin{itemize}
 \item
-  Ambas serem meninas, ambas terem $C$: $\frac14 \cdot p^2$.
+  Eventos:
+
+  \[
+  \begin{aligned}
+  AA &= \text{As duas são meninas} \\
+  AC &= \text{Pelo menos uma é menina e tem } C
+  \end{aligned}
+  \]
 \item
-  Ambas serem meninas, só uma ter $C$ (a primeira ou a segunda): $2 \cdot \frac14 \cdot p \cdot (1 - p)$.
+  Vamos usar Bayes:
+
+  \[
+  P(AA \mid AC) = \frac{P(AC \mid AA) \cdot P(AA)}{P(AC)}
+  \]
 \item
-  Uma ser menina com $C$, a outra ser menino (com ou sem $C$): $\frac12 \cdot p$.
+  A probabilidade de ambas serem meninas é
+
+  \[
+  P(AA) = 1/4
+  \]
+\item
+  A probabilidade $P(AC)$ de pelo menos uma ser menina e ter $C$ é a soma das probabilidades de
+
+  \begin{itemize}
+  \item
+    Ambas serem meninas, ambas terem $C$: $\frac14 \cdot p^2$.
+  \item
+    Ambas serem meninas, só uma ter $C$ (a primeira ou a segunda): $2 \cdot \frac14 \cdot p \cdot (1 - p)$.
+  \item
+    Uma ser menina com $C$, a outra ser menino (com ou sem $C$): $\frac12 \cdot p$.
+  \item
+    Logo,
+    \[
+    P(AC) = \frac{p \cdot (4 - p)}{4}
+    \]
+  \end{itemize}
+\item
+  A probabilidade $P(AC \mid AA)$ de uma ser menina com $C$, dado que ambas são meninas, é
+
+  \[
+  \begin{aligned}
+  P(AC \mid AA) &= 1 - (1 - p)^2 \\
+  &= p \cdot (2 - p)
+  \end{aligned}
+  \]
+\item
+  Juntando tudo:
+
+  \[
+  \begin{aligned}
+  P(AA \mid AC) 
+  &= \frac{P(AC \mid AA) P(AA)}{P(AC)} \\
+  &= \frac
+    {p \cdot (2 - p) \cdot 1/4}
+    {p \cdot (4 - p) \cdot 1/4} \\
+  &= \frac{2 - p}{4 - p}
+  \end{aligned}
+  \]
+\item
+  Um gráfico:
+
+  \begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/unnamed-chunk-37-1} \end{center}
 \end{itemize}
-
-Logo,
-\[
-P(AC) = \frac{p \cdot (4 - p)}{4}
-\]
-
-A probabilidade $P(AC \mid AA)$ de uma ser menina com $C$, dado que ambas são meninas, é
-
-\[
-\begin{aligned}
-P(AC \mid AA) &= 1 - (1 - p)^2 \\
-&= p \cdot (2 - p)
-\end{aligned}
-\]
-
-Juntando tudo:
-
-\[
-\begin{aligned}
-P(AA \mid AC) 
-&= \frac{P(AC \mid AA) P(AA)}{P(AC)} \\
-&= \frac
-  {p \cdot (2 - p) \cdot 1/4}
-  {p \cdot (4 - p) \cdot 1/4} \\
-&= \frac{2 - p}{4 - p}
-\end{aligned}
-\]
-
-Um gráfico:
-
-\begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/unnamed-chunk-39-1} \end{center}
 
 \hypertarget{probabilidade-condicional-continuauxe7uxe3o}{%
 \chapter*{05: Probabilidade condicional (continuação)}\label{probabilidade-condicional-continuauxe7uxe3o}}

@@ -416,7 +416,7 @@ b. Agora, eles usam um [código com repetição]{.hl}:
   &= P(BB\neg B \mid AAA) \cdot P(AAA) + 
      P(BB\neg B \mid \neg(AAA))P(\neg(AAA)) \\
   &= \frac12 \cdot \left( q_1 \cdot q_1 \cdot p_1 +
-     p_0 \cdot p_0 \cdot q-0 \right)
+     p_0 \cdot p_0 \cdot q_0 \right)
   \end{aligned}
   $$
 
