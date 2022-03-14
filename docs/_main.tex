@@ -338,7 +338,7 @@
 
 \title{Introduction to Probability (Joe Blitzstein)}
 \author{Fernando Náufel}
-\date{(versão de 12/03/2022)}
+\date{(versão de 14/03/2022)}
 
 \begin{document}
 \maketitle
@@ -420,17 +420,17 @@
 \begin{Highlighting}[]
 \NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{365}\NormalTok{,}\DecValTok{23}\NormalTok{,}\AttributeTok{replace=}\ConstantTok{TRUE}\NormalTok{)}
 \FunctionTok{tabulate}\NormalTok{(b)}
-\DocumentationTok{\#\#   [1] 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0}
-\DocumentationTok{\#\#  [34] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\#  [67] 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 2}
-\DocumentationTok{\#\# [133] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [166] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [199] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [232] 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [265] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [298] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2 0 0 1}
+\DocumentationTok{\#\#   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0}
+\DocumentationTok{\#\#  [34] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0}
+\DocumentationTok{\#\# [133] 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [166] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [199] 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0 0 0}
+\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 0 0 2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 2 0 0 0 0}
+\DocumentationTok{\#\# [265] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
+\DocumentationTok{\#\# [298] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [331] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -438,10 +438,10 @@
 \begin{Highlighting}[]
 \FunctionTok{table}\NormalTok{(b)}
 \DocumentationTok{\#\# b}
-\DocumentationTok{\#\#   6  30  35  72  77 107 124 130 132 133 166 221 224 236 243 247 255 }
-\DocumentationTok{\#\#   1   1   1   1   1   1   1   1   2   1   1   1   1   1   1   1   1 }
-\DocumentationTok{\#\# 300 315 346 349 }
-\DocumentationTok{\#\#   1   1   2   1}
+\DocumentationTok{\#\#  18  30  36  52 129 134 145 180 208 215 217 218 225 228 241 242 258 }
+\DocumentationTok{\#\#   1   1   1   1   1   1   1   1   1   1   1   1   1   1   2   1   1 }
+\DocumentationTok{\#\# 260 297 331 361 }
+\DocumentationTok{\#\#   2   1   1   1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2338,16 +2338,185 @@ Observe:
 \subsection*{30}\label{section-17}}
 \addcontentsline{toc}{subsection}{30}
 
+\begin{rmdbox}
+
+Uma família tem $3$ filhos: $A$, $B$ e $C$.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  O evento ``$A$ é mais velho que $B$'' é independente de ``$A$ é mais velho que $C$''?
+\end{enumerate}
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Intuitivamente:
+
+  Não, pois $A$ ser mais velho que $B$ torna mais provável que $A$ seja mais velho que $C$.
+\end{itemize}
+
+\begin{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Qual a probabilidade de que $A$ é mais velho que $B$, dado que $A$ é mais velho que $C$?
+\end{enumerate}
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Queremos achar $P(A > B \mid A > C)$.
+\item
+  Esta probabilidade é igual a
+
+  \[
+  \frac{P(A > B,  A > C)}{P(A > C)}
+  \]
+\item
+  O numerador é a probabilidade de $A$ ser o mais velho.
+\item
+  Se todas as $6$ ordens de nascimento tiverem a mesma probabilidade,
+
+  \[
+  P(A > B,  A > C) = 2/6 = 1/3
+  \]
+\item
+  O denominador é
+
+  \[
+  P(A > C) = 3/6 = 1/2
+  \]
+\item
+  Daí, $P(A > B \mid A > C) = \frac{1/3}{1/2} = \frac23$.
+\item
+  De fato, a probabilidade {\hl{condicional}} $P(A > B \mid A > C) = 2/3$ é {\hl{maior}} do que a probabilidade {\hl{não-condicional}} $P(A > B) = 1/2$.
+\end{itemize}
+
 \hypertarget{section-18}{%
 \subsection*{31}\label{section-18}}
 \addcontentsline{toc}{subsection}{31}
 
-\hypertarget{section-19}{%
-\subsection*{32}\label{section-19}}
-\addcontentsline{toc}{subsection}{32}
+\begin{rmdbox}
+Um evento pode ser independente de si mesmo?
 
-\hypertarget{section-20}{%
-\subsection*{33}\label{section-20}}
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Chamando este evento de $A$, é preciso que
+
+  \[
+  P(A \cap A) = P(A) = P(A) \cdot P(A)
+  \]
+\item
+  Isto só é possível se $P(A) = 0$ ou se $P(A) = 1$.
+\end{itemize}
+
+\hypertarget{dados-de-efron}{%
+\subsection*{32. Dados de Efron}\label{dados-de-efron}}
+\addcontentsline{toc}{subsection}{32. Dados de Efron}
+
+\begin{rmdbox}
+
+Considere $4$ dados não-padrão (\emph{dados de Efron}), cujos lados são rotulados da seguinte forma (cada lado tem a mesma probabilidade):
+
+\[
+\begin{aligned}
+  A &: 4, 4, 4, 4, 0, 0 \\
+  B &: 3, 3, 3, 3, 3, 3 \\
+  C &: 6, 6, 2, 2, 2, 2 \\
+  D &: 5, 5, 5, 1, 1, 1
+\end{aligned}
+\]
+
+Cada dado é lançado uma vez. Cada letra representa o resultado do dado correspondente.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Ache $P(A > B)$, $P(B > C)$, $P(C > D)$, e $P(D > A)$.
+\end{enumerate}
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Eventos equivalentes:
+
+  \[
+  \begin{aligned}
+    A > B &\iff A = 4 \\
+    B > C &\iff C = 2 \\
+    C > D &\iff C = 6 \cup (C = 2 \cap D = 1) \\
+    D > A & \iff D = 5 \cup (D = 1\cap A = 0)
+  \end{aligned}
+  \]
+\item
+  $P(A > B) = 2/3$.
+\item
+  $P(B > C) = 2/3$.
+\item
+  $P(C > D) = 1/3 + 2/3 \cdot 1/2 = 2/3$.
+\item
+  $P(D > A) = 1/2 + 1/2 \cdot 2/3 = 2/3$.
+\end{itemize}
+
+\begin{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\item
+  O evento $A > B$ é independente de $B > C$?
+
+  O evento $B > C$ é independente de $C > D$?
+\end{enumerate}
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Sim:
+
+  \[
+  \begin{aligned}
+  P(A > B \cap B > C) &= P(A = 4) \cdot P(C = 2) \\
+  &= P(A > B) \cdot P(B > C)
+  \end{aligned}
+  \]
+
+  Intuitivamente: como o resultado de $B$ não importa para $A > B$ nem para $B > C$, os eventos são independentes.
+\item
+  Não:
+
+  \[
+  \begin{aligned}
+    P(B > C \cap C > D) 
+    &= P(C = 2 \cap [C = 6 \cup (C = 2 \cap D = 1)]) \\
+    &= P((C = 2 \cap C = 6) \cup (C = 2 \cap D = 1)) \\
+    &= P(C = 2 \cap D = 1) \\
+    &= 2/3 \cdot 1/2 \\
+    &= 1/3
+  \end{aligned}
+  \]
+
+  mas
+
+  \[
+  P(B > C) \cdot P(C > D) = 4/9
+  \]
+\end{itemize}
+
+\hypertarget{section-19}{%
+\subsection*{33}\label{section-19}}
 \addcontentsline{toc}{subsection}{33}
 
 \hypertarget{xadrez}{%
@@ -2559,16 +2728,72 @@ Observe:
   \]
 \end{itemize}
 
-\hypertarget{section-21}{%
-\subsection*{36}\label{section-21}}
-\addcontentsline{toc}{subsection}{36}
+\hypertarget{paradoxo-de-berkson}{%
+\subsection*{\texorpdfstring{36. \href{https://en.wikipedia.org/wiki/Berkson\%27s_paradox}{Paradoxo de Berkson}}{36. Paradoxo de Berkson}}\label{paradoxo-de-berkson}}
+\addcontentsline{toc}{subsection}{36. \href{https://en.wikipedia.org/wiki/Berkson\%27s_paradox}{Paradoxo de Berkson}}
 
-\hypertarget{section-22}{%
-\subsection*{37}\label{section-22}}
+\begin{rmdbox}
+{\hl{Se}}
+
+\begin{itemize}
+\item
+  $A$ e $B$ são independentes, e
+\item
+  $P(A \cap B) > 0$, e
+\item
+  $P(A \cup B) < 1$, e
+\item
+  $C = A \cup B$
+\end{itemize}
+
+{\hl{então}} $A$ e $B$ são condicionalmente dependentes, dado $C$, com
+
+\[
+P(A \mid B, C) < P(A \mid C)
+\]
+
+Exemplo: universidade admite candidatos que são bons jogadores de basquete ($A$) ou que são bons em Matemática ($B$).
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  De $P(A \cap B) > 0$, temos que $P(A) > 0$ e que $P(B) > 0$.
+\item
+  Daí, $P(C) = P(A \cup B) > 0$.
+\item
+  Para o lado esquerdo:
+
+  \[
+  \begin{aligned}
+  P(A \mid B, C) 
+  &= \frac{P(A \cap B \cap C)}{P(B \cap C)} \\
+  &= \frac{P(A \cap B)}{P(B)} \\
+  &= \frac{P(A)P(B)}{P(B)} \\
+  &= P(A)
+  \end{aligned}
+  \]
+\item
+  Para o lado direito:
+
+  \[
+  \begin{aligned}
+  P(A \mid C) 
+  &= \frac{P(A \cap C)}{P(C)} \\
+  &= \frac{P(A)}{P(C)} \\
+  &= \frac{P(A)}{P(A \cup B)} 
+  \end{aligned}
+  \]
+\item
+  Como o denominador $P(A \cup B) < 1$, esta probabilidade é maior do que $P(A)$.
+\end{itemize}
+
+\hypertarget{section-20}{%
+\subsection*{37}\label{section-20}}
 \addcontentsline{toc}{subsection}{37}
 
-\hypertarget{section-23}{%
-\subsection*{38}\label{section-23}}
+\hypertarget{section-21}{%
+\subsection*{38}\label{section-21}}
 \addcontentsline{toc}{subsection}{38}
 
 \hypertarget{referuxeancias}{%
