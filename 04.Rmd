@@ -600,7 +600,7 @@ b. Mostre que, se "$=$" for substituído por "$\approx$", o resultado não vale.
   \end{aligned}
   $$
 
-::: {.rmdnote latex=1}
+::: {.rmdnote latex=1 #i}
 
 Vamos criar uma medida de independência. Se $P(A) \neq 0$  e $P(B) \neq 0$, definimos
 

@@ -391,7 +391,7 @@ P(V_2 \mid V_1) \approx 0{,}68
 <p><span class="math display">\[
 P(A \mid B, C) &lt; P(A \mid C)
 \]</span></p>
-<p>Exemplo: universidade admite candidatos que são bons jogadores de basquete (<span class="math inline">\(A\)</span>) ou que são bons em Matemática (<span class="math inline">\(B\)</span>).</p>
+<p>Exemplo: universidade admite candidatos que são bons jogadores de basquete (<span class="math inline">\(A\)</span>) ou que são bons em Matemática (<span class="math inline">\(B\)</span>) — <span class="hl">supondo que estes são eventos independentes, o que é meio duvidoso</span>.<a class="footnote-ref" tabindex="0" data-toggle="popover" data-content='&lt;p&gt;Na verdade, em vez de independência entre &lt;span class="math inline"&gt;\(A\)&lt;/span&gt; e &lt;span class="math inline"&gt;\(B\)&lt;/span&gt;, basta que um evento atrapalhe o outro para termos o paradoxo. Em termos da &lt;a href="probabilidade-condicional.html#i"&gt;nossa medida de independência &lt;span class="math inline"&gt;\(I\)&lt;/span&gt;&lt;/a&gt;, basta &lt;span class="math inline"&gt;\(0&amp;lt; I &amp;lt; 1\)&lt;/span&gt;.&lt;/p&gt;'><sup>5</sup></a></p>
 </div>
 <ul>
 <li><p>De <span class="math inline">\(P(A \cap B) &gt; 0\)</span>, temos que <span class="math inline">\(P(A) &gt; 0\)</span> e que <span class="math inline">\(P(B) &gt; 0\)</span>.</p></li>
@@ -425,14 +425,247 @@ P(A \mid C)
 <div id="section-20" class="section level3 unnumbered">
 <h3>37<a class="anchor" aria-label="anchor" href="#section-20"><i class="fas fa-link"></i></a>
 </h3>
+<div class="rmdbox">
+<ul>
+<li><p>Quem tem a doença <span class="math inline">\(D_1\)</span> ou a doença <span class="math inline">\(D_2\)</span> (ou ambas) tem o sintoma estranho <span class="math inline">\(W\)</span>.</p></li>
+<li><p><span class="math inline">\(D_1\)</span> e <span class="math inline">\(D_2\)</span> são independentes, com <span class="math inline">\(P(D_j) = p_j\)</span>, e com <span class="math inline">\(q_j = 1 - p_j\)</span>.</p></li>
+<li><p><span class="math inline">\(0 &lt; p_j &lt; 1\)</span>.</p></li>
+<li><p>Uma pessoa sadia tem o sintoma <span class="math inline">\(W\)</span> com probabilidade <span class="math inline">\(w_0\)</span>.</p></li>
+</ul>
 </div>
-<div id="section-21" class="section level3 unnumbered">
-<h3>38<a class="anchor" aria-label="anchor" href="#section-21"><i class="fas fa-link"></i></a>
+<div class="rmdbox">
+<ol style="list-style-type: lower-alpha">
+<li>Achar <span class="math inline">\(P(W)\)</span>.</li>
+</ol>
+</div>
+<ul>
+<li>
+<p>Por probabilidade total:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(W)
+&amp;= P(W \mid D_1 \cup D_2) \cdot P(D_1 \cup D_2) +
+P(W \mid \neg(D_1 \cup D_2)) \cdot P(\neg(D_1 \cup D_2)) \\
+&amp;= 1 \cdot (p_1 + p_2 - p_1p_2) + w_0 \cdot (1 - p_1 - p_2 + p_1p_2) \\
+&amp;= p_1 + p_2 - p_1p_2 + w_0q_1q_2
+\end{aligned}
+\]</span></p>
+</li>
+</ul>
+<div class="rmdbox">
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Achar <span class="math inline">\(P(D_1 \mid W)\)</span>, <span class="math inline">\(P(D_2 \mid W)\)</span>, e <span class="math inline">\(P(D_1 \cap D_2 \mid W)\)</span>.</li>
+</ol>
+</div>
+<ul>
+<li>
+<p>Por Bayes:</p>
+<p><span class="math display">\[
+\begin{aligned}
+  P(D_1 \mid W)
+  &amp;= \frac{P(W \mid D_1) \cdot P(D_1)}{P(W)} \\
+  &amp;= \frac{1 \cdot p_1}{p_1 + p_2 - p_1p_2 + w_0q_1q_2} \\
+  &amp;= \frac{p_1}{p_1 + p_2 - p_1p_2 + w_0q_1q_2}
+\end{aligned}
+\]</span></p>
+</li>
+<li>
+<p>Analogamente,</p>
+<p><span class="math display">\[
+P(D_2 \mid W) = \frac{p_2}{p_1 + p_2 - p_1p_2 + w_0q_1q_2}
+\]</span></p>
+</li>
+<li>
+<p>Finalmente,</p>
+<p><span class="math display">\[
+\begin{aligned}
+P(D_1 \cap D_2 \mid W)
+&amp;= \frac{P(D_1 \cap D_2 \cap W)}{P(W)} \\
+&amp;= \frac{P(D_1 \cap D_2)}{P(W)} &amp; (\text{pois }D_1 \cap D_2 \subseteq W)\\
+&amp;= \frac{p_1p_2}{p_1 + p_2 - p_1p_2 + w_0q_1q_2}
+\end{aligned}
+\]</span></p>
+</li>
+</ul>
+<div class="rmdbox">
+<ol start="3" style="list-style-type: lower-alpha">
+<li>
+<span class="math inline">\(D_1\)</span> e <span class="math inline">\(D_2\)</span> são condicionalmente independentes, dado <span class="math inline">\(W\)</span>?</li>
+</ol>
+</div>
+<ul>
+<li>
+<p>Basta verificar se</p>
+<p><span class="math display">\[
+P(D_1 \mid W) \cdot P(D_2 \mid W) = P(D_1 \cap D_2 \mid W)
+\]</span></p>
+</li>
+<li>
+<p>Isto equivale a</p>
+<p><span class="math display">\[
+\frac{p_1p_2}{(p_1 + p_2 - p_1p_2 + w_0q_1q_2)^2} =
+\frac{p_1p_2}{p_1 + p_2 - p_1p_2 + w_0q_1q_2}
+\]</span></p>
+</li>
+<li>
+<p><span class="hl">Esta igualdade só é verdade se</span></p>
+<ol style="list-style-type: decimal">
+<li>
+<p><span class="math inline">\(w_0 = 0\)</span> e <span class="math inline">\(P(D_1 \cup D_2) = 0\)</span> (o que é proibido pelo enunciado). Ninguém estaria doente, e ninguém teria o sintoma.</p>
+<p>ou</p>
+</li>
+<li><p><span class="math inline">\(P(D_1 \cup D_2) = 1\)</span>. Aqui, todos estariam doentes, e todos teriam o sintoma.</p></li>
+</ol>
+</li>
+<li>
+<p>Lembramos que</p>
+<p><span class="math display">\[
+w_0 = P(W \mid \neg(D_1 \cup D_2)) =
+\frac{P(W \cap \neg(D_1 \cup D_2))}{P(\neg(D_1 \cup D_2))}
+\]</span></p>
+</li>
+<li><p>No caso (1) acima, <span class="math inline">\(w_0 = P(W) = 0\)</span>, e não faz mais sentido condicionar sobre <span class="math inline">\(W\)</span>.</p></li>
+<li><p>No caso (2) acima, <span class="math inline">\(P(\neg(D_1 \cup D_2)) = 0\)</span>, e a própría definição de <span class="math inline">\(w_0\)</span> deixa de fazer sentido.</p></li>
+</ul>
+<div class="rmdbox">
+<ol start="4" style="list-style-type: lower-alpha">
+<li>Suponha que <span class="math inline">\(w_0 = 0\)</span>. Neste caso, <span class="math inline">\(D_1\)</span> e <span class="math inline">\(D_2\)</span> são condicionalmente independentes, dado <span class="math inline">\(W\)</span>?</li>
+</ol>
+</div>
+<ul>
+<li><p>Por causa do discutido no item (c), vamos supor que <span class="math display">\[0 &lt; P(D_1 \cup D_2) &lt; 1\]</span> para que possamos condicionar sobre <span class="math inline">\(W\)</span> e para que a definição de <span class="math inline">\(w_0\)</span> faça sentido.</p></li>
+<li>
+<p>Como no item (c), verificamos se</p>
+<p><span class="math display">\[
+P(D_1 \mid W) \cdot P(D_2 \mid W) = P(D_1 \cap D_2 \mid W)
+\]</span></p>
+</li>
+<li>
+<p>Que equivale a</p>
+<p><span class="math display">\[
+\frac{p_1p_2}{(p_1 + p_2 - p_1p_2)^2} =
+\frac{p_1p_2}{p_1 + p_2 - p_1p_2}
+\]</span></p>
+</li>
+<li><p>Isto é impossível, se <span class="math inline">\(0 &lt; P(D_1 \cup D_2) &lt; 1\)</span>.</p></li>
+<li><p>Intuitivamente, <span class="math inline">\(D_1\)</span> e <span class="math inline">\(D_2\)</span> seriam <span class="hl">condicionalmente dependentes</span>, dado <span class="math inline">\(W\)</span>, pois, dado que uma pessoa tem o sintoma <span class="math inline">\(W\)</span>, saber que ela não tem a doença <span class="math inline">\(D_1\)</span> imediatamente nos diz que ela tem a doença <span class="math inline">\(D_2\)</span>.</p></li>
+</ul>
+<div class="rmdnote">
+<p>Quando <span class="math inline">\(w_0 = 0\)</span> e <span class="math inline">\(0 &lt; P(D_1 \cup D_2) &lt; 1\)</span>, a consequência é que</p>
+<p><span class="math display">\[
+D_1 \cup D_2 = W
+\]</span>
+como eventos.</p>
+<p>Daí, com as outras condições do enunciado, temos uma instância do <a href="probabilidade-condicional-continua%C3%A7%C3%A3o.html#paradoxo-de-berkson">paradoxo de Berkson</a>, com <span class="math inline">\(A = D_1\)</span> e <span class="math inline">\(B = D_2\)</span>.</p>
+</div>
+</div>
+<div id="naïve-bayes" class="section level3 unnumbered">
+<h3>38. Naïve Bayes<a class="anchor" aria-label="anchor" href="#na%C3%AFve-bayes"><i class="fas fa-link"></i></a>
 </h3>
+<div class="rmdbox">
+<ul>
+<li><p>Temos uma lista de <span class="math inline">\(100\)</span> palavras.</p></li>
+<li><p>Evento <span class="math inline">\(W_j = {}\)</span> a palavra <span class="math inline">\(j\)</span> aparece no <em>email</em>.</p></li>
+<li><p>Evento <span class="math inline">\(\text{spam} = {}\)</span> o <em>email</em> é <em>spam</em>.</p></li>
+<li><p><span class="math inline">\(p = P(\text{spam})\)</span>.</p></li>
+<li><p><span class="math inline">\(p_j = P(W_j \mid \text{spam})\)</span>.</p></li>
+<li><p><span class="math inline">\(r_j = P(W_j \mid \neg \text{spam})\)</span>.</p></li>
+<li>
+<p>A <em>naïveté</em> do algoritmo consiste nas seguintes suposições — não-realistas, mas úteis:</p>
+<ul>
+<li><p>Os <span class="math inline">\(W_j\)</span> são condicionalmente independentes, dado <span class="math inline">\(\text{spam}\)</span>.</p></li>
+<li><p>Os <span class="math inline">\(W_j\)</span> são condicionalmente independentes, dado <span class="math inline">\(\neg \text{spam}\)</span>.</p></li>
+</ul>
+</li>
+<li><p>Um novo <em>email</em> é recebido. Contém as palavras <span class="math inline">\(23\)</span>, <span class="math inline">\(64\)</span>, e <span class="math inline">\(65\)</span>, e nenhuma das outras.</p></li>
+<li>
+<p>Vamos chamar de <span class="math inline">\(\vec W\)</span> a lista de eventos</p>
+<p><span class="math display">\[
+\begin{array}{l}
+\neg W_1, \ldots, \neg W_{22}, \\
+W_{23},\\
+\neg W_{24}, \ldots, \neg W_{63},\\    
+W_{64}, W_{65},\\
+\neg W_{66}, \ldots, \neg W_{100}
+\end{array}
+\]</span></p>
+</li>
+<li><p>Calcular <span class="math inline">\(P\left( \text{spam} \;\middle|\; \vec W \right)\)</span>.</p></li>
+</ul>
+</div>
+<ul>
+<li><p>Vamos chamar de <span class="math inline">\(\vec W\)</span> a lista de eventos sobre os quais estamos condicionando.</p></li>
+<li>
+<p>Então,</p>
+<p><span class="math display">\[
+P\left( \text{spam} \;\middle|\; \vec W \right) =
+\frac{P\left(\vec W \;\middle|\; \text{spam} \right)}
+{P\left( \vec W  \right)}
+\]</span></p>
+</li>
+<li>
+<p>Com a suposição <em>naïve</em>, podemos multiplicar as probabilidades condicionais:</p>
+<p><span class="math display">\[
+P\left(\vec W\;\middle|\; \text{spam} \right) =
+p_{23} \cdot p_{64} \cdot p_{65} \cdot
+\!\!\!\!\!\!\!\!\!
+\prod_{
+  \begin{array}{c}
+  1 \leq j \leq 100. \\
+  j \not\in \{ 23, 64, 65 \}
+  \end{array}
+}
+\!\!\!\!\!\!\!
+(1 - p_j)
+\]</span></p>
+<p><span class="hl">Vamos chamar este valor de <span class="math inline">\(m\)</span>.</span></p>
+</li>
+<li>
+<p>Para calcular <span class="math inline">\(P\left( \vec W \right)\)</span>, usamos probabilidade total:</p>
+<p><span class="math display">\[
+\begin{aligned}
+P\left( \vec W \right)
+&amp;=
+  P\left(\vec W \;\middle|\; \text{spam} \right)
+  \cdot P(\text{spam})
+  \;+\;
+  P\left(\vec W \;\middle|\; \neg\text{spam} \right)
+  \cdot P(\neg\text{spam})
+\\
+&amp;=
+  m \cdot p \;+\; m' \cdot (1 - p)
+\end{aligned}
+\]</span></p>
+<p>onde, de maneira análoga ao cálculo de <span class="math inline">\(m\)</span>,</p>
+<p><span class="math display">\[
+m' =
+  r_{23} \cdot r_{64} \cdot r_{65} \cdot
+\!\!\!\!\!\!\!\!\!
+\prod_{
+  \begin{array}{c}
+  1 \leq j \leq 100. \\
+  j \not\in \{ 23, 64, 65 \}
+  \end{array}
+}
+\!\!\!\!\!\!\!
+(1 - r_j)
+\]</span></p>
+</li>
+<li>
+<p>O valor procurado é, então,</p>
+<p><span class="math display">\[
+P\left( \text{spam} \;\middle|\; \vec W \right)
+=
+\frac{P\left(\vec W \;\middle|\; \text{spam} \right)}
+{P\left( \vec W  \right)}
+= \frac{mp}{mp + m'(1 - p)}
+\]</span></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
 
-</div>
-</div>
-</div>
   <div class="chapter-nav">
 <div class="prev"><a href="probabilidade-condicional.html">04: Probabilidade condicional</a></div>
 <div class="next"><a href="refer%C3%AAncias.html">Referências</a></div>
@@ -450,7 +683,7 @@ P(A \mid C)
 <li><a class="nav-link" href="#xadrez">35. Xadrez</a></li>
 <li><a class="nav-link" href="#paradoxo-de-berkson">36. Paradoxo de Berkson</a></li>
 <li><a class="nav-link" href="#section-20">37</a></li>
-<li><a class="nav-link" href="#section-21">38</a></li>
+<li><a class="nav-link" href="#na%C3%AFve-bayes">38. Naïve Bayes</a></li>
 </ul>
 </li>
 </ul>
@@ -470,7 +703,7 @@ P(A \mid C)
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 14/03/2022)</p>
+    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 16/03/2022)</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

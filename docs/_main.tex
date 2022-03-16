@@ -338,7 +338,7 @@
 
 \title{Introduction to Probability (Joe Blitzstein)}
 \author{Fernando Náufel}
-\date{(versão de 14/03/2022)}
+\date{(versão de 16/03/2022)}
 
 \begin{document}
 \maketitle
@@ -356,6 +356,8 @@
   Página do curso (com \emph{link} para pdf do livro): \url{https://projects.iq.harvard.edu/stat110/home}
 \item
   \emph{Playlist}: \url{https://www.youtube.com/playlist?list=PL2SOU6wwxB0uwwH80KTQ6ht66KWxbzTIo}
+\item
+  Soluções não oficiais (de alguns capítulos): \url{https://fifthist.github.io/Introduction-To-Probability-Blitzstein-Solutions/}
 \end{itemize}
 
 \hypertarget{probabilidade-e-contagem}{%
@@ -420,17 +422,17 @@
 \begin{Highlighting}[]
 \NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{365}\NormalTok{,}\DecValTok{23}\NormalTok{,}\AttributeTok{replace=}\ConstantTok{TRUE}\NormalTok{)}
 \FunctionTok{tabulate}\NormalTok{(b)}
-\DocumentationTok{\#\#   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0}
-\DocumentationTok{\#\#  [34] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0}
-\DocumentationTok{\#\# [133] 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [166] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [199] 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 1 1 0 0 0 0 0 0 1 0 0 1 0 0 0}
-\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 0 0 2 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 2 0 0 0 0}
-\DocumentationTok{\#\# [265] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
+\DocumentationTok{\#\#   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
+\DocumentationTok{\#\#  [34] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [133] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
+\DocumentationTok{\#\# [166] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [199] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [232] 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [265] 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0}
 \DocumentationTok{\#\# [298] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [331] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
+\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -438,10 +440,10 @@
 \begin{Highlighting}[]
 \FunctionTok{table}\NormalTok{(b)}
 \DocumentationTok{\#\# b}
-\DocumentationTok{\#\#  18  30  36  52 129 134 145 180 208 215 217 218 225 228 241 242 258 }
-\DocumentationTok{\#\#   1   1   1   1   1   1   1   1   1   1   1   1   1   1   2   1   1 }
-\DocumentationTok{\#\# 260 297 331 361 }
-\DocumentationTok{\#\#   2   1   1   1}
+\DocumentationTok{\#\#  14  33  36  89 113 116 122 136 150 165 166 202 213 214 217 234 236 }
+\DocumentationTok{\#\#   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1 }
+\DocumentationTok{\#\# 267 273 285 293 340 354 }
+\DocumentationTok{\#\#   1   1   1   1   1   1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2080,6 +2082,7 @@ Considere eventos $A$ e $B$ com $P(A), P(B) \not\in \{0, 1\}$.
   \]
 \end{itemize}
 
+\hypertarget{i}{}
 \begin{rmdnote}
 
 Vamos criar uma medida de independência. Se $P(A) \neq 0$ e $P(B) \neq 0$, definimos
@@ -2752,7 +2755,7 @@ Cada dado é lançado uma vez. Cada letra representa o resultado do dado corresp
 P(A \mid B, C) < P(A \mid C)
 \]
 
-Exemplo: universidade admite candidatos que são bons jogadores de basquete ($A$) ou que são bons em Matemática ($B$).
+Exemplo: universidade admite candidatos que são bons jogadores de basquete ($A$) ou que são bons em Matemática ($B$) --- {\hl{supondo que estes são eventos independentes, o que é meio duvidoso}}.\footnote{Na verdade, em vez de independência entre $A$ e $B$, basta que um evento atrapalhe o outro para termos o paradoxo. Em termos da \protect\hyperlink{i}{nossa medida de independência $I$}, basta $0< I < 1$.}
 
 \end{rmdbox}
 
@@ -2792,9 +2795,308 @@ Exemplo: universidade admite candidatos que são bons jogadores de basquete ($A$
 \subsection*{37}\label{section-20}}
 \addcontentsline{toc}{subsection}{37}
 
-\hypertarget{section-21}{%
-\subsection*{38}\label{section-21}}
-\addcontentsline{toc}{subsection}{38}
+\begin{rmdbox}
+
+\begin{itemize}
+\item
+  Quem tem a doença $D_1$ ou a doença $D_2$ (ou ambas) tem o sintoma estranho $W$.
+\item
+  $D_1$ e $D_2$ são independentes, com $P(D_j) = p_j$, e com $q_j = 1 - p_j$.
+\item
+  $0 < p_j < 1$.
+\item
+  Uma pessoa sadia tem o sintoma $W$ com probabilidade $w_0$.
+\end{itemize}
+
+\end{rmdbox}
+
+\begin{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\tightlist
+\item
+  Achar $P(W)$.
+\end{enumerate}
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Por probabilidade total:
+
+  \[
+  \begin{aligned}
+  P(W) 
+  &= P(W \mid D_1 \cup D_2) \cdot P(D_1 \cup D_2) +
+  P(W \mid \neg(D_1 \cup D_2)) \cdot P(\neg(D_1 \cup D_2)) \\
+  &= 1 \cdot (p_1 + p_2 - p_1p_2) + w_0 \cdot (1 - p_1 - p_2 + p_1p_2) \\
+  &= p_1 + p_2 - p_1p_2 + w_0q_1q_2 
+  \end{aligned}
+  \]
+\end{itemize}
+
+\begin{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Achar $P(D_1 \mid W)$, $P(D_2 \mid W)$, e $P(D_1 \cap D_2 \mid W)$.
+\end{enumerate}
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Por Bayes:
+
+  \[
+  \begin{aligned}
+    P(D_1 \mid W) 
+    &= \frac{P(W \mid D_1) \cdot P(D_1)}{P(W)} \\
+    &= \frac{1 \cdot p_1}{p_1 + p_2 - p_1p_2 + w_0q_1q_2} \\
+    &= \frac{p_1}{p_1 + p_2 - p_1p_2 + w_0q_1q_2}
+  \end{aligned}
+  \]
+\item
+  Analogamente,
+
+  \[
+  P(D_2 \mid W) = \frac{p_2}{p_1 + p_2 - p_1p_2 + w_0q_1q_2}
+  \]
+\item
+  Finalmente,
+
+  \[
+  \begin{aligned}
+  P(D_1 \cap D_2 \mid W)
+  &= \frac{P(D_1 \cap D_2 \cap W)}{P(W)} \\
+  &= \frac{P(D_1 \cap D_2)}{P(W)} & (\text{pois }D_1 \cap D_2 \subseteq W)\\
+  &= \frac{p_1p_2}{p_1 + p_2 - p_1p_2 + w_0q_1q_2}
+  \end{aligned}
+  \]
+\end{itemize}
+
+\begin{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  $D_1$ e $D_2$ são condicionalmente independentes, dado $W$?
+\end{enumerate}
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Basta verificar se
+
+  \[
+  P(D_1 \mid W) \cdot P(D_2 \mid W) = P(D_1 \cap D_2 \mid W)
+  \]
+\item
+  Isto equivale a
+
+  \[
+  \frac{p_1p_2}{(p_1 + p_2 - p_1p_2 + w_0q_1q_2)^2} = 
+  \frac{p_1p_2}{p_1 + p_2 - p_1p_2 + w_0q_1q_2}
+  \]
+\item
+  {\hl{Esta igualdade só é verdade se}}
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \item
+    $w_0 = 0$ e $P(D_1 \cup D_2) = 0$ (o que é proibido pelo enunciado). Ninguém estaria doente, e ninguém teria o sintoma.
+
+    ou
+  \item
+    $P(D_1 \cup D_2) = 1$. Aqui, todos estariam doentes, e todos teriam o sintoma.
+  \end{enumerate}
+\item
+  Lembramos que
+
+  \[
+  w_0 = P(W \mid \neg(D_1 \cup D_2)) = 
+  \frac{P(W \cap \neg(D_1 \cup D_2))}{P(\neg(D_1 \cup D_2))}
+  \]
+\item
+  No caso (1) acima, $w_0 = P(W) = 0$, e não faz mais sentido condicionar sobre $W$.
+\item
+  No caso (2) acima, $P(\neg(D_1 \cup D_2)) = 0$, e a própría definição de $w_0$ deixa de fazer sentido.
+\end{itemize}
+
+\begin{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{3}
+\tightlist
+\item
+  Suponha que $w_0 = 0$. Neste caso, $D_1$ e $D_2$ são condicionalmente independentes, dado $W$?
+\end{enumerate}
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Por causa do discutido no item (c), vamos supor que \[0 < P(D_1 \cup D_2) < 1\] para que possamos condicionar sobre $W$ e para que a definição de $w_0$ faça sentido.
+\item
+  Como no item (c), verificamos se
+
+  \[
+  P(D_1 \mid W) \cdot P(D_2 \mid W) = P(D_1 \cap D_2 \mid W)
+  \]
+\item
+  Que equivale a
+
+  \[
+  \frac{p_1p_2}{(p_1 + p_2 - p_1p_2)^2} = 
+  \frac{p_1p_2}{p_1 + p_2 - p_1p_2}
+  \]
+\item
+  Isto é impossível, se $0 < P(D_1 \cup D_2) < 1$.
+\item
+  Intuitivamente, $D_1$ e $D_2$ seriam {\hl{condicionalmente dependentes}}, dado $W$, pois, dado que uma pessoa tem o sintoma $W$, saber que ela não tem a doença $D_1$ imediatamente nos diz que ela tem a doença $D_2$.
+\end{itemize}
+
+\begin{rmdnote}
+Quando $w_0 = 0$ e $0 < P(D_1 \cup D_2) < 1$, a consequência é que
+
+\[
+D_1 \cup D_2 = W
+\]
+como eventos.
+
+Daí, com as outras condições do enunciado, temos uma instância do \protect\hyperlink{paradoxo-de-berkson}{paradoxo de Berkson}, com $A = D_1$ e $B = D_2$.
+
+\end{rmdnote}
+
+\hypertarget{nauxefve-bayes}{%
+\subsection*{38. Naïve Bayes}\label{nauxefve-bayes}}
+\addcontentsline{toc}{subsection}{38. Naïve Bayes}
+
+\begin{rmdbox}
+
+\begin{itemize}
+\item
+  Temos uma lista de $100$ palavras.
+\item
+  Evento $W_j = {}$ a palavra $j$ aparece no \emph{email}.
+\item
+  Evento $\text{spam} = {}$ o \emph{email} é \emph{spam}.
+\item
+  $p = P(\text{spam})$.
+\item
+  $p_j = P(W_j \mid \text{spam})$.
+\item
+  $r_j = P(W_j \mid \neg \text{spam})$.
+\item
+  A \emph{naïveté} do algoritmo consiste nas seguintes suposições --- não-realistas, mas úteis:
+
+  \begin{itemize}
+  \item
+    Os $W_j$ são condicionalmente independentes, dado $\text{spam}$.
+  \item
+    Os $W_j$ são condicionalmente independentes, dado $\neg \text{spam}$.
+  \end{itemize}
+\item
+  Um novo \emph{email} é recebido. Contém as palavras $23$, $64$, e $65$, e nenhuma das outras.
+\item
+  Vamos chamar de $\vec W$ a lista de eventos
+
+  \[
+  \begin{array}{l}
+  \neg W_1, \ldots, \neg W_{22}, \\
+  W_{23},\\ 
+  \neg W_{24}, \ldots, \neg W_{63},\\    
+  W_{64}, W_{65},\\ 
+  \neg W_{66}, \ldots, \neg W_{100}
+  \end{array}
+  \]
+\item
+  Calcular $P\left( \text{spam} \;\middle|\; \vec W \right)$.
+\end{itemize}
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Vamos chamar de $\vec W$ a lista de eventos sobre os quais estamos condicionando.
+\item
+  Então,
+
+  \[
+  P\left( \text{spam} \;\middle|\; \vec W \right) = 
+  \frac{P\left(\vec W \;\middle|\; \text{spam} \right)}
+  {P\left( \vec W  \right)}
+  \]
+\item
+  Com a suposição \emph{naïve}, podemos multiplicar as probabilidades condicionais:
+
+  \[
+  P\left(\vec W\;\middle|\; \text{spam} \right) =
+  p_{23} \cdot p_{64} \cdot p_{65} \cdot
+  \!\!\!\!\!\!\!\!\!
+  \prod_{
+    \begin{array}{c}
+    1 \leq j \leq 100. \\
+    j \not\in \{ 23, 64, 65 \}
+    \end{array}
+  }
+  \!\!\!\!\!\!\!
+  (1 - p_j)
+  \]
+
+  {\hl{Vamos chamar este valor de $m$.}}
+\item
+  Para calcular $P\left( \vec W \right)$, usamos probabilidade total:
+
+  \[
+  \begin{aligned}
+  P\left( \vec W \right) 
+  &= 
+    P\left(\vec W \;\middle|\; \text{spam} \right) 
+    \cdot P(\text{spam})
+    \;+\;
+    P\left(\vec W \;\middle|\; \neg\text{spam} \right) 
+    \cdot P(\neg\text{spam})
+  \\
+  &=
+    m \cdot p \;+\; m' \cdot (1 - p)
+  \end{aligned}
+  \]
+
+  onde, de maneira análoga ao cálculo de $m$,
+
+  \[
+  m' = 
+    r_{23} \cdot r_{64} \cdot r_{65} \cdot
+  \!\!\!\!\!\!\!\!\!
+  \prod_{
+    \begin{array}{c}
+    1 \leq j \leq 100. \\
+    j \not\in \{ 23, 64, 65 \}
+    \end{array}
+  }
+  \!\!\!\!\!\!\!
+  (1 - r_j)
+  \]
+\item
+  O valor procurado é, então,
+
+  \[
+  P\left( \text{spam} \;\middle|\; \vec W \right) 
+  = 
+  \frac{P\left(\vec W \;\middle|\; \text{spam} \right)}
+  {P\left( \vec W  \right)}
+  = \frac{mp}{mp + m'(1 - p)}
+  \]
+\end{itemize}
 
 \hypertarget{referuxeancias}{%
 \chapter*{Referências}\label{referuxeancias}}

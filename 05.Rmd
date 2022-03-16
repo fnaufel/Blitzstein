@@ -373,7 +373,7 @@ $$
 P(A \mid B, C) < P(A \mid C)
 $$
 
-Exemplo: universidade admite candidatos que são bons jogadores de basquete ($A$) ou que são bons em Matemática ($B$). 
+Exemplo: universidade admite candidatos que são bons jogadores de basquete ($A$) ou que são bons em Matemática ($B$) --- [supondo que estes são eventos independentes, o que é meio duvidoso]{.hl}.^[Na verdade, em vez de independência entre $A$ e $B$, basta que um evento atrapalhe o outro para termos o paradoxo. Em termos da [nossa medida de independência $I$](#i), basta $0< I < 1$.] 
 
 :::
 
@@ -409,7 +409,255 @@ Exemplo: universidade admite candidatos que são bons jogadores de basquete ($A$
 
 ### 37 {-}
 
+::: {.rmdbox latex=1}
+
+* Quem tem a doença $D_1$ ou a doença $D_2$ (ou ambas) tem o sintoma estranho $W$.
+
+* $D_1$ e $D_2$ são independentes, com $P(D_j) = p_j$, e com $q_j = 1 - p_j$. 
+
+* $0 < p_j < 1$.
+
+* Uma pessoa sadia tem o sintoma $W$ com probabilidade $w_0$.
+
+:::
+
+::: {.rmdbox latex=1}
+
+a. Achar $P(W)$.
+
+:::
+
+* Por probabilidade total:
+
+  $$
+  \begin{aligned}
+  P(W) 
+  &= P(W \mid D_1 \cup D_2) \cdot P(D_1 \cup D_2) +
+  P(W \mid \neg(D_1 \cup D_2)) \cdot P(\neg(D_1 \cup D_2)) \\
+  &= 1 \cdot (p_1 + p_2 - p_1p_2) + w_0 \cdot (1 - p_1 - p_2 + p_1p_2) \\
+  &= p_1 + p_2 - p_1p_2 + w_0q_1q_2 
+  \end{aligned}
+  $$
+
+::: {.rmdbox latex=1}
+
+b. Achar $P(D_1 \mid W)$, $P(D_2 \mid W)$, e $P(D_1 \cap D_2 \mid W)$.
+
+:::
+
+* Por Bayes:
+
+  $$
+  \begin{aligned}
+    P(D_1 \mid W) 
+    &= \frac{P(W \mid D_1) \cdot P(D_1)}{P(W)} \\
+    &= \frac{1 \cdot p_1}{p_1 + p_2 - p_1p_2 + w_0q_1q_2} \\
+    &= \frac{p_1}{p_1 + p_2 - p_1p_2 + w_0q_1q_2}
+  \end{aligned}
+  $$
+
+* Analogamente,
+
+  $$
+  P(D_2 \mid W) = \frac{p_2}{p_1 + p_2 - p_1p_2 + w_0q_1q_2}
+  $$
+
+* Finalmente,
+
+  $$
+  \begin{aligned}
+  P(D_1 \cap D_2 \mid W)
+  &= \frac{P(D_1 \cap D_2 \cap W)}{P(W)} \\
+  &= \frac{P(D_1 \cap D_2)}{P(W)} & (\text{pois }D_1 \cap D_2 \subseteq W)\\
+  &= \frac{p_1p_2}{p_1 + p_2 - p_1p_2 + w_0q_1q_2}
+  \end{aligned}
+  $$
+
+::: {.rmdbox latex=1}
+
+c. $D_1$ e $D_2$ são condicionalmente independentes, dado $W$?
+
+:::
+
+* Basta verificar se
+
+  $$
+  P(D_1 \mid W) \cdot P(D_2 \mid W) = P(D_1 \cap D_2 \mid W)
+  $$
+
+* Isto equivale a
+
+  $$
+  \frac{p_1p_2}{(p_1 + p_2 - p_1p_2 + w_0q_1q_2)^2} = 
+  \frac{p_1p_2}{p_1 + p_2 - p_1p_2 + w_0q_1q_2}
+  $$
+
+* [Esta igualdade só é verdade se]{.hl}
+
+  1. $w_0 = 0$ e $P(D_1 \cup D_2) = 0$ (o que é proibido pelo enunciado). Ninguém estaria doente, e ninguém teria o sintoma.
+  
+     ou
+  
+  2. $P(D_1 \cup D_2) = 1$. Aqui, todos estariam doentes, e todos teriam o sintoma. 
+  
+* Lembramos que 
+
+  $$
+  w_0 = P(W \mid \neg(D_1 \cup D_2)) = 
+  \frac{P(W \cap \neg(D_1 \cup D_2))}{P(\neg(D_1 \cup D_2))}
+  $$
+
+* No caso (1) acima, $w_0 = P(W) = 0$, e não faz mais sentido condicionar sobre $W$.
+
+* No caso (2) acima, $P(\neg(D_1 \cup D_2)) = 0$, e a própría definição de $w_0$ deixa de fazer sentido.
+
+  
+::: {.rmdbox latex=1}
+
+d. Suponha que $w_0 = 0$. Neste caso, $D_1$ e $D_2$ são condicionalmente independentes, dado $W$?
+
+:::
+
+* Por causa do discutido no item (c), vamos supor que $$0 < P(D_1 \cup D_2) < 1$$ para que possamos condicionar sobre $W$ e para que a definição de $w_0$ faça sentido.
+
+* Como no item (c), verificamos se
+
+  $$
+  P(D_1 \mid W) \cdot P(D_2 \mid W) = P(D_1 \cap D_2 \mid W)
+  $$
+
+* Que equivale a 
+
+  $$
+  \frac{p_1p_2}{(p_1 + p_2 - p_1p_2)^2} = 
+  \frac{p_1p_2}{p_1 + p_2 - p_1p_2}
+  $$
+
+* Isto é impossível, se $0 < P(D_1 \cup D_2) < 1$.
+
+* Intuitivamente, $D_1$ e $D_2$ seriam [condicionalmente dependentes]{.hl}, dado $W$, pois, dado que uma pessoa tem o sintoma $W$, saber que ela não tem a doença $D_1$ imediatamente nos diz que ela tem a doença $D_2$.
+
+::: {.rmdnote latex=1}
+
+Quando $w_0 = 0$ e $0 < P(D_1 \cup D_2) < 1$, a consequência é que 
+
+$$
+D_1 \cup D_2 = W
+$$
+como eventos.
+
+Daí, com as outras condições do enunciado, temos uma instância do [paradoxo de Berkson](#paradoxo-de-berkson), com $A = D_1$ e $B = D_2$.
+
+:::
 
 
-### 38 {-}
+### 38. Naïve Bayes {-}
 
+::: {.rmdbox latex=1}
+
+* Temos uma lista de $100$ palavras.
+
+* Evento $W_j = {}$ a palavra $j$ aparece no *email*.
+
+* Evento $\text{spam} = {}$ o *email* é *spam*.
+
+* $p = P(\text{spam})$.
+
+* $p_j = P(W_j \mid \text{spam})$.
+
+* $r_j = P(W_j \mid \neg \text{spam})$.
+
+* A *naïveté* do algoritmo consiste nas seguintes suposições --- não-realistas, mas úteis:
+
+  * Os $W_j$ são condicionalmente independentes, dado $\text{spam}$.
+  
+  * Os $W_j$ são condicionalmente independentes, dado $\neg \text{spam}$.
+
+* Um novo *email* é recebido. Contém as palavras $23$, $64$, e $65$, e nenhuma das outras.
+
+* Vamos chamar de $\vec W$ a lista de eventos
+
+  $$
+  \begin{array}{l}
+  \neg W_1, \ldots, \neg W_{22}, \\
+  W_{23},\\ 
+  \neg W_{24}, \ldots, \neg W_{63},\\    
+  W_{64}, W_{65},\\ 
+  \neg W_{66}, \ldots, \neg W_{100}
+  \end{array}
+  $$
+  
+* Calcular $P\left( \text{spam} \;\middle|\; \vec W \right)$.
+
+:::
+
+* Por Bayes:
+
+  $$
+  P\left( \text{spam} \;\middle|\; \vec W \right) = 
+  \frac{P\left(\vec W \;\middle|\; \text{spam} \right)}
+  {P\left( \vec W  \right)}
+  $$
+
+* Com a suposição *naïve*, podemos multiplicar as probabilidades condicionais:
+
+  $$
+  P\left(\vec W\;\middle|\; \text{spam} \right) =
+  p_{23} \cdot p_{64} \cdot p_{65} \cdot
+  \!\!\!\!\!\!\!\!\!
+  \prod_{
+    \begin{array}{c}
+    1 \leq j \leq 100. \\
+    j \not\in \{ 23, 64, 65 \}
+    \end{array}
+  }
+  \!\!\!\!\!\!\!
+  (1 - p_j)
+  $$
+  
+  [Vamos chamar este valor de $m$.]{.hl}
+  
+* Para calcular $P\left( \vec W \right)$, usamos probabilidade total:
+
+  $$
+  \begin{aligned}
+  P\left( \vec W \right) 
+  &= 
+    P\left(\vec W \;\middle|\; \text{spam} \right) 
+    \cdot P(\text{spam})
+    \;+\;
+    P\left(\vec W \;\middle|\; \neg\text{spam} \right) 
+    \cdot P(\neg\text{spam})
+  \\
+  &=
+    m \cdot p \;+\; m' \cdot (1 - p)
+  \end{aligned}
+  $$
+  
+  onde, de maneira análoga ao cálculo de $m$,
+  
+  $$
+  m' = 
+    r_{23} \cdot r_{64} \cdot r_{65} \cdot
+  \!\!\!\!\!\!\!\!\!
+  \prod_{
+    \begin{array}{c}
+    1 \leq j \leq 100. \\
+    j \not\in \{ 23, 64, 65 \}
+    \end{array}
+  }
+  \!\!\!\!\!\!\!
+  (1 - r_j)
+  $$
+  
+* O valor procurado é, então,
+
+  $$
+  P\left( \text{spam} \;\middle|\; \vec W \right) 
+  = 
+  \frac{P\left(\vec W \;\middle|\; \text{spam} \right)}
+  {P\left( \vec W  \right)}
+  = \frac{mp}{mp + m'(1 - p)}
+  $$
+  
+  
