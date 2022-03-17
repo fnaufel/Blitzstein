@@ -37,7 +37,7 @@ embed_yt('KbB0FjPg0mw')
 * Da mesma forma, `lchoose(n, k)` calcula $\ln \binom nk$.
 
 
-### Tabulando dados: `tabulate` $\times$ `table` {-}
+### Tabulando dados: `tabulate` x `table` {-}
 
 ```{r}
 b <- sample(1:365,23,replace=TRUE)

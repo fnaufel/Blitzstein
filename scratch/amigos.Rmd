@@ -1,0 +1,149 @@
+
+# Tentativa 1
+
+* [Para $p$ qualquer]{.hl}, a probabilidade de $x$ estar em $A$ e em $D$, ou de $x$ não estar nem em $A$, nem em $D$, é
+
+  $$
+  p \cdot \frac{|D|}{|C|} + (1 - p) \cdot \left(1 - \frac{|D|}{|C|}\right)
+  $$
+
+* Agora a probabilidade depende de $p$ e de $|D|$. 
+
+* Isto é razoável, pois $p$ influencia o tamanho de $A$; se o tamanho de $D$ for muito diferente do tamanho de $A$, a probabilidade $P(A = D)$ é baixa.
+
+* Vamos simular, fixando $A$ e gerando vários conjuntos $D$ tais que $|A| = |D|$:
+
+    ```{r}
+    # Simular conjuntos A e D e testar se A = D
+    simular_2 <- function(
+      A,
+      tamanho_C         # qtde de pessoas em C
+    ) {
+      
+      # Gerar D do mesmo tamanho que A
+      D <- sort(sample(tamanho_C, length(A)))
+      
+      # São iguais?
+      all(A == D) 
+        
+    }
+    ```
+
+* $|C| = 10$ e $p = 1/4$:
+
+    ```{r}
+    p <- 1/2
+    tamanho_C <- 10
+    n <- 1e5
+    
+    # Gerar A
+    sorteio <- runif(tamanho_C) <= p 
+    A <- (1:tamanho_C)[sorteio]
+    A <- sort(A)
+      
+    resultados <- 1:n %>% 
+      map_lgl(
+        ~simular_2(A, tamanho_C)
+      )
+    
+    DC <- length(A) / tamanho_C
+    
+    cat('\nP(A = D) simulado = ', mean(resultados))
+    cat(
+      '\nP(A = D) teórico  = ',
+      (p * DC + (1 - p) * (1 - DC))^tamanho_C
+    )
+    ```
+
+
+# Tentativa 2
+
+* A probabilidade que procuramos é a probabilidade de um conjunto $D$ qualquer ter o mesmo tamanho que $A$, e dado isto, ter os mesmos elementos que $A$:
+  
+  $$
+  P(A = D) = P(A = D \mid |A| = |D|) \cdot P(|A| = |D|)
+  $$
+  
+* Mas aqui já temos uma sutileza: $A$ não é um conjunto qualquer. Existe uma distribuição dos tamanhos de $A$, com média igual a $p \cdot |C|$.
+  
+* A distribuição de $|A|$ é $\text{Binom}(n, p)$, onde $n = |C|$.
+
+* Basta pensar que cada elemento de $C$ pode estar em $A$ com probabilidade $p$, independentemente.
+
+* Ou seja, 
+
+  $$
+  P(|A| = k) = \binom{n}{k} p^k (1 - p)^{n - k}
+  $$
+
+* Por outro lado, vamos supor que o conjunto $D$ é definido de forma que todos os subconjuntos de $C$ tenham a mesma probabilidade de ser escolhido. Então,
+
+  $$
+  P(|D| = k) = \frac{\binom{n}{k}}{2^n}
+  $$
+
+  onde o numerador é a quantidade de subconjuntos de $C$ com $k$ elementos, e o denominador é a quantidade total de subconjuntos de $C$.
+  
+* Vamos calcular $P(A = D)$ como 
+
+  $$
+  P(A = D \mid |A| = |D|) \cdot P(|A| = |D|)
+  $$
+
+* Para o primeiro fator:
+
+  $$
+  P(A = D \mid |A| = |D|) = \sum_{k = 0}^{n} \frac{1}{\binom{n}{k}}
+  $$
+
+  pois existem ${\binom n k}^2$ maneiras de escolher dois subconjuntos $A$ e $D$ de $C$ com tamanho $k$, e $\binom n k$ destes pares consistem de conjuntos iguais.
+  
+* Para o segundo fator:
+
+  $$
+  \begin{aligned}
+  P(|A| = |D|) 
+  &= \sum_{k = 0}^{n} P(|A| = k) \cdot P(|D| = k) \\
+  &= \sum_{k = 0}^{n} 
+    \binom{n}{k} p^k (1 - p)^{n - k} \cdot  \frac{\binom{n}{k}}{2^n} \\
+  &= \frac{1}{2^n} \sum_{k = 0}^{n} {\binom{n}{k}}^2 p^k (1 - p)^{n - k}
+  \end{aligned}
+  $$
+  
+* Juntando tudo:
+
+  $$
+  P(A = D) = 
+  \frac{1}{2^n}\sum_{k = 0}^{n} \frac{1}{\binom{n}{k}} 
+  \cdot  
+  \sum_{k = 0}^{n} {\binom{n}{k}}^2 p^k (1 - p)^{n - k}
+  $$
+  
+* Em R:
+
+    ```{r}
+    pad <- function(p, n) {
+      
+      fator1 <- 1 / 2^n
+      
+      k <- 0:n
+      nck <- choose(n, k)
+      
+      fator2 <- sum(
+        1 / nck
+      )
+      
+      fator3 <- sum(nck^2 * p^k * (1 - p)^(n - k))
+      
+      fator1 * fator2 * fator3
+      
+    }
+    ```
+
+* Para $p = 1/2$ e $n = 10$:
+
+    ```{r}
+    pad(1/2, 10)
+    ```
+
+* Deu errado. Por quê?

@@ -7,14 +7,14 @@
 <title>01: Probabilidade e contagem | Introduction to Probability (Joe Blitzstein)</title>
 <meta name="author" content="Fernando Náufel">
 <meta name="description" content="Vídeo   Pascal e Fermat Ver artigo DEVLIN, Keith1. Ver originais em francês de toda a correspondência de Pascal.  R  Fatoriais e combinações  Qual o maior valor de \(n\) para o qual o R calcula...">
-<meta name="generator" content="bookdown 0.24.7 with bs4_book()">
+<meta name="generator" content="bookdown 0.25 with bs4_book()">
 <meta property="og:title" content="01: Probabilidade e contagem | Introduction to Probability (Joe Blitzstein)">
 <meta property="og:type" content="book">
 <meta property="og:description" content="Vídeo   Pascal e Fermat Ver artigo DEVLIN, Keith1. Ver originais em francês de toda a correspondência de Pascal.  R  Fatoriais e combinações  Qual o maior valor de \(n\) para o qual o R calcula...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="01: Probabilidade e contagem | Introduction to Probability (Joe Blitzstein)">
 <meta name="twitter:description" content="Vídeo   Pascal e Fermat Ver artigo DEVLIN, Keith1. Ver originais em francês de toda a correspondência de Pascal.  R  Fatoriais e combinações  Qual o maior valor de \(n\) para o qual o R calcula...">
-<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/header-attrs-2.11.14/header-attrs.js"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/_Lexend-0.4.0/font.css" rel="stylesheet">
 <link href="libs/_JetBrains%20Mono-0.4.0/font.css" rel="stylesheet">
@@ -99,27 +99,27 @@
 <li><p>Da mesma forma, <code>lchoose(n, k)</code> calcula <span class="math inline">\(\ln \binom nk\)</span>.</p></li>
 </ul>
 </div>
-<div id="tabulando-dados-tabulate-times-table" class="section level3 unnumbered">
-<h3>Tabulando dados: <code>tabulate</code> <span class="math inline">\(\times\)</span> <code>table</code><a class="anchor" aria-label="anchor" href="#tabulando-dados-tabulate-times-table"><i class="fas fa-link"></i></a>
+<div id="tabulando-dados-tabulate-x-table" class="section level3 unnumbered">
+<h3>Tabulando dados: <code>tabulate</code> x <code>table</code><a class="anchor" aria-label="anchor" href="#tabulando-dados-tabulate-x-table"><i class="fas fa-link"></i></a>
 </h3>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">365</span>,<span class="fl">23</span>,replace<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
 <span class="fu"><a href="https://rdrr.io/r/base/tabulate.html">tabulate</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span>
-<span class="co">##   [1] 0 0 0 0 0 0 0 0 0 0 1 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0</span>
-<span class="co">##  [41] 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0</span>
-<span class="co">##  [81] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 0</span>
-<span class="co">## [121] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1</span>
-<span class="co">## [161] 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
-<span class="co">## [201] 0 0 0 0 0 1 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
-<span class="co">## [241] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0</span>
-<span class="co">## [281] 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0</span>
-<span class="co">## [321] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1</span></code></pre></div>
+<span class="co">##   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">##  [41] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">##  [81] 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">## [121] 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">## [161] 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">## [201] 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 1 0 1 0 0</span>
+<span class="co">## [241] 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
+<span class="co">## [281] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0</span>
+<span class="co">## [321] 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 1 1</span></code></pre></div>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span>
 <span class="co">## b</span>
-<span class="co">##  11  12  15  20  37  47  57  68 104 112 115 154 160 174 206 207 214 258 273 294 304 </span>
+<span class="co">##  53  64  88 125 147 165 171 205 216 228 229 236 238 245 264 295 315 325 332 341 342 </span>
 <span class="co">##   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1 </span>
-<span class="co">## 311 347 </span>
+<span class="co">## 351 352 </span>
 <span class="co">##   1   1</span></code></pre></div>
 </div>
 <div id="funções-para-o-problema-do-aniversário" class="section level3 unnumbered">
@@ -257,7 +257,7 @@ e^x = \sum_{k=0}^\infty \frac{x^k}{k!}
 <li>
 <a class="nav-link" href="#r">R</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#fatoriais-e-combina%C3%A7%C3%B5es">Fatoriais e combinações</a></li>
-<li><a class="nav-link" href="#tabulando-dados-tabulate-times-table">Tabulando dados: tabulate \(\times\) table</a></li>
+<li><a class="nav-link" href="#tabulando-dados-tabulate-x-table">Tabulando dados: tabulate x table</a></li>
 <li><a class="nav-link" href="#fun%C3%A7%C3%B5es-para-o-problema-do-anivers%C3%A1rio">Funções para o problema do aniversário</a></li>
 </ul>
 </li>
@@ -284,7 +284,7 @@ e^x = \sum_{k=0}^\infty \frac{x^k}{k!}
 <footer class="bg-primary text-light mt-5"><div class="container"><div class="row">
 
   <div class="col-12 col-md-6 mt-3">
-    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 16/03/2022)</p>
+    <p>"<strong>Introduction to Probability (Joe Blitzstein)</strong>" por Fernando Náufel (versão de 17/03/2022)</p>
   </div>
 
   <div class="col-12 col-md-6 mt-3">

@@ -156,7 +156,7 @@ b. O evento $A > B$ é independente de $B > C$?
   $$
 
 
-### 33 {-}
+### 33 {- #amigos}
 
 ::: {.rmdbox latex=1}
 
@@ -204,54 +204,37 @@ a. Seja $D \subseteq C$. Achar $P(A = D)$.
   P(A = D) = \frac1{2^{|C|}}
   $$
 
-* Vamos simular a situação. Definimos um conjunto $A$ fixo, com $p = 1/2$, e geramos diversos conjuntos $D$, testando se $A = D$:
+* Vamos simular a situação. Estamos supondo que os elementos de $D$ são escolhidos segundo uma amostragem uniforme. [Veja explicações mais detalhadas abaixo](#amostra).
 
-    ```{r}
-    # Simular um conjunto D e testar se D = A
-    simular_1 <- function(
-      A,                # Conjunto A (fixo)
-      tamanho_C         # qtde de pessoas em C
-    ) {
+    ```{r attr.source='id="simular-amigos"'}
+    simular <- function(p, n) {
       
-      # O tamanho de D não é necessariamente igual ao de A
-      # Sortear o tamanho de D
-      tamanho_D <- sample(tamanho_C, 1)
+      A <- (1:n)[runif(n) <= p]
+      D <- (1:n)[runif(n) <= 1/2]
       
-      if (tamanho_D == length(A)) {
-        
-        # Se os tamanhos coincidirem, gerar D e testar
-        D <- sort(sample(tamanho_C, tamanho_D))
-        # Como A e D estão ordenados, basta isto:
-        all(A == D) 
-        
-      } else {
-        
-        # Senão, já falhou
+      if (length(A) != length(D)) {
         FALSE
-        
+      } else {
+        all(A == D)
       }
       
     }
     ```
 
-    ```{r}
+* Para as probabilidades não ficarem tão pequenas, vamos usar um universo $C$ com $10$ elementos apenas:
+
+    ```{r cache=TRUE, collapse=FALSE}
     p <- 1/2
-    tamanho_C <- 10
-    n <- 1e5
+    n <- 10
+    nsims <- 1e6
     
-    # Vamos fixar A:
-    sorteio <- runif(tamanho_C) <= p 
-    A <- (1:tamanho_C)[sorteio]
-    A <- sort(A)
-    cat('A = ', A)
+    resultado <- mean(
+      1:nsims %>% 
+        map_lgl(~simular(p, n))
+    )
     
-    resultados <- 1:n %>% 
-      map_lgl(
-        ~simular_1(A, tamanho_C)
-      )
-    
-    cat('\nP(A = D) simulado = ', mean(resultados))
-    cat('\nP(A = D) teórico  = ', 1/2^tamanho_C)
+    cat('P(A = D) simulado = ', resultado)
+    cat('P(A = D) teórico  = ', 1/2^n)
     ```
 
 
@@ -259,36 +242,84 @@ a. Seja $D \subseteq C$. Achar $P(A = D)$.
 
 * Vamos resolver de outra maneira, pensando em $p$ genérico.
 
-```{r}
-simular_2 <- function(p, n, nsubconjuntos) {
-  
-  A <- (1:n)[runif(n) <= p]
-  
-  tamanho_D <- sample(0:n, size = 1, prob = nsubconjuntos)
-  D <- sort(sample(n, tamanho_D))
-  
-  if (length(A) != length(D)) {
-    FALSE
-  } else {
-    all(A == D)
-  }
-  
-}
+* ??? Substituir $\frac{|D|}{n}$ por $\frac 1 2$ na fórmula.
 
-```
+* Simular com outros valores de $p$.
 
-```{r}
-p <-  1/2
-n <- 10
-nsubconjuntos <- choose(n, 0:n)
-nsims <- 1e5
 
-mean(
-  1:nsims %>% 
-    map_lgl(~simular_2(p, n, nsubconjuntos))
-)
-```
+### Extra: amostragem uniforme (sem reposição) {- #amostra}
 
+* [Na resolução acima](#amigos), usamos a igualdade
+
+  $$
+  P(x \in D) = \frac{|D|}{n}
+  $$
+
+  para representar a probabilidade de que um elemento qualquer de um universo com $n$ elementos pertença a um [conjunto $D$ fixo]{.hl}.
+  
+* Mas e quando não sabemos qual é o conjunto $D$, nem qual o seu tamanho?
+
+* Neste caso, precisamos supor algo sobre a distribuição dos subconjuntos.
+
+* O mais comum é supor que [cada um dos $2^n$ subconjuntos tem a mesma probabilidade de ser o resultado da amostragem.]{.hl}
+
+* Com esta suposição, como calculamos $P(x \in D)$?
+
+* Vamos condicionar ao tamanho do conjunto $D$ e marginalizar:
+
+  $$
+  P(x \in D) = \sum_{k = 0}^{n} P(x \in D \mid |D| = k) \cdot P(|D| = k)
+  $$
+  
+* Calculando a primeira probabilidade dentro do somatório:
+
+  $$
+  \begin{aligned}
+  P(x \in D \mid |D| = k) 
+  &= \frac{\binom{n - 1}{k - 1}}{\binom n k} \\
+  &= \frac k n
+  \end{aligned}
+  $$
+
+  Na primeira linha, o numerador é a quantidade de subconjuntos de $k$ elementos que contêm $x$ (basta escolher os outros $k - 1$ elementos dentre os $n - 1$ outros elementos do universo); o denominador é o total de subconjuntos de $k$ elementos. 
+  
+  Perceba que [aqui usamos a suposição de que todos os subconjuntos têm a mesma probabilidade de ser amostrados]{.hl}.
+  
+  Perceba também que, como antes, esta probabilidade é igual a $\frac{|D|}{n}$.
+  
+* Calculando a segunda probabilidade dentro do somatório:
+
+  $$
+  \begin{aligned}
+  P(|D| = k)
+  &= \frac{\binom{n}{k}}{2^n}
+  \end{aligned}
+  $$
+
+  De novo, usando a suposição de que todos os subconjuntos são equiprováveis, temos a quantidade de subconjuntos de $k$ elementos sobre o total de subconjuntos.
+  
+* Juntando tudo:
+
+  $$
+  \begin{aligned}
+  P(x \in D) 
+  &= \sum_{k = 0}^{n} P(x \in D \mid |D| = k) \cdot P(|D| = k) \\
+  &= \sum_{k = 0}^{n} \frac 1 {2^n} \binom n k \frac k n \\
+  &= \frac 1 {2^n} \sum_{k = 0}^{n} \binom{n - 1}{k - 1} \\
+  &= \frac 1 {2^n} \cdot 2^{n - 1} \\
+  &= \frac 1 2
+  \end{aligned}
+  $$
+
+  ::: {.rmdimportant latex=1}
+  
+  Fazer amostragem uniforme significa que todos os subconjuntos são equiprováveis, [ou, equivalentemente, que cada elemento do universo tem $50\%$ de chance de estar na amostra.]{.hl}
+  
+  :::
+
+* Por isso, [na simulação](#simular-amigos), geramos o conjunto $D$ com o comando 
+
+  `D <- (1:n)[runif(n) <= 1/2]`
 
 
 ### 35. Xadrez {-}
