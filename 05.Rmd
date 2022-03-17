@@ -158,6 +158,138 @@ b. O evento $A > B$ é independente de $B > C$?
 
 ### 33 {-}
 
+::: {.rmdbox latex=1}
+
+* Alice, Bob, e mais $100$ pessoas vivem em uma cidade.
+
+* $C$ é o conjunto das outras $100$ pessoas.
+
+* $A \subseteq C$ é o conjunto de amigos de Alice.
+
+* $B \subseteq C$ é o conjunto de amigos de Bob.
+
+* Para cada pessoa em $C$, a probabilidade de Alice ser amiga da pessoa é $1/2$.
+
+* Idem para Bob.
+
+* As amizades são independentes.
+
+:::
+
+::: {.rmdbox latex=1}
+
+a. Seja $D \subseteq C$. Achar $P(A = D)$.
+
+:::
+
+* Para cada $x \in C$:
+
+  1. $x \in A \land x \in D$, com probabilidade $\frac12 \cdot \frac{|D|}{|C|}$, 
+  
+     ou (exclusivo)
+     
+  2. $x \not\in A \land x \not\in D$, com probabilidade $\frac12 \cdot \left(1 - \frac{|D|}{|C|}\right)$
+  
+* Somando as probabilidades dos casos, para cada $x \in C$, a probabilidade de $x$ estar em $A$ e em $D$, ou de $x$ não estar nem em $A$, nem em $D$, é
+
+  $$
+  \frac12 \cdot \frac{|D|}{|C|} + \frac12 \cdot \left(1 - \frac{|D|}{|C|}\right) = \frac12
+  $$
+
+* [Convenientemente, $|D|$ desapareceu, mas só porque $p = 1/2$.]{.hl}
+
+* A probabilidade de $A = D$ é a probabilidade de, para todo $x \in C$, acontecer de $x \in A \land x \in D$ ou $x \in A \land x \in D$. Como os eventos são independentes, temos
+
+  $$
+  P(A = D) = \frac1{2^{|C|}}
+  $$
+
+* Vamos simular a situação. Definimos um conjunto $A$ fixo, com $p = 1/2$, e geramos diversos conjuntos $D$, testando se $A = D$:
+
+    ```{r}
+    # Simular um conjunto D e testar se D = A
+    simular_1 <- function(
+      A,                # Conjunto A (fixo)
+      tamanho_C         # qtde de pessoas em C
+    ) {
+      
+      # O tamanho de D não é necessariamente igual ao de A
+      # Sortear o tamanho de D
+      tamanho_D <- sample(tamanho_C, 1)
+      
+      if (tamanho_D == length(A)) {
+        
+        # Se os tamanhos coincidirem, gerar D e testar
+        D <- sort(sample(tamanho_C, tamanho_D))
+        # Como A e D estão ordenados, basta isto:
+        all(A == D) 
+        
+      } else {
+        
+        # Senão, já falhou
+        FALSE
+        
+      }
+      
+    }
+    ```
+
+    ```{r}
+    p <- 1/2
+    tamanho_C <- 10
+    n <- 1e5
+    
+    # Vamos fixar A:
+    sorteio <- runif(tamanho_C) <= p 
+    A <- (1:tamanho_C)[sorteio]
+    A <- sort(A)
+    cat('A = ', A)
+    
+    resultados <- 1:n %>% 
+      map_lgl(
+        ~simular_1(A, tamanho_C)
+      )
+    
+    cat('\nP(A = D) simulado = ', mean(resultados))
+    cat('\nP(A = D) teórico  = ', 1/2^tamanho_C)
+    ```
+
+
+#### $p$ qualquer {-}
+
+* Vamos resolver de outra maneira, pensando em $p$ genérico.
+
+```{r}
+simular_2 <- function(p, n, nsubconjuntos) {
+  
+  A <- (1:n)[runif(n) <= p]
+  
+  tamanho_D <- sample(0:n, size = 1, prob = nsubconjuntos)
+  D <- sort(sample(n, tamanho_D))
+  
+  if (length(A) != length(D)) {
+    FALSE
+  } else {
+    all(A == D)
+  }
+  
+}
+
+```
+
+```{r}
+p <-  1/2
+n <- 10
+nsubconjuntos <- choose(n, 0:n)
+nsims <- 1e5
+
+mean(
+  1:nsims %>% 
+    map_lgl(~simular_2(p, n, nsubconjuntos))
+)
+```
+
+
 
 ### 35. Xadrez {-}
 
