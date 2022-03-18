@@ -13,7 +13,7 @@ embed_yt('P7NE4WF8j-Q')
 
 ## Exercícios do livro (cap. 2) {-}
 
-### 2 {-}
+### 2. Gêmeos {-}
 
 ::: {.rmdbox latex=1}
 
@@ -89,7 +89,7 @@ embed_yt('P7NE4WF8j-Q')
   $$
 
 
-### 4 {-}
+### 4. Múltipla escolha {-}
 
 ::: {.rmdbox latex=1}
 
@@ -105,81 +105,90 @@ embed_yt('P7NE4WF8j-Q')
 
 * Considere $P(K) = p$.
 
+:::
+
+::: {.rmdbox latex=1}
+
 (a) Ache $P(K \mid R)$.
+
+:::
+
+
+
+* Vamos usar Bayes, supondo $p = P(K) > 0$:
+
+  $$
+  \begin{aligned}
+  P(K \mid R)
+  &=
+  \frac{P(R \mid K) \cdot P(K)}{P(R)} \\
+  &=
+  \frac{1 \cdot p}{
+    P(R \mid K) \cdot P(K) + 
+    P(R \mid \neg K) \cdot P(\neg K)
+  } \\
+  &=
+  \frac{p}{
+    1 \cdot p + 
+    \frac{1}{n} \cdot (1 - p)
+  } \\
+  &=
+  \frac{np}{np + (1 - p)}
+  \end{aligned}
+  $$
+
+::: {.rmdbox latex=1}
 
 (b) Mostre que $P(K \mid R) \geq p$. Por que isto faz sentido? Quando a igualdade é exata?
 
 :::
 
-a. Vamos usar Bayes, supondo $p = P(K) > 0$:
 
-   $$
-   \begin{aligned}
-   P(K \mid R)
-   &=
-   \frac{P(R \mid K) \cdot P(K)}{P(R)} \\
-   &=
-   \frac{1 \cdot p}{
-     P(R \mid K) \cdot P(K) + 
-     P(R \mid \neg K) \cdot P(\neg K)
-   } \\
-   &=
-   \frac{p}{
-     1 \cdot p + 
-     \frac{1}{n} \cdot (1 - p)
-   } \\
-   &=
-   \frac{np}{np + (1 - p)}
-   \end{aligned}
-   $$
+* Isto equivale a mostrar
 
-b. Isto equivale a mostrar
-
-   $$
-   \frac{np}{np + (1 - p)} \geq p
-   $$
-
-   Como todos os valores são positivos, isto equivale a 
+ $$
+ \frac{np}{np + (1 - p)} \geq p
+ $$
+ Como todos os valores são positivos, isto equivale a 
+ 
+ $$
+ np \geq np^2 + (1 - p)p
+ $$
+ Dividindo ambos os lados por $p > 0$:
+ 
+ $$
+ n \geq np + 1 - p
+ $$
+ 
+ Daí,
+ 
+ $$
+ \begin{aligned}
+ n \geq np + 1 - p 
+ &\iff n - np \geq 1 - p \\
+ &\iff n(1 - p) \geq 1 - p \\
+ &\iff n \geq 1 & \text{(supondo } p < 1 \text{)}
+ \end{aligned}
+ $$
+ O que é verdade, pois existe pelo menos uma opção (a correta).
+ 
+ Se $p = 1$, a igualdade vale, e $P(K \mid R) = 1$, pois o aluno sempre sabe a esposta e sempre acerta.
+ 
+ Se $n = 1$, a igualdade vale, e $P(K \mid R) = p$, pois o aluno acertar (ele empre acerta!) e o aluno saber são independentes.
+ 
+ Imagine $n > 1$. 
+ 
+ Lembre-se de que $P(K \mid R) = \frac{P(K \cap R)}{P(R)}$.
    
-   $$
-   np \geq np^2 + (1 - p)p
-   $$
-
-   Dividindo ambos os lados por $p > 0$:
-   
-   $$
-   n \geq np + 1 - p
-   $$
-   
-   Daí,
-   
-   $$
-   \begin{aligned}
-   n \geq np + 1 - p 
-   &\iff n - np \geq 1 - p \\
-   &\iff n(1 - p) \geq 1 - p \\
-   &\iff n \geq 1 & \text{(supondo } p < 1 \text{)}
-   \end{aligned}
-   $$
-   O que é verdade, pois existe pelo menos uma opção (a correta).
-   
-   Se $p = 1$, a igualdade vale, e $P(K \mid R) = 1$, pois o aluno sempre sabe a resposta e sempre acerta.
-   
-   Se $n = 1$, a igualdade vale, e $P(K \mid R) = p$, pois o aluno acertar (ele sempre acerta!) e o aluno saber são independentes.
-   
-   Imagine $n > 1$. 
-   
-   Lembre-se de que $P(K \mid R) = \frac{P(K \cap R)}{P(R)}$.
-   
-   O numerador é a probabilidade do evento "o aluno sabe e o aluno acerta". Esta probabilidade é exatamente $p$, pois "o aluno sabe" é sub-evento de "o aluno acerta".
-   
-   O numerador $P(R)$ é um número tal que $0 < P(R) < 1$. Vamos chamar este número de $1/x$, para $x > 1$.
-   
-   Então, 
-   
-   $$
-   P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp > p
-   $$
+ O numerador é a probabilidade do evento "o aluno sabe e o aluno acerta". Esta robabilidade é exatamente $p$, pois "o aluno sabe" é sub-evento de "o aluno certa".
+ 
+ O numerador $P(R)$ é um número tal que $0 < P(R) < 1$. Vamos chamar este úmero de $1/x$, para $x > 1$.
+ 
+ Então, 
+ 
+ $$
+ P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp > p
+ $$
    
 #### Em R {-}
 
@@ -293,7 +302,7 @@ df %>%
 ```
 
 
-### 12 {-}
+### 12. Mensagens em binário {-}
 
 ::: {.rmdbox latex=1}
 
@@ -451,7 +460,7 @@ b. Agora, eles usam um [código com repetição]{.hl}:
     ```
 
 
-### 14 {-}
+### 14. Probabilidades condicionais e complementos {-}
 
 ::: {.rmdbox latex=1}
 
@@ -467,7 +476,7 @@ $$
 ???
 
 
-### 15 {-}
+### 15. Torcer para qual evento? {-}
 
 ::: {.rmdbox latex=1}
 
@@ -506,7 +515,7 @@ O que você ficaria mais feliz em observar?
 * Intuitivamente, como $A$ é o evento menos provável dos dois, saber que $A$ ocorreu nos deixa mais próximo da ocorrência dos dois eventos do que saber que $B$ (ou que algum dos dois) ocorreu.
 
 
-### 16 {-}
+### 16. Ajudar e atrapalhar {-}
 
 ::: {.rmdbox latex=1}
 
@@ -541,7 +550,7 @@ $$
   $$
 
 
-### 17 {-}
+### 17. Contrapositiva {-}
 
 ::: {.rmdbox latex=1}
 
@@ -693,7 +702,7 @@ df1 %>%
 ```
 
 
-### 22 {-}
+### 22. Lewis Carroll {-}
 
 ::: {.rmdbox latex=1}
 
@@ -800,7 +809,7 @@ Este problema foi proposto pela primeira vez por Lewis Carroll em 1893.
   mas as probabilidades do numerador são mais difíceis de calcular! Teríamos que usar a lei da probabilidade total duas vezes para o numerador (além de uma vez para o denominador).
 
 
-### 29 {-}
+### 29. Características menos e mais específicas {-}
 
 ::: {.rmdbox latex=1}
 

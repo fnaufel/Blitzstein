@@ -181,12 +181,16 @@
 % Caixas
 
 \usepackage{tcolorbox}
+\tcbuselibrary{breakable}
+\tcbuselibrary{skins}
 
 \tcbset{
+  enhanced,
   rounded corners,
   boxrule=0.3mm,
   colback=black!.5!white,
-  parbox=false
+  parbox=false,
+  /tcb/breakable=true
 }
 
 \newtcolorbox{rmdbox}{
@@ -314,6 +318,12 @@
 }
 \makeatother
 
+% Use tt in tables
+\let\oldlongtable\longtable
+\let\endoldlongtable\endlongtable
+\renewenvironment{longtable}{\tt\oldlongtable}{\endoldlongtable}
+
+
 % End of preamble for bookdowntemplate01
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -398,18 +408,24 @@
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{factorial}\NormalTok{(}\DecValTok{170}\SpecialCharTok{:}\DecValTok{171}\NormalTok{)}
-\DocumentationTok{\#\# [1] 7,257416e+306           Inf}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## [1] 7,257416e+306           Inf
+\end{verbatim}
 \item
   Para valores maiores, podemos usar \texttt{lfactorial(n)} para calcular $\ln n!$:
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{lfactorial}\NormalTok{(}\DecValTok{170}\SpecialCharTok{:}\DecValTok{171}\NormalTok{)}
-\DocumentationTok{\#\# [1] 706,5731 711,7147}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## [1] 706,5731 711,7147
+\end{verbatim}
 \item
   Da mesma forma, \texttt{lchoose(n,\ k)} calcula $\ln \binom nk$.
 \end{itemize}
@@ -422,30 +438,36 @@
 \begin{Highlighting}[]
 \NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{365}\NormalTok{,}\DecValTok{23}\NormalTok{,}\AttributeTok{replace=}\ConstantTok{TRUE}\NormalTok{)}
 \FunctionTok{tabulate}\NormalTok{(b)}
-\DocumentationTok{\#\#   [1] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\#  [34] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0}
-\DocumentationTok{\#\#  [67] 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [100] 0 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [133] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0}
-\DocumentationTok{\#\# [166] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [199] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0}
-\DocumentationTok{\#\# [265] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [298] 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+##   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+##  [34] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+##  [67] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+## [100] 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 2 0 0 0
+## [133] 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+## [166] 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0
+## [199] 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+## [232] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+## [265] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+## [298] 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0
+## [331] 0 0 0 0 0 0 0 0 0 1
+\end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{table}\NormalTok{(b)}
-\DocumentationTok{\#\# b}
-\DocumentationTok{\#\#   1  63  72  78 104 105 110 115 133 160 163 178 184 223 239 243 252 }
-\DocumentationTok{\#\#   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1 }
-\DocumentationTok{\#\# 260 286 304 316 341 347 }
-\DocumentationTok{\#\#   1   1   1   1   1   1}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## b
+##  37  48  70 102 109 127 129 138 148 168 175 181 182 193 196 210 247 
+##   1   1   1   1   1   1   2   1   1   1   1   1   1   1   1   1   1 
+## 283 302 318 326 340 
+##   1   1   1   1   1
+\end{verbatim}
 
 \hypertarget{funuxe7uxf5es-para-o-problema-do-aniversuxe1rio}{%
 \subsection*{Funções para o problema do aniversário}\label{funuxe7uxf5es-para-o-problema-do-aniversuxe1rio}}
@@ -454,36 +476,48 @@
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{pbirthday}\NormalTok{(}\DecValTok{23}\NormalTok{)}
-\DocumentationTok{\#\# [1] 0,5072972}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## [1] 0,5072972
+\end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{qbirthday}\NormalTok{(.}\DecValTok{5}\NormalTok{)}
-\DocumentationTok{\#\# [1] 23}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## [1] 23
+\end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{qbirthday}\NormalTok{(}\DecValTok{1}\NormalTok{)}
-\DocumentationTok{\#\# [1] 366}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## [1] 366
+\end{verbatim}
 
 Para no mínimo $3$ no mesmo dia:
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{qbirthday}\NormalTok{(.}\DecValTok{5}\NormalTok{, }\AttributeTok{coincident =} \DecValTok{3}\NormalTok{)}
-\DocumentationTok{\#\# [1] 88}
 \end{Highlighting}
 \end{Shaded}
 
-\hypertarget{exercuxedcios-cap.-1}{%
-\section*{Exercícios (cap. 1)}\label{exercuxedcios-cap.-1}}
-\addcontentsline{toc}{section}{Exercícios (cap. 1)}
+\begin{verbatim}
+## [1] 88
+\end{verbatim}
+
+\hypertarget{exercuxedcios-do-livro-cap.-1}{%
+\section*{Exercícios do livro (cap. 1)}\label{exercuxedcios-do-livro-cap.-1}}
+\addcontentsline{toc}{section}{Exercícios do livro (cap. 1)}
 
 \hypertarget{superbaralho}{%
 \subsection*{13. Superbaralho}\label{superbaralho}}
@@ -508,9 +542,9 @@ How many different $10$-card hands can be dealt from the superdeck? The order of
   Só foi possível usar combinações completas porque a mão tem $10$ cartas, o que faz com que haja, essencialmente, um {\hl{número infinito de cópias de cada um dos $52$ tipos de carta}}. Se a mão tivesse $11$ ou mais cartas, seria impossível que todas as cartas fossem iguais, e este raciocínio não poderia ser usado.
 \end{itemize}
 
-\hypertarget{norepeat-words}{%
-\subsection*{42. Norepeat words}\label{norepeat-words}}
-\addcontentsline{toc}{subsection}{42. Norepeat words}
+\hypertarget{palavras-sem-repetiuxe7uxe3o}{%
+\subsection*{42. Palavras sem repetição}\label{palavras-sem-repetiuxe7uxe3o}}
+\addcontentsline{toc}{subsection}{42. Palavras sem repetição}
 
 \begin{rmdbox}
 A \emph{norepeatword} is a sequence of at least one (and possibly all) of the usual $26$ letters a, b, c, \ldots,z, with repetitions not allowed.
@@ -593,16 +627,22 @@ A \emph{norepeatword} is chosen randomly, with all \emph{norepeatwords} equally 
 \begin{Shaded}
 \begin{Highlighting}[]
 \DecValTok{1} \SpecialCharTok{/} \FunctionTok{exp}\NormalTok{(}\DecValTok{1}\NormalTok{)}
-\DocumentationTok{\#\# [1] 0,3678794}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## [1] 0,3678794
+\end{verbatim}
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \DecValTok{1} \SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(}\DecValTok{1} \SpecialCharTok{/} \FunctionTok{factorial}\NormalTok{(}\DecValTok{0}\SpecialCharTok{:}\DecValTok{25}\NormalTok{))}
-\DocumentationTok{\#\# [1] 0,3678794}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## [1] 0,3678794
+\end{verbatim}
 \end{itemize}
 
 \hypertarget{histuxf3rias-e-axiomas}{%
@@ -615,13 +655,13 @@ A \emph{norepeatword} is chosen randomly, with all \emph{norepeatwords} equally 
 
 \begin{center} \url{https://youtu.be/FJd_1H3rZGg} \end{center}
 
-\hypertarget{exercuxedcios-do-livro-cap.-1}{%
-\section*{Exercícios do livro (cap. 1)}\label{exercuxedcios-do-livro-cap.-1}}
+\hypertarget{exercuxedcios-do-livro-cap.-1-1}{%
+\section*{Exercícios do livro (cap. 1)}\label{exercuxedcios-do-livro-cap.-1-1}}
 \addcontentsline{toc}{section}{Exercícios do livro (cap. 1)}
 
-\hypertarget{section}{%
-\subsection*{17}\label{section}}
-\addcontentsline{toc}{subsection}{17}
+\hypertarget{quadrados-de-combinauxe7uxf5es}{%
+\subsection*{17. Quadrados de combinações}\label{quadrados-de-combinauxe7uxf5es}}
+\addcontentsline{toc}{subsection}{17. Quadrados de combinações}
 
 \begin{rmdbox}
 \[
@@ -648,9 +688,9 @@ A \emph{norepeatword} is chosen randomly, with all \emph{norepeatwords} equally 
   \end{itemize}
 \end{itemize}
 
-\hypertarget{section-1}{%
-\subsection*{18}\label{section-1}}
-\addcontentsline{toc}{subsection}{18}
+\hypertarget{quadrados-de-combinauxe7uxf5es-vezes-k}{%
+\subsection*{\texorpdfstring{18. Quadrados de combinações vezes $k$}{18. Quadrados de combinações vezes }}\label{quadrados-de-combinauxe7uxf5es-vezes-k}}
+\addcontentsline{toc}{subsection}{18. Quadrados de combinações vezes $k$}
 
 \begin{rmdbox}
 \[
@@ -683,9 +723,9 @@ A \emph{norepeatword} is chosen randomly, with all \emph{norepeatwords} equally 
   \end{itemize}
 \end{itemize}
 
-\hypertarget{section-2}{%
-\subsection*{19}\label{section-2}}
-\addcontentsline{toc}{subsection}{19}
+\hypertarget{produto-de-combinauxe7uxf5es}{%
+\subsection*{19. Produto de combinações}\label{produto-de-combinauxe7uxf5es}}
+\addcontentsline{toc}{subsection}{19. Produto de combinações}
 
 \begin{rmdbox}
 \[
@@ -989,13 +1029,13 @@ Para provar
 
 \begin{center} \url{https://youtu.be/LZ5Wergp_PA} \end{center}
 
-\hypertarget{exercuxedcios-do-livro-cap.-1-1}{%
-\section*{Exercícios do livro (cap. 1)}\label{exercuxedcios-do-livro-cap.-1-1}}
+\hypertarget{exercuxedcios-do-livro-cap.-1-2}{%
+\section*{Exercícios do livro (cap. 1)}\label{exercuxedcios-do-livro-cap.-1-2}}
 \addcontentsline{toc}{section}{Exercícios do livro (cap. 1)}
 
-\hypertarget{section-3}{%
-\subsection*{26}\label{section-3}}
-\addcontentsline{toc}{subsection}{26}
+\hypertarget{amostra-com-reposiuxe7uxe3o}{%
+\subsection*{26. Amostra com reposição}\label{amostra-com-reposiuxe7uxe3o}}
+\addcontentsline{toc}{subsection}{26. Amostra com reposição}
 
 \begin{rmdbox}
 Amostra {\hl{com reposição}} de tamanho $1000$ a partir de uma população de tamanho $1$ milhão. Cada pessoa tem a mesma probabilidade de ser escolhida.
@@ -1024,9 +1064,7 @@ P &= 1 - P(\text{ninguém escolhido mais de uma vez}) \\
 \item
   Para $N$ grande e $n$ pequeno, a probabilidade $P$ de pelo menos uma pessoa ser escolhida mais de uma vez se aproxima de $0$:
 
-  \begin{table}
-  \centering
-  \begin{tabular}[t]{r|r|r}
+  \begin{longtable}[t]{r|r|r}
   \hline
   N & n & P\\
   \hline
@@ -1044,13 +1082,12 @@ P &= 1 - P(\text{ninguém escolhido mais de uma vez}) \\
   \hline
   1.000.000 & 1 & 0,0000000\\
   \hline
-  \end{tabular}
-  \end{table}
+  \end{longtable}
 \end{itemize}
 
-\hypertarget{section-4}{%
-\subsection*{27}\label{section-4}}
-\addcontentsline{toc}{subsection}{27}
+\hypertarget{funuxe7uxe3o-de-hash}{%
+\subsection*{\texorpdfstring{27. Função de \emph{hash}}{27. Função de hash}}\label{funuxe7uxe3o-de-hash}}
+\addcontentsline{toc}{subsection}{27. Função de \emph{hash}}
 
 \begin{rmdbox}
 
@@ -1071,9 +1108,9 @@ P &= 1 - P(\text{ninguém escolhido mais de uma vez}) \\
   De novo, \texttt{pbirthday(k,\ n)}.
 \end{itemize}
 
-\hypertarget{section-5}{%
-\subsection*{57}\label{section-5}}
-\addcontentsline{toc}{subsection}{57}
+\hypertarget{uxfaltimo-suspiro-de-juxfalio-cuxe9sar}{%
+\subsection*{57. Último suspiro de Júlio César}\label{uxfaltimo-suspiro-de-juxfalio-cuxe9sar}}
+\addcontentsline{toc}{subsection}{57. Último suspiro de Júlio César}
 
 \begin{rmdbox}
 
@@ -1130,9 +1167,9 @@ P &= 1 - P(\text{ninguém escolhido mais de uma vez}) \\
   \begin{center}\includegraphics[width=0.6\linewidth]{images/caesar} \end{center}
 \end{itemize}
 
-\hypertarget{section-6}{%
-\subsection*{61}\label{section-6}}
-\addcontentsline{toc}{subsection}{61}
+\hypertarget{passageiros-e-assentos}{%
+\subsection*{61. Passageiros e assentos}\label{passageiros-e-assentos}}
+\addcontentsline{toc}{subsection}{61. Passageiros e assentos}
 
 \begin{rmdbox}
 
@@ -1202,9 +1239,9 @@ P &= 1 - P(\text{ninguém escolhido mais de uma vez}) \\
   Logo, a probabilidade de o passageiro $n$ acabar no assento $n$ é $1/2$.
 \end{itemize}
 
-\hypertarget{section-7}{%
-\subsection*{62}\label{section-7}}
-\addcontentsline{toc}{subsection}{62}
+\hypertarget{aniversuxe1rios}{%
+\subsection*{62. Aniversários}\label{aniversuxe1rios}}
+\addcontentsline{toc}{subsection}{62. Aniversários}
 
 \begin{rmdbox}
 
@@ -1430,9 +1467,9 @@ P &= 1 - P(\text{ninguém escolhido mais de uma vez}) \\
 \section*{Exercícios do livro (cap. 2)}\label{exercuxedcios-do-livro-cap.-2}}
 \addcontentsline{toc}{section}{Exercícios do livro (cap. 2)}
 
-\hypertarget{section-8}{%
-\subsection*{2}\label{section-8}}
-\addcontentsline{toc}{subsection}{2}
+\hypertarget{guxeameos}{%
+\subsection*{2. Gêmeos}\label{guxeameos}}
+\addcontentsline{toc}{subsection}{2. Gêmeos}
 
 \begin{rmdbox}
 
@@ -1513,9 +1550,9 @@ P &= 1 - P(\text{ninguém escolhido mais de uma vez}) \\
   \]
 \end{itemize}
 
-\hypertarget{section-9}{%
-\subsection*{4}\label{section-9}}
-\addcontentsline{toc}{subsection}{4}
+\hypertarget{muxfaltipla-escolha}{%
+\subsection*{4. Múltipla escolha}\label{muxfaltipla-escolha}}
+\addcontentsline{toc}{subsection}{4. Múltipla escolha}
 
 \begin{rmdbox}
 
@@ -1534,18 +1571,20 @@ P &= 1 - P(\text{ninguém escolhido mais de uma vez}) \\
   Considere $P(K) = p$.
 \end{itemize}
 
+\end{rmdbox}
+
+\begin{rmdbox}
+
 \begin{enumerate}
 \def\labelenumi{(\alph{enumi})}
+\tightlist
 \item
   Ache $P(K \mid R)$.
-\item
-  Mostre que $P(K \mid R) \geq p$. Por que isto faz sentido? Quando a igualdade é exata?
 \end{enumerate}
 
 \end{rmdbox}
 
-\begin{enumerate}
-\def\labelenumi{\alph{enumi}.}
+\begin{itemize}
 \item
   Vamos usar Bayes, supondo $p = P(K) > 0$:
 
@@ -1568,55 +1607,69 @@ P &= 1 - P(\text{ninguém escolhido mais de uma vez}) \\
   \frac{np}{np + (1 - p)}
   \end{aligned}
   \]
+\end{itemize}
+
+\begin{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Mostre que $P(K \mid R) \geq p$. Por que isto faz sentido? Quando a igualdade é exata?
+\end{enumerate}
+
+\end{rmdbox}
+
+\begin{itemize}
+\tightlist
 \item
   Isto equivale a mostrar
+\end{itemize}
 
-  \[
-  \frac{np}{np + (1 - p)} \geq p
-  \]
+\[
+ \frac{np}{np + (1 - p)} \geq p
+ \]
+Como todos os valores são positivos, isto equivale a
 
-  Como todos os valores são positivos, isto equivale a
+\[
+ np \geq np^2 + (1 - p)p
+ \]
+Dividindo ambos os lados por $p > 0$:
 
-  \[
-  np \geq np^2 + (1 - p)p
-  \]
+\[
+ n \geq np + 1 - p
+ \]
 
-  Dividindo ambos os lados por $p > 0$:
+Daí,
 
-  \[
-  n \geq np + 1 - p
-  \]
+\[
+ \begin{aligned}
+ n \geq np + 1 - p 
+ &\iff n - np \geq 1 - p \\
+ &\iff n(1 - p) \geq 1 - p \\
+ &\iff n \geq 1 & \text{(supondo } p < 1 \text{)}
+ \end{aligned}
+ \]
+O que é verdade, pois existe pelo menos uma opção (a correta).
 
-  Daí,
+Se $p = 1$, a igualdade vale, e $P(K \mid R) = 1$, pois o aluno sempre sabe a esposta e sempre acerta.
 
-  \[
-  \begin{aligned}
-  n \geq np + 1 - p 
-  &\iff n - np \geq 1 - p \\
-  &\iff n(1 - p) \geq 1 - p \\
-  &\iff n \geq 1 & \text{(supondo } p < 1 \text{)}
-  \end{aligned}
-  \]
-  O que é verdade, pois existe pelo menos uma opção (a correta).
+Se $n = 1$, a igualdade vale, e $P(K \mid R) = p$, pois o aluno acertar (ele empre acerta!) e o aluno saber são independentes.
 
-  Se $p = 1$, a igualdade vale, e $P(K \mid R) = 1$, pois o aluno sempre sabe a resposta e sempre acerta.
+Imagine $n > 1$.
 
-  Se $n = 1$, a igualdade vale, e $P(K \mid R) = p$, pois o aluno acertar (ele sempre acerta!) e o aluno saber são independentes.
+Lembre-se de que $P(K \mid R) = \frac{P(K \cap R)}{P(R)}$.
 
-  Imagine $n > 1$.
+O numerador é a probabilidade do evento ``o aluno sabe e o aluno acerta''. Esta robabilidade é exatamente $p$, pois ``o aluno sabe'' é sub-evento de ``o aluno certa''.
 
-  Lembre-se de que $P(K \mid R) = \frac{P(K \cap R)}{P(R)}$.
+O numerador $P(R)$ é um número tal que $0 < P(R) < 1$. Vamos chamar este úmero de $1/x$, para $x > 1$.
 
-  O numerador é a probabilidade do evento ``o aluno sabe e o aluno acerta''. Esta probabilidade é exatamente $p$, pois ``o aluno sabe'' é sub-evento de ``o aluno acerta''.
+Então,
 
-  O numerador $P(R)$ é um número tal que $0 < P(R) < 1$. Vamos chamar este número de $1/x$, para $x > 1$.
-
-  Então,
-
-  \[
-  P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp > p
-  \]
-\end{enumerate}
+\[
+ P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp > p
+ \]
 
 \hypertarget{em-r}{%
 \subsubsection*{Em R}\label{em-r}}
@@ -1636,18 +1689,21 @@ Valores teóricos:
   \FunctionTok{arrange}\NormalTok{(n)}
 
 \NormalTok{df}
-\DocumentationTok{\#\# \# A tibble: 45 x 3}
-\DocumentationTok{\#\#       n     p pkr\_teorico}
-\DocumentationTok{\#\#   \textless{}int\textgreater{} \textless{}dbl\textgreater{}       \textless{}dbl\textgreater{}}
-\DocumentationTok{\#\# 1     1  0           0   }
-\DocumentationTok{\#\# 2     1  0.25        0.25}
-\DocumentationTok{\#\# 3     1  0.5         0.5 }
-\DocumentationTok{\#\# 4     1  0.75        0.75}
-\DocumentationTok{\#\# 5     1  1           1   }
-\DocumentationTok{\#\# 6     2  0           0   }
-\DocumentationTok{\#\# \# ... with 39 more rows}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 45 x 3
+##       n     p pkr_teorico
+##   <int> <dbl>       <dbl>
+## 1     1  0           0   
+## 2     1  0.25        0.25
+## 3     1  0.5         0.5 
+## 4     1  0.75        0.75
+## 5     1  1           1   
+## 6     2  0           0   
+## # ... with 39 more rows
+\end{verbatim}
 
 Gráfico:
 
@@ -1709,24 +1765,27 @@ Simulação:
 \NormalTok{  )}
 
 \NormalTok{df}
-\DocumentationTok{\#\# \# A tibble: 45 x 4}
-\DocumentationTok{\#\#       n     p pkr\_teorico pkr\_simulado}
-\DocumentationTok{\#\#   \textless{}int\textgreater{} \textless{}dbl\textgreater{}       \textless{}dbl\textgreater{}        \textless{}dbl\textgreater{}}
-\DocumentationTok{\#\# 1     1  0           0           0    }
-\DocumentationTok{\#\# 2     1  0.25        0.25        0.250}
-\DocumentationTok{\#\# 3     1  0.5         0.5         0.500}
-\DocumentationTok{\#\# 4     1  0.75        0.75        0.750}
-\DocumentationTok{\#\# 5     1  1           1           1    }
-\DocumentationTok{\#\# 6     2  0           0           0    }
-\DocumentationTok{\#\# \# ... with 39 more rows}
 \end{Highlighting}
 \end{Shaded}
 
+\begin{verbatim}
+## # A tibble: 45 x 4
+##       n     p pkr_teorico pkr_simulado
+##   <int> <dbl>       <dbl>        <dbl>
+## 1     1  0           0           0    
+## 2     1  0.25        0.25        0.250
+## 3     1  0.5         0.5         0.500
+## 4     1  0.75        0.75        0.750
+## 5     1  1           1           1    
+## 6     2  0           0           0    
+## # ... with 39 more rows
+\end{verbatim}
+
 \begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/unnamed-chunk-27-1} \end{center}
 
-\hypertarget{section-10}{%
-\subsection*{12}\label{section-10}}
-\addcontentsline{toc}{subsection}{12}
+\hypertarget{mensagens-em-binuxe1rio}{%
+\subsection*{12. Mensagens em binário}\label{mensagens-em-binuxe1rio}}
+\addcontentsline{toc}{subsection}{12. Mensagens em binário}
 
 \begin{rmdbox}
 
@@ -1772,9 +1831,12 @@ Simulação:
 \NormalTok{pAIB }\OtherTok{\textless{}{-}}\NormalTok{ pBIA }\SpecialCharTok{*}\NormalTok{ pA }\SpecialCharTok{/}\NormalTok{ pB}
 
 \NormalTok{pAIB}
-\DocumentationTok{\#\# [1] 0,9473684}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## [1] 0,9473684
+\end{verbatim}
 \item
   Para sermos completos, vamos calcular outras probabilidades, com $P(A) = P(\neg A) = 1/2$:
 
@@ -1809,9 +1871,12 @@ Simulação:
 
 \NormalTok{pab }\OtherTok{\textless{}{-}} \FunctionTok{sum}\NormalTok{(alice\_envia }\SpecialCharTok{\&}\NormalTok{ bob\_recebe) }\SpecialCharTok{/} \FunctionTok{sum}\NormalTok{(bob\_recebe)}
 \NormalTok{pab}
-\DocumentationTok{\#\# [1] 0,9473928}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## [1] 0,9474377
+\end{verbatim}
 \end{itemize}
 
 \begin{rmdbox}
@@ -1899,14 +1964,17 @@ Simulação:
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{q1 }\SpecialCharTok{*}\NormalTok{ q1 }\SpecialCharTok{*}\NormalTok{ p1 }\SpecialCharTok{/}\NormalTok{ (q1 }\SpecialCharTok{*}\NormalTok{ q1 }\SpecialCharTok{*}\NormalTok{ p1 }\SpecialCharTok{+}\NormalTok{ p0 }\SpecialCharTok{*}\NormalTok{ p0 }\SpecialCharTok{*}\NormalTok{ q0)}
-\DocumentationTok{\#\# [1] 0,9715142}
 \end{Highlighting}
 \end{Shaded}
+
+\begin{verbatim}
+## [1] 0,9715142
+\end{verbatim}
 \end{itemize}
 
-\hypertarget{section-11}{%
-\subsection*{14}\label{section-11}}
-\addcontentsline{toc}{subsection}{14}
+\hypertarget{probabilidades-condicionais-e-complementos}{%
+\subsection*{14. Probabilidades condicionais e complementos}\label{probabilidades-condicionais-e-complementos}}
+\addcontentsline{toc}{subsection}{14. Probabilidades condicionais e complementos}
 
 \begin{rmdbox}
 Se $P(A), P(B) \in (0, 1)$, então
@@ -1920,9 +1988,9 @@ P(B \mid A) > P(B \mid \neg A)
 
 ???
 
-\hypertarget{section-12}{%
-\subsection*{15}\label{section-12}}
-\addcontentsline{toc}{subsection}{15}
+\hypertarget{torcer-para-qual-evento}{%
+\subsection*{15. Torcer para qual evento?}\label{torcer-para-qual-evento}}
+\addcontentsline{toc}{subsection}{15. Torcer para qual evento?}
 
 \begin{rmdbox}
 
@@ -1966,9 +2034,9 @@ O que você ficaria mais feliz em observar?
   Intuitivamente, como $A$ é o evento menos provável dos dois, saber que $A$ ocorreu nos deixa mais próximo da ocorrência dos dois eventos do que saber que $B$ (ou que algum dos dois) ocorreu.
 \end{itemize}
 
-\hypertarget{section-13}{%
-\subsection*{16}\label{section-13}}
-\addcontentsline{toc}{subsection}{16}
+\hypertarget{ajudar-e-atrapalhar}{%
+\subsection*{16. Ajudar e atrapalhar}\label{ajudar-e-atrapalhar}}
+\addcontentsline{toc}{subsection}{16. Ajudar e atrapalhar}
 
 \begin{rmdbox}
 \[
@@ -2004,9 +2072,9 @@ P(A \mid B) \leq P(A) \implies P(A \mid \neg B) \geq P(A)
   \]
 \end{itemize}
 
-\hypertarget{section-14}{%
-\subsection*{17}\label{section-14}}
-\addcontentsline{toc}{subsection}{17}
+\hypertarget{contrapositiva}{%
+\subsection*{17. Contrapositiva}\label{contrapositiva}}
+\addcontentsline{toc}{subsection}{17. Contrapositiva}
 
 \begin{rmdbox}
 
@@ -2114,9 +2182,9 @@ Com isso,
 
 \begin{center}\includegraphics[width=1\linewidth]{_main_files/figure-latex/unnamed-chunk-36-1} \end{center}
 
-\hypertarget{section-15}{%
-\subsection*{22}\label{section-15}}
-\addcontentsline{toc}{subsection}{22}
+\hypertarget{lewis-carroll}{%
+\subsection*{22. Lewis Carroll}\label{lewis-carroll}}
+\addcontentsline{toc}{subsection}{22. Lewis Carroll}
 
 \begin{rmdbox}
 
@@ -2228,9 +2296,9 @@ Este problema foi proposto pela primeira vez por Lewis Carroll em 1893.
   mas as probabilidades do numerador são mais difíceis de calcular! Teríamos que usar a lei da probabilidade total duas vezes para o numerador (além de uma vez para o denominador).
 \end{itemize}
 
-\hypertarget{section-16}{%
-\subsection*{29}\label{section-16}}
-\addcontentsline{toc}{subsection}{29}
+\hypertarget{caracteruxedsticas-menos-e-mais-especuxedficas}{%
+\subsection*{29. Características menos e mais específicas}\label{caracteruxedsticas-menos-e-mais-especuxedficas}}
+\addcontentsline{toc}{subsection}{29. Características menos e mais específicas}
 
 \begin{rmdbox}
 
@@ -3304,7 +3372,7 @@ Daí, com as outras condições do enunciado, temos uma instância do \protect\h
   \!\!\!\!\!\!\!\!\!
   \prod_{
     \begin{array}{c}
-    1 \leq j \leq 100. \\
+    1 \leq j \leq 100, \\
     j \not\in \{ 23, 64, 65 \}
     \end{array}
   }
@@ -3357,6 +3425,118 @@ Daí, com as outras condições do enunciado, temos uma instância do \protect\h
   = \frac{mp}{mp + m'(1 - p)}
   \]
 \end{itemize}
+
+\hypertarget{monty-hall-paradoxo-de-simpson}{%
+\chapter*{06: Monty Hall, paradoxo de Simpson}\label{monty-hall-paradoxo-de-simpson}}
+\addcontentsline{toc}{chapter}{06: Monty Hall, paradoxo de Simpson}
+
+\hypertarget{vuxeddeo-5}{%
+\section*{Vídeo}\label{vuxeddeo-5}}
+\addcontentsline{toc}{section}{Vídeo}
+
+\begin{center} \url{https://youtu.be/fDcjhAKuhqQ} \end{center}
+
+\hypertarget{exercuxedcios-do-livro-cap.-2-2}{%
+\section*{Exercícios do livro (cap. 2)}\label{exercuxedcios-do-livro-cap.-2-2}}
+\addcontentsline{toc}{section}{Exercícios do livro (cap. 2)}
+
+\hypertarget{monty-hall-com-7-portas}{%
+\subsection*{\texorpdfstring{39. Monty Hall com $7$ portas}{39. Monty Hall com  portas}}\label{monty-hall-com-7-portas}}
+\addcontentsline{toc}{subsection}{39. Monty Hall com $7$ portas}
+
+\hypertarget{monty-hall-prefere-a-porta-2}{%
+\subsection*{\texorpdfstring{40. Monty Hall prefere a porta $2$}{40. Monty Hall prefere a porta }}\label{monty-hall-prefere-a-porta-2}}
+\addcontentsline{toc}{subsection}{40. Monty Hall prefere a porta $2$}
+
+\hypertarget{monty-hall-com-probabilidades-diferentes}{%
+\subsection*{44. Monty Hall com probabilidades diferentes}\label{monty-hall-com-probabilidades-diferentes}}
+\addcontentsline{toc}{subsection}{44. Monty Hall com probabilidades diferentes}
+
+\hypertarget{paradoxo-de-simpson}{%
+\subsection*{55. Paradoxo de Simpson?}\label{paradoxo-de-simpson}}
+\addcontentsline{toc}{subsection}{55. Paradoxo de Simpson?}
+
+\hypertarget{os-simpsons}{%
+\subsection*{56. Os Simpsons}\label{os-simpsons}}
+\addcontentsline{toc}{subsection}{56. Os Simpsons}
+
+\hypertarget{potes-de-doces}{%
+\subsection*{57. Potes de doces}\label{potes-de-doces}}
+\addcontentsline{toc}{subsection}{57. Potes de doces}
+
+\hypertarget{independuxeancia-e-simpson}{%
+\subsection*{58. Independência e Simpson}\label{independuxeancia-e-simpson}}
+\addcontentsline{toc}{subsection}{58. Independência e Simpson}
+
+\hypertarget{ruuxedna-do-jogador}{%
+\chapter*{07: Ruína do jogador}\label{ruuxedna-do-jogador}}
+\addcontentsline{toc}{chapter}{07: Ruína do jogador}
+
+\hypertarget{vuxeddeo-6}{%
+\section*{Vídeo}\label{vuxeddeo-6}}
+\addcontentsline{toc}{section}{Vídeo}
+
+\begin{center} \url{https://youtu.be/PNrqCdslGi4} \end{center}
+
+\hypertarget{exercuxedcios-do-livro-cap.-2-3}{%
+\section*{Exercícios do livro (cap. 2)}\label{exercuxedcios-do-livro-cap.-2-3}}
+\addcontentsline{toc}{section}{Exercícios do livro (cap. 2)}
+
+\hypertarget{total-de-lanuxe7amentos-de-um-dado}{%
+\subsection*{48. Total de lançamentos de um dado}\label{total-de-lanuxe7amentos-de-um-dado}}
+\addcontentsline{toc}{subsection}{48. Total de lançamentos de um dado}
+
+\hypertarget{nuxfamero-par-de-sucessos}{%
+\subsection*{49. Número par de sucessos}\label{nuxfamero-par-de-sucessos}}
+\addcontentsline{toc}{subsection}{49. Número par de sucessos}
+
+\hypertarget{calvin-e-hobbes}{%
+\subsection*{50. Calvin e Hobbes}\label{calvin-e-hobbes}}
+\addcontentsline{toc}{subsection}{50. Calvin e Hobbes}
+
+\hypertarget{jogador}{%
+\subsection*{51. Jogador}\label{jogador}}
+\addcontentsline{toc}{subsection}{51. Jogador}
+
+\hypertarget{jogadores-com-apostas-de-outros-valores}{%
+\subsection*{52. Jogadores com apostas de outros valores}\label{jogadores-com-apostas-de-outros-valores}}
+\addcontentsline{toc}{subsection}{52. Jogadores com apostas de outros valores}
+
+\hypertarget{carneiros-e-lobo-em-um-cuxedrculo}{%
+\subsection*{53. Carneiros e lobo em um círculo}\label{carneiros-e-lobo-em-um-cuxedrculo}}
+\addcontentsline{toc}{subsection}{53. Carneiros e lobo em um círculo}
+
+\hypertarget{buxeabado-imortal}{%
+\subsection*{54. Bêbado imortal}\label{buxeabado-imortal}}
+\addcontentsline{toc}{subsection}{54. Bêbado imortal}
+
+\hypertarget{truxeas-moedas}{%
+\subsection*{63. Três moedas}\label{truxeas-moedas}}
+\addcontentsline{toc}{subsection}{63. Três moedas}
+
+\hypertarget{urna}{%
+\subsection*{64. Urna}\label{urna}}
+\addcontentsline{toc}{subsection}{64. Urna}
+
+\hypertarget{assalto-uxe0-festa}{%
+\subsection*{65. Assalto à festa}\label{assalto-uxe0-festa}}
+\addcontentsline{toc}{subsection}{65. Assalto à festa}
+
+\hypertarget{total-de-100-em-um-dado}{%
+\subsection*{\texorpdfstring{66. Total de $100$ em um dado}{66. Total de  em um dado}}\label{total-de-100-em-um-dado}}
+\addcontentsline{toc}{subsection}{66. Total de $100$ em um dado}
+
+\hypertarget{testes-ab}{%
+\subsection*{72. Testes A/B}\label{testes-ab}}
+\addcontentsline{toc}{subsection}{72. Testes A/B}
+
+\hypertarget{alelos}{%
+\subsection*{73. Alelos}\label{alelos}}
+\addcontentsline{toc}{subsection}{73. Alelos}
+
+\hypertarget{primeiro-uxe1s}{%
+\subsection*{74. Primeiro ás}\label{primeiro-uxe1s}}
+\addcontentsline{toc}{subsection}{74. Primeiro ás}
 
 \hypertarget{referuxeancias}{%
 \chapter*{Referências}\label{referuxeancias}}

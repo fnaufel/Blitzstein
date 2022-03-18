@@ -1,0 +1,36 @@
+---
+knit: "bookdown::render_book"
+---
+
+# 06: Monty Hall, paradoxo de Simpson {-}
+
+## Vídeo {-}
+
+```{r echo=FALSE, results='asis', out.extra=center()}
+embed_yt('fDcjhAKuhqQ')
+```
+
+
+## Exercícios do livro (cap. 2) {-}
+
+### 39. Monty Hall com $7$ portas {-}
+
+
+### 40. Monty Hall prefere a porta $2$ {-}
+
+
+### 44. Monty Hall com probabilidades diferentes {-}
+
+
+### 55. Paradoxo de Simpson? {-}
+
+
+### 56. Os Simpsons {-}
+
+
+### 57. Potes de doces {-}
+
+
+### 58. Independência e Simpson {-}
+
+

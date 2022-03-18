@@ -70,7 +70,7 @@ qbirthday(.5, coincident = 3)
 ```
 
 
-## Exercícios (cap. 1) {-}
+## Exercícios do livro (cap. 1) {-}
 
 ### 13. Superbaralho {-}
 
@@ -96,7 +96,7 @@ How many different $10$-card hands can be dealt from the superdeck? The order of
 * Só foi possível usar combinações completas porque a mão tem $10$ cartas, o que faz com que haja, essencialmente, um [número infinito de cópias de cada um dos $52$ tipos de carta]{.hl}. Se a mão tivesse $11$ ou mais cartas, seria impossível que todas as cartas fossem iguais, e este raciocínio não poderia ser usado.
 
 
-### 42. Norepeat words {-}
+### 42. Palavras sem repetição {-}
 
 ::: {.rmdbox latex=1}
 

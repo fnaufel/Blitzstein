@@ -13,7 +13,7 @@ embed_yt('FJd_1H3rZGg')
 
 ## Exercícios do livro (cap. 1) {-}
 
-### 17 {-}
+### 17. Quadrados de combinações {-}
 
 ::: {.rmdbox latex=1}
 
@@ -36,7 +36,7 @@ $$
   * Para este valor de $k$, tenho $\binom{n}{k}^2$ maneiras de selecionar $n$ pessoas, com $k$ pessoas do primeiro grupo e $n-k$ pessoas do segundo.
   
 
-### 18 {-}
+### 18. Quadrados de combinações vezes $k$ {-}
 
 ::: {.rmdbox latex=1}
 
@@ -65,7 +65,7 @@ $$
   * Vou escolher $k$ pessoas do segundo grupo --- $\binom{n}{k}$ --- para [não]{.hl} entrar.
 
 
-### 19 {-}
+### 19. Produto de combinações {-}
 
 ::: {.rmdbox latex=1}
 

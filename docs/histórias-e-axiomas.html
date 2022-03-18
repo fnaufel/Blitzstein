@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>02: Histórias e axiomas | Introduction to Probability (Joe Blitzstein)</title>
 <meta name="author" content="Fernando Náufel">
-<meta name="description" content="Vídeo   Exercícios do livro (cap. 1)  17  \[ \sum_{k = 0}^n \binom{n}{k}^2 = \binom{2n}{n} \] Quero escolher \(n\) pessoas dentre \(2n\) pessoas (lado direito). Divido as \(2n\) pessoas em dois...">
+<meta name="description" content="Vídeo   Exercícios do livro (cap. 1)  17. Quadrados de combinações  \[ \sum_{k = 0}^n \binom{n}{k}^2 = \binom{2n}{n} \] Quero escolher \(n\) pessoas dentre \(2n\) pessoas (lado direito). Divido as...">
 <meta name="generator" content="bookdown 0.25 with bs4_book()">
 <meta property="og:title" content="02: Histórias e axiomas | Introduction to Probability (Joe Blitzstein)">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Vídeo   Exercícios do livro (cap. 1)  17  \[ \sum_{k = 0}^n \binom{n}{k}^2 = \binom{2n}{n} \] Quero escolher \(n\) pessoas dentre \(2n\) pessoas (lado direito). Divido as \(2n\) pessoas em dois...">
+<meta property="og:description" content="Vídeo   Exercícios do livro (cap. 1)  17. Quadrados de combinações  \[ \sum_{k = 0}^n \binom{n}{k}^2 = \binom{2n}{n} \] Quero escolher \(n\) pessoas dentre \(2n\) pessoas (lado direito). Divido as...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="02: Histórias e axiomas | Introduction to Probability (Joe Blitzstein)">
-<meta name="twitter:description" content="Vídeo   Exercícios do livro (cap. 1)  17  \[ \sum_{k = 0}^n \binom{n}{k}^2 = \binom{2n}{n} \] Quero escolher \(n\) pessoas dentre \(2n\) pessoas (lado direito). Divido as \(2n\) pessoas em dois...">
+<meta name="twitter:description" content="Vídeo   Exercícios do livro (cap. 1)  17. Quadrados de combinações  \[ \sum_{k = 0}^n \binom{n}{k}^2 = \binom{2n}{n} \] Quero escolher \(n\) pessoas dentre \(2n\) pessoas (lado direito). Divido as...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/_Lexend-0.4.0/font.css" rel="stylesheet">
@@ -51,6 +51,8 @@
 <li><a class="" href="problema-do-anivers%C3%A1rio-propriedades.html">03: Problema do aniversário, propriedades</a></li>
 <li><a class="" href="probabilidade-condicional.html">04: Probabilidade condicional</a></li>
 <li><a class="" href="probabilidade-condicional-continua%C3%A7%C3%A3o.html">05: Probabilidade condicional (continuação)</a></li>
+<li><a class="" href="monty-hall-paradoxo-de-simpson.html">06: Monty Hall, paradoxo de Simpson</a></li>
+<li><a class="" href="ru%C3%ADna-do-jogador.html">07: Ruína do jogador</a></li>
 <li><a class="" href="refer%C3%AAncias.html">Referências</a></li>
 </ul>
 
@@ -68,11 +70,11 @@
 <iframe src="https://www.youtube.com/embed/FJd_1H3rZGg" width="100%" height="400px" data-external="1" class="center" style="width: 80%;">
 </iframe>
 </div>
-<div id="exercícios-do-livro-cap.-1" class="section level2 unnumbered">
-<h2>Exercícios do livro (cap. 1)<a class="anchor" aria-label="anchor" href="#exerc%C3%ADcios-do-livro-cap.-1"><i class="fas fa-link"></i></a>
+<div id="exercícios-do-livro-cap.-1-1" class="section level2 unnumbered">
+<h2>Exercícios do livro (cap. 1)<a class="anchor" aria-label="anchor" href="#exerc%C3%ADcios-do-livro-cap.-1-1"><i class="fas fa-link"></i></a>
 </h2>
-<div id="section" class="section level3 unnumbered">
-<h3>17<a class="anchor" aria-label="anchor" href="#section"><i class="fas fa-link"></i></a>
+<div id="quadrados-de-combinações" class="section level3 unnumbered">
+<h3>17. Quadrados de combinações<a class="anchor" aria-label="anchor" href="#quadrados-de-combina%C3%A7%C3%B5es"><i class="fas fa-link"></i></a>
 </h3>
 <div class="rmdbox">
 <p><span class="math display">\[
@@ -92,8 +94,8 @@
 </li>
 </ul>
 </div>
-<div id="section-1" class="section level3 unnumbered">
-<h3>18<a class="anchor" aria-label="anchor" href="#section-1"><i class="fas fa-link"></i></a>
+<div id="quadrados-de-combinações-vezes-k" class="section level3 unnumbered">
+<h3>18. Quadrados de combinações vezes <span class="math inline">\(k\)</span><a class="anchor" aria-label="anchor" href="#quadrados-de-combina%C3%A7%C3%B5es-vezes-k"><i class="fas fa-link"></i></a>
 </h3>
 <div class="rmdbox">
 <p><span class="math display">\[
@@ -116,8 +118,8 @@
 </li>
 </ul>
 </div>
-<div id="section-2" class="section level3 unnumbered">
-<h3>19<a class="anchor" aria-label="anchor" href="#section-2"><i class="fas fa-link"></i></a>
+<div id="produto-de-combinações" class="section level3 unnumbered">
+<h3>19. Produto de combinações<a class="anchor" aria-label="anchor" href="#produto-de-combina%C3%A7%C3%B5es"><i class="fas fa-link"></i></a>
 </h3>
 <div class="rmdbox">
 <p><span class="math display">\[
@@ -347,10 +349,10 @@ a_0, a_1, a_2, \dots, a_n
 <li><a class="nav-link" href="#hist%C3%B3rias-e-axiomas">02: Histórias e axiomas</a></li>
 <li><a class="nav-link" href="#v%C3%ADdeo-1">Vídeo</a></li>
 <li>
-<a class="nav-link" href="#exerc%C3%ADcios-do-livro-cap.-1">Exercícios do livro (cap. 1)</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#section">17</a></li>
-<li><a class="nav-link" href="#section-1">18</a></li>
-<li><a class="nav-link" href="#section-2">19</a></li>
+<a class="nav-link" href="#exerc%C3%ADcios-do-livro-cap.-1-1">Exercícios do livro (cap. 1)</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#quadrados-de-combina%C3%A7%C3%B5es">17. Quadrados de combinações</a></li>
+<li><a class="nav-link" href="#quadrados-de-combina%C3%A7%C3%B5es-vezes-k">18. Quadrados de combinações vezes \(k\)</a></li>
+<li><a class="nav-link" href="#produto-de-combina%C3%A7%C3%B5es">19. Produto de combinações</a></li>
 <li><a class="nav-link" href="#teorema-das-colunas">20. Teorema das colunas</a></li>
 <li><a class="nav-link" href="#soma-de-cubos">22. Soma de cubos</a></li>
 </ul>

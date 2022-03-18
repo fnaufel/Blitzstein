@@ -13,7 +13,7 @@ embed_yt('LZ5Wergp_PA')
 
 ## Exercícios do livro (cap. 1) {-}
 
-### 26 {-}
+### 26. Amostra com reposição {-}
 
 ::: {.rmdbox latex=1}
 
@@ -48,7 +48,8 @@ $$
     P = map2_dbl(n, N, ~pbirthday(.x, .y))
   ) %>% 
     kbl(
-      format.args = list(big.mark = '.')
+      format.args = list(big.mark = '.'),
+      longtable = TRUE
     ) %>% 
     kable_paper(
       c('striped', 'hover'),
@@ -57,7 +58,7 @@ $$
   ```
 
 
-### 27 {-}
+### 27. Função de *hash* {-}
 
 ::: {.rmdbox latex=1}
 
@@ -72,7 +73,7 @@ $$
 * De novo, `pbirthday(k, n)`.
 
 
-### 57 {-}
+### 57. Último suspiro de Júlio César {-}
 
 ::: {.rmdbox latex=1}
 
@@ -126,7 +127,7 @@ $$
     ```
 
 
-### 61 {-}
+### 61. Passageiros e assentos {-}
 
 ::: {.rmdbox latex=1}
 
@@ -182,7 +183,7 @@ $$
 * Logo, a probabilidade de o passageiro $n$ acabar no assento $n$ é $1/2$.
 
 
-### 62 {-}
+### 62. Aniversários {-}
 
 ::: {.rmdbox latex=1}
 

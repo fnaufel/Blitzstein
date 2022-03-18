@@ -51,6 +51,8 @@
 <li><a class="" href="problema-do-anivers%C3%A1rio-propriedades.html">03: Problema do aniversário, propriedades</a></li>
 <li><a class="" href="probabilidade-condicional.html">04: Probabilidade condicional</a></li>
 <li><a class="" href="probabilidade-condicional-continua%C3%A7%C3%A3o.html">05: Probabilidade condicional (continuação)</a></li>
+<li><a class="" href="monty-hall-paradoxo-de-simpson.html">06: Monty Hall, paradoxo de Simpson</a></li>
+<li><a class="" href="ru%C3%ADna-do-jogador.html">07: Ruína do jogador</a></li>
 <li><a class="" href="refer%C3%AAncias.html">Referências</a></li>
 </ul>
 
@@ -87,14 +89,14 @@
 <p>Qual o maior valor de <span class="math inline">\(n\)</span> para o qual o R calcula <code>factorial(n)</code>?</p>
 <p>No meu computador, <span class="math inline">\(n = 170\)</span>:</p>
 <div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Special.html">factorial</a></span><span class="op">(</span><span class="fl">170</span><span class="op">:</span><span class="fl">171</span><span class="op">)</span>
-<span class="co">## [1] 7,257416e+306           Inf</span></code></pre></div>
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Special.html">factorial</a></span><span class="op">(</span><span class="fl">170</span><span class="op">:</span><span class="fl">171</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 7,257416e+306           Inf</code></pre>
 </li>
 <li>
 <p>Para valores maiores, podemos usar <code>lfactorial(n)</code> para calcular <span class="math inline">\(\ln n!\)</span>:</p>
-<div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Special.html">lfactorial</a></span><span class="op">(</span><span class="fl">170</span><span class="op">:</span><span class="fl">171</span><span class="op">)</span>
-<span class="co">## [1] 706,5731 711,7147</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/Special.html">lfactorial</a></span><span class="op">(</span><span class="fl">170</span><span class="op">:</span><span class="fl">171</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 706,5731 711,7147</code></pre>
 </li>
 <li><p>Da mesma forma, <code>lchoose(n, k)</code> calcula <span class="math inline">\(\ln \binom nk\)</span>.</p></li>
 </ul>
@@ -102,46 +104,46 @@
 <div id="tabulando-dados-tabulate-x-table" class="section level3 unnumbered">
 <h3>Tabulando dados: <code>tabulate</code> x <code>table</code><a class="anchor" aria-label="anchor" href="#tabulando-dados-tabulate-x-table"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">b</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fl">1</span><span class="op">:</span><span class="fl">365</span>,<span class="fl">23</span>,replace<span class="op">=</span><span class="cn">TRUE</span><span class="op">)</span>
-<span class="fu"><a href="https://rdrr.io/r/base/tabulate.html">tabulate</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span>
-<span class="co">##   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0</span>
-<span class="co">##  [41] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0</span>
-<span class="co">##  [81] 0 0 1 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
-<span class="co">## [121] 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
-<span class="co">## [161] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0</span>
-<span class="co">## [201] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 2 0 0 0 0</span>
-<span class="co">## [241] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0</span>
-<span class="co">## [281] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0</span>
-<span class="co">## [321] 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 1 0 1</span></code></pre></div>
-<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span>
-<span class="co">## b</span>
-<span class="co">##  37  74  83  88  92 100 125 133 139 144 146 164 199 204 219 233 236 269 326 328 339 </span>
-<span class="co">##   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   2   1   1   1   1 </span>
-<span class="co">## 341 </span>
-<span class="co">##   1</span></code></pre></div>
+<span class="fu"><a href="https://rdrr.io/r/base/tabulate.html">tabulate</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span></code></pre></div>
+<pre><code>##   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0
+##  [41] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+##  [81] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+## [121] 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 0 1 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0
+## [161] 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0
+## [201] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0 0 0 1 0 0 0 0 0 0
+## [241] 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
+## [281] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+## [321] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 1</code></pre>
+<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/base/table.html">table</a></span><span class="op">(</span><span class="va">b</span><span class="op">)</span></code></pre></div>
+<pre><code>## b
+##  39  83 132 136 138 143 150 167 176 184 191 216 226 229 234 245 261 280 341 342 353 
+##   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1 
+## 359 360 
+##   1   1</code></pre>
 </div>
 <div id="funções-para-o-problema-do-aniversário" class="section level3 unnumbered">
 <h3>Funções para o problema do aniversário<a class="anchor" aria-label="anchor" href="#fun%C3%A7%C3%B5es-para-o-problema-do-anivers%C3%A1rio"><i class="fas fa-link"></i></a>
 </h3>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/birthday.html">pbirthday</a></span><span class="op">(</span><span class="fl">23</span><span class="op">)</span>
-<span class="co">## [1] 0,5072972</span></code></pre></div>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/birthday.html">qbirthday</a></span><span class="op">(</span><span class="fl">.5</span><span class="op">)</span>
-<span class="co">## [1] 23</span></code></pre></div>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/birthday.html">qbirthday</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
-<span class="co">## [1] 366</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/birthday.html">pbirthday</a></span><span class="op">(</span><span class="fl">23</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 0,5072972</code></pre>
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/birthday.html">qbirthday</a></span><span class="op">(</span><span class="fl">.5</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 23</code></pre>
+<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/birthday.html">qbirthday</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 366</code></pre>
 <p>Para no mínimo <span class="math inline">\(3\)</span> no mesmo dia:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/birthday.html">qbirthday</a></span><span class="op">(</span><span class="fl">.5</span>, coincident <span class="op">=</span> <span class="fl">3</span><span class="op">)</span>
-<span class="co">## [1] 88</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fu"><a href="https://rdrr.io/r/stats/birthday.html">qbirthday</a></span><span class="op">(</span><span class="fl">.5</span>, coincident <span class="op">=</span> <span class="fl">3</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 88</code></pre>
 </div>
 </div>
-<div id="exercícios-cap.-1" class="section level2 unnumbered">
-<h2>Exercícios (cap. 1)<a class="anchor" aria-label="anchor" href="#exerc%C3%ADcios-cap.-1"><i class="fas fa-link"></i></a>
+<div id="exercícios-do-livro-cap.-1" class="section level2 unnumbered">
+<h2>Exercícios do livro (cap. 1)<a class="anchor" aria-label="anchor" href="#exerc%C3%ADcios-do-livro-cap.-1"><i class="fas fa-link"></i></a>
 </h2>
 <div id="superbaralho" class="section level3 unnumbered">
 <h3>13. Superbaralho<a class="anchor" aria-label="anchor" href="#superbaralho"><i class="fas fa-link"></i></a>
@@ -161,8 +163,8 @@
 <li><p>Só foi possível usar combinações completas porque a mão tem <span class="math inline">\(10\)</span> cartas, o que faz com que haja, essencialmente, um <span class="hl">número infinito de cópias de cada um dos <span class="math inline">\(52\)</span> tipos de carta</span>. Se a mão tivesse <span class="math inline">\(11\)</span> ou mais cartas, seria impossível que todas as cartas fossem iguais, e este raciocínio não poderia ser usado.</p></li>
 </ul>
 </div>
-<div id="norepeat-words" class="section level3 unnumbered">
-<h3>42. Norepeat words<a class="anchor" aria-label="anchor" href="#norepeat-words"><i class="fas fa-link"></i></a>
+<div id="palavras-sem-repetição" class="section level3 unnumbered">
+<h3>42. Palavras sem repetição<a class="anchor" aria-label="anchor" href="#palavras-sem-repeti%C3%A7%C3%A3o"><i class="fas fa-link"></i></a>
 </h3>
 <div class="rmdbox">
 <p>A <em>norepeatword</em> is a sequence of at least one (and possibly all) of the usual <span class="math inline">\(26\)</span> letters a, b, c, …,z, with repetitions not allowed.</p>
@@ -233,12 +235,12 @@ e^x = \sum_{k=0}^\infty \frac{x^k}{k!}
 </li>
 <li>
 <p>Numericamente:</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fl">1</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span>
-<span class="co">## [1] 0,3678794</span></code></pre></div>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="fl">1</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/Special.html">factorial</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">25</span><span class="op">)</span><span class="op">)</span>
-<span class="co">## [1] 0,3678794</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fl">1</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/Log.html">exp</a></span><span class="op">(</span><span class="fl">1</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 0,3678794</code></pre>
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="fl">1</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="fl">1</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/Special.html">factorial</a></span><span class="op">(</span><span class="fl">0</span><span class="op">:</span><span class="fl">25</span><span class="op">)</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 0,3678794</code></pre>
 </li>
 </ul>
 </div>
@@ -262,9 +264,9 @@ e^x = \sum_{k=0}^\infty \frac{x^k}{k!}
 </ul>
 </li>
 <li>
-<a class="nav-link" href="#exerc%C3%ADcios-cap.-1">Exercícios (cap. 1)</a><ul class="nav navbar-nav">
+<a class="nav-link" href="#exerc%C3%ADcios-do-livro-cap.-1">Exercícios do livro (cap. 1)</a><ul class="nav navbar-nav">
 <li><a class="nav-link" href="#superbaralho">13. Superbaralho</a></li>
-<li><a class="nav-link" href="#norepeat-words">42. Norepeat words</a></li>
+<li><a class="nav-link" href="#palavras-sem-repeti%C3%A7%C3%A3o">42. Palavras sem repetição</a></li>
 </ul>
 </li>
 </ul>

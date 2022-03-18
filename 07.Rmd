@@ -1,0 +1,56 @@
+---
+knit: "bookdown::render_book"
+---
+
+# 07: Ruína do jogador {-}
+
+## Vídeo {-}
+
+```{r echo=FALSE, results='asis', out.extra=center()}
+embed_yt('PNrqCdslGi4')
+```
+
+
+## Exercícios do livro (cap. 2) {-}
+
+### 48. Total de lançamentos de um dado {-}
+
+
+### 49. Número par de sucessos {-}
+
+
+### 50. Calvin e Hobbes {-}
+
+
+### 51. Jogador {-}
+
+
+### 52. Jogadores com apostas de outros valores {-}
+
+
+### 53. Carneiros e lobo em um círculo {-}
+
+
+### 54. Bêbado imortal {-}
+
+
+### 63. Três moedas {-}
+
+
+### 64. Urna {-}
+
+
+### 65. Assalto à festa {-}
+
+
+### 66. Total de $100$ em um dado {-}
+
+
+### 72. Testes A/B {-}
+
+
+### 73. Alelos {-}
+
+
+### 74. Primeiro ás {-}
+

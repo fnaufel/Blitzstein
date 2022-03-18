@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>04: Probabilidade condicional | Introduction to Probability (Joe Blitzstein)</title>
 <meta name="author" content="Fernando Náufel">
-<meta name="description" content="Vídeo   Exercícios do livro (cap. 2)  2  Uma mulher está grávida de meninos gêmeos. Gêmeos podem ser idênticos ou fraternos. \(1/3\) dos gêmeos são idênticos. Gêmeos idênticos têm \(50\%\) de...">
+<meta name="description" content="Vídeo   Exercícios do livro (cap. 2)  2. Gêmeos  Uma mulher está grávida de meninos gêmeos. Gêmeos podem ser idênticos ou fraternos. \(1/3\) dos gêmeos são idênticos. Gêmeos idênticos têm \(50\%\)...">
 <meta name="generator" content="bookdown 0.25 with bs4_book()">
 <meta property="og:title" content="04: Probabilidade condicional | Introduction to Probability (Joe Blitzstein)">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Vídeo   Exercícios do livro (cap. 2)  2  Uma mulher está grávida de meninos gêmeos. Gêmeos podem ser idênticos ou fraternos. \(1/3\) dos gêmeos são idênticos. Gêmeos idênticos têm \(50\%\) de...">
+<meta property="og:description" content="Vídeo   Exercícios do livro (cap. 2)  2. Gêmeos  Uma mulher está grávida de meninos gêmeos. Gêmeos podem ser idênticos ou fraternos. \(1/3\) dos gêmeos são idênticos. Gêmeos idênticos têm \(50\%\)...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="04: Probabilidade condicional | Introduction to Probability (Joe Blitzstein)">
-<meta name="twitter:description" content="Vídeo   Exercícios do livro (cap. 2)  2  Uma mulher está grávida de meninos gêmeos. Gêmeos podem ser idênticos ou fraternos. \(1/3\) dos gêmeos são idênticos. Gêmeos idênticos têm \(50\%\) de...">
+<meta name="twitter:description" content="Vídeo   Exercícios do livro (cap. 2)  2. Gêmeos  Uma mulher está grávida de meninos gêmeos. Gêmeos podem ser idênticos ou fraternos. \(1/3\) dos gêmeos são idênticos. Gêmeos idênticos têm \(50\%\)...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/_Lexend-0.4.0/font.css" rel="stylesheet">
@@ -51,6 +51,8 @@
 <li><a class="" href="problema-do-anivers%C3%A1rio-propriedades.html">03: Problema do aniversário, propriedades</a></li>
 <li><a class="active" href="probabilidade-condicional.html">04: Probabilidade condicional</a></li>
 <li><a class="" href="probabilidade-condicional-continua%C3%A7%C3%A3o.html">05: Probabilidade condicional (continuação)</a></li>
+<li><a class="" href="monty-hall-paradoxo-de-simpson.html">06: Monty Hall, paradoxo de Simpson</a></li>
+<li><a class="" href="ru%C3%ADna-do-jogador.html">07: Ruína do jogador</a></li>
 <li><a class="" href="refer%C3%AAncias.html">Referências</a></li>
 </ul>
 
@@ -71,8 +73,8 @@
 <div id="exercícios-do-livro-cap.-2" class="section level2 unnumbered">
 <h2>Exercícios do livro (cap. 2)<a class="anchor" aria-label="anchor" href="#exerc%C3%ADcios-do-livro-cap.-2"><i class="fas fa-link"></i></a>
 </h2>
-<div id="section-8" class="section level3 unnumbered">
-<h3>2<a class="anchor" aria-label="anchor" href="#section-8"><i class="fas fa-link"></i></a>
+<div id="gêmeos" class="section level3 unnumbered">
+<h3>2. Gêmeos<a class="anchor" aria-label="anchor" href="#g%C3%AAmeos"><i class="fas fa-link"></i></a>
 </h3>
 <div class="rmdbox">
 <ul>
@@ -144,8 +146,8 @@ P(I \mid M)
 </li>
 </ul>
 </div>
-<div id="section-9" class="section level3 unnumbered">
-<h3>4<a class="anchor" aria-label="anchor" href="#section-9"><i class="fas fa-link"></i></a>
+<div id="múltipla-escolha" class="section level3 unnumbered">
+<h3>4. Múltipla escolha<a class="anchor" aria-label="anchor" href="#m%C3%BAltipla-escolha"><i class="fas fa-link"></i></a>
 </h3>
 <div class="rmdbox">
 <ul>
@@ -156,12 +158,13 @@ P(I \mid M)
 <li><p>Se ele não sabe, ele chuta uma opção ao acaso.</p></li>
 <li><p>Considere <span class="math inline">\(P(K) = p\)</span>.</p></li>
 </ul>
+</div>
+<div class="rmdbox">
 <ol style="list-style-type: lower-alpha">
-<li><p>Ache <span class="math inline">\(P(K \mid R)\)</span>.</p></li>
-<li><p>Mostre que <span class="math inline">\(P(K \mid R) \geq p\)</span>. Por que isto faz sentido? Quando a igualdade é exata?</p></li>
+<li>Ache <span class="math inline">\(P(K \mid R)\)</span>.</li>
 </ol>
 </div>
-<ol style="list-style-type: lower-alpha">
+<ul>
 <li>
 <p>Vamos usar Bayes, supondo <span class="math inline">\(p = P(K) &gt; 0\)</span>:</p>
 <p><span class="math display">\[
@@ -184,16 +187,23 @@ P(K \mid R)
 \end{aligned}
 \]</span></p>
 </li>
-<li>
-<p>Isto equivale a mostrar</p>
+</ul>
+<div class="rmdbox">
+<ol start="2" style="list-style-type: lower-alpha">
+<li>Mostre que <span class="math inline">\(P(K \mid R) \geq p\)</span>. Por que isto faz sentido? Quando a igualdade é exata?</li>
+</ol>
+</div>
+<ul>
+<li>Isto equivale a mostrar</li>
+</ul>
 <p><span class="math display">\[
 \frac{np}{np + (1 - p)} \geq p
-\]</span></p>
-<p>Como todos os valores são positivos, isto equivale a</p>
+\]</span>
+Como todos os valores são positivos, isto equivale a</p>
 <p><span class="math display">\[
 np \geq np^2 + (1 - p)p
-\]</span></p>
-<p>Dividindo ambos os lados por <span class="math inline">\(p &gt; 0\)</span>:</p>
+\]</span>
+Dividindo ambos os lados por <span class="math inline">\(p &gt; 0\)</span>:</p>
 <p><span class="math display">\[
 n \geq np + 1 - p
 \]</span></p>
@@ -207,23 +217,21 @@ n \geq np + 1 - p
 \end{aligned}
 \]</span>
 O que é verdade, pois existe pelo menos uma opção (a correta).</p>
-<p>Se <span class="math inline">\(p = 1\)</span>, a igualdade vale, e <span class="math inline">\(P(K \mid R) = 1\)</span>, pois o aluno sempre sabe a resposta e sempre acerta.</p>
-<p>Se <span class="math inline">\(n = 1\)</span>, a igualdade vale, e <span class="math inline">\(P(K \mid R) = p\)</span>, pois o aluno acertar (ele sempre acerta!) e o aluno saber são independentes.</p>
+<p>Se <span class="math inline">\(p = 1\)</span>, a igualdade vale, e <span class="math inline">\(P(K \mid R) = 1\)</span>, pois o aluno sempre sabe a esposta e sempre acerta.</p>
+<p>Se <span class="math inline">\(n = 1\)</span>, a igualdade vale, e <span class="math inline">\(P(K \mid R) = p\)</span>, pois o aluno acertar (ele empre acerta!) e o aluno saber são independentes.</p>
 <p>Imagine <span class="math inline">\(n &gt; 1\)</span>.</p>
 <p>Lembre-se de que <span class="math inline">\(P(K \mid R) = \frac{P(K \cap R)}{P(R)}\)</span>.</p>
-<p>O numerador é a probabilidade do evento “o aluno sabe e o aluno acerta”. Esta probabilidade é exatamente <span class="math inline">\(p\)</span>, pois “o aluno sabe” é sub-evento de “o aluno acerta”.</p>
-<p>O numerador <span class="math inline">\(P(R)\)</span> é um número tal que <span class="math inline">\(0 &lt; P(R) &lt; 1\)</span>. Vamos chamar este número de <span class="math inline">\(1/x\)</span>, para <span class="math inline">\(x &gt; 1\)</span>.</p>
+<p>O numerador é a probabilidade do evento “o aluno sabe e o aluno acerta”. Esta robabilidade é exatamente <span class="math inline">\(p\)</span>, pois “o aluno sabe” é sub-evento de “o aluno certa”.</p>
+<p>O numerador <span class="math inline">\(P(R)\)</span> é um número tal que <span class="math inline">\(0 &lt; P(R) &lt; 1\)</span>. Vamos chamar este úmero de <span class="math inline">\(1/x\)</span>, para <span class="math inline">\(x &gt; 1\)</span>.</p>
 <p>Então,</p>
 <p><span class="math display">\[
 P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp &gt; p
 \]</span></p>
-</li>
-</ol>
 <div id="em-r" class="section level4 unnumbered">
 <h4>Em R<a class="anchor" aria-label="anchor" href="#em-r"><i class="fas fa-link"></i></a>
 </h4>
 <p>Valores teóricos:</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">n</span> <span class="op">&lt;-</span> <span class="fl">1</span><span class="op">:</span><span class="fl">9</span>
 <span class="va">p</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/seq.html">seq</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span>, <span class="fl">.25</span><span class="op">)</span>
 
@@ -255,7 +263,7 @@ P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp &gt; p
 \]</span></p>
 </div>
 <p>Simulação:</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb22"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">sim</span> <span class="op">&lt;-</span> <span class="kw">function</span><span class="op">(</span><span class="va">n</span>, <span class="va">p</span>, <span class="va">reps</span> <span class="op">=</span> <span class="fl">1e7</span><span class="op">)</span> <span class="op">{</span>
   
   <span class="va">sabe</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span>
@@ -281,7 +289,7 @@ P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp &gt; p
 <span class="op">}</span>
 
 <span class="va">sim</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/Vectorize.html">Vectorize</a></span><span class="op">(</span><span class="va">sim</span><span class="op">)</span></code></pre></div>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb23"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op">%&gt;%</span> 
   <span class="fu">mutate</span><span class="op">(</span>
     pkr_simulado <span class="op">=</span> <span class="fu">sim</span><span class="op">(</span><span class="va">n</span>, <span class="va">p</span><span class="op">)</span>
@@ -290,14 +298,14 @@ P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp &gt; p
 <span class="va">df</span></code></pre></div>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["n"],"name":[1],"type":["int"],"align":["right"]},{"label":["p"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["pkr_teorico"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["pkr_simulado"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"1","2":"0,25","3":"0,2500000","4":"0,2502026"},{"1":"1","2":"0,50","3":"0,5000000","4":"0,4999832"},{"1":"1","2":"0,75","3":"0,7500000","4":"0,7504606"},{"1":"1","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"2","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"2","2":"0,25","3":"0,4000000","4":"0,3998505"},{"1":"2","2":"0,50","3":"0,6666667","4":"0,6666403"},{"1":"2","2":"0,75","3":"0,8571429","4":"0,8570665"},{"1":"2","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"3","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"3","2":"0,25","3":"0,5000000","4":"0,4999805"},{"1":"3","2":"0,50","3":"0,7500000","4":"0,7500388"},{"1":"3","2":"0,75","3":"0,9000000","4":"0,9000684"},{"1":"3","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"4","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"4","2":"0,25","3":"0,5714286","4":"0,5716879"},{"1":"4","2":"0,50","3":"0,8000000","4":"0,7999421"},{"1":"4","2":"0,75","3":"0,9230769","4":"0,9231010"},{"1":"4","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"5","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"5","2":"0,25","3":"0,6250000","4":"0,6247393"},{"1":"5","2":"0,50","3":"0,8333333","4":"0,8331971"},{"1":"5","2":"0,75","3":"0,9375000","4":"0,9373535"},{"1":"5","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"6","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"6","2":"0,25","3":"0,6666667","4":"0,6664028"},{"1":"6","2":"0,50","3":"0,8571429","4":"0,8572894"},{"1":"6","2":"0,75","3":"0,9473684","4":"0,9473386"},{"1":"6","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"7","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"7","2":"0,25","3":"0,7000000","4":"0,6999313"},{"1":"7","2":"0,50","3":"0,8750000","4":"0,8747860"},{"1":"7","2":"0,75","3":"0,9545455","4":"0,9544844"},{"1":"7","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"8","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"8","2":"0,25","3":"0,7272727","4":"0,7271878"},{"1":"8","2":"0,50","3":"0,8888889","4":"0,8891418"},{"1":"8","2":"0,75","3":"0,9600000","4":"0,9599143"},{"1":"8","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"9","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"9","2":"0,25","3":"0,7500000","4":"0,7503001"},{"1":"9","2":"0,50","3":"0,9000000","4":"0,8998653"},{"1":"9","2":"0,75","3":"0,9642857","4":"0,9642199"},{"1":"9","2":"1,00","3":"1,0000000","4":"1,0000000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["n"],"name":[1],"type":["int"],"align":["right"]},{"label":["p"],"name":[2],"type":["dbl"],"align":["right"]},{"label":["pkr_teorico"],"name":[3],"type":["dbl"],"align":["right"]},{"label":["pkr_simulado"],"name":[4],"type":["dbl"],"align":["right"]}],"data":[{"1":"1","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"1","2":"0,25","3":"0,2500000","4":"0,2500700"},{"1":"1","2":"0,50","3":"0,5000000","4":"0,5001001"},{"1":"1","2":"0,75","3":"0,7500000","4":"0,7501206"},{"1":"1","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"2","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"2","2":"0,25","3":"0,4000000","4":"0,3998249"},{"1":"2","2":"0,50","3":"0,6666667","4":"0,6666296"},{"1":"2","2":"0,75","3":"0,8571429","4":"0,8573860"},{"1":"2","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"3","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"3","2":"0,25","3":"0,5000000","4":"0,4999860"},{"1":"3","2":"0,50","3":"0,7500000","4":"0,7498939"},{"1":"3","2":"0,75","3":"0,9000000","4":"0,9000722"},{"1":"3","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"4","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"4","2":"0,25","3":"0,5714286","4":"0,5712752"},{"1":"4","2":"0,50","3":"0,8000000","4":"0,8001661"},{"1":"4","2":"0,75","3":"0,9230769","4":"0,9231557"},{"1":"4","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"5","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"5","2":"0,25","3":"0,6250000","4":"0,6250229"},{"1":"5","2":"0,50","3":"0,8333333","4":"0,8333137"},{"1":"5","2":"0,75","3":"0,9375000","4":"0,9374911"},{"1":"5","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"6","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"6","2":"0,25","3":"0,6666667","4":"0,6668525"},{"1":"6","2":"0,50","3":"0,8571429","4":"0,8571221"},{"1":"6","2":"0,75","3":"0,9473684","4":"0,9473923"},{"1":"6","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"7","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"7","2":"0,25","3":"0,7000000","4":"0,7001727"},{"1":"7","2":"0,50","3":"0,8750000","4":"0,8748166"},{"1":"7","2":"0,75","3":"0,9545455","4":"0,9544707"},{"1":"7","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"8","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"8","2":"0,25","3":"0,7272727","4":"0,7274055"},{"1":"8","2":"0,50","3":"0,8888889","4":"0,8888319"},{"1":"8","2":"0,75","3":"0,9600000","4":"0,9600704"},{"1":"8","2":"1,00","3":"1,0000000","4":"1,0000000"},{"1":"9","2":"0,00","3":"0,0000000","4":"0,0000000"},{"1":"9","2":"0,25","3":"0,7500000","4":"0,7500127"},{"1":"9","2":"0,50","3":"0,9000000","4":"0,9000799"},{"1":"9","2":"0,75","3":"0,9642857","4":"0,9643105"},{"1":"9","2":"1,00","3":"1,0000000","4":"1,0000000"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
 <div class="inline-figure"><img src="_main_files/figure-html/unnamed-chunk-27-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
 </div>
-<div id="section-10" class="section level3 unnumbered">
-<h3>12<a class="anchor" aria-label="anchor" href="#section-10"><i class="fas fa-link"></i></a>
+<div id="mensagens-em-binário" class="section level3 unnumbered">
+<h3>12. Mensagens em binário<a class="anchor" aria-label="anchor" href="#mensagens-em-bin%C3%A1rio"><i class="fas fa-link"></i></a>
 </h3>
 <div class="rmdbox">
 <ol style="list-style-type: lower-alpha">
@@ -320,7 +328,7 @@ P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp &gt; p
 <li>
 <p>Queremos achar <span class="math inline">\(P(A \mid B)\)</span>. Usando Bayes:</p>
 <div class="inline-figure"><img src="images/alice02.png" width="75%" style="display: block; margin: auto;"></div>
-<div class="sourceCode" id="cb14"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb24"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">p0</span> <span class="op">&lt;-</span> <span class="fl">.05</span>
 <span class="va">p1</span> <span class="op">&lt;-</span> <span class="fl">.1</span>
 <span class="va">q0</span> <span class="op">&lt;-</span> <span class="fl">1</span> <span class="op">-</span> <span class="va">p0</span>
@@ -331,8 +339,8 @@ P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp &gt; p
 <span class="va">pB</span> <span class="op">&lt;-</span> <span class="op">(</span><span class="va">q1</span> <span class="op">+</span> <span class="va">p0</span><span class="op">)</span> <span class="op">/</span> <span class="fl">2</span>
 <span class="va">pAIB</span> <span class="op">&lt;-</span> <span class="va">pBIA</span> <span class="op">*</span> <span class="va">pA</span> <span class="op">/</span> <span class="va">pB</span>
 
-<span class="va">pAIB</span>
-<span class="co">## [1] 0,9473684</span></code></pre></div>
+<span class="va">pAIB</span></code></pre></div>
+<pre><code>## [1] 0,9473684</code></pre>
 </li>
 <li>
 <p>Para sermos completos, vamos calcular outras probabilidades, com <span class="math inline">\(P(A) = P(\neg A) = 1/2\)</span>:</p>
@@ -341,7 +349,7 @@ P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp &gt; p
 </li>
 <li>
 <p>Simulação:</p>
-<div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb26"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span class="va">reps</span> <span class="op">&lt;-</span> <span class="fl">1e7</span>
 <span class="va">alice_envia</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sample.html">sample</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html">c</a></span><span class="op">(</span><span class="fl">0</span>, <span class="fl">1</span><span class="op">)</span>, <span class="va">reps</span>, replace <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span>
 <span class="va">bob_recebe</span> <span class="op">&lt;-</span> <span class="va">alice_envia</span>
@@ -364,8 +372,8 @@ P(K \mid R) = \frac{P(K \cap R)}{P(R)} = \frac{p}{1/x} = xp &gt; p
   <span class="op">)</span>
 
 <span class="va">pab</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">alice_envia</span> <span class="op">&amp;</span> <span class="va">bob_recebe</span><span class="op">)</span> <span class="op">/</span> <span class="fu"><a href="https://rdrr.io/r/base/sum.html">sum</a></span><span class="op">(</span><span class="va">bob_recebe</span><span class="op">)</span>
-<span class="va">pab</span>
-<span class="co">## [1] 0,9474936</span></code></pre></div>
+<span class="va">pab</span></code></pre></div>
+<pre><code>## [1] 0,947354</code></pre>
 </li>
 </ul>
 <div class="rmdbox">
@@ -438,14 +446,14 @@ P(AAA \mid BB\neg B)
 </li>
 <li>
 <p>Numericamente:</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span class="va">q1</span> <span class="op">*</span> <span class="va">q1</span> <span class="op">*</span> <span class="va">p1</span> <span class="op">/</span> <span class="op">(</span><span class="va">q1</span> <span class="op">*</span> <span class="va">q1</span> <span class="op">*</span> <span class="va">p1</span> <span class="op">+</span> <span class="va">p0</span> <span class="op">*</span> <span class="va">p0</span> <span class="op">*</span> <span class="va">q0</span><span class="op">)</span>
-<span class="co">## [1] 0,9715142</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span class="va">q1</span> <span class="op">*</span> <span class="va">q1</span> <span class="op">*</span> <span class="va">p1</span> <span class="op">/</span> <span class="op">(</span><span class="va">q1</span> <span class="op">*</span> <span class="va">q1</span> <span class="op">*</span> <span class="va">p1</span> <span class="op">+</span> <span class="va">p0</span> <span class="op">*</span> <span class="va">p0</span> <span class="op">*</span> <span class="va">q0</span><span class="op">)</span></code></pre></div>
+<pre><code>## [1] 0,9715142</code></pre>
 </li>
 </ul>
 </div>
-<div id="section-11" class="section level3 unnumbered">
-<h3>14<a class="anchor" aria-label="anchor" href="#section-11"><i class="fas fa-link"></i></a>
+<div id="probabilidades-condicionais-e-complementos" class="section level3 unnumbered">
+<h3>14. Probabilidades condicionais e complementos<a class="anchor" aria-label="anchor" href="#probabilidades-condicionais-e-complementos"><i class="fas fa-link"></i></a>
 </h3>
 <div class="rmdbox">
 <p>Se <span class="math inline">\(P(A), P(B) \in (0, 1)\)</span>, então</p>
@@ -456,8 +464,8 @@ P(B \mid A) &gt; P(B \mid \neg A)
 </div>
 <p>???</p>
 </div>
-<div id="section-12" class="section level3 unnumbered">
-<h3>15<a class="anchor" aria-label="anchor" href="#section-12"><i class="fas fa-link"></i></a>
+<div id="torcer-para-qual-evento" class="section level3 unnumbered">
+<h3>15. Torcer para qual evento?<a class="anchor" aria-label="anchor" href="#torcer-para-qual-evento"><i class="fas fa-link"></i></a>
 </h3>
 <div class="rmdbox">
 <p><span class="math inline">\(A\)</span> e <span class="math inline">\(B\)</span> são eventos com</p>
@@ -489,8 +497,8 @@ P(A \cap B \mid A \cup B) &amp;=
 <li><p>Intuitivamente, como <span class="math inline">\(A\)</span> é o evento menos provável dos dois, saber que <span class="math inline">\(A\)</span> ocorreu nos deixa mais próximo da ocorrência dos dois eventos do que saber que <span class="math inline">\(B\)</span> (ou que algum dos dois) ocorreu.</p></li>
 </ul>
 </div>
-<div id="section-13" class="section level3 unnumbered">
-<h3>16<a class="anchor" aria-label="anchor" href="#section-13"><i class="fas fa-link"></i></a>
+<div id="ajudar-e-atrapalhar" class="section level3 unnumbered">
+<h3>16. Ajudar e atrapalhar<a class="anchor" aria-label="anchor" href="#ajudar-e-atrapalhar"><i class="fas fa-link"></i></a>
 </h3>
 <div class="rmdbox">
 <p><span class="math display">\[
@@ -523,8 +531,8 @@ P(A \mid \neg B)
 </li>
 </ul>
 </div>
-<div id="section-14" class="section level3 unnumbered">
-<h3>17<a class="anchor" aria-label="anchor" href="#section-14"><i class="fas fa-link"></i></a>
+<div id="contrapositiva" class="section level3 unnumbered">
+<h3>17. Contrapositiva<a class="anchor" aria-label="anchor" href="#contrapositiva"><i class="fas fa-link"></i></a>
 </h3>
 <div class="rmdbox">
 <p>Em lógica determinística, <span class="math inline">\(A \to B \iff \neg B \to \neg A\)</span>.</p>
@@ -604,8 +612,8 @@ I = \frac{P(A \cap B)}{P(A)P(B)}
 <div class="inline-figure"><img src="_main_files/figure-html/unnamed-chunk-35-1.png" width="100%" style="display: block; margin: auto;"></div>
 <div class="inline-figure"><img src="_main_files/figure-html/unnamed-chunk-36-1.png" width="100%" style="display: block; margin: auto;"></div>
 </div>
-<div id="section-15" class="section level3 unnumbered">
-<h3>22<a class="anchor" aria-label="anchor" href="#section-15"><i class="fas fa-link"></i></a>
+<div id="lewis-carroll" class="section level3 unnumbered">
+<h3>22. Lewis Carroll<a class="anchor" aria-label="anchor" href="#lewis-carroll"><i class="fas fa-link"></i></a>
 </h3>
 <div class="rmdbox">
 <p>Este problema foi proposto pela primeira vez por Lewis Carroll em 1893.</p>
@@ -704,8 +712,8 @@ P(S \mid R) = \frac{P(R \mid S) \cdot P(S)}{P(R)}
 </li>
 </ul>
 </div>
-<div id="section-16" class="section level3 unnumbered">
-<h3>29<a class="anchor" aria-label="anchor" href="#section-16"><i class="fas fa-link"></i></a>
+<div id="características-menos-e-mais-específicas" class="section level3 unnumbered">
+<h3>29. Características menos e mais específicas<a class="anchor" aria-label="anchor" href="#caracter%C3%ADsticas-menos-e-mais-espec%C3%ADficas"><i class="fas fa-link"></i></a>
 </h3>
 <div class="rmdbox">
 <p>Uma família tem <span class="math inline">\(2\)</span> crias.</p>
@@ -795,15 +803,15 @@ P(AA \mid AC)
 <li><a class="nav-link" href="#v%C3%ADdeo-3">Vídeo</a></li>
 <li>
 <a class="nav-link" href="#exerc%C3%ADcios-do-livro-cap.-2">Exercícios do livro (cap. 2)</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#section-8">2</a></li>
-<li><a class="nav-link" href="#section-9">4</a></li>
-<li><a class="nav-link" href="#section-10">12</a></li>
-<li><a class="nav-link" href="#section-11">14</a></li>
-<li><a class="nav-link" href="#section-12">15</a></li>
-<li><a class="nav-link" href="#section-13">16</a></li>
-<li><a class="nav-link" href="#section-14">17</a></li>
-<li><a class="nav-link" href="#section-15">22</a></li>
-<li><a class="nav-link" href="#section-16">29</a></li>
+<li><a class="nav-link" href="#g%C3%AAmeos">2. Gêmeos</a></li>
+<li><a class="nav-link" href="#m%C3%BAltipla-escolha">4. Múltipla escolha</a></li>
+<li><a class="nav-link" href="#mensagens-em-bin%C3%A1rio">12. Mensagens em binário</a></li>
+<li><a class="nav-link" href="#probabilidades-condicionais-e-complementos">14. Probabilidades condicionais e complementos</a></li>
+<li><a class="nav-link" href="#torcer-para-qual-evento">15. Torcer para qual evento?</a></li>
+<li><a class="nav-link" href="#ajudar-e-atrapalhar">16. Ajudar e atrapalhar</a></li>
+<li><a class="nav-link" href="#contrapositiva">17. Contrapositiva</a></li>
+<li><a class="nav-link" href="#lewis-carroll">22. Lewis Carroll</a></li>
+<li><a class="nav-link" href="#caracter%C3%ADsticas-menos-e-mais-espec%C3%ADficas">29. Características menos e mais específicas</a></li>
 </ul>
 </li>
 </ul>

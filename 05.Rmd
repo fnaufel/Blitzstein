@@ -807,7 +807,7 @@ Daí, com as outras condições do enunciado, temos uma instância do [paradoxo 
   \!\!\!\!\!\!\!\!\!
   \prod_{
     \begin{array}{c}
-    1 \leq j \leq 100. \\
+    1 \leq j \leq 100, \\
     j \not\in \{ 23, 64, 65 \}
     \end{array}
   }

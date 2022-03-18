@@ -6,14 +6,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>03: Problema do aniversário, propriedades | Introduction to Probability (Joe Blitzstein)</title>
 <meta name="author" content="Fernando Náufel">
-<meta name="description" content="Vídeo   Exercícios do livro (cap. 1)  26  Amostra com reposição de tamanho \(1000\) a partir de uma população de tamanho \(1\) milhão. Cada pessoa tem a mesma probabilidade de ser escolhida. Qual...">
+<meta name="description" content="Vídeo   Exercícios do livro (cap. 1)  26. Amostra com reposição  Amostra com reposição de tamanho \(1000\) a partir de uma população de tamanho \(1\) milhão. Cada pessoa tem a mesma probabilidade...">
 <meta name="generator" content="bookdown 0.25 with bs4_book()">
 <meta property="og:title" content="03: Problema do aniversário, propriedades | Introduction to Probability (Joe Blitzstein)">
 <meta property="og:type" content="book">
-<meta property="og:description" content="Vídeo   Exercícios do livro (cap. 1)  26  Amostra com reposição de tamanho \(1000\) a partir de uma população de tamanho \(1\) milhão. Cada pessoa tem a mesma probabilidade de ser escolhida. Qual...">
+<meta property="og:description" content="Vídeo   Exercícios do livro (cap. 1)  26. Amostra com reposição  Amostra com reposição de tamanho \(1000\) a partir de uma população de tamanho \(1\) milhão. Cada pessoa tem a mesma probabilidade...">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="03: Problema do aniversário, propriedades | Introduction to Probability (Joe Blitzstein)">
-<meta name="twitter:description" content="Vídeo   Exercícios do livro (cap. 1)  26  Amostra com reposição de tamanho \(1000\) a partir de uma população de tamanho \(1\) milhão. Cada pessoa tem a mesma probabilidade de ser escolhida. Qual...">
+<meta name="twitter:description" content="Vídeo   Exercícios do livro (cap. 1)  26. Amostra com reposição  Amostra com reposição de tamanho \(1000\) a partir de uma população de tamanho \(1\) milhão. Cada pessoa tem a mesma probabilidade...">
 <!-- JS --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://kit.fontawesome.com/6ecbd6c532.js" crossorigin="anonymous"></script><script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="libs/bootstrap-4.6.0/bootstrap.min.css" rel="stylesheet">
 <script src="libs/bootstrap-4.6.0/bootstrap.bundle.min.js"></script><link href="libs/_Lexend-0.4.0/font.css" rel="stylesheet">
@@ -51,6 +51,8 @@
 <li><a class="active" href="problema-do-anivers%C3%A1rio-propriedades.html">03: Problema do aniversário, propriedades</a></li>
 <li><a class="" href="probabilidade-condicional.html">04: Probabilidade condicional</a></li>
 <li><a class="" href="probabilidade-condicional-continua%C3%A7%C3%A3o.html">05: Probabilidade condicional (continuação)</a></li>
+<li><a class="" href="monty-hall-paradoxo-de-simpson.html">06: Monty Hall, paradoxo de Simpson</a></li>
+<li><a class="" href="ru%C3%ADna-do-jogador.html">07: Ruína do jogador</a></li>
 <li><a class="" href="refer%C3%AAncias.html">Referências</a></li>
 </ul>
 
@@ -68,11 +70,11 @@
 <iframe src="https://www.youtube.com/embed/LZ5Wergp_PA" width="100%" height="400px" data-external="1" class="center" style="width: 80%;">
 </iframe>
 </div>
-<div id="exercícios-do-livro-cap.-1-1" class="section level2 unnumbered">
-<h2>Exercícios do livro (cap. 1)<a class="anchor" aria-label="anchor" href="#exerc%C3%ADcios-do-livro-cap.-1-1"><i class="fas fa-link"></i></a>
+<div id="exercícios-do-livro-cap.-1-2" class="section level2 unnumbered">
+<h2>Exercícios do livro (cap. 1)<a class="anchor" aria-label="anchor" href="#exerc%C3%ADcios-do-livro-cap.-1-2"><i class="fas fa-link"></i></a>
 </h2>
-<div id="section-3" class="section level3 unnumbered">
-<h3>26<a class="anchor" aria-label="anchor" href="#section-3"><i class="fas fa-link"></i></a>
+<div id="amostra-com-reposição" class="section level3 unnumbered">
+<h3>26. Amostra com reposição<a class="anchor" aria-label="anchor" href="#amostra-com-reposi%C3%A7%C3%A3o"><i class="fas fa-link"></i></a>
 </h3>
 <div class="rmdbox">
 <p>Amostra <span class="hl">com reposição</span> de tamanho <span class="math inline">\(1000\)</span> a partir de uma população de tamanho <span class="math inline">\(1\)</span> milhão. Cada pessoa tem a mesma probabilidade de ser escolhida.</p>
@@ -187,8 +189,8 @@ P &amp;= 1 - P(\text{ninguém escolhido mais de uma vez}) \\
 </li>
 </ul>
 </div>
-<div id="section-4" class="section level3 unnumbered">
-<h3>27<a class="anchor" aria-label="anchor" href="#section-4"><i class="fas fa-link"></i></a>
+<div id="função-de-hash" class="section level3 unnumbered">
+<h3>27. Função de <em>hash</em><a class="anchor" aria-label="anchor" href="#fun%C3%A7%C3%A3o-de-hash"><i class="fas fa-link"></i></a>
 </h3>
 <div class="rmdbox">
 <ul>
@@ -201,8 +203,8 @@ P &amp;= 1 - P(\text{ninguém escolhido mais de uma vez}) \\
 <li>De novo, <code>pbirthday(k, n)</code>.</li>
 </ul>
 </div>
-<div id="section-5" class="section level3 unnumbered">
-<h3>57<a class="anchor" aria-label="anchor" href="#section-5"><i class="fas fa-link"></i></a>
+<div id="último-suspiro-de-júlio-césar" class="section level3 unnumbered">
+<h3>57. Último suspiro de Júlio César<a class="anchor" aria-label="anchor" href="#%C3%BAltimo-suspiro-de-j%C3%BAlio-c%C3%A9sar"><i class="fas fa-link"></i></a>
 </h3>
 <div class="rmdbox">
 <ul>
@@ -248,8 +250,8 @@ P(\text{nenhuma molécula sua foi de César})
 </li>
 </ul>
 </div>
-<div id="section-6" class="section level3 unnumbered">
-<h3>61<a class="anchor" aria-label="anchor" href="#section-6"><i class="fas fa-link"></i></a>
+<div id="passageiros-e-assentos" class="section level3 unnumbered">
+<h3>61. Passageiros e assentos<a class="anchor" aria-label="anchor" href="#passageiros-e-assentos"><i class="fas fa-link"></i></a>
 </h3>
 <div class="rmdbox">
 <ul>
@@ -296,8 +298,8 @@ P(\text{nenhuma molécula sua foi de César})
 </ul>
 </div>
 </div>
-<div id="section-7" class="section level3 unnumbered">
-<h3>62<a class="anchor" aria-label="anchor" href="#section-7"><i class="fas fa-link"></i></a>
+<div id="aniversários" class="section level3 unnumbered">
+<h3>62. Aniversários<a class="anchor" aria-label="anchor" href="#anivers%C3%A1rios"><i class="fas fa-link"></i></a>
 </h3>
 <div class="rmdbox">
 <p><strong>Problema do aniversário com probabilidades diferentes:</strong></p>
@@ -482,12 +484,12 @@ e_{k}(p_3, \ldots p_n)
 <li><a class="nav-link" href="#problema-do-anivers%C3%A1rio-propriedades">03: Problema do aniversário, propriedades</a></li>
 <li><a class="nav-link" href="#v%C3%ADdeo-2">Vídeo</a></li>
 <li>
-<a class="nav-link" href="#exerc%C3%ADcios-do-livro-cap.-1-1">Exercícios do livro (cap. 1)</a><ul class="nav navbar-nav">
-<li><a class="nav-link" href="#section-3">26</a></li>
-<li><a class="nav-link" href="#section-4">27</a></li>
-<li><a class="nav-link" href="#section-5">57</a></li>
-<li><a class="nav-link" href="#section-6">61</a></li>
-<li><a class="nav-link" href="#section-7">62</a></li>
+<a class="nav-link" href="#exerc%C3%ADcios-do-livro-cap.-1-2">Exercícios do livro (cap. 1)</a><ul class="nav navbar-nav">
+<li><a class="nav-link" href="#amostra-com-reposi%C3%A7%C3%A3o">26. Amostra com reposição</a></li>
+<li><a class="nav-link" href="#fun%C3%A7%C3%A3o-de-hash">27. Função de hash</a></li>
+<li><a class="nav-link" href="#%C3%BAltimo-suspiro-de-j%C3%BAlio-c%C3%A9sar">57. Último suspiro de Júlio César</a></li>
+<li><a class="nav-link" href="#passageiros-e-assentos">61. Passageiros e assentos</a></li>
+<li><a class="nav-link" href="#anivers%C3%A1rios">62. Aniversários</a></li>
 </ul>
 </li>
 </ul>
