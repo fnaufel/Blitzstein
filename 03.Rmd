@@ -47,10 +47,19 @@ $$
     n = n,
     P = map2_dbl(n, N, ~pbirthday(.x, .y))
   ) %>% 
-    kbl(
-      format.args = list(big.mark = '.'),
-      longtable = TRUE
-    ) %>% 
+  	kbl(
+  	  format.args = list(big.mark = '.'),
+  	  longtable = TRUE,
+  	  booktabs = TRUE,
+  	  linesep = ''
+  	) %>% 
+  	kable_styling(
+  		latex_options = c(
+  			'hold_position',
+  			'repeat_header',
+  			'striped'
+  		)
+  	) %>% 
     kable_paper(
       c('striped', 'hover'),
       full_width = FALSE

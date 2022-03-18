@@ -176,6 +176,17 @@
 {\thesubsection}{.5em}{\titlerule\\[.8ex]\bfseries}%
 [\vspace{1ex}]
 
+\titleformat{\subsubsection}[block]%
+{\itshape}%
+{\thesubsubsection}{.5em}{\titlerule\\[.8ex]\itshape}%
+[\vspace{1ex}]
+
+\titleformat{\paragraph}[block]%
+{\itshape}%
+{\theparagraph}{.5em}{\\[.8ex]\itshape}%
+[\vspace{1ex}]
+
+
 %%%%%%%%%%%%%%%
 %
 % Caixas
@@ -319,6 +330,7 @@
 \makeatother
 
 % Use tt in tables
+\usepackage{longtable}
 \let\oldlongtable\longtable
 \let\endoldlongtable\endlongtable
 \renewenvironment{longtable}{\tt\oldlongtable}{\endoldlongtable}
@@ -443,16 +455,16 @@
 
 \begin{verbatim}
 ##   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-##  [34] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-##  [67] 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-## [100] 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 2 0 0 0
-## [133] 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-## [166] 0 0 1 0 0 0 0 0 0 1 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0
-## [199] 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-## [232] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-## [265] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-## [298] 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0
-## [331] 0 0 0 0 0 0 0 0 0 1
+##  [34] 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 1 0 0 0 0 0
+##  [67] 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+## [100] 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+## [133] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+## [166] 0 0 0 0 0 0 0 0 1 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+## [199] 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0
+## [232] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+## [265] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+## [298] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0
+## [331] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1
 \end{verbatim}
 
 \begin{Shaded}
@@ -463,10 +475,10 @@
 
 \begin{verbatim}
 ## b
-##  37  48  70 102 109 127 129 138 148 168 175 181 182 193 196 210 247 
-##   1   1   1   1   1   1   2   1   1   1   1   1   1   1   1   1   1 
-## 283 302 318 326 340 
-##   1   1   1   1   1
+##  36  44  53  60  61  76  85 101 115 116 117 145 174 175 202 210 215 
+##   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1 
+## 228 279 325 343 351 360 
+##   1   1   1   1   1   1
 \end{verbatim}
 
 \hypertarget{funuxe7uxf5es-para-o-problema-do-aniversuxe1rio}{%
@@ -1064,24 +1076,27 @@ P &= 1 - P(\text{ninguém escolhido mais de uma vez}) \\
 \item
   Para $N$ grande e $n$ pequeno, a probabilidade $P$ de pelo menos uma pessoa ser escolhida mais de uma vez se aproxima de $0$:
 
-  \begin{longtable}[t]{r|r|r}
-  \hline
+  \begin{longtable}[t]{rrr}
+  \toprule
   N & n & P\\
-  \hline
-  1.000.000 & 1.000.000 & 1,0000000\\
-  \hline
+  \midrule
+  \endfirsthead
+  \multicolumn{3}{@{}l}{\textit{(continued)}}\\
+  \toprule
+  N & n & P\\
+  \midrule
+  \endhead
+
+  \endfoot
+  \bottomrule
+  \endlastfoot
+  \cellcolor{gray!6}{1.000.000} & \cellcolor{gray!6}{1.000.000} & \cellcolor{gray!6}{1,0000000}\\
   1.000.000 & 100.000 & 1,0000000\\
-  \hline
-  1.000.000 & 10.000 & 1,0000000\\
-  \hline
+  \cellcolor{gray!6}{1.000.000} & \cellcolor{gray!6}{10.000} & \cellcolor{gray!6}{1,0000000}\\
   1.000.000 & 1.000 & 0,3932670\\
-  \hline
-  1.000.000 & 100 & 0,0049379\\
-  \hline
+  \cellcolor{gray!6}{1.000.000} & \cellcolor{gray!6}{100} & \cellcolor{gray!6}{0,0049379}\\
   1.000.000 & 10 & 0,0000450\\
-  \hline
-  1.000.000 & 1 & 0,0000000\\
-  \hline
+  \cellcolor{gray!6}{1.000.000} & \cellcolor{gray!6}{1} & \cellcolor{gray!6}{0,0000000}\\*
   \end{longtable}
 \end{itemize}
 
