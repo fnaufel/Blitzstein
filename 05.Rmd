@@ -13,7 +13,7 @@ embed_yt('JzDvVgNDxo8')
 
 ## Exercícios do livro (cap. 2) {-}
 
-### 30 {-}
+### 30. Filho mais velho {-}
 
 ::: {.rmdbox latex=1}
 
@@ -60,7 +60,7 @@ b. Qual a probabilidade de que $A$ é mais velho que $B$, dado que $A$ é mais v
 * De fato, a probabilidade [condicional]{.hl} $P(A > B \mid A > C) = 2/3$ é [maior]{.hl} do que a probabilidade [não-condicional]{.hl} $P(A > B) = 1/2$.
 
 
-### 31 {-}
+### 31. Auto-independência? {-}
 
 ::: {.rmdbox latex=1}
 
@@ -156,7 +156,7 @@ b. O evento $A > B$ é independente de $B > C$?
   $$
 
 
-### 33 {- #amigos}
+### 33. Amigos de Alice e Bob {- #amigos}
 
 ::: {.rmdbox latex=1}
 
@@ -196,15 +196,13 @@ a. Seja $D \subseteq C$. Achar $P(A = D)$.
   \frac12 \cdot \frac{|D|}{|C|} + \frac12 \cdot \left(1 - \frac{|D|}{|C|}\right) = \frac12
   $$
 
-* [Convenientemente, $|D|$ desapareceu, mas só porque $p = 1/2$.]{.hl}
-
 * A probabilidade de $A = D$ é a probabilidade de, para todo $x \in C$, acontecer de $x \in A \land x \in D$ ou $x \in A \land x \in D$. Como os eventos são independentes, temos
 
   $$
   P(A = D) = \frac1{2^{|C|}}
   $$
 
-* Vamos simular a situação. Estamos supondo que os elementos de $D$ são escolhidos segundo uma amostragem uniforme. [Veja explicações mais detalhadas abaixo](#amostra).
+* Vamos simular a situação. Estamos supondo que os elementos de $D$ são escolhidos segundo uma amostragem simples uniforme, sem reposição. [Veja explicações mais detalhadas abaixo](#amostra).
 
     ```{r attr.source='id="simular-amigos"'}
     simular <- function(p, n) {
@@ -223,7 +221,7 @@ a. Seja $D \subseteq C$. Achar $P(A = D)$.
 
 * Para as probabilidades não ficarem tão pequenas, vamos usar um universo $C$ com $10$ elementos apenas:
 
-    ```{r cache=TRUE, collapse=FALSE}
+    ```{r cache=TRUE, collapse=FALSE, attr.source='id="simular-com-p"'}
     p <- 1/2
     n <- 10
     nsims <- 1e6
@@ -238,16 +236,55 @@ a. Seja $D \subseteq C$. Achar $P(A = D)$.
     ```
 
 
-#### $p$ qualquer {-}
+* E se $p \neq 1/2$?
 
-* Vamos resolver de outra maneira, pensando em $p$ genérico.
+* [Como explicado abaixo](#amostra), a probabilidade de um $x \in C$ pertencer a $D$ (supondo que $D$ é obtido por amostragem simples) é $1/2$.
 
-* ??? Substituir $\frac{|D|}{n}$ por $\frac 1 2$ na fórmula.
+* Então, Para cada $x \in C$:
 
-* Simular com outros valores de $p$.
+  1. $x \in A \land x \in D$, com probabilidade $p/2$, 
+  
+     ou (exclusivo)
+     
+  2. $x \not\in A \land x \not\in D$, com probabilidade $(1 - p)/2$
+  
+* Somando as probabilidades dos casos, para cada $x \in C$, a probabilidade de $x$ estar em $A$ e em $D$, ou de $x$ não estar nem em $A$, nem em $D$, é, de novo, $1/2$.
+
+* Logo, $P(A = D) = 1/ 2^{|C|}$ novamente.
+
+* Ou seja, [o resultado vale para qualquer valor de $p$.]{.hl} Altere o valor de $p$ no [código da simulação acima](#simular-com-p) para verificar.
+
+::: {.rmdbox latex=1}
+
+b. Achar $P(A \subseteq B)$
+
+:::
+
+* Para cada $x \in A$, a probabilidade de $x \in B$ é $1/2$.
+
+* Logo, $P(A \subseteq B) = 1 / 2^{|A|}$.
+
+::: {.rmdbox latex=1}
+
+c. Achar $P(A \cup B) = C$.
+
+:::
+
+* Para cada $x \in C$,
+
+  $$
+  \begin{aligned}
+  P(x \in A \cup B) 
+  &= P(x \in A) + P(x \in B) - P(x \in A \cap B) \\
+  &= 1/2 + 1/2 - 1/4 \\
+  &= 3/4
+  \end{aligned}
+  $$
+
+* Logo, $P(A \cup B = C) = (3/4)^{|C|}$
 
 
-### Extra: amostragem uniforme (sem reposição) {- #amostra}
+### Extra: amostragem simples {- #amostra}
 
 * [Na resolução acima](#amigos), usamos a igualdade
 
@@ -570,7 +607,7 @@ Exemplo: universidade admite candidatos que são bons jogadores de basquete ($A$
 * Como o denominador $P(A \cup B) < 1$, esta probabilidade é maior do que $P(A)$.
 
 
-### 37 {-}
+### 37. Doenças e sintoma {-}
 
 ::: {.rmdbox latex=1}
 

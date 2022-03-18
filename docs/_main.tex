@@ -338,7 +338,7 @@
 
 \title{Introduction to Probability (Joe Blitzstein)}
 \author{Fernando Náufel}
-\date{(versão de 17/03/2022)}
+\date{(versão de 18/03/2022)}
 
 \begin{document}
 \maketitle
@@ -422,17 +422,17 @@
 \begin{Highlighting}[]
 \NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{sample}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{365}\NormalTok{,}\DecValTok{23}\NormalTok{,}\AttributeTok{replace=}\ConstantTok{TRUE}\NormalTok{)}
 \FunctionTok{tabulate}\NormalTok{(b)}
-\DocumentationTok{\#\#   [1] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0}
-\DocumentationTok{\#\#  [34] 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\#  [67] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [100] 0 0 0 0 0 0 0 0 0 0 2 0 0 0 0 0 0 0 0 0 0 1 0 1 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [133] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [166] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [199] 0 0 0 1 0 0 0 0 0 0 0 3 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 0 0 0 0 1 0 0 0}
-\DocumentationTok{\#\# [265] 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [298] 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
-\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 2}
+\DocumentationTok{\#\#   [1] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\#  [34] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0}
+\DocumentationTok{\#\#  [67] 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [100] 0 0 0 0 1 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [133] 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 0 0}
+\DocumentationTok{\#\# [166] 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [199] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [232] 0 0 0 0 0 0 0 1 0 0 0 1 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 0 0 0 0}
+\DocumentationTok{\#\# [265] 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [298] 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0}
+\DocumentationTok{\#\# [331] 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -440,10 +440,10 @@
 \begin{Highlighting}[]
 \FunctionTok{table}\NormalTok{(b)}
 \DocumentationTok{\#\# b}
-\DocumentationTok{\#\#  15  23  28  40  42 110 121 123 148 202 210 247 252 253 261 267 288 }
-\DocumentationTok{\#\#   1   1   1   1   1   2   1   1   1   1   3   1   1   1   1   1   1 }
-\DocumentationTok{\#\# 308 348 }
-\DocumentationTok{\#\#   1   2}
+\DocumentationTok{\#\#   1  63  72  78 104 105 110 115 133 160 163 178 184 223 239 243 252 }
+\DocumentationTok{\#\#   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1   1 }
+\DocumentationTok{\#\# 260 286 304 316 341 347 }
+\DocumentationTok{\#\#   1   1   1   1   1   1}
 \end{Highlighting}
 \end{Shaded}
 
@@ -2337,9 +2337,9 @@ Observe:
 \section*{Exercícios do livro (cap. 2)}\label{exercuxedcios-do-livro-cap.-2-1}}
 \addcontentsline{toc}{section}{Exercícios do livro (cap. 2)}
 
-\hypertarget{section-17}{%
-\subsection*{30}\label{section-17}}
-\addcontentsline{toc}{subsection}{30}
+\hypertarget{filho-mais-velho}{%
+\subsection*{30. Filho mais velho}\label{filho-mais-velho}}
+\addcontentsline{toc}{subsection}{30. Filho mais velho}
 
 \begin{rmdbox}
 
@@ -2402,9 +2402,9 @@ Uma família tem $3$ filhos: $A$, $B$ e $C$.
   De fato, a probabilidade {\hl{condicional}} $P(A > B \mid A > C) = 2/3$ é {\hl{maior}} do que a probabilidade {\hl{não-condicional}} $P(A > B) = 1/2$.
 \end{itemize}
 
-\hypertarget{section-18}{%
-\subsection*{31}\label{section-18}}
-\addcontentsline{toc}{subsection}{31}
+\hypertarget{auto-independuxeancia}{%
+\subsection*{31. Auto-independência?}\label{auto-independuxeancia}}
+\addcontentsline{toc}{subsection}{31. Auto-independência?}
 
 \begin{rmdbox}
 Um evento pode ser independente de si mesmo?
@@ -2519,8 +2519,8 @@ Cada dado é lançado uma vez. Cada letra representa o resultado do dado corresp
 \end{itemize}
 
 \hypertarget{amigos}{%
-\subsection*{33}\label{amigos}}
-\addcontentsline{toc}{subsection}{33}
+\subsection*{33. Amigos de Alice e Bob}\label{amigos}}
+\addcontentsline{toc}{subsection}{33. Amigos de Alice e Bob}
 
 \begin{rmdbox}
 
@@ -2574,15 +2574,13 @@ Cada dado é lançado uma vez. Cada letra representa o resultado do dado corresp
   \frac12 \cdot \frac{|D|}{|C|} + \frac12 \cdot \left(1 - \frac{|D|}{|C|}\right) = \frac12
   \]
 \item
-  {\hl{Convenientemente, $|D|$ desapareceu, mas só porque $p = 1/2$.}}
-\item
   A probabilidade de $A = D$ é a probabilidade de, para todo $x \in C$, acontecer de $x \in A \land x \in D$ ou $x \in A \land x \in D$. Como os eventos são independentes, temos
 
   \[
   P(A = D) = \frac1{2^{|C|}}
   \]
 \item
-  Vamos simular a situação. Estamos supondo que os elementos de $D$ são escolhidos segundo uma amostragem uniforme. \protect\hyperlink{amostra}{Veja explicações mais detalhadas abaixo}.
+  Vamos simular a situação. Estamos supondo que os elementos de $D$ são escolhidos segundo uma amostragem simples uniforme, sem reposição. \protect\hyperlink{amostra}{Veja explicações mais detalhadas abaixo}.
 
 \hypertarget{simular-amigos}{%
 \label{simular-amigos}}%
@@ -2605,6 +2603,8 @@ Cada dado é lançado uma vez. Cada letra representa o resultado do dado corresp
 \item
   Para as probabilidades não ficarem tão pequenas, vamos usar um universo $C$ com $10$ elementos apenas:
 
+\hypertarget{simular-com-p}{%
+\label{simular-com-p}}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \NormalTok{p }\OtherTok{\textless{}{-}} \DecValTok{1}\SpecialCharTok{/}\DecValTok{2}
@@ -2624,6 +2624,8 @@ Cada dado é lançado uma vez. Cada letra representa o resultado do dado corresp
 ## P(A = D) simulado =  0,000991
 \end{verbatim}
 
+\hypertarget{simular-com-p}{%
+\label{simular-com-p}}%
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{cat}\NormalTok{(}\StringTok{\textquotesingle{}P(A = D) teórico  = \textquotesingle{}}\NormalTok{, }\DecValTok{1}\SpecialCharTok{/}\DecValTok{2}\SpecialCharTok{\^{}}\NormalTok{n)}
@@ -2633,24 +2635,80 @@ Cada dado é lançado uma vez. Cada letra representa o resultado do dado corresp
 \begin{verbatim}
 ## P(A = D) teórico  =  0,0009765625
 \end{verbatim}
+\item
+  E se $p \neq 1/2$?
+\item
+  \protect\hyperlink{amostra}{Como explicado abaixo}, a probabilidade de um $x \in C$ pertencer a $D$ (supondo que $D$ é obtido por amostragem simples) é $1/2$.
+\item
+  Então, Para cada $x \in C$:
+
+  \begin{enumerate}
+  \def\labelenumi{\arabic{enumi}.}
+  \item
+    $x \in A \land x \in D$, com probabilidade $p/2$,
+
+    ou (exclusivo)
+  \item
+    $x \not\in A \land x \not\in D$, com probabilidade $(1 - p)/2$
+  \end{enumerate}
+\item
+  Somando as probabilidades dos casos, para cada $x \in C$, a probabilidade de $x$ estar em $A$ e em $D$, ou de $x$ não estar nem em $A$, nem em $D$, é, de novo, $1/2$.
+\item
+  Logo, $P(A = D) = 1/ 2^{|C|}$ novamente.
+\item
+  Ou seja, {\hl{o resultado vale para qualquer valor de $p$.}} Altere o valor de $p$ no \protect\hyperlink{simular-com-p}{código da simulação acima} para verificar.
 \end{itemize}
 
-\hypertarget{p-qualquer}{%
-\subsubsection*{\texorpdfstring{$p$ qualquer}{ qualquer}}\label{p-qualquer}}
-\addcontentsline{toc}{subsubsection}{$p$ qualquer}
+\begin{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  Achar $P(A \subseteq B)$
+\end{enumerate}
+
+\end{rmdbox}
 
 \begin{itemize}
 \item
-  Vamos resolver de outra maneira, pensando em $p$ genérico.
+  Para cada $x \in A$, a probabilidade de $x \in B$ é $1/2$.
 \item
-  ??? Substituir $\frac{|D|}{n}$ por $\frac 1 2$ na fórmula.
+  Logo, $P(A \subseteq B) = 1 / 2^{|A|}$.
+\end{itemize}
+
+\begin{rmdbox}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi}.}
+\setcounter{enumi}{2}
+\tightlist
 \item
-  Simular com outros valores de $p$.
+  Achar $P(A \cup B) = C$.
+\end{enumerate}
+
+\end{rmdbox}
+
+\begin{itemize}
+\item
+  Para cada $x \in C$,
+
+  \[
+  \begin{aligned}
+  P(x \in A \cup B) 
+  &= P(x \in A) + P(x \in B) - P(x \in A \cap B) \\
+  &= 1/2 + 1/2 - 1/4 \\
+  &= 3/4
+  \end{aligned}
+  \]
+\item
+  Logo, $P(A \cup B = C) = (3/4)^{|C|}$
 \end{itemize}
 
 \hypertarget{amostra}{%
-\subsection*{Extra: amostragem uniforme (sem reposição)}\label{amostra}}
-\addcontentsline{toc}{subsection}{Extra: amostragem uniforme (sem reposição)}
+\subsection*{Extra: amostragem simples}\label{amostra}}
+\addcontentsline{toc}{subsection}{Extra: amostragem simples}
 
 \begin{itemize}
 \item
@@ -2995,9 +3053,9 @@ Exemplo: universidade admite candidatos que são bons jogadores de basquete ($A$
   Como o denominador $P(A \cup B) < 1$, esta probabilidade é maior do que $P(A)$.
 \end{itemize}
 
-\hypertarget{section-19}{%
-\subsection*{37}\label{section-19}}
-\addcontentsline{toc}{subsection}{37}
+\hypertarget{doenuxe7as-e-sintoma}{%
+\subsection*{37. Doenças e sintoma}\label{doenuxe7as-e-sintoma}}
+\addcontentsline{toc}{subsection}{37. Doenças e sintoma}
 
 \begin{rmdbox}
 
